@@ -1,3 +1,5 @@
 name: Alexey Nikolaev
 markdown: redcarpet
 pygments: true
+safe: true
+lsi: false
