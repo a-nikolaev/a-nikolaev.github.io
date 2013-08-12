@@ -9,7 +9,7 @@ Hunter College of CUNY
 New York, NY 10065
 
 ###Email
-a<span style="color:#999999;">(my last name)</span>@gc.cuny.edu
+a<span style="color:#969086;">(my last name)</span>@gc.cuny.edu
 
 ##Education
 
