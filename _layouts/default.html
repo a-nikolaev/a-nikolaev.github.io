@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <!-- <link rel="stylesheet" href="/css/main.css"> -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/common.css">
+        <!-- <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> -->
+        <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'> 
+
+    </head>
+    <body>
+
+    <!--
+        <div class="container">
+     -->
+          <div class="page">
+            <div class="nav">
+                <a href="{{ site.baseurl }}/">home</a>,
+                <a href="{{ site.baseurl }}/ds/">discrete structures</a>,
+                <a href="{{ site.baseurl }}/cv/">cv</a> 
+            </div>
+
+                {{ content }}
+
+            <div class="footer">
+              <!--
+              <div class="contact">
+                <p>
+                  Your Name<br />
+                  What You Are<br />
+                  your@email.com
+                </p>
+              </div>
+              <div class="contact">
+                <p>
+                  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
+                  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
+                </p>
+              </div>
+              -->
+            </div>
+          </div>
+     <!--
+        </div>
+        -->
+
+    </body>
+</html>
