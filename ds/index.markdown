@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Alexey Nikolaev CV
+title: CSCI 150 - Discrete Structures
 ---
 
 ##Literature

@@ -3,6 +3,13 @@ layout: page
 title: Alexey Nikolaev CV
 ---
 
+Alexey Nikolaev  
+Hunter College of CUNY  
+695 Park Avenue, HN 1000C  
+New York, NY 10065
+
+###Email
+a<span style="color:#999999;">(my last name)</span>@gc.cuny.edu
 
 ##Education
 
