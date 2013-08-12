@@ -6,7 +6,7 @@ title: CSCI 150 - Discrete Structures
 ##Literature
 1. Rosen "Discrete Mathematics and its Applications" edition 6 or 7.
 2. Lehman and Leighton "Mathematics for Computer Science" (2004).
-[![pdf][pdfimg]]({{ baseurl }}/docs/mit-mathcs.pdf)
+[![pdf][pdfimg]](/docs/mit-mathcs.pdf)
 
 
 ## Overview
@@ -16,4 +16,4 @@ Mathematical background required for computer science.
 Sets, relations, cardinality, propositional calculus, discrete functions, truth tables, 
 induction, combinatorics, graphs, number theory.
 
-[pdfimg]: {{site.baseurl}}/img/pdf1.png
+[pdfimg]: /img/pdf1.png

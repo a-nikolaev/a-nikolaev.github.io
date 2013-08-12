@@ -48,7 +48,7 @@ edited by M.E. Gracheva, p. 187-210, Humana Press (2012),
 ISBN 978-1-61779-772-9, DOI 10.1007/978-1-61779-773-6. (Methods Mol Biol; 2012;870:187-207). -->
 * Masters thesis: "Poisson-Nernst-Planck Model for Simulating Ionic
   Current through the Nanopore in a Semiconductor Membrane", 2011. 
-  [![pdf][pdfimg]]({{ baseurl }}/docs/thesis_1.0.pdf)
+  [![pdf][pdfimg]](/docs/thesis_1.0.pdf)
 * "Simulation of ionic current through the nanopore in a double-layered semiconductor membrane" 
 A. Nikolaev, M. E. Gracheva, Nanotechnology, 2011, **22** (16) 165202.
 
@@ -58,17 +58,17 @@ N.N. Nefedov, A. Nikolaev, et al., ZhVMiMF, 2007, **47** (8), 1356-1364.
 ###Posters and Talks
 * Poster "Simulation of Infinite Time Turing Machines on a Classical Turing Machine",
 A. Nikolaev, Computer Science Student Workshop 2013, CUNY, New York, New York, May 3rd (2013).
-[![pdf][pdfimg]]({{ baseurl }}/docs/poster-cssw-2013-ittm.pdf)
+[![pdf][pdfimg]](/docs/poster-cssw-2013-ittm.pdf)
 
 * Talk "A Probabilistic Model for Deriving Structure of Proteins from Their Sequence Information",
 A. Nikolaev, S. Mneimneh, STAR-W 2013: STudents Algoritmic Reserach Workshop, CUNY, New York, New York, March 22nd (2013).
-[![pdf][pdfimg]]({{ baseurl }}/docs/slides-star-w-2013.pdf)
+[![pdf][pdfimg]](/docs/slides-star-w-2013.pdf)
 * Talk "From Sequences to Structures: A Computational Probability Approach Based on Percolation Theory",
 A. Nikolaev, S. Mneimneh, INFORMS Computing Society Conference 2013, Santa Fe, New Mexico, January 6th - 8th (2013). 
-[![pdf][pdfimg]]({{ baseurl }}/docs/slides-informs-2013.pdf)
+[![pdf][pdfimg]](/docs/slides-informs-2013.pdf)
 * Poster "Simulation of ionic current through the nanopore in a double layered semiconductor membrane", 
 A. Nikolaev, M. E. Gracheva, Biophysical Society Meeting, Baltimore, Maryland, March 5th - 9th (2011). 
-[![pdf][pdfimg]]({{ baseurl }}/docs/poster-bps-2011.pdf)
+[![pdf][pdfimg]](/docs/poster-bps-2011.pdf)
 * Talk "Ionic current in semiconductor nanopores: Designing the most efficient devices", 
 Clarkson University, Physics Department Colloquium, October 8th (2010).
 * Poster "Modeling of ionic currents in a semiconductor nanopore", 
@@ -87,4 +87,4 @@ N. Grachev, A. Nikolaev, et al., XIII Conference “Mathematics. Computer. Educa
 N. Grachev, A. Nikolaev, Conference ’Lomonosov - 2006’, Moscow, Russia (2006).
 
 
-[pdfimg]: {{site.baseurl}}/img/pdf1.png
+[pdfimg]: /img/pdf1.png
