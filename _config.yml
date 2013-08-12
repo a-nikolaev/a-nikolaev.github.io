@@ -3,4 +3,4 @@ markdown: redcarpet
 pygments: true
 safe: true
 lsi: false
-baseurl: ''
+baseurl: http://a-nikolaev.github.io
