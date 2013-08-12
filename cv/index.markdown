@@ -87,4 +87,4 @@ N. Grachev, A. Nikolaev, et al., XIII Conference “Mathematics. Computer. Educa
 N. Grachev, A. Nikolaev, Conference ’Lomonosov - 2006’, Moscow, Russia (2006).
 
 
-[pdfimg]: {{baseurl}}/img/pdf1.png
+[pdfimg]: {{site.baseurl}}/img/pdf1.png

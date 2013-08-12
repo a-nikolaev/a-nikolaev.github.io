@@ -16,4 +16,4 @@ Mathematical background required for computer science.
 Sets, relations, cardinality, propositional calculus, discrete functions, truth tables, 
 induction, combinatorics, graphs, number theory.
 
-[pdfimg]: {{baseurl}}/img/pdf1.png
+[pdfimg]: {{site.baseurl}}/img/pdf1.png
