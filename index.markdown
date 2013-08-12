@@ -8,3 +8,4 @@ My name is Alexey Nikolaev, I am a Computer Science PhD student at The Graduate 
 
 This fall, I teach CSCI 150: [Discrete Structures](/ds/) at Hunter College.
 
+![CUNY](/img/cuny.png)

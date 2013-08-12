@@ -31,7 +31,7 @@ a<span style="color:#969086;">(my last name)</span>@gc.cuny.edu
   * Instructor for PH132 - Physics II (Spring 2009, Spring 2010).  
 * July 2010 - July 2011. Research Assistant. 
 
-###City University of New York, Computer Science Program
+###The City University of New York, Computer Science Program
 * August 2011 - present. Research Assistant at Hunter College.
   * Work with Professor Saad Mneimneh.
 * August 2013 - present. Adjunct Lecturer at Hunter College. 
