@@ -5,7 +5,8 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Aug 28, 2013. [slides](/ds/docs/lec1.pdf)
+Lecture 1. Aug 28, 2013. [slides](/ds/docs/lec1.pdf). Reading: R.ed6: 1.1-1.2; R.ed7: 1.1-1.3;  
+[HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 11.
 
 ## Syllabus
 
