@@ -5,8 +5,15 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Aug 28, 2013. [slides](/ds/docs/lec1.pdf). Reading: R.ed6: 1.1-1.2; R.ed7: 1.1-1.3;  
+Lecture 1. Aug 28, 2013. [Propositional Logic](/ds/docs/lec1.pdf).   
+Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3;  
 [HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 11.
+
+Lecture 2. Sep 9, 2013. Satisfiability and Rules of Inference.   
+Reading: R(ed6): 1.5; R(ed7): 1.6.
+
+Lecture 3. Sep 11, 2013. Predicates and Quantifiers.   
+Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.
 
 ## Syllabus
 
