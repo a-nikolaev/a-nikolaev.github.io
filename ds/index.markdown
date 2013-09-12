@@ -9,11 +9,15 @@ Lecture 1. Aug 28, 2013. [Propositional Logic](/ds/docs/lec1.pdf).
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3;  
 [HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 11.
 
-Lecture 2. Sep 9, 2013. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf).   
-Reading: R(ed6): 1.5; R(ed7): 1.6.
+Lecture 2. Sep 9, 2013. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Reading: R(ed6): 1.5; R(ed7): 1.6.  
 
 Lecture 3. Sep 11, 2013. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
-Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.
+Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
+[HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 18.
+
+Lecture 4. Sep 16, 2013. Proofs.  
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
 ## Syllabus
 
