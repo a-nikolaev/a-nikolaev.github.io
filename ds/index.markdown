@@ -16,12 +16,16 @@ Lecture 3. Sep 11, 2013. [Predicates and Quantifiers](/ds/docs/lec3.pdf).
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
 [HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 18.
 
-Lecture 4. Sep 16, 2013. Proofs.  
+Lecture 4. Sep 16, 2013. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
+
+Lecture 5. Sep 18, 2013. Counting.  
+Reading: R(ed6): 5.1; R(ed7): 6.1.
 
 ## Syllabus
 
-Monday and Wednesday 7:00 - 8:15 pm.
+Monday and Wednesday 7:00 - 8:15 pm. Hunter North 1516.  
+Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
 Website: <http://a-nikolaev.github.io/ds/>  
