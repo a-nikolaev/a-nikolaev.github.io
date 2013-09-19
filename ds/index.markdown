@@ -20,7 +20,12 @@ Lecture 4. Sep 16, 2013. [Proofs](/ds/docs/lec4.pdf).
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
 Lecture 5. Sep 18, 2013. [Counting](/ds/docs/lec5.pdf).  
-Reading: R(ed6): 5.1; R(ed7): 6.1.
+Reading: R(ed6): 5.1; R(ed7): 6.1.  
+[HW3](/ds/docs/hw3.pdf). Due Wednesday, Sep 25.
+
+Lecture 6. Sep 23, 2013. Permutations and Combinations. Binomial Theorem.
+
+Lecture 7. Sep 25, 2013. Generalized Permutations and Combinations.
 
 ## Syllabus
 
