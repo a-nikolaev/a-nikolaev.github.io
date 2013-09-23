@@ -29,9 +29,12 @@ Reading: R(ed6): 5.1; R(ed7): 6.1.
 [HW3](/ds/docs/hw3.pdf). Due Wednesday, Sep 25.
 
 Lecture 6. Sep 23, 2013. [The Pigeonhole Principle. Permutations and Combinations. Binomial Theorem](/ds/docs/lec6.pdf).  
-Reading: R(ed6): 5.2-5.4; R(ed7): 6.2-6.4.
+Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.
 
-Lecture 7. Sep 25, 2013. Generalized Permutations and Combinations.  
+Lecture 7. Sep 25, 2013. Binomial Theorem.  
+Reading: R(ed6): 5.4; R(ed7): 6.4.
+
+Lecture 8. Sep 30, 2013. Generalized Permutations and Combinations.  
 Reading: R(ed6): 5.5; R(ed7): 6.5.
 
 ## Syllabus
