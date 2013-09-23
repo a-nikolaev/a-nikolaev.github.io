@@ -37,6 +37,9 @@ Reading: R(ed6): 5.4; R(ed7): 6.4.
 Lecture 8. Sep 30, 2013. Generalized Permutations and Combinations.  
 Reading: R(ed6): 5.5; R(ed7): 6.5.
 
+### Joint Facebook group for all CSCI-150 sections
+[![fb][fbimg]](https://www.facebook.com/groups/226900480808188/)
+
 ## Syllabus
 
 Monday and Wednesday 7:00 - 8:15 pm. Hunter North 1516.  
@@ -84,5 +87,9 @@ Graphs. Bridges of Koenigsberg. Eulerian and Hamiltonian cycles.
 Trees, spanning trees. Travelling Salesman problem.
  
 Number theory. Divisibility and primes. Modulo-arithmetics. GCD and Euclid's algorithm.
+Cryptography.
+
+Introduction to probability theory.
 
 [pdfimg]: /img/pdf1.png
+[fbimg]: /img/fb.png
