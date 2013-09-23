@@ -11,6 +11,11 @@ Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3;
 
 Lecture 2. Sep 9, 2013. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
+Usiful links:
+[Tutorial](http://www.cs.colostate.edu/~cs122/tut_3.php),
+[2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
+[3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).
+
 
 Lecture 3. Sep 11, 2013. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
