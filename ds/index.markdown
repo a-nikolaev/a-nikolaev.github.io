@@ -23,9 +23,11 @@ Lecture 5. Sep 18, 2013. [Counting](/ds/docs/lec5.pdf).
 Reading: R(ed6): 5.1; R(ed7): 6.1.  
 [HW3](/ds/docs/hw3.pdf). Due Wednesday, Sep 25.
 
-Lecture 6. Sep 23, 2013. Permutations and Combinations. Binomial Theorem.
+Lecture 6. Sep 23, 2013. [The Pigenhole Principle. Permutations and Combinations. Binomial Theorem](ds/docs/lec6.pdf).  
+Reading: R(ed6): 5.2-5.4; R(ed7): 6.2-6.4.
 
-Lecture 7. Sep 25, 2013. Generalized Permutations and Combinations.
+Lecture 7. Sep 25, 2013. Generalized Permutations and Combinations.  
+Reading: R(ed6): 5.5; R(ed7): 6.5.
 
 ## Syllabus
 
