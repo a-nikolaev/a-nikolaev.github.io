@@ -33,7 +33,7 @@ Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.
 
 Lecture 7. Sep 25, 2013. Binomial Theorem. Combinations with repetition.   
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
-[HW4](/ds/docs/hw4.pdf). Due Wednesday, Oct 2. This one can be a little hard[,&nbsp;](https://www.youtube.com/watch?v=KIsv1YOFNys)but try to do your best. 
+[HW4](/ds/docs/hw4.pdf). Due Wednesday, Oct 2. This one can be a little hard, but try to do your best. 
 Teamwork is acceptable. Ask questions by email.
 
 Lecture 8. Sep 30, 2013. Induction.  
