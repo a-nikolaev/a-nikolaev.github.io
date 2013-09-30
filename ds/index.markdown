@@ -36,7 +36,7 @@ Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.
 [HW4](/ds/docs/hw4.pdf). Due Wednesday, Oct 2. This one can be a little hard, but try to do your best. 
 Teamwork is acceptable. Ask questions by email.
 
-Lecture 8. Sep 30, 2013. Counting. Practice session.  
+Lecture 8. Sep 30, 2013. Counting. Practice session. [[problem set](/ds/docs/cc3.pdf)].  
 Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.   
 We are going to solve more problems that involve counting.
 If you send me your questions by Sunday, I will try to cover them in this class.
