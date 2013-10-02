@@ -42,7 +42,7 @@ We are going to solve more problems that involve counting.
 If you send me your questions by Sunday, I will try to cover them in this class.
 Feel free to suggest problems as well. 
 
-Lecture 9. Oct 2, 2013. [Induction](/ds/docs/lec8.pdf).  
+Lecture 9. Oct 2, 2013. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.
 
 ### Joint Facebook group for all CSCI-150 sections
