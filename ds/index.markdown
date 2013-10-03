@@ -43,7 +43,8 @@ If you send me your questions by Sunday, I will try to cover them in this class.
 Feel free to suggest problems as well. 
 
 Lecture 9. Oct 2, 2013. [Induction](/ds/docs/lec9.pdf).  
-Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.
+Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
+[HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 9.
 
 ### Joint Facebook group for all CSCI-150 sections
 [![fb][fbimg]](https://www.facebook.com/groups/226900480808188/)
