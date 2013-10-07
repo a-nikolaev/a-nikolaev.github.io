@@ -46,6 +46,21 @@ Lecture 9. Oct 2, 2013. [Induction](/ds/docs/lec9.pdf).
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
 [HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 9.
 
+Lecture 10. Oct 7, 2013. [Recurrences](/ds/docs/lec10.pdf).  
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)
+
+Lecture 11. Oct 9, 2013. Fibonacci Numbers. Solving Linear Recurrences.   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.  
+
+Lecture 12. Oct 15, 2013. Strong Induction.
+
+Lecture 13. Oct 16, 2013. Recursion and recursive programming.
+
+Midterm. Oct 21, 2013.
+
+[Grades Statistics](/ds/docs/grades-stats.pdf)
+
 ### Joint Facebook group for all CSCI-150 sections
 [![fb][fbimg]](https://www.facebook.com/groups/226900480808188/)
 
