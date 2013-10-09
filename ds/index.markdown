@@ -50,7 +50,7 @@ Lecture 10. Oct 7, 2013. [Recurrences](/ds/docs/lec10.pdf).
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)
 
-Lecture 11. Oct 9, 2013. Fibonacci Numbers. Solving Linear Recurrences.   
+Lecture 11. Oct 9, 2013. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.  
 
 Lecture 12. Oct 15, 2013. Strong Induction.
