@@ -55,11 +55,13 @@ Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.
 [HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 16. WolframAlpha can be useful to check the correctness of your solutions,
 [see an example](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29).
 
-Lecture 12. Oct 15, 2013. Strong Induction.
+Lecture 12. Oct 15, 2013. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf).  
+Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
+["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.
 
 Lecture 13. Oct 16, 2013. Recursion and recursive programming.
 
-Midterm. Oct 21, 2013.
+Midterm. Oct 21, 2013. [Example](/ds/docs/midterm-example.pdf).
 
 [Grades Statistics](/ds/docs/grades-stats.pdf)
 
