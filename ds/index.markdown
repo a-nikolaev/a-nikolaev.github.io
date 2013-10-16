@@ -59,7 +59,15 @@ Lecture 12. Oct 15, 2013. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf
 Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
 ["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.
 
-Lecture 13. Oct 16, 2013. Recursion and recursive programming.
+Lecture 13. Oct 16, 2013. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).  
+Code: 
+[sum.jl](/ds/code/sum.jl),
+[fact.jl](/ds/code/fact.jl),
+[fib.jl](/ds/code/fib.jl),
+[mset.jl](/ds/code/mset.jl),
+[graph.jl](/ds/code/graph.jl),
+[lsys.jl](/ds/code/lsys.jl),
+[turtle.jl](/ds/code/turtle.jl).
 
 Midterm. Oct 21, 2013. [Example](/ds/docs/midterm-example.pdf).
 
