@@ -60,7 +60,7 @@ Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.
 ["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.
 
 Lecture 13. Oct 16, 2013. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).  
-Code: 
+Source code in [Julia](http://julialang.org/):   
 [sum.jl](/ds/code/sum.jl),
 [fact.jl](/ds/code/fact.jl),
 [fib.jl](/ds/code/fib.jl),
