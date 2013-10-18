@@ -69,7 +69,7 @@ Source code in [Julia](http://julialang.org/):
 [lsys.jl](/ds/code/lsys.jl),
 [turtle.jl](/ds/code/turtle.jl).
 
-Midterm. Oct 21, 2013. [Example](/ds/docs/midterm-example.pdf).
+Midterm. Oct 21, 2013. [Example](/ds/docs/midterm-example.pdf) ([answers](/ds/mxanswers.html)).
 
 [Grades Statistics](/ds/docs/grades-stats.pdf)
 
