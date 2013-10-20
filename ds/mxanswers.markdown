@@ -22,9 +22,9 @@ title: Example Midterm - Answers
     3)  p and s                            Given
     
     4)  p                                  and-E, 3
-    5)  s                                  and-E, 4
-    6)  q                                  M.P., 1, 3
-    7)  q and s                            and-I, 4, 6
+    5)  s                                  and-E, 3
+    6)  q                                  M.P., 1, 4
+    7)  q and s                            and-I, 5, 6
     8)  ((q and s) -> (not q or t)) and    Equivalence, 2
         ((not q or t) -> (q and s))
     9)  (q and s) -> (not q or t)          and-E, 8
@@ -52,7 +52,7 @@ First question: 4!
 Second question: 4! 3! 4! 4! 5!
    
 ## Problem 6
-Let S(n) = 1 + 1/2 + ... + 2^n.
+Let S(n) = 1 + 2 + ... + 2^n.
 
 *The base case:*   
 S(0) = 2^0 = 1. 
