@@ -71,7 +71,7 @@ Source code in [Julia](http://julialang.org/):
 
 Midterm. Oct 21, 2013. [Example](/ds/docs/midterm-example.pdf) ([answers](/ds/mxanswers.html)).
 
-Lecture 14. Oct 23, 2013. Intro to Number Theory.  
+Lecture 14. Oct 23, 2013. [Intro to Number Theory](/ds/docs/lec14.pdf).  
 Reading: 
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
 LL: Chapter 4; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.  
