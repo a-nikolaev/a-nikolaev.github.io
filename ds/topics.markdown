@@ -45,7 +45,7 @@ and [Repressilator](https://en.wikipedia.org/wiki/Repressilator).
 
 4. Generation of a map, a maze or a building layout using L-systems or a similar model 
 that effectively divides space into parts recursively.
-Because it is using the Divide and Conquer pronciple, it is quite efficient, 
+Because it is using the Divide and Conquer principle, it is efficient, 
 but it can be hard to come up with good rules.
 
 5. Use Prolog for solving logical puzzles like 
