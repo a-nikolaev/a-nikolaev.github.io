@@ -54,7 +54,7 @@ but it can be hard to come up with good rules.
 
 6. *I will update this list and add new topics if I come up with other ideas.*
 
-7. You topic. Suggest something related to the course. 
+7. Your topic. Suggest something related to the course. 
 
 ### Where to get more ideas
 
