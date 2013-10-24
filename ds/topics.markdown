@@ -19,7 +19,7 @@ In any case, it will be beneficial for your final grade.
 
 We have to discuss the topic of your project, and I have to approve it, before you start working.
 
-Report you progress regularly (for example, once a week), so you don't waste time.
+Report you progress regularly (for example, once a week), so I can guide you, and you don't waste time.
 
 ## Topics
 
