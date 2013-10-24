@@ -52,9 +52,16 @@ but it can be hard to come up with good rules.
 [Wolf, goat, cabbage problem](http://jeux.lulu.pagesperso-orange.fr/html/anglais/loupChe/loupChe1.htm)
 (If you already know or want to learn Prolog).
 
-6. *I will update this list and add new topics if I come up with other ideas.*
+6. [SKI Combinator Calculus](https://en.wikipedia.org/wiki/SKI_combinator_calculus) 
+is a surprisingly simple Turing-complete language. You have to learn it and
+write a program that can reduce (evaluate) expressions of SKI calculus. 
+I can explain this topic, if you want to try it. Good programming experience is required.
+Better if you know how to work with lists or tuples. A language with garbage collection
+should simplify things.
 
-7. Your topic. Suggest something related to the course. 
+7. *I will update this list and add new topics if I come up with other ideas.*
+
+8. Your topic. Suggest something related to the course. 
 
 ### Where to get more ideas
 
