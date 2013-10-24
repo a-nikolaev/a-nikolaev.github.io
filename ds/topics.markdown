@@ -23,7 +23,7 @@ Report you progress regularly (for example, once a week), so I can guide you, an
 
 ## Topics
 
-I can suggest a few options. They are not perfect, but yo can get an idea:
+I can suggest a few options. They are not perfect, but you can get an idea:
 
 1. There is a chapter in Rosen's book: Generating Permutations and Combinations (ed7: 6.6)
 Implement the algorithms generating all combinations and permutations (in lexicographic order).
