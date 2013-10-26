@@ -59,9 +59,13 @@ I can explain this topic, if you want to try it. Good programming experience is 
 Better if you know how to work with lists or tuples. A language with garbage collection
 should simplify things.
 
-7. *I will update this list and add new topics if I come up with other ideas.*
+7. [Von Neumann cellular automata](https://en.wikipedia.org/wiki/Von_Neumann_cellular_automata),
+  or similar automata (see [Codd's](https://en.wikipedia.org/wiki/Codd%27s_cellular_automaton), or
+  [many other](http://code.google.com/p/ruletablerepository/wiki/TheRules) possible ruleset).
 
-8. Your topic. Suggest something related to the course. 
+0. *I will update this list and add new topics if I come up with other ideas.*
+
+0. Your topic. Suggest something related to the course. 
 
 ### Where to get more ideas
 
