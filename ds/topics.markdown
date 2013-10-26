@@ -48,7 +48,7 @@ that effectively divides space into parts recursively.
 Because it is using the Divide and Conquer principle, it is efficient, 
 but it can be hard to come up with good rules.
 
-5. Use Prolog for solving logical puzzles like 
+5. Use Prolog for solving logical puzzles like Knights and Knaves, and 
 [Wolf, goat, cabbage problem](http://jeux.lulu.pagesperso-orange.fr/html/anglais/loupChe/loupChe1.htm)
 (If you already know or want to learn Prolog).
 
