@@ -78,7 +78,8 @@ LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.
 [HW7](/ds/docs/hw7.pdf). Due Wednesday, Oct 30.
 
 Lecture 15. Oct 28, 2013. [Modular arithmetic](/ds/docs/lec15.pdf).  
-Reading: the same.
+Reading: the same.  
+Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C. Not sure if it's correct, I did not have time to test it thoroughly.
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
