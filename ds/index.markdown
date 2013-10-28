@@ -74,8 +74,11 @@ Midterm. Oct 21, 2013. [Example](/ds/docs/midterm-example.pdf) ([answers](/ds/mx
 Lecture 14. Oct 23, 2013. [Intro to Number Theory](/ds/docs/lec14.pdf).  
 Reading: 
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
-LL: Chapter 4; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
 [HW7](/ds/docs/hw7.pdf). Due Wednesday, Oct 30.
+
+Lecture 15. Oct 28, 2013. [Modular arithmetic](/ds/docs/lec15.pdf).  
+Reading: the same.
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
