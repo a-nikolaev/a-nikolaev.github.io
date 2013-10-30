@@ -81,6 +81,9 @@ Lecture 15. Oct 28, 2013. [Modular arithmetic](/ds/docs/lec15.pdf).
 Reading: the same.  
 Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C. Not sure if it's correct, I did not have time to test it thoroughly.
 
+Lecture 16. Oct 28, 2013. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).  
+Reading: the same.  
+
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
 
