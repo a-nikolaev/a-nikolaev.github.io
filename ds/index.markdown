@@ -85,6 +85,9 @@ Lecture 16. Oct 28, 2013. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).
 Reading: the same.   
 [HW8](/ds/docs/hw8.pdf). Due Wednesday, Nov 6.
 
+Lecture 17. Nov 4, 2013. [Sets. Ordered pairs. Functions and Relations](/ds/docs/lec17.pdf).  
+Reading: R(ed6): 2.1-2.3, 8.1; R(ed7): 2.1-2.3, 9.1.  
+
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
 
