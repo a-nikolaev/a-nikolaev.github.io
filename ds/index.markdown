@@ -85,8 +85,18 @@ Lecture 16. Oct 28, 2013. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).
 Reading: the same.   
 [HW8](/ds/docs/hw8.pdf). Due Wednesday, Nov 6.
 
-Lecture 17. Nov 4, 2013. [Sets. Ordered pairs. Functions and Relations](/ds/docs/lec17.pdf).  
-Reading: R(ed6): 2.1-2.3, 8.1; R(ed7): 2.1-2.3, 9.1.  
+Lecture 17. Nov 4, 2013. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
+Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.  
+
+Lecture 18. Nov 6, 2013. Relations. Functions. Bijection and counting.   
+Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
+Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
+
+Lecture 19. Nov 11, 2013. Infinity. Cardinality. Pairing function. Diagonalization argument.   
+Reading: R(ed6): 2.5; R(ed7): 2.5. 
+
+Lecture 20. Nov 13, 2013. Combinators and computation with functions. Relations and partial orderings.   
+Reading: R(ed6): 8; R(ed7): 9. 
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
