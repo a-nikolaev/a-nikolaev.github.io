@@ -90,7 +90,8 @@ Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.
 
 Lecture 18. Nov 6, 2013. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
-Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
+Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+[HW9](/ds/docs/hw9.pdf). Due Wednesday, Nov 13.
 
 Lecture 19. Nov 11, 2013. Infinity. Cardinality. Pairing function. Diagonalization argument.   
 Reading: R(ed6): 2.5; R(ed7): 2.5. 
