@@ -93,7 +93,7 @@ Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 [HW9](/ds/docs/hw9.pdf). Due Wednesday, Nov 13.
 
-Lecture 19. Nov 11, 2013. Infinity. Cardinality. Pairing function. Diagonalization argument.   
+Lecture 19. Nov 11, 2013. [Infinity. Cardinality. Pairing function. Diagonalization argument](/ds/docs/lec19.pdf).   
 Reading: R(ed6): 2.5; R(ed7): 2.5. 
 
 Lecture 20. Nov 13, 2013. Combinators and computation with functions. Relations and partial orderings.   
