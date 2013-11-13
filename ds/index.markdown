@@ -96,8 +96,8 @@ Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
 Lecture 19. Nov 11, 2013. [Infinity. Cardinality. Pairing function. Diagonalization argument](/ds/docs/lec19.pdf).   
 Reading: R(ed6): 2.5; R(ed7): 2.5. 
 
-Lecture 20. Nov 13, 2013. Combinators and computation with functions. Relations and partial orderings.   
-Reading: R(ed6): 8; R(ed7): 9. 
+Lecture 20. Nov 13, 2013. [Computation with functions. Relations and partial orders](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6 
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
