@@ -91,13 +91,17 @@ Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.
 Lecture 18. Nov 6, 2013. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
-[HW9](/ds/docs/hw9.pdf). Due Wednesday, Nov 13.
+[HW9](/ds/docs/hw9.pdf). <s>Due Wednesday, Nov 13.</s> Extended until Monday, Nov 18.
 
 Lecture 19. Nov 11, 2013. [Infinity. Cardinality. Pairing function. Diagonalization argument](/ds/docs/lec19.pdf).   
 Reading: R(ed6): 2.5; R(ed7): 2.5. 
 
 Lecture 20. Nov 13, 2013. [Computation with functions. Relations and partial orders](/ds/docs/lec20.pdf).   
-Reading: R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6 
+Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+[HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 20.
+
+Lecture 21. Nov 18, 2013. Graphs.   
+Reading: R(ed6): 9.1-9.4; R(ed7): 10.1-10.4; LL: Chapter 6. 
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
