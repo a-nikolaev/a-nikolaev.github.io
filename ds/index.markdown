@@ -100,8 +100,11 @@ Lecture 20. Nov 13, 2013. [Computation with functions. Relations and partial ord
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
 [HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 20.
 
-Lecture 21. Nov 18, 2013. Graphs.   
-Reading: R(ed6): 9.1-9.4; R(ed7): 10.1-10.4; LL: Chapter 6. 
+Lecture 21. Nov 18, 2013. [Graphs. Bipartite graphs. Paths](/ds/docs/lec21.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
+
+Lecture 22. Nov 20, 2013. Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.   
+Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7. 
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
