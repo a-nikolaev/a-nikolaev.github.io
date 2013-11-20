@@ -94,7 +94,8 @@ Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
 [HW9](/ds/docs/hw9.pdf). <s>Due Wednesday, Nov 13.</s> Extended until Monday, Nov 18.
 
 Lecture 19. Nov 11, 2013. [Infinity. Cardinality. Pairing function. Diagonalization argument](/ds/docs/lec19.pdf).   
-Reading: R(ed6): 2.5; R(ed7): 2.5. 
+Reading: R(ed6):n/a; R(ed7): 2.5.   
+Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.
 
 Lecture 20. Nov 13, 2013. [Computation with functions. Relations and partial orders](/ds/docs/lec20.pdf).   
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
@@ -103,7 +104,7 @@ Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.
 Lecture 21. Nov 18, 2013. [Graphs. Bipartite graphs. Paths](/ds/docs/lec21.pdf).   
 Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
 
-Lecture 22. Nov 20, 2013. Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.   
+Lecture 22. Nov 20, 2013. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec22.pdf).   
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7. 
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
