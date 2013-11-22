@@ -105,7 +105,20 @@ Lecture 21. Nov 18, 2013. [Graphs. Bipartite graphs. Paths](/ds/docs/lec21.pdf).
 Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
 
 Lecture 22. Nov 20, 2013. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec22.pdf).   
-Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7. 
+Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+No homework today.
+
+Lecture 23. Nov 25, 2013. Trees.
+
+Lecture 24. Dec 2, 2013. Probability.
+
+Lecture 25. Dec 4, 2013. Probability.
+
+Review session. Dec 9, 2013.
+
+Project presentation. Dec 11, 2013.
+
+Final Exam. Dec 23, 2013. 6:20 - 8:20 pm.
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
