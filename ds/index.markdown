@@ -116,7 +116,10 @@ Lecture 24. Dec 2, 2013. Probability.
 No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
-Lecture 25. Dec 4, 2013. Probability.
+Lecture 25. Dec 4, 2013. Probability. Random variables. Expected value.       
+The notes for the previous lecture are updated.    
+Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
+[HW12](/ds/docs/hw12.pdf). Due Wednesday, Dec 11. 
 
 Review session. Dec 9, 2013.
 
