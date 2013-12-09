@@ -14,9 +14,9 @@ so we can copy everything on time.
 
 ## Presentation hints
 
-0. First, briefly explain the topic and what your are doing.
-Then, show your solution to the problem, and demonstrate your results.
-0. Avoid showing code (not enough time for that).
-0. A high-level overview is more important than technical details.
+0. First, briefly present the topic and what your are doing.
+Then, explain your solution to the problem, and demonstrate your results.
+0. Avoid showing code (not enough time for that). Explain the algorithm conceptually, if it's possible.
+0. Show interesting results.
 0. Remember about the time limit.
 
