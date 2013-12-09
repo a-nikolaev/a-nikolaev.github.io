@@ -121,11 +121,15 @@ The notes for the previous lecture are updated.
 Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
 [HW12](/ds/docs/hw12.pdf). Due Wednesday, Dec 11. 
 
-Review session. Dec 9, 2013.
+Review session. Dec 9, 2013. [[Problem Set](/ds/docs/cc5.pdf)]
 
-Project presentation. Dec 11, 2013.
+Project presentation. Dec 11, 2013.   
+[Information for the speakers](/ds/talks.html).
 
-Final Exam. Dec 23, 2013. 6:20 - 8:20 pm.
+Final Exam. Dec 23, 2013. 6:20 - 8:20 pm.   
+You are allowed to bring a cheatsheet (standard paper size, you can write on both sides).
+However, you will have to hand it in after the exam.
+
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
