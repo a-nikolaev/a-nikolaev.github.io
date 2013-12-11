@@ -124,7 +124,8 @@ Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.
 Review session. Dec 9, 2013. [[Problem Set](/ds/docs/cc5.pdf)]
 
 Project presentation. Dec 11, 2013.   
-[Information for the speakers](/ds/talks.html).
+[Information for the speakers](/ds/talks.html).   
+[Presentation schadule](/ds/presentation.html).
 
 Final Exam. Dec 23, 2013. 6:20 - 8:20 pm.   
 You are allowed to bring a cheatsheet (standard paper size, you can write on both sides).
