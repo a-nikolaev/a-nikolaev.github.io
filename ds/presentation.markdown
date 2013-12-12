@@ -17,5 +17,7 @@ title: Projects Presentation
 
 1. 7:53. **Justin Tung** "Pathfinder"
 
-1. 8:01. **Yadiel Hernandez, Josue Pichardo** "Lotka-Volterra Model: Stochastic simulation"
+1. 8:01. **Yarley Geffrard** "Procedural Music Generation"
+
+1. 8:09. **Yadiel Hernandez, Josue Pichardo** "Lotka-Volterra Model: Stochastic simulation"
 
