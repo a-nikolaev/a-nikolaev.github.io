@@ -40,6 +40,10 @@ a<span style="color:#969086;">(my last name)</span>@gc.cuny.edu
 ##Research
 
 ###Publications
+
+* "A mathematical model for secondary structure in proteins." Alexey Nikolaev, Saad Mneimneh.
+BIBE 2013: 1-6.
+
 <!--
 * "Polymer translocation through an electrically tunable nanopore in a multilayered semiconductor membrane", 
 D. Melnikov, A. Nikolaev, J.-P. Leburton, M.E. Gracheva, 
