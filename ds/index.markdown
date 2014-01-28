@@ -5,18 +5,17 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Aug 28, 2013. [Propositional Logic](/ds/docs/lec1.pdf).   
+Lecture 1. Jan 28, 2014. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3;  
-[HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 11.
 
-Lecture 2. Sep 9, 2013. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Jan 31, 2014. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).
 
-
+<!--
 Lecture 3. Sep 11, 2013. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
 [HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 18.
@@ -139,10 +138,11 @@ However, you will have to hand it in after the exam.
 
 ### Joint Facebook group for all CSCI-150 sections
 [![fb][fbimg]](https://www.facebook.com/groups/226900480808188/)
+-->
 
 ## Syllabus
 
-Monday and Wednesday 7:00 - 8:15 pm. Hunter North 1516.  
+Tuesday and Friday 9:45 - 11:00 am. West 113.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -159,37 +159,126 @@ Office: HN 1000C
 No late homeworks accepted.  
 Expect to have homeworks every week.
 
-####Final grade:    
+####Distribution  
   HWs: 25%  
-  Midterm exam: 35%  
-  Final exam: 40%  
+  Exams: 75%  
+
+  There are two midterms and the final. When computing the final grade,
+  only two best exams out of three are counted, and
+  the worst is dropped:
+
+  X = HW * 0.25 + MAX((M1 + M2), (M1 + F), (M2 + F)) * 0.5 * 0.75
+
+  However, you still have to attend and write the final exam,
+  even if you already have 100% for the midterms.
+
+####Project    
+  An optional project is a possibility to improve your grade, and 
+  (hopefully) do something fun.
+  If you get P (a number between 0 and 1) for the project, 
+  then the bonus is 0.1 * P * (1-X/2).
+  Effectively, it gives you a bonus between 5% and 10%, depending on your 
+  total grade X. 
+
+  Your project topic should be formulated no later than by the 
+  first day of the Spring Break (April, 14).
 
 ### Tentative Course Content
-Propositional Logic. Operators. Truth tables. Logical equivalence.
-Rules of inference. Satisfiability.
-Predicates and quantifiers.
-Proofs. Pigeonhole principle.
- 
-Counting. Sum and product rules.
-Permutations, n! Binomial coefficients, n choose k. Selection with replacement.
-Induction. Hanoi towers. Summation of series.
-Recurrence. Fibonacci numbers. Catalan numbers. Solving linear recurrence.
- 
-Sets. Operations, empty set, singleton set, powerset.
-Natural, rational, real numbers.
-Diagonalization. Relations and Functions.
-Graph of a function. Lambda-abstraction.
- 
-Counting 2. Inclusion-Exclusion.
-Counting and Bijection. Generating Functions.
- 
-Graphs. Bridges of Koenigsberg. Eulerian and Hamiltonian cycles.
-Trees, spanning trees. Travelling Salesman problem.
- 
-Number theory. Divisibility and primes. Modulo-arithmetics. GCD and Euclid's algorithm.
-Cryptography.
 
-Introduction to probability theory.
+Tue 01/28.
+Propositional Logic.
+<br />
+Fri 01/31.
+Satisfiability and Rules of Inference.
+<br />
+Tue 02/04.
+Predicates and Quantifiers.
+<br />
+Fri 02/07.
+Proofs.
+
+Tue 02/11.
+Counting. Intro.
+<br />
+Fri 02/14.
+The Pigeonhole Principle. Permutations and Combinations. 
+<br />
+Tue 02/18.
+Binomial Theorem. Combinations with repetition.
+<br />
+Fri 02/21.
+Counting. Practice session. 
+<br />
+
+Tue 02/25.
+Induction.
+<br />
+Fri 02/28.
+Recurrences.
+<br />
+Tue 03/04.
+Fibonacci Numbers. Solving Linear Recurrences.
+<br />
+Fri 03/07.
+Strong Induction. Catalan Numbers.
+<br />
+Tue 03/11.
+Recursion in Mathematics and Programming.
+
+Fri 03/14.
+Midterm 1
+
+Tue 03/18.
+Intro to Number Theory.
+<br />
+Fri 03/21.
+Modular arithmetic.
+<br />
+Tue 03/25.
+Fermat's little theorem. RSA.
+
+Fri 03/28.
+Sets. Ordered pairs.
+<br />
+Tue 04/01.
+Relations. Functions. Bijection and counting.
+<br />
+Fri 04/04.
+Relations and partial orders. 
+Infinity. Countable and uncountable sets. Diagonalization.
+
+Tue 04/08.
+Graphs. Bipartite graphs. Paths.
+<br />
+Fri 04/11.
+Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
+
+Tue 04/15 - Spring Break
+<br />
+Fri 04/18 - Spring Break
+<br />
+Tue 04/22 - Spring Break
+
+Fri 04/25.
+Trees. Huffman coding.
+
+Tue 04/29.
+Probability
+<br />
+Fri 05/02.
+Probability. Random variables. Expected value.
+
+Tue 05/06. 
+Review Session
+
+Fri 05/09. 
+Midterm 2
+
+Tue 05/13. 
+Projects presentations
+
+Mon 05/19.
+(9:00 - 11:00am) Final Exam
 
 [pdfimg]: /img/pdf1.png
 [fbimg]: /img/fb.png
