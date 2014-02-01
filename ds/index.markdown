@@ -16,10 +16,10 @@ Useful links:
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).   
 [HW1](/ds/docs/hw1.pdf). Due Friday, Feb 7.
 
-Lecture 3. Sep 11, 2013. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+Lecture 3. Feb 4, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
 
-Lecture 4. Sep 16, 2013. [Proofs](/ds/docs/lec4.pdf).  
+Lecture 4. Feb 7, 2014. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
 <!--
