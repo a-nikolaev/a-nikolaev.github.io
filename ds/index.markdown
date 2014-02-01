@@ -13,16 +13,16 @@ Reading: R(ed6): 1.5; R(ed7): 1.6.
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
-[3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).
+[3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).   
+[HW1](/ds/docs/hw1.pdf). Due Friday, Feb 7.
 
-<!--
 Lecture 3. Sep 11, 2013. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
-[HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 18.
 
 Lecture 4. Sep 16, 2013. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
+<!--
 Lecture 5. Sep 18, 2013. [Counting](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.  
 [HW3](/ds/docs/hw3.pdf). Due Wednesday, Sep 25.
