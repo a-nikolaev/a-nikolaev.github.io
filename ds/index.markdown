@@ -20,13 +20,13 @@ Lecture 3. Feb 4, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
 
 Lecture 4. Feb 7, 2014. [Proofs](/ds/docs/lec4.pdf).  
-Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.   
+[HW2](/ds/docs/hw2.pdf). Due Friday, Feb 14.
+
+Lecture 5. Feb 11, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
+Reading: R(ed6): 5.1; R(ed7): 6.1.   
 
 <!--
-Lecture 5. Sep 18, 2013. [Counting](/ds/docs/lec5.pdf).  
-Reading: R(ed6): 5.1; R(ed7): 6.1.  
-[HW3](/ds/docs/hw3.pdf). Due Wednesday, Sep 25.
-
 Lecture 6. Sep 23, 2013. [The Pigeonhole Principle. Permutations and Combinations. Binomial Theorem](/ds/docs/lec6.pdf).  
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.
 
