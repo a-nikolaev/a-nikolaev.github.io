@@ -26,10 +26,10 @@ Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 Lecture 5. Feb 11, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
 
-<!--
-Lecture 6. Sep 23, 2013. [The Pigeonhole Principle. Permutations and Combinations. Binomial Theorem](/ds/docs/lec6.pdf).  
+Lecture 6. Feb 14, 2013. [The Pigeonhole Principle. Permutations and Combinations.](/ds/docs/lec6.pdf).  
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.
 
+<!--
 Lecture 7. Sep 25, 2013. Binomial Theorem. Combinations with repetition.   
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 [HW4](/ds/docs/hw4.pdf). Due Wednesday, Oct 2. This one can be a little hard, but try to do your best. 
