@@ -34,13 +34,10 @@ Lecture 7. Feb 18, 2014. Binomial Theorem. Combinations with repetition.
 (Continue the lecture 6 slides).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
-<!--
-Lecture 8. Sep 30, 2013. Counting. Practice session. [[problem set (with answers)](/ds/docs/cc3-full.pdf)].  
-Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.   
-We are going to solve more problems that involve counting.
-If you send me your questions by Sunday, I will try to cover them in this class.
-Feel free to suggest problems as well. 
+Lecture 8. Feb 21, 2014. Counting. Problem solving. [[problem set](/ds/docs/cc3.pdf)].   
+Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.    
 
+<!--
 Lecture 9. Oct 2, 2013. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
 [HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 9.
