@@ -34,18 +34,18 @@ Lecture 7. Feb 18, 2014. Binomial Theorem. Combinations with repetition.
 (Continue the lecture 6 slides).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
-Lecture 8. Feb 21, 2014. Counting. Problem solving. [[problem set](/ds/docs/cc3.pdf)].   
-Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.    
+Lecture 8. Feb 21, 2014. Counting. Problem solving. [[problem set](/ds/docs/cc3.pdf)][[answers](/ds/docs/cc3-ans.pdf)].    
+Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.     
+[HW4](/ds/docs/hw4.pdf). Due Friday, Feb 28.  
 
-<!--
-Lecture 9. Oct 2, 2013. [Induction](/ds/docs/lec9.pdf).  
+Lecture 9. Feb 25, 2014. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
-[HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 9.
 
-Lecture 10. Oct 7, 2013. [Recurrences](/ds/docs/lec10.pdf).  
+Lecture 10. Feb 28, 2014. [Recurrences](/ds/docs/lec10.pdf).  
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)
 
+<!--
 Lecture 11. Oct 9, 2013. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.  
 [HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 16. WolframAlpha can be useful to check the correctness of your solutions,
