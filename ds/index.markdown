@@ -43,17 +43,19 @@ Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.
 
 Lecture 10. Feb 28, 2014. [Recurrences](/ds/docs/lec10.pdf).  
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
-[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)    
+[HW5](/ds/docs/hw5.pdf). Due Friday, Mar 7.
+
+Lecture 11. Mar 4, 2014. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
 <!--
-Lecture 11. Oct 9, 2013. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
-Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.  
+Lecture 12. Oct 15, 2013. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf).  
+Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
+["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.   
 [HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 16. WolframAlpha can be useful to check the correctness of your solutions,
 [see an example](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29).
 
-Lecture 12. Oct 15, 2013. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf).  
-Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
-["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.
 
 Lecture 13. Oct 16, 2013. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).  
 Source code in [Julia](http://julialang.org/):   
