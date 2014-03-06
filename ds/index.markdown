@@ -49,10 +49,19 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 Lecture 11. Mar 4, 2014. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
-<!--
-Lecture 12. Oct 15, 2013. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf).  
+Lecture 12. Mar 7, 2014. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf).  
 Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
 ["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.   
+
+Lecture 13. Mar 11, 2014. Recursion in Mathematics and Programming.
+
+Midterm I. Mar 14, 2014.    
+Covers Lectures 1 - 11.    
+A practice exam (actual midterm exam from the last semester) is posted on Blackboard 
+(in the "Course Materials" section). If you don't have access to the Blackboard, ask me to
+send you the PDF by email.
+
+<!--
 [HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 16. WolframAlpha can be useful to check the correctness of your solutions,
 [see an example](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29).
 
