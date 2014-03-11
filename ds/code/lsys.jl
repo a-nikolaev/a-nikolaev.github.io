@@ -5,8 +5,17 @@ red    = (0.9, 0.1, 0.0)
 green  = (0.1, 0.7, 0.0)
 blue   = (0.0, 0.4, 0.7)
 
+function fold(f,acc,ls)
+  len = length(ls)
+  if len>0 
+    fold(f,f(acc,ls[1]),ls[2:len])
+  else
+    acc
+  end
+end
+
 function rewrite(rules, x)
-  reduce((acc,c)->[acc,rules[c]],[],x)
+  fold(((acc,c)->[acc,rules[c]]),[],x)
 end
 
 function run(actions, x)
@@ -19,9 +28,9 @@ function draw()
   line, turn, start, done = drawing("lsys.pdf", 800)
 
   rules = [ 
-    'F' => ['F', 'L', 'F', 'R', 'F', 'R', 'F', 'L', 'F'],
-    'L' => ['L'],
-    'R' => ['R'] 
+    'F' => ['F','L','F','R','F','R','F','L','F'],
+    'R' => ['R'] ,
+    'L' => ['L'] 
   ]
   
   actions(len) = [
@@ -41,11 +50,10 @@ function draw()
 
   # Experiments
   x=['F']
-  path(x,rules,actions, (-25,-30), orange,   1, 0)
-  path(x,rules,actions, (-25,-27), red,   1, 1)
-
-  #path(x,rules,actions, (-25,-21), green, 1, 2)
-  #path(x,rules,actions, (-25, -9),  blue,  1, 3)
+  path(x,rules,actions, (-25,-30), orange, 1,  0)
+  #path(x,rules,actions, (-25,-27), red,    1,  1)
+  #path(x,rules,actions, (-25,-21), green,  1,  2)
+  #path(x,rules,actions, (-25, -9),  blue,  1,  3)
 
   # Hilbert curve
   # rules 
@@ -65,7 +73,24 @@ function draw()
     'A' => ()-> (),
     'B' => ()-> ()
   ]
-  #path(['A'], rlH, acH, (-25,-25), blue, 1, 5)
+
+  #path(['A'], rlH, acH, (-25,-25), blue, 1, 1)
+  
+  #path(['A'], rlH, acH, (-23,-25), blue, 1, 2)
+  
+  #path(['A'], rlH, acH, (-15,-25), blue, 1, 3)
+  
+  #path(['A'], rlH, acH, (-5,-25), blue, 1, 7)
 
   done()
+end
+
+function draw_alt()
+  rules = [ 
+    'A' => ['B','R','A','R','B'],
+    'B' => ['A','L','B','L','A'],
+    'R' => ['R'] ,
+    'L' => ['L'] 
+  ]
+
 end

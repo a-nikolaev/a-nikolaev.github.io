@@ -56,7 +56,16 @@ Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.
 [see an example](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29).
 
 
-Lecture 13. Mar 11, 2014. Recursion in Mathematics and Programming.
+Lecture 13. Mar 11, 2014. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).   
+Source code in [Julia](http://julialang.org/):   
+[sum.jl](/ds/code/sum.jl),
+[fact.jl](/ds/code/fact.jl),
+[fib.jl](/ds/code/fib.jl),
+[mset.jl](/ds/code/mset.jl),
+[graph.jl](/ds/code/graph.jl),
+[lsys.jl](/ds/code/lsys.jl),
+[turtle.jl](/ds/code/turtle.jl),
+[merge.jl](/ds/code/merge.jl).
 
 Midterm I. Mar 14, 2014.    
 Covers Lectures 1 - 11.    
