@@ -73,24 +73,12 @@ A practice exam (actual midterm exam from the last semester) is posted on Blackb
 (in the "Course Materials" section). If you don't have access to the Blackboard, ask me to
 send you the PDF by email.
 
-<!--
-
-Lecture 13. Oct 16, 2013. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).  
-Source code in [Julia](http://julialang.org/):   
-[sum.jl](/ds/code/sum.jl),
-[fact.jl](/ds/code/fact.jl),
-[fib.jl](/ds/code/fib.jl),
-[mset.jl](/ds/code/mset.jl),
-[graph.jl](/ds/code/graph.jl),
-[lsys.jl](/ds/code/lsys.jl),
-[turtle.jl](/ds/code/turtle.jl).
-
-Midterm. Oct 21, 2013. [Example](/ds/docs/midterm-example.pdf) ([answers](/ds/mxanswers.html)).
-
-Lecture 14. Oct 23, 2013. [Intro to Number Theory](/ds/docs/lec14.pdf).  
+Lecture 14. Mar 18, 2013. [Intro to Number Theory](/ds/docs/lec14.pdf).  
 Reading: 
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
 LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
+
+<!--
 [HW7](/ds/docs/hw7.pdf). Due Wednesday, Oct 30.
 
 Lecture 15. Oct 28, 2013. [Modular arithmetic](/ds/docs/lec15.pdf).  
