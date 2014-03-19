@@ -81,6 +81,7 @@ LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.
 Lecture 15. Mar 21, 2014. [Modular arithmetic](/ds/docs/lec15.pdf).   
 Reading: the same.    
 Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C. Not sure if it's correct, I did not have time to test it thoroughly.
+
 <!--
 [HW7](/ds/docs/hw7.pdf). Due Wednesday, Oct 30.
 
