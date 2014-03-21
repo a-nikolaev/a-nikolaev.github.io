@@ -71,7 +71,8 @@ Midterm I. Mar 14, 2014.
 Covers Lectures 1 - 11.    
 A practice exam (actual midterm exam from the last semester) is posted on Blackboard 
 (in the "Course Materials" section). If you don't have access to the Blackboard, ask me to
-send you the PDF by email.
+send you the PDF by email.    
+[Midterm Statistics](/ds/docs/midterm1.pdf)
 
 Lecture 14. Mar 18, 2014. [Intro to Number Theory](/ds/docs/lec14.pdf).  
 Reading: 
