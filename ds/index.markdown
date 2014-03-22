@@ -81,14 +81,14 @@ LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.
 
 Lecture 15. Mar 21, 2014. [Modular arithmetic](/ds/docs/lec15.pdf).   
 Reading: the same.    
-Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C. 
+Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
+[HW7](/ds/docs/hw7.pdf). Due Friday, Mar 28.
+
+Lecture 16. Mar 25, 2014. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).  
+Reading: the same.   
+
 
 <!--
-[HW7](/ds/docs/hw7.pdf). Due Wednesday, Oct 30.
-
-
-Lecture 16. Oct 28, 2013. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).  
-Reading: the same.   
 [HW8](/ds/docs/hw8.pdf). Due Wednesday, Nov 6.
 
 Lecture 17. Nov 4, 2013. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
