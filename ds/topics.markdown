@@ -50,6 +50,8 @@ language, [SKI-calculus](https://en.wikipedia.org/wiki/SKI_combinator_calculus).
 Consider this one only if you are good at programming and math in general. 
 Here, you are advised to use languages with built-in list and tuple types.
 
+1. Experimental analysis of algorithms (for Merge sort, Binary search, and(or) Linear search).
+
 I will try to add more topics here, but, maybe you already know something
 interesting you would like to work on.
 
