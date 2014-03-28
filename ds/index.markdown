@@ -90,6 +90,9 @@ Reading: the same.
 Lecture 17. Mar 28, 2014. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.  
 
+
+[Possible Project Topics](/ds/topics.html).
+
 <!--
 [HW8](/ds/docs/hw8.pdf). Due Wednesday, Nov 6.
 
@@ -140,8 +143,6 @@ However, you will have to hand it in after the exam.
 
 [Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
 [Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
-
-[Possible Project Topics](/ds/topics.html)
 
 ### Joint Facebook group for all CSCI-150 sections
 [![fb][fbimg]](https://www.facebook.com/groups/226900480808188/)
