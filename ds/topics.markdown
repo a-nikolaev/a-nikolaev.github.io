@@ -5,7 +5,7 @@ title: Project Topics
 
 ## General info
 
-The project is optional, and it is a way to improve your grade if you did not do well on the midterm,
+The project is optional, and it is a way to improve your grade if you did not do well on the exams,
 or just want to get some extra credit.
 
 The project will be due by the end of the semester. 
@@ -13,11 +13,7 @@ You will have to make a short (5 minutes) presentation in the last class, showin
 Also, you will have to write a 5-6 page report, describing the problem, 
 your solution, and the results obtained.
 
-The project will give you at most 10% of the grade.
-I'm not sure about the exact policy, but I will decide and let you know.
-In any case, it will be beneficial for your final grade.
-
-We have to discuss the topic of your project, and I have to approve it, before you start working.
+We have to discuss the topic of your project, and I have to approve it, before you start working on it.
 
 Report you progress regularly (for example, once a week), so I can guide you, and you don't waste time.
 
