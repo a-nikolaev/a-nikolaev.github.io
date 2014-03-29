@@ -89,17 +89,17 @@ Reading: the same.
 
 Lecture 17. Mar 28, 2014. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.  
+[HW8](/ds/docs/hw8.pdf). Due Fri, Apr 4.
+
+
+Lecture 18. Apr 1, 2014. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
+Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
+Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 
 
 [Possible Project Topics](/ds/topics.html).
 
 <!--
-[HW8](/ds/docs/hw8.pdf). Due Wednesday, Nov 6.
-
-
-Lecture 18. Nov 6, 2013. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
-Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
-Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 [HW9](/ds/docs/hw9.pdf). <s>Due Wednesday, Nov 13.</s> Extended until Monday, Nov 18.
 
 Lecture 19. Nov 11, 2013. [Infinity. Cardinality. Pairing function. Diagonalization argument](/ds/docs/lec19.pdf).   
