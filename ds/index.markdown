@@ -96,18 +96,18 @@ Lecture 18. Apr 1, 2014. [Relations. Functions. Bijection and counting](/ds/docs
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 
+Lecture 19. Apr 4, 2014. [Partial orders. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec19.pdf).   
+Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.   
+Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.
 
 [Possible Project Topics](/ds/topics.html).
 
 <!--
 [HW9](/ds/docs/hw9.pdf). <s>Due Wednesday, Nov 13.</s> Extended until Monday, Nov 18.
 
-Lecture 19. Nov 11, 2013. [Infinity. Cardinality. Pairing function. Diagonalization argument](/ds/docs/lec19.pdf).   
-Reading: R(ed6):n/a; R(ed7): 2.5.   
-Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.
 
 Lecture 20. Nov 13, 2013. [Computation with functions. Relations and partial orders](/ds/docs/lec20.pdf).   
-Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
 [HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 20.
 
 Lecture 21. Nov 18, 2013. [Graphs. Bipartite graphs. Paths](/ds/docs/lec21.pdf).   
