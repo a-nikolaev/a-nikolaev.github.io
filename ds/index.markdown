@@ -99,12 +99,12 @@ Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
 Lecture 19. Apr 4, 2014. [Partial orders. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec19.pdf).   
 Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
 Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.   
-Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.
+Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
+[HW9](/ds/docs/hw9.pdf). Due Friday, Apr 11.
 
 [Possible Project Topics](/ds/topics.html).
 
 <!--
-[HW9](/ds/docs/hw9.pdf). <s>Due Wednesday, Nov 13.</s> Extended until Monday, Nov 18.
 
 
 Lecture 20. Nov 13, 2013. [Computation with functions. Relations and partial orders](/ds/docs/lec20.pdf).   
