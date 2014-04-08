@@ -102,6 +102,9 @@ Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.
 Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
 [HW9](/ds/docs/hw9.pdf). Due Friday, Apr 11.
 
+Lecture 20. Apr 8, 2014. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
+
 [Possible Project Topics](/ds/topics.html).
 
 <!--
