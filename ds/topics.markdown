@@ -52,6 +52,8 @@ Here, you are advised to use languages with built-in list and tuple types.
 
 1. Experimental analysis of algorithms (for Merge sort, Binary search, and(or) Linear search).
 
+1. Finding the [largest connected component](https://en.wikipedia.org/wiki/Giant_component) in a random graph.
+
 I will try to add more topics here, but, maybe you already know something
 interesting you would like to work on.
 
