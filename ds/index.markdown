@@ -105,20 +105,14 @@ Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proo
 Lecture 20. Apr 8, 2014. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
 Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
 
+Lecture 21. Apr 11, 2014. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).   
+Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+
 [Possible Project Topics](/ds/topics.html).
 
 <!--
 
 
-Lecture 20. Nov 13, 2013. [Computation with functions. Relations and partial orders](/ds/docs/lec20.pdf).   
-[HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 20.
-
-Lecture 21. Nov 18, 2013. [Graphs. Bipartite graphs. Paths](/ds/docs/lec21.pdf).   
-Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
-
-Lecture 22. Nov 20, 2013. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec22.pdf).   
-Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
-No homework today.
 
 Lecture 23. Nov 25, 2013. [Trees. Huffman coding](/ds/docs/lec23.pdf).   
 Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
