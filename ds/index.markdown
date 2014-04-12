@@ -107,6 +107,7 @@ Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.
 
 Lecture 21. Apr 11, 2014. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).   
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+[HW10](/ds/docs/hw10.pdf). Due Friday, Apr 25.
 
 [Possible Project Topics](/ds/topics.html).
 
