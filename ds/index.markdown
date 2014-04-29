@@ -114,6 +114,7 @@ Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.
 [HW11](/ds/docs/hw11.pdf). Due Friday, May 2.
 
 Lecture 23. Apr 29, 2014. Probability.    
+No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
 
@@ -125,7 +126,6 @@ Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
 
 Lecture 24. Dec 2, 2013. Probability.   
-No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
 Lecture 25. Dec 4, 2013. Probability. Random variables. Expected value.       
