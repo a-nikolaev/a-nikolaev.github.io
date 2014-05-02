@@ -72,7 +72,7 @@ Covers Lectures 1 - 11.
 A practice exam (actual midterm exam from the last semester) is posted on Blackboard 
 (in the "Course Materials" section). If you don't have access to the Blackboard, ask me to
 send you the PDF by email.    
-[Midterm Statistics](/ds/docs/midterm1.pdf)
+[Midterm Statistics](/ds/docs/stats-midterm1.pdf)
 
 Lecture 14. Mar 18, 2014. [Intro to Number Theory](/ds/docs/lec14.pdf).  
 Reading: 
@@ -117,20 +117,36 @@ Lecture 23. Apr 29, 2014. Probability.
 No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
+Lecture 24. May 2, 2014. Probability. Random variables. Expected value.  
+Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
+HW12 (no link yet). Due Tuesday, May 13 (Last class). 
 
+[Statistics: Z1 and M1+Z1](/ds/docs/stats2.pdf)  
+Z1 = Homeworks 1-8. Maximum you could get = 0.167.  
+M1+Z1 = Midterm 1 + Homeworks 1-8. Maximum = 0.54167.   
+(These scores are posted on Blackboard).
+
+Review Session. May 6, 2014.
+
+Midterm 2. May 9, 2014.   
+The practice exam is posted on Blackboard. It was the final exam last semester,
+so it was made to be 2 hours long. Your midterm will be shorter, of course.
+Also, since we did not spend a lot of time on countable/uncountable sets,
+you will not get problems on this topic. So, don't worry that problem 5 looks a bit cryptic for you.
+(Although, you have enough knowledge to solve it, actually).
+
+Projects presentation. May 13, 2014.    
 [Possible Project Topics](/ds/topics.html).
 
+Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room.
+
 <!--
-
-
 
 
 Lecture 24. Dec 2, 2013. Probability.   
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
 Lecture 25. Dec 4, 2013. Probability. Random variables. Expected value.       
-The notes for the previous lecture are updated.    
-Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
 [HW12](/ds/docs/hw12.pdf). Due Wednesday, Dec 11. 
 
 Review session. Dec 9, 2013. [[Problem Set](/ds/docs/cc5.pdf)]
