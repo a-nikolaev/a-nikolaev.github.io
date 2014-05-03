@@ -119,7 +119,7 @@ Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
 Lecture 24. May 2, 2014. Probability. Random variables. Expected value.  
 Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
-HW12 (no link yet). Due Tuesday, May 13 (Last class). 
+[HW12](/ds/docs/hw12.pdf). Due Tuesday, May 13 (Last class). 
 
 [Statistics: Z1 and M1+Z1](/ds/docs/stats2.pdf)  
 Z1 = Homeworks 1-8. Maximum you could get = 0.167.  
