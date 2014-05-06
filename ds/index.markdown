@@ -126,7 +126,7 @@ Z1 = Homeworks 1-8. Maximum you could get = 0.167.
 M1+Z1 = Midterm 1 + Homeworks 1-8. Maximum = 0.54167.   
 (These scores are posted on Blackboard).
 
-Review Session. May 6, 2014.
+Review Session. May 6, 2014. [Problem set](/ds/docs/cc5.pdf)  
 
 Midterm 2. May 9, 2014.   
 The practice exam is posted on Blackboard. It was the final exam last semester,
