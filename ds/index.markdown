@@ -136,7 +136,9 @@ you will not get problems on this topic. So, don't worry that problem 5 looks a 
 (Although, you have enough knowledge to solve it, actually).
 
 Projects presentation. May 13, 2014.    
-[Possible Project Topics](/ds/topics.html).
+[Possible Project Topics](/ds/topics.html).    
+[Information for the speakers](/ds/talks.html).
+
 
 Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room.
 
