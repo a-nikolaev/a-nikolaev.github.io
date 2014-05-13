@@ -15,7 +15,7 @@ title: Projects Presentation
 
 1. 10:40. **David Bohl** "Procedural music. Cellular automata"
 
-1. 10:50. **Alsonel Rosario** "An algoruthm for playing Minesweeper"
+1. 10:50. **Alsonel Rosario** "Solving Minesweeper"
 
 <!--
 
