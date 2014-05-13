@@ -133,11 +133,13 @@ The practice exam is posted on Blackboard. It was the final exam last semester,
 so it was made to be 2 hours long. Your midterm will be shorter, of course.
 Also, since we did not spend a lot of time on countable/uncountable sets,
 you will not get problems on this topic. So, don't worry that problem 5 looks a bit cryptic for you.
-(Although, you have enough knowledge to solve it, actually).
+(Although, you have enough knowledge to solve it, actually).    
+[Midterm Statistics](/ds/docs/stats-midterm2.pdf)
 
 Projects presentation. May 13, 2014.    
 [Possible Project Topics](/ds/topics.html).    
-[Information for the speakers](/ds/talks.html).
+[Information for the speakers](/ds/talks.html).    
+[Schedule](/ds/presentation.html).
 
 
 Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room.
