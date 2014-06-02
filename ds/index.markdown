@@ -5,24 +5,27 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Jan 28, 2014. [Propositional Logic](/ds/docs/lec1.pdf).   
+Lecture 1. Jun 2, 2014. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3;  
 
-Lecture 2. Jan 31, 2014. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Jun 3, 2014. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
-[3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).   
-[HW1](/ds/docs/hw1.pdf). Due Friday, Feb 7.
+[3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).
 
-Lecture 3. Feb 4, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+<!-- [HW1](/ds/docs/hw1.pdf). Due Friday, Feb 7. -->
+
+Lecture 3. Jun 4, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
 
-Lecture 4. Feb 7, 2014. [Proofs](/ds/docs/lec4.pdf).  
-Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.   
-[HW2](/ds/docs/hw2.pdf). Due Friday, Feb 14.
+Lecture 4. Jun 5, 2014. [Proofs](/ds/docs/lec4.pdf).  
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
+<!-- [HW2](/ds/docs/hw2.pdf). Due Friday, Feb 14. -->
+
+<!--
 Lecture 5. Feb 11, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
 
@@ -143,37 +146,11 @@ Projects presentation. May 13, 2014.
 
 
 Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room.
-
-<!--
-
-
-Lecture 24. Dec 2, 2013. Probability.   
-Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
-
-Lecture 25. Dec 4, 2013. Probability. Random variables. Expected value.       
-[HW12](/ds/docs/hw12.pdf). Due Wednesday, Dec 11. 
-
-Review session. Dec 9, 2013. [[Problem Set](/ds/docs/cc5.pdf)]
-
-Project presentation. Dec 11, 2013.   
-[Information for the speakers](/ds/talks.html).   
-[Presentation schadule](/ds/presentation.html).
-
-Final Exam. Dec 23, 2013. 6:20 - 8:20 pm.   
-You are allowed to bring a cheatsheet (standard paper size, you can write on both sides).
-However, you will have to hand it in after the exam.
-
-
-[Grades Statistics](/ds/docs/grades-stats.pdf) (HW1, HW2, HW3 only)  
-[Midterm Statistics](/ds/docs/grades-midterm-stats.pdf)
-
-### Joint Facebook group for all CSCI-150 sections
-[![fb][fbimg]](https://www.facebook.com/groups/226900480808188/)
 -->
 
 ## Syllabus
 
-Tuesday and Friday 9:45 - 11:00 am. West 113.  
+Mon, Tue, Wed, Thr, 11:40 am - 12:50 pm. North C111.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -188,7 +165,7 @@ Office: HN 1000C
 
 ### Grading Policy
 No late homeworks accepted.  
-Expect to have homeworks every week.
+Homeworks twice a week (Due Thursday and Monday). 
 
 ####Distribution  
   HWs: 25%  
@@ -203,6 +180,7 @@ Expect to have homeworks every week.
   However, you still have to attend and write the final exam,
   even if you already have 100% for the midterms.
 
+<!--
 ####Project    
   An optional project is a possibility to improve your grade, and 
   (hopefully) do something fun.
@@ -213,103 +191,105 @@ Expect to have homeworks every week.
 
   Your project topic should be formulated no later than by the 
   first day of the Spring Break (April, 14).
+-->
 
 ### Tentative Course Content
 
-Tue 01/28.
+Mon 06/02.
 Propositional Logic.
 <br />
-Fri 01/31.
+Tue 06/03.
 Satisfiability and Rules of Inference.
 <br />
-Tue 02/04.
+Wed 06/04.
 Predicates and Quantifiers.
 <br />
-Fri 02/07.
+Thr 06/05.
 Proofs.
 
-Tue 02/11.
+Mon 06/09.
 Counting. Intro.
 <br />
-Fri 02/14.
+Tue 06/10.
 The Pigeonhole Principle. Permutations and Combinations. 
 <br />
-Tue 02/18.
+Wed 06/11.
 Binomial Theorem. Combinations with repetition.
 <br />
-Fri 02/21.
+Thr 06/12.
 Counting. Practice session. 
-<br />
 
-Tue 02/25.
+Mon 06/16.
 Induction.
 <br />
-Fri 02/28.
+Tue 06/17.
 Recurrences.
 <br />
-Tue 03/04.
+Wed 06/18.
 Fibonacci Numbers. Solving Linear Recurrences.
 <br />
-Fri 03/07.
+Thr 06/19.
 Strong Induction. Catalan Numbers.
+
+Mon 06/23.
+Review session.
 <br />
-Tue 03/11.
+Tue 06/24.
+Midterm 1.
+<br />
+Wed 06/25.
 Recursion in Mathematics and Programming.
-
-Fri 03/14.
-Midterm 1
-
-Tue 03/18.
-Intro to Number Theory.
 <br />
-Fri 03/21.
+Thr 06/26.
+Intro to Number Theory.
+
+Mon 06/30.
 Modular arithmetic.
 <br />
-Tue 03/25.
+Tue 07/01.
 Fermat's little theorem. RSA.
-
-Fri 03/28.
+<br />
+Wed 07/02.
 Sets. Ordered pairs.
 <br />
-Tue 04/01.
+Thr 07/03.
 Relations. Functions. Bijection and counting.
-<br />
-Fri 04/04.
-Relations and partial orders. 
-Infinity. Countable and uncountable sets. Diagonalization.
 
-Tue 04/08.
+Mon 07/08.
+Relations and partial orders. 
+<br />
+Tue 07/09.
 Graphs. Bipartite graphs. Paths.
 <br />
-Fri 04/11.
+Wed 07/10.
 Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
-
-Tue 04/15 - Spring Break
 <br />
-Fri 04/18 - Spring Break
-<br />
-Tue 04/22 - Spring Break
-
-Fri 04/25.
+Thr 07/11.
 Trees. Huffman coding.
 
-Tue 04/29.
-Probability
+Mon 07/14.
+Probability.
 <br />
-Fri 05/02.
+Tue 07/15. 
 Probability. Random variables. Expected value.
-
-Tue 05/06. 
+<br />
+Wed 07/16. 
 Review Session
+<br />
+Thr 07/17. 
+Midterm 2.
 
-Fri 05/09. 
-Midterm 2
-
-Tue 05/13. 
-Projects presentations
-
-Mon 05/19.
-(9:00 - 11:00am) Final Exam
+Mon 07/21
+Probability. Expected value.
+<br />
+Tue 07/22. 
+Infinity. Countable and uncountable sets. Diagonalization.
+<br />
+Wed 07/23. 
+Computation with functions. Lambda calculus. Review session.
+<br />
+Thr 07/24.
+Final Exam.
 
 [pdfimg]: /img/pdf1.png
 [fbimg]: /img/fb.png
