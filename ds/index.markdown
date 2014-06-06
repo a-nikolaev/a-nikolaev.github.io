@@ -21,24 +21,26 @@ Lecture 3. Jun 4, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
 
 Lecture 4. Jun 5, 2014. [Proofs](/ds/docs/lec4.pdf).  
-Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
+[HW2](/ds/docs/hw2.pdf). Due Monday, Jun 9.
 
-<!-- [HW2](/ds/docs/hw2.pdf). Due Friday, Feb 14. -->
-
-<!--
-Lecture 5. Feb 11, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
+Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
 
-Lecture 6. Feb 14, 2014. [The Pigeonhole Principle. Permutations and Combinations.](/ds/docs/lec6.pdf).  
+Lecture 6. Jun 10, 2014. [The Pigeonhole Principle. Permutations and Combinations.](/ds/docs/lec6.pdf).  
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.    
-[HW3](/ds/docs/hw3.pdf). Due Friday, Feb 21.
 
-Lecture 7. Feb 18, 2014. Binomial Theorem. Combinations with repetition.    
+<!--
+Lecture 7. Jun 11, 2014. Binomial Theorem. Combinations with repetition.    
 (Continue the lecture 6 slides).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
-Lecture 8. Feb 21, 2014. Counting. Problem solving. [[problem set](/ds/docs/cc3.pdf)][[answers](/ds/docs/cc3-ans.pdf)].    
+Lecture 8. Jun 12, 2014. Counting. Problem solving. 
 Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.     
+
+[[problem set](/ds/docs/cc3.pdf)][[answers](/ds/docs/cc3-ans.pdf)].    
+[HW3](/ds/docs/hw3.pdf). Due Friday, Feb 21.
+
 [HW4](/ds/docs/hw4.pdf). Due Friday, Feb 28.  
 
 Lecture 9. Feb 25, 2014. [Induction](/ds/docs/lec9.pdf).  
