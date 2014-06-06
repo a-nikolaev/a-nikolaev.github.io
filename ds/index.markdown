@@ -22,7 +22,9 @@ Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.
 
 Lecture 4. Jun 5, 2014. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
-[HW2](/ds/docs/hw2.pdf). Due Monday, Jun 9.
+[HW2](/ds/docs/hw2.pdf). Due Monday, Jun 9.   
+There is a nice math video, watch it if you have time: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
+It's related to next Tuesday's class.
 
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
