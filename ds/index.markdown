@@ -31,17 +31,17 @@ Reading: R(ed6): 5.1; R(ed7): 6.1.
 
 Lecture 6. Jun 10, 2014. [The Pigeonhole Principle. Permutations and Combinations.](/ds/docs/lec6.pdf).  
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.    
+[HW3](/ds/docs/hw3.pdf). Due Thursday, Jun 12.
 
-<!--
 Lecture 7. Jun 11, 2014. Binomial Theorem. Combinations with repetition.    
 (Continue the lecture 6 slides).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
-Lecture 8. Jun 12, 2014. Counting. Problem solving. 
+Lecture 8. Jun 12, 2014. Counting. Problem solving.      
 Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.     
 
+<!--
 [[problem set](/ds/docs/cc3.pdf)][[answers](/ds/docs/cc3-ans.pdf)].    
-[HW3](/ds/docs/hw3.pdf). Due Friday, Feb 21.
 
 [HW4](/ds/docs/hw4.pdf). Due Friday, Feb 28.  
 
