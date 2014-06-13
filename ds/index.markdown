@@ -37,16 +37,17 @@ Lecture 7. Jun 11, 2014. Binomial Theorem. Combinations with repetition.
 (Continue the lecture 6 slides).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
-Lecture 8. Jun 12, 2014. Counting. Problem solving.      
+Lecture 8. Jun 12, 2014. Counting. Problem solving.
+[[problem set with answers](/ds/docs/cc3.pdf)].   
 Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.     
-
-<!--
-[[problem set](/ds/docs/cc3.pdf)][[answers](/ds/docs/cc3-ans.pdf)].    
-
-[HW4](/ds/docs/hw4.pdf). Due Friday, Feb 28.  
+[HW4](/ds/docs/hw4.pdf). Due Monday, Jun 16.   
+The Thursday's class problems set with answers is available, see link above.  
+You can yse WolframAlpha as a universal calculator, [example](http://www.wolframalpha.com/input/?i=%2810+choose+5%29+%2B+10!).
 
 Lecture 9. Feb 25, 2014. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
+
+<!--
 
 Lecture 10. Feb 28, 2014. [Recurrences](/ds/docs/lec10.pdf).  
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
