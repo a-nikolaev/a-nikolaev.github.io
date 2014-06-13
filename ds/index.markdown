@@ -42,7 +42,7 @@ Lecture 8. Jun 12, 2014. Counting. Problem solving.
 Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.     
 [HW4](/ds/docs/hw4.pdf). Due Monday, Jun 16.   
 The Thursday's class problems set with answers is available, see link above.  
-You can yse WolframAlpha as a universal calculator, [example](http://www.wolframalpha.com/input/?i=%2810+choose+5%29+%2B+10!).
+You can use WolframAlpha as a universal calculator, [example](http://www.wolframalpha.com/input/?i=%2810+choose+5%29+%2B+10!).
 
 Lecture 9. Feb 25, 2014. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
