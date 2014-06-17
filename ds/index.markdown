@@ -44,22 +44,31 @@ Reading: R(ed6): 5.1-5.6; R(ed7): 6.1-6.6.
 The Thursday's class problems set with answers is available, see link above.  
 You can use WolframAlpha as a universal calculator, [example](http://www.wolframalpha.com/input/?i=%2810+choose+5%29+%2B+10!).
 
-Lecture 9. Feb 25, 2014. [Induction](/ds/docs/lec9.pdf).  
+Lecture 9. Jun 16, 2014. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
+
+Lecture 10. Jun 17, 2014. [Recurrences](/ds/docs/lec10.pdf).  
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)    
+[HW5](/ds/docs/hw5.pdf). Due Thursday, Jun 19.
+
+Lecture 11. Jun 18, 2014. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+
+Lecture 12. Jun 19, 2014. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf).  
+Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
+["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.   
+
+Review session. Jun 23, 2014.    
+
+Midterm I. Jun 24, 2014.    
+Covers Lectures 1 - 11.    
+A practice exam (an actual midterm exam from the last semester) is posted on Blackboard 
+(in the "Course Materials" section). If you don't have access to the Blackboard, ask me to
+send you the PDF by email.    
 
 <!--
 
-Lecture 10. Feb 28, 2014. [Recurrences](/ds/docs/lec10.pdf).  
-Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
-[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)    
-[HW5](/ds/docs/hw5.pdf). Due Friday, Mar 7.
-
-Lecture 11. Mar 4, 2014. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
-Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
-
-Lecture 12. Mar 7, 2014. [Strong Induction. Catalan Numbers](/ds/docs/lec12.pdf).  
-Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
-["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.   
 [HW6](/ds/docs/hw6.pdf). Due Friday, Mar 14. WolframAlpha can be useful to check the correctness of your solutions,
 [see an example](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29).
 
