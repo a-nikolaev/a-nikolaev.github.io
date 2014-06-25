@@ -71,18 +71,6 @@ A practice exam (an actual midterm exam from the last semester) is posted on Bla
 send you the PDF by email.    
 
 Lecture 13. Jun 25, 2014. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).   
-Additional source code will be posted soon.
-
-Lecture 14. Jun 26, 2014. [Intro to Number Theory](/ds/docs/lec14.pdf).  
-Reading: 
-[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
-LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
-
-<!--
-
-
-
-Lecture 13. Mar 11, 2014. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).   
 Source code in [Julia](http://julialang.org/):   
 [sum.jl](/ds/code/sum.jl),
 [fact.jl](/ds/code/fact.jl),
@@ -92,6 +80,14 @@ Source code in [Julia](http://julialang.org/):
 [lsys.jl](/ds/code/lsys.jl),
 [turtle.jl](/ds/code/turtle.jl),
 [merge.jl](/ds/code/merge.jl).
+
+
+Lecture 14. Jun 26, 2014. [Intro to Number Theory](/ds/docs/lec14.pdf).  
+Reading: 
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
+
+<!--
 
 Midterm I. Mar 14, 2014.    
 Covers Lectures 1 - 11.    
