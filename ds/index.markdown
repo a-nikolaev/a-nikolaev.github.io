@@ -86,26 +86,13 @@ Lecture 14. Jun 26, 2014. [Intro to Number Theory](/ds/docs/lec14.pdf).
 Reading: 
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
 LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
+[HW7](/ds/docs/hw7.pdf). Due Monday, Jun 30.
 
-<!--
-
-Midterm I. Mar 14, 2014.    
-Covers Lectures 1 - 11.    
-A practice exam (actual midterm exam from the last semester) is posted on Blackboard 
-(in the "Course Materials" section). If you don't have access to the Blackboard, ask me to
-send you the PDF by email.    
-[Midterm Statistics](/ds/docs/stats-midterm1.pdf)
-
-Lecture 14. Mar 18, 2014. [Intro to Number Theory](/ds/docs/lec14.pdf).  
-Reading: 
-[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
-LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
-
-Lecture 15. Mar 21, 2014. [Modular arithmetic](/ds/docs/lec15.pdf).   
+Lecture 15. Jun 30, 2014. [Modular arithmetic](/ds/docs/lec15.pdf).   
 Reading: the same.    
 Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
-[HW7](/ds/docs/hw7.pdf). Due Friday, Mar 28.
 
+<!--
 Lecture 16. Mar 25, 2014. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).  
 Reading: the same.   
 
