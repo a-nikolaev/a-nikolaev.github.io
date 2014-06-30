@@ -69,6 +69,7 @@ Covers Lectures 1 - 11.
 A practice exam (an actual midterm exam from the last semester) is posted on Blackboard 
 (in the "Course Materials" section). If you don't have access to the Blackboard, ask me to
 send you the PDF by email.    
+[Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 Lecture 13. Jun 25, 2014. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).   
 Source code in [Julia](http://julialang.org/):   
