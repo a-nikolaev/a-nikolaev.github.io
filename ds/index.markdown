@@ -97,11 +97,10 @@ Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in
 Lecture 16. Jul 1, 2014. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).  
 Reading: the same.   
 
-<!--
-Lecture 17. Mar 28, 2014. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
+Lecture 17. Jul 3, 2014. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.  
-[HW8](/ds/docs/hw8.pdf). Due Fri, Apr 4.
 
+<!--
 
 Lecture 18. Apr 1, 2014. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
