@@ -98,14 +98,14 @@ Lecture 16. Jul 1, 2014. [Fermat’s little theorem. RSA](/ds/docs/lec16.pdf).
 Reading: the same.   
 
 Lecture 17. Jul 3, 2014. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
-Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.  
+Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+[HW9](/ds/docs/hw9.pdf). Due Monday, Jul 7.
 
-<!--
-
-Lecture 18. Apr 1, 2014. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
+Lecture 18. Jul 7, 2014. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 
+<!--
 Lecture 19. Apr 4, 2014. [Partial orders. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec19.pdf).   
 Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
 Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.   
