@@ -104,6 +104,25 @@ Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.
 Lecture 18. Jul 7, 2014. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+[HW10](/ds/docs/hw10.pdf). Due Thursday, Jul 10.
+
+Lecture 19. Jul 8, 2014. [Partial orders.](/ds/docs/lec19.pdf).   
+Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+
+Lecture 20. Jul 9, 2014. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
+
+Lecture 21. Jul 10, 2014. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).   
+Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+
+Lecture 22. Trees. Huffman coding.
+
+Lecture 23. Probability.
+
+Review Session.
+
+Midterm II. Jul 17, 2014.   
+A practice exam is posted on Blackboard. Covers Lectures 14 - 23. 
 
 <!--
 Lecture 19. Apr 4, 2014. [Partial orders. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec19.pdf).   
@@ -111,13 +130,6 @@ Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.
 Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.   
 Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
 [HW9](/ds/docs/hw9.pdf). Due Friday, Apr 11.
-
-Lecture 20. Apr 8, 2014. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
-Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
-
-Lecture 21. Apr 11, 2014. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).   
-Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
-[HW10](/ds/docs/hw10.pdf). Due Friday, Apr 25.
 
 Lecture 22. Apr 25, 2014. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
 Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
