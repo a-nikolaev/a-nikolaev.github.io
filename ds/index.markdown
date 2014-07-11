@@ -114,6 +114,7 @@ Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.
 
 Lecture 21. Jul 10, 2014. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).   
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+[HW11](/ds/docs/hw11.pdf). Due Monday, Jul 14.
 
 Lecture 22. Trees. Huffman coding.
 
