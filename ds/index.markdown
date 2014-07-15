@@ -118,10 +118,13 @@ Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.
 
 Lecture 22. Jul 14, 2014. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
 Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
+[HW12](/ds/docs/hw12.pdf). Due Monday, Jul 21. (it is due next Monday, not Thursday!).
 
-Lecture 23. Probability.
+Lecture 23. Jul 15, 2014. Probability.    
+No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
+Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
-Review Session.
+Review Session. Jul 16, 2014.
 
 Midterm II. Jul 17, 2014.   
 A practice exam is posted on Blackboard. Covers Lectures 14 - 22 (Probability will not be in the test). 
