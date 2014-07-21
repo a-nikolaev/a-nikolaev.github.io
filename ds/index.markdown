@@ -127,7 +127,17 @@ Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 Review Session. Jul 16, 2014.
 
 Midterm II. Jul 17, 2014.   
-A practice exam is posted on Blackboard. Covers Lectures 14 - 22 (Probability will not be in the test). 
+A practice exam is posted on Blackboard. Covers Lectures 14 - 22 (Probability will not be in the test).   
+[Statistics](/ds/docs/stats/stats-midterm2.pdf). Your projected grades are posted in Blackboard.
+
+Lecture 24. Jul 21, 2014. Probability. Independent events and Bernoulli trials. Random variables. Expected value.  
+Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
+
+Lecture 25. Jul 22, 2014. Probability. Random variables. Expected value. Cardinality of infinite sets. Diagonalization argument.
+
+Lecture 26. Jul 23, 2014. Cardinality of infinite sets. Diagonalization argument. Lambda Calculus(?). Review (?).
+
+Final exam. Jul 24, 2014. Cumulative. Covers almost everything: Lectures 1-12, 14-25, and most likely excluding Lecture 26.  
 
 <!--
 Lecture 19. Apr 4, 2014. [Partial orders. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec19.pdf).   
