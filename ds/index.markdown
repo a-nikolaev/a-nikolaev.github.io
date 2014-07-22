@@ -132,6 +132,8 @@ A practice exam is posted on Blackboard. Covers Lectures 14 - 22 (Probability wi
 
 Lecture 24. Jul 21, 2014. Probability. Independent events and Bernoulli trials. Random variables. Expected value.  
 Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
+[Probability problem set](/ds/docs/prob.pdf). This is not a real homework, but just a set of problems on Probability for you
+to practice before the Final exam.
 
 Lecture 25. Jul 22, 2014. Probability. Random variables. Expected value. Cardinality of infinite sets. Diagonalization argument.
 
