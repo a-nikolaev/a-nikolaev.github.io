@@ -135,9 +135,11 @@ Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.
 [Probability problem set](/ds/docs/prob.pdf). This is not a real homework, but just a set of problems on Probability for you
 to practice before the Final exam.
 
-Lecture 25. Jul 22, 2014. Probability. Random variables. Expected value. Cardinality of infinite sets. Diagonalization argument.
+Lecture 25. Jul 22, 2014. Probability. Random variables. Expected value. 
 
-Lecture 26. Jul 23, 2014. Cardinality of infinite sets. Diagonalization argument. Lambda Calculus(?). Review (?).
+Lecture 26. Jul 23, 2014. [Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec26.pdf).  
+Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.   
+Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
 
 Final exam. Jul 24, 2014. Cumulative. Covers almost everything: Lectures 1-12, 14-25, and most likely excluding Lecture 26.  
 
