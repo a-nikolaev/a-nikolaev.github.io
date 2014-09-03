@@ -5,20 +5,25 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Jun 2, 2014. [Propositional Logic](/ds/docs/lec1.pdf).   
+Lecture 1. Sep 3, 2014. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3;  
 
-Lecture 2. Jun 3, 2014. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Sep 8, 2014. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).    
+
+<!--
 [HW1](/ds/docs/hw1.pdf). Due Thursday, Jun 5.
 (Note that only problems 2, 3, and 4 are graded).
+-->
 
-Lecture 3. Jun 4, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+Lecture 3. Sep 10, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
+
+<!--
 
 Lecture 4. Jun 5, 2014. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
@@ -143,6 +148,8 @@ Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proo
 
 Final exam. Jul 24, 2014. Cumulative. Covers almost everything: Lectures 1-12, 14-25, and most likely excluding Lecture 26.  
 
+-->
+
 <!--
 Lecture 19. Apr 4, 2014. [Partial orders. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec19.pdf).   
 Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
@@ -188,7 +195,7 @@ Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room
 
 ## Syllabus
 
-Mon, Tue, Wed, Thr, 11:40 am - 12:50 pm. North C111.  
+Mon, Wed, 7:00 pm - 8:15 pm. North 1516.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -203,12 +210,27 @@ Office: HN 1000C
 
 ### Grading Policy
 No late homeworks accepted.  
-Homeworks twice a week (Due Thursday and Monday). 
+Homeworks every week (Due Wednesday). 
 
 ####Distribution  
   HWs: 25%  
-  Exams: 75%  
+  Midterm I: 25%  
+  Midterm II: 25%  
+  Final: 25%  
 
+  Two midterms and the final. All exams are non-cumulative and cover one third of the material each.
+
+####Project    
+  An optional project is a possibility to improve your grade, and 
+  (hopefully) do something fun.
+  
+  If your total grade X = HWs + Exams is a number between 0 and 1, and if your grade for the project is P (again, a number between 0 and 1), 
+  then the additive bonus is 0.1 * P * (1-X/2). Effectively, it gives you a bonus between 5% and 10%, depending on your 
+  total grade X. 
+
+  Your project topic should be formulated no later than November 15. I will post more information about choosing a project later.
+
+<!--
   There are two midterms and the final. When computing the final grade,
   only two best exams out of three are counted, and
   the worst is dropped:
@@ -217,106 +239,106 @@ Homeworks twice a week (Due Thursday and Monday).
 
   However, you still have to attend and write the final exam,
   even if you already have 100% for the midterms.
-
-<!--
-####Project    
-  An optional project is a possibility to improve your grade, and 
-  (hopefully) do something fun.
-  If you get P (a number between 0 and 1) for the project, 
-  then the bonus is 0.1 * P * (1-X/2).
-  Effectively, it gives you a bonus between 5% and 10%, depending on your 
-  total grade X. 
-
-  Your project topic should be formulated no later than by the 
-  first day of the Spring Break (April, 14).
 -->
 
 ### Tentative Course Content
 
-Mon 06/02.
+Wed 09/03.
 Propositional Logic.
 <br />
-Tue 06/03.
+Mon 09/08.
 Satisfiability and Rules of Inference.
 <br />
-Wed 06/04.
+Wed 09/10.
 Predicates and Quantifiers.
 <br />
-Thr 06/05.
+Mon 09/15.
 Proofs.
 
-Mon 06/09.
-Counting. Intro.
-<br />
-Tue 06/10.
-The Pigeonhole Principle. Permutations and Combinations. 
-<br />
-Wed 06/11.
-Binomial Theorem. Combinations with repetition.
-<br />
-Thr 06/12.
-Counting. Practice session. 
 
-Mon 06/16.
+Wed 09/17.
 Induction.
 <br />
-Tue 06/17.
+Mon 09/22.
 Recurrences.
 <br />
-Wed 06/18.
+Wed 09/24. 
+No classes
+<br />
+Mon 09/29.
 Fibonacci Numbers. Solving Linear Recurrences.
 <br />
-Thr 06/19.
-Strong Induction. Catalan Numbers.
+Wed 10/1.
+Strong Induction. Recursion in Mathematics and Programming.
 
-Mon 06/23.
-Review session.
+Mon 10/6.
+Midterm I.
+
+Wed 10/08.
+Counting. Intro.
 <br />
-Tue 06/24.
-Midterm 1.
+Mon 10/13. 
+No classes.
 <br />
-Wed 06/25.
-Recursion in Mathematics and Programming.
+Wed 10/15.
+The Pigeonhole Principle. Permutations and Combinations. 
 <br />
-Thr 06/26.
+Mon 10/20.
+Binomial Theorem. Combinations with repetition.
+<br />
+Wed 10/22.
+Counting. Practice session. 
+
+Mon 10/27.
 Intro to Number Theory.
-
-Mon 06/30.
+<br />
+Wed 10/29.
 Modular arithmetic.
 <br />
-Tue 07/01.
+Mon 11/03.
 Fermat's little theorem. RSA.
 <br />
-Wed 07/02.
+Wed 11/05.
+Other topics in cryptography and number theory. Review.
+
+Mon 11/10.
+Midterm II.
+
+Wed 11/12.
 Sets. Ordered pairs.
 <br />
-Thr 07/03.
+Mon 11/17.
 Relations. Functions. Bijection and counting.
-
-Mon 07/08.
+<br />
+Wed 11/19.
 Relations and partial orders. 
 <br />
-Tue 07/09.
+Mon 11/24.
 Graphs. Bipartite graphs. Paths.
 <br />
-Wed 07/10.
+Wed 11/26.
 Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
 <br />
-Thr 07/11.
+Mon 12/1.
 Trees. Huffman coding.
 
-Mon 07/14.
+Wed 12/3.
 Probability.
 <br />
-Tue 07/15. 
+Mon 12/8. 
 Probability. Random variables. Expected value.
 <br />
-Wed 07/16. 
-Review Session
+Wed 12/10. 
+Review Session.
 <br />
-Thr 07/17. 
-Midterm 2.
+Mon 12/15. 
+Projects presentation.
 
+
+Mon 12/22. Final Exam. 6:20 - 8:20 pm. The same room. 
+
+
+<!--
 Mon 07/21
 Probability. Expected value.
 <br />
@@ -328,6 +350,7 @@ Computation with functions. Lambda calculus. Review session.
 <br />
 Thr 07/24.
 Final Exam.
+-->
 
 [pdfimg]: /img/pdf1.png
 [fbimg]: /img/fb.png
