@@ -3,4 +3,5 @@ markdown: redcarpet
 pygments: true
 safe: true
 lsi: false
-exclude: ['/docs', '/ds/docs']
+
+#exclude: ['/docs', '/ds/docs']
