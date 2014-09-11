@@ -20,17 +20,18 @@ Useful links:
 
 Lecture 3. Sep 10, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
+[HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 17.   
+
+Lecture 4. Sep 15, 2014. [Proofs](/ds/docs/lec4.pdf).  
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
+
 
 <!--
-
-Lecture 4. Jun 5, 2014. [Proofs](/ds/docs/lec4.pdf).  
-Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
-[HW2](/ds/docs/hw2.pdf). Due Monday, Jun 9.   
-There is a nice math video, watch it if you have time: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
-It's related to next Tuesday's class.
-
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
+
+There is a nice math video, watch it if you have time: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
+It's related to next Tuesday's class.
 
 Lecture 6. Jun 10, 2014. [The Pigeonhole Principle. Permutations and Combinations.](/ds/docs/lec6.pdf).  
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.    
