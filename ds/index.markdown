@@ -25,8 +25,16 @@ Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.
 Lecture 4. Sep 15, 2014. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
 
-Lecture 5. Jun 16, 2014. [Induction](/ds/docs/lec5.pdf).  
-Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.  
+Lecture 5. Sep 17, 2014. [Induction](/ds/docs/lec5.pdf).  
+Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+[HW3](/ds/docs/hw3.pdf). Due Wednesday, Sep 24.   
+
+Lecture 6. Sep 22, 2014. Recurrences.    
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)    
+
+Lecture 7. Sep 24, 2014. Fibonacci Numbers. Solving Linear Recurrences.   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
 <!--
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
