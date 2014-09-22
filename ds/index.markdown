@@ -27,13 +27,15 @@ Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
 Lecture 5. Sep 17, 2014. [Induction](/ds/docs/lec5.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
-[HW3](/ds/docs/hw3.pdf). Due Wednesday, Sep 24.   
+[HW3](/ds/docs/hw3.pdf). Due Monday, Sep 29 <s>Wednesday, Sep 24</s>.       
+Because there is no classes on Wednesday, the homework is due Monday, September 29.    
 
-Lecture 6. Sep 22, 2014. Recurrences.    
+Lecture 6. Sep 22, 2014. [Recurrences](/ds/docs/lec6.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
-[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)    
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
+You will get another, rather short, homework this Wednesday, and it will be due next Wednesday.
 
-Lecture 7. Sep 24, 2014. Fibonacci Numbers. Solving Linear Recurrences.   
+Lecture 7. Sep 29, 2014. Fibonacci Numbers. Solving Linear Recurrences.   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
 <!--
