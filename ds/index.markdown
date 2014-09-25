@@ -33,7 +33,8 @@ Because there is no classes on Wednesday, the homework is due Monday, September 
 Lecture 6. Sep 22, 2014. [Recurrences](/ds/docs/lec6.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
-You will get another, rather short, homework this Wednesday, and it will be due next Wednesday.
+You will get another, rather short, homework this Wednesday, and it will be due next Wednesday.     
+[HW4](/ds/docs/hw4.pdf). Due Wednesday, Oct 1.       
 
 Lecture 7. Sep 29, 2014. Fibonacci Numbers. Solving Linear Recurrences.   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
