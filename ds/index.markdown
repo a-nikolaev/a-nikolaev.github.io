@@ -51,7 +51,7 @@ Source code in [Julia](http://julialang.org/):
 [merge.jl](/ds/code/merge.jl).
 
 Midterm I. Oct 6, 2014.    
-Covers lectures from 1 to 6. No books, no notes allowed. You will be provided with a 
+Covers lectures from 1 to 7. No books, no notes allowed. You will be provided with a 
 formula sheet with the logical equivalences and the inference rules.
 
 <!--
