@@ -36,10 +36,28 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 You will get another, rather short, homework this Wednesday, and it will be due next Wednesday.     
 [HW4](/ds/docs/hw4.pdf). Due Wednesday, Oct 1.       
 
-Lecture 7. Sep 29, 2014. Fibonacci Numbers. Solving Linear Recurrences.   
+Lecture 7. Sep 29, 2014. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
+Lecture 8. Oct 1, 2014. Strong Induction. Recursion in Mathematics and Programming.   
+Source code in [Julia](http://julialang.org/):   
+[sum.jl](/ds/code/sum.jl),
+[fact.jl](/ds/code/fact.jl),
+[fib.jl](/ds/code/fib.jl),
+[mset.jl](/ds/code/mset.jl),
+[graph.jl](/ds/code/graph.jl),
+[lsys.jl](/ds/code/lsys.jl),
+[turtle.jl](/ds/code/turtle.jl),
+[merge.jl](/ds/code/merge.jl).
+
+Midterm I. Oct 6, 2014.    
+Covers lectures from 1 to 6. No books, no notes allowed. You will be provided with a 
+formula sheet with the logical equivalences and the inference rules.
+
 <!--
+Lecture 9. Oct 8, 2014. Counting. Sets.  
+Reading: R(ed6): 5.1; R(ed7): 6.1.   
+
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
 
