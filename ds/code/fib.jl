@@ -1,10 +1,11 @@
 
 
-
 # Fibonacci Numbers
 
 function fib(n)
-  if n==0 || n==1
+  if n <= 0
+    0
+  elseif n == 1
     1
   else
     fib(n-1) + fib(n-2)
@@ -13,58 +14,51 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-# Improved Fibonacci with a loop
+# Improved iterative Fibonacci
 
 function fib_loop(n)
-  if n==0 || n==1
+  if n == 0
+    0
+  elseif n == 1
     1
   else
-    x = 1
-    y = 1
-    for i = 2:n
-      (x, y) = (y, x+y)
+
+    pr = 0   # f(i-1)
+    cur = 1  # f(i)
+    i = 1    # i
+
+    while (i<n) 
+      pr, cur = cur, cur+pr
+      i = i+1
     end
-    y
+
+    cur
+
   end
 end
 
 
 
 
+# Improved recursive Fibonacci
 
-
-
-
-
-# Improved Recursive Fibonacci
-
-function fib2(n)
-  function next(x, y, i) 
-    if i < n 
-      next(y, x+y, i+1)
-    else
-      x+y
-    end
-  end
-
-  if n==0 || n==1
+function fib_loop_rec(n)
+  if n == 0 
+    0
+  elseif n == 1
     1
   else
-    next(1,1,2)
+
+    function loop(i, pr, cur)
+      if i < n
+        loop(i+1, cur, pr+cur)
+      else
+        cur
+      end
+    end
+
+    loop(1, 0, 1)
+
   end
 end
-
-
-
 

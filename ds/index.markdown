@@ -39,7 +39,7 @@ You will get another, rather short, homework this Wednesday, and it will be due 
 Lecture 7. Sep 29, 2014. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
-Lecture 8. Oct 1, 2014. Strong Induction. Recursion in Mathematics and Programming.   
+Lecture 8. Oct 1, 2014. [Recursion in Mathematics and Programming](/ds/docs/lec8.pdf).   
 Source code in [Julia](http://julialang.org/):   
 [sum.jl](/ds/code/sum.jl),
 [fact.jl](/ds/code/fact.jl),
@@ -48,7 +48,11 @@ Source code in [Julia](http://julialang.org/):
 [graph.jl](/ds/code/graph.jl),
 [lsys.jl](/ds/code/lsys.jl),
 [turtle.jl](/ds/code/turtle.jl),
-[merge.jl](/ds/code/merge.jl).
+[merge.jl](/ds/code/merge.jl).     
+[HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 8.    
+WolframAlpha can be useful to check the correctness of your solutions,
+[example1](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29),
+[example2](http://www.wolframalpha.com/input/?i=f%280%29+%3D+3%2C+f%281%29+%3D+1%2C+f%28n%29+%3D+4f%28n+%E2%88%92+1%29+%2B+21f%28n+%E2%88%92+2%29).
 
 Midterm I. Oct 6, 2014.    
 Covers lectures from 1 to 7. No books, no notes allowed. You will be provided with a 
