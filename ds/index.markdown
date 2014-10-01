@@ -40,7 +40,7 @@ Lecture 7. Sep 29, 2014. [Fibonacci Numbers. Solving Linear Recurrences](/ds/doc
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
 Lecture 8. Oct 1, 2014. [Recursion in Mathematics and Programming](/ds/docs/lec8.pdf).   
-Source code in [Julia](http://julialang.org/):   
+Source code in [Julia](http://julialang.org/):
 [sum.jl](/ds/code/sum.jl),
 [fact.jl](/ds/code/fact.jl),
 [fib.jl](/ds/code/fib.jl),
