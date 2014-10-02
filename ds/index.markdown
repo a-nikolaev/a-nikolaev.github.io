@@ -56,7 +56,12 @@ WolframAlpha can be useful to check the correctness of your solutions,
 
 Midterm I. Oct 6, 2014.    
 Covers lectures from 1 to 7. No books, no notes allowed. You will be provided with a 
-formula sheet with the logical equivalences and the inference rules.
+formula sheet with the logical equivalences and the inference rules.   
+
+A **Practice exam** is posted on Blackboard. I will try to post the solutions for it by Saturday.   
+
+Some of you asked for **office hours this Friday** (October 3). I will be available after 5pm, if you need help. If it's possible, email in advance,
+so I can plan my day better.
 
 <!--
 Lecture 9. Oct 8, 2014. Counting. Sets.  
