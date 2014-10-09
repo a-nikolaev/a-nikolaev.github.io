@@ -65,6 +65,7 @@ so I can plan my day better.
 
 Lecture 9. Oct 8, 2014. [Counting. Sets](/ds/docs/lec9.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
+[HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 15.    
 
 <!--
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
