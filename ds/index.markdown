@@ -63,6 +63,8 @@ A **Practice exam** is posted on Blackboard. I will try to post the solutions fo
 Some of you asked for **office hours this Friday** (October 3). I will be available after 5pm, if you need help. If it's possible, email in advance,
 so I can plan my day better.
 
+[Midterm I - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
+
 Lecture 9. Oct 8, 2014. [Counting. Sets](/ds/docs/lec9.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
 [HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 15.    
