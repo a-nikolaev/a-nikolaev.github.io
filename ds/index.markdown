@@ -69,11 +69,15 @@ Lecture 9. Oct 8, 2014. [Counting. Sets](/ds/docs/lec9.pdf).
 Reading: R(ed6): 5.1; R(ed7): 6.1.   
 [HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 15.    
 
-There is a nice math video, watch it if you have time: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
-It's related to this Wednesday's class.
-
 Lecture 10. Oct 15, 2014. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec10.pdf).  
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.    
+[HW7](/ds/docs/hw7.pdf). Due Wednesday, Oct 22.    
+
+There is a nice math video, watch it if you have time: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
+It's related to the next class (the pigeonhole principle).
+
+Lecture 11. Oct 20, 2014. Binomial Theorem. Combinations with repetition.    
+Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
 <!--
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
