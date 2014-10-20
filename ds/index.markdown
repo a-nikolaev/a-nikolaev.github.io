@@ -76,8 +76,10 @@ Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.
 There is a nice math video, watch it if you have time: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
 It's related to the next class (the pigeonhole principle).
 
-Lecture 11. Oct 20, 2014. Binomial Theorem. Combinations with repetition.    
+Lecture 11. Oct 20, 2014. [Binomial Theorem. Combinations with repetition](/ds/docs/lec11.pdf).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
+
+[Possible Project Topics](/ds/topics.html).    
 
 <!--
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
