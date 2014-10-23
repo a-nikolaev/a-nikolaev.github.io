@@ -79,6 +79,9 @@ It's related to the next class (the pigeonhole principle).
 Lecture 11. Oct 20, 2014. [Binomial Theorem. Combinations with repetition](/ds/docs/lec11.pdf).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
+Lecture 12. Oct 22, 2014. Counting. Problem solving.
+[[problem set with answers](/ds/docs/cc3.pdf)].   
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
