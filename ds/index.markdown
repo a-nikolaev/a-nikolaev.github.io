@@ -80,7 +80,13 @@ Lecture 11. Oct 20, 2014. [Binomial Theorem. Combinations with repetition](/ds/d
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
 
 Lecture 12. Oct 22, 2014. Counting. Problem solving.
-[[problem set with answers](/ds/docs/cc3.pdf)].   
+[[problem set with answers](/ds/docs/cc3.pdf)].    
+[HW8](/ds/docs/hw8.pdf). Due Wednesday, Oct 29.    
+
+Lecture 13. Oct 27, 2014. Intro to Number Theory.    
+Reading: 
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
 
 [Possible Project Topics](/ds/topics.html).    
 
