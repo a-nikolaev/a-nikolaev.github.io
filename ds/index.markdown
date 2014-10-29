@@ -88,6 +88,10 @@ Reading:
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
 LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
 
+Lecture 14. Oct 29, 2014. [Modular arithmetic](/ds/docs/lec14.pdf).   
+Reading: the same.    
+Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
