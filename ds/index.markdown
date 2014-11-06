@@ -96,6 +96,20 @@ Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in
 Lecture 15. Nov 3, 2014. [Fermat’s little theorem. RSA](/ds/docs/lec15.pdf).  
 Reading: the same.   
 
+Lecture 16. Nov 5, 2014. RSA. The fundamental theorem of arithmetic.    
+Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
+[HW10](/ds/docs/hw10.pdf). Due Monday, Nov 17. 
+
+Review Session. Nov 10, 2014.
+
+Midterm II. Nov 12, 2014.    
+
+* Covers lectures from 9 to 16 (although the proofs in the Lecture 16 are not that important).
+* For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.
+* On Friday, Nov 7, I have office hours after 5:30 pm until 9:00pm.   
+* A practice exam will be posted on Blackboard by Friday.
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
