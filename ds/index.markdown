@@ -110,6 +110,8 @@ The formula sheet should be handed in after the exam.
 * On Friday, Nov 7, I have office hours after 5:30 pm until 9:00pm.   
 * A practice exam will be posted on Blackboard by Friday.
 
+[Midterm II - Statistics](/ds/docs/stats/stats-midterm2.pdf).  
+
 Lecture 17. Nov 17, 2014. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
 
