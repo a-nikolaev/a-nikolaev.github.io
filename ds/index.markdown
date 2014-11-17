@@ -110,6 +110,13 @@ The formula sheet should be handed in after the exam.
 * On Friday, Nov 7, I have office hours after 5:30 pm until 9:00pm.   
 * A practice exam will be posted on Blackboard by Friday.
 
+Lecture 17. Nov 17, 2014. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
+Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+
+Lecture 18. Nov 19, 2014. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
+Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
+Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
