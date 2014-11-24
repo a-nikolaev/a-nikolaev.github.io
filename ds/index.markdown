@@ -118,9 +118,14 @@ Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.
 Lecture 18. Nov 19, 2014. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
-[HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 26. Note that there will be 
-an additional bonus (extra credit) problem, 
-it will be posted later, by Saturday or Sunday. 
+[HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 26.   
+[HW11-Bonus](/ds/docs/hw11bonus.pdf). Due Monday, Dec 1.
+
+Lecture 19. Nov 24, 2014. [Partial orders.](/ds/docs/lec19.pdf).   
+Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+
+Lecture 20. Nov 26, 2014. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7. 
 
 [Possible Project Topics](/ds/topics.html).    
 
