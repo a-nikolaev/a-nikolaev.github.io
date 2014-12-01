@@ -128,6 +128,12 @@ Lecture 20. Nov 26, 2014. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).
 Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.     
 [HW12](/ds/docs/hw12.pdf). Due Wednesday, Dec 3.   
 
+Lecture 21. Dec 1, 2014. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).   
+Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+
+Lecture 22. Dec 3, 2014. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
+Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
