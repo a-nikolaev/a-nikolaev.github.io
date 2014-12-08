@@ -135,7 +135,21 @@ Lecture 22. Dec 3, 2014. [Trees. Huffman coding](/ds/docs/lec22.pdf).
 Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
 [HW13](/ds/docs/hw13.pdf). Due Wednesday, Dec 10.   
 
-[Possible Project Topics](/ds/topics.html).    
+Lecture 23. Dec 08, 2014. Probability.    
+No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
+Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
+
+Lecture 24. Dec 10, 2014. Probability. Review session.  
+Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
+
+Projects presentation. Dec 15, 2014.    
+[Information for the speakers](/ds/talks.html).      
+[Possible Project Topics](/ds/topics.html).     
+Also, all speakers, please send me the title of your project at least a few hours in advance.
+
+Final Exam. Monday, Dec 22, 2014. 6:20 - 8:20 pm. The same room.     
+Covers lectures 17-24. You can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam. A practice exam will be posted on Blackboard.
 
 <!--
 Lecture 5. Jun 9, 2014. [Counting. Sets](/ds/docs/lec5.pdf).  
