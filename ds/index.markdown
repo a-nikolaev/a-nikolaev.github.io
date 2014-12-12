@@ -140,7 +140,11 @@ No slides, only [supplementary notes](/ds/docs/cc4.pdf).
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
 Lecture 24. Dec 10, 2014. Probability. Review session.  
-Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.   
+Reading: R(ed6): 6.2, 6.4 ; R(ed7): 7.2, 7.4. LL: Chapters 18-22.    
+[HW14](/ds/docs/hw14.pdf). Due Monday, Dec 15.   
+The deadline can be extended until Wednesday, if you want. In that case, tell me
+on Monday that you are going to submit it on Wednesday. Then, bring it to my office
+1000C (I plan to be there after 1pm) or email.
 
 Projects presentation. Dec 15, 2014.    
 [Information for the speakers](/ds/talks.html).      
