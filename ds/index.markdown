@@ -147,6 +147,7 @@ on Monday that you are going to submit it on Wednesday. Then, bring it to my off
 1000C (I plan to be there after 1pm) or email.
 
 Projects presentation. Dec 15, 2014.    
+[Schedule](/ds/presentation.html).   
 [Information for the speakers](/ds/talks.html).      
 [Possible Project Topics](/ds/topics.html).     
 Also, all speakers, please send me the title of your project at least a few hours in advance.
