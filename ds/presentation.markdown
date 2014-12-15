@@ -11,11 +11,9 @@ title: Projects Presentation
 
 1. **Kristen Perez** "2048 The Right Way to Play"
 
-<!--
-1. **Scott Chow** "Maze generation using Prim's algorithm" 
-
 1. **Antony Melendez** "Dijkstra's shortest path algorithm"
 
+<!--
 1. **Alex Siu** "Computing Probabilities in Poker"
 -->
 
