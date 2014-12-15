@@ -5,14 +5,14 @@ title: Projects Presentation
 
 1. **Gwenael Gatto** "To Ceasar Cypher And Back" 
 
-1. **Yulia Reznik** "DNA De Bruijn Graphs"
+1. **Yulia Reznik** "De Bruijn Graphs and Genome Assembly"
 
 1. **Nishad Sharker** "Generating Random Graphs"
 
+1. **Kristen Perez** "2048 The Right Way to Play"
+
 <!--
 1. **Scott Chow** "Maze generation using Prim's algorithm" 
-
-1. **Kristen Perez** "2048 The Right Way to Play"
 
 1. **Antony Melendez** "Dijkstra's shortest path algorithm"
 
