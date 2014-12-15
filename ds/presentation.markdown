@@ -3,15 +3,15 @@ layout: page
 title: Projects Presentation
 ---
 
-1. **Gwenael Gatto** "To Ceasar Cypher And Back" 
+1. 7:05 **Gwenael Gatto** "To Ceasar Cypher And Back" 
 
-1. **Yulia Reznik** "De Bruijn Graphs and Genome Assembly"
+1. 7:15 **Yulia Reznik** "De Bruijn Graphs and Genome Assembly"
 
-1. **Nishad Sharker** "Generating Random Graphs"
+1. 7:25 **Nishad Sharker** "Generating Random Graphs"
 
-1. **Kristen Perez** "2048 The Right Way to Play"
+1. 7:35 **Kristen Perez** "2048 The Right Way to Play"
 
-1. **Antony Melendez** "Dijkstra's shortest path algorithm"
+1. 7:45 **Antony Melendez** "Dijkstra's shortest path algorithm"
 
 <!--
 1. **Alex Siu** "Computing Probabilities in Poker"
