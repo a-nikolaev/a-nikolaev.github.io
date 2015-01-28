@@ -1,0 +1,6 @@
+
+.terminal table td { padding: 5px; }
+.terminal table pre { margin: 0; }
+.terminal {
+  background-color: #e0ffc8;
+}

@@ -9,7 +9,7 @@ Hunter College of CUNY
 New York, NY 10065
 
 ###Email
-a<span style="color:#969086;">(my last name)</span>@gc.cuny.edu
+a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 
 ##Education
 
@@ -35,7 +35,8 @@ a<span style="color:#969086;">(my last name)</span>@gc.cuny.edu
 * August 2011 - present. Research Assistant at Hunter College.
   * Work with Professor Saad Mneimneh.
 * August 2013 - present. Adjunct Lecturer at Hunter College. 
-  * Teaching CSCI 150: Discrete Structures (Fall 2013).
+  * Teaching CSCI 150: Discrete Structures (Fall 2013, Spring 2014, Summer 2014, Fall 2014, Spring 2015).
+  * Teaching CSCI 135: Software Analysis and Design 1 (Spring 2015).
 
 ##Research
 

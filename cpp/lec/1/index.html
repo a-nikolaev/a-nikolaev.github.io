@@ -1,0 +1,337 @@
+<!-- <link rel='stylesheet' href='normalize.css'/> -->
+<link rel='stylesheet' href='markdown.css'/>
+
+<link rel='stylesheet' href='syntax.css'/>
+<link rel='stylesheet' href='term.css'/>
+<p><title>C++ intro</title></p>
+
+<h1>C++ intro. Variables. Types. Arithmetic operations.</h1>
+
+<h2>A simple C++ program</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>Hello World!
+</code></pre>
+
+
+<h2>How to compile a program</h2>
+
+<p>You need <code>g++</code> compiler from GNU Compiler Collection.
+If you have no compiler on you computer, install it. Alternatively, you may try this
+<a href="http://www.tutorialspoint.com/compile_cpp_online.php">online development environment</a>.</p>
+
+<pre><code>$ g++ hello.cpp 
+
+$ ./a.out 
+Hello World!
+</code></pre>
+
+<p>By default, the executable file is called <code>a.out</code>, to give it a different name,
+you can run the compiler with the option <code>-o myname</code>, for example:</p>
+
+<pre><code>$ g++ -o hello hello.cpp 
+
+$ ./hello 
+Hello World!
+</code></pre>
+
+<h2>Variables and types</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">z</span><span class="p">;</span>
+
+  <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">20</span><span class="p">;</span>
+
+  <span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">proxima_centauri</span> <span class="o">=</span> <span class="mf">40100000000000000.0</span><span class="p">;</span> <span class="c1">// meters
+</span>  <span class="kt">double</span> <span class="n">proxima_centauri2</span> <span class="o">=</span> <span class="mf">4.01e+16</span><span class="p">;</span> <span class="c1">// 4.01 x 10^16 
+</span>  <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">proxima_centauri</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>10
+100
+70
+4.01e+16
+A 65
+</code></pre>
+
+
+<h2>Arithmetic operations</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// Integer operations
+</span>  <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="mi">27</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// addition
+</span>  <span class="kt">int</span> <span class="n">x2</span> <span class="o">=</span> <span class="mi">27</span> <span class="o">-</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// subtraction
+</span>  <span class="kt">int</span> <span class="n">x3</span> <span class="o">=</span> <span class="mi">27</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// multiplication
+</span>  <span class="kt">int</span> <span class="n">x4</span> <span class="o">=</span> <span class="mi">27</span> <span class="o">/</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// quotient (integer division)
+</span>  <span class="kt">int</span> <span class="n">x5</span> <span class="o">=</span> <span class="mi">27</span> <span class="o">%</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// remainder
+</span>
+  <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">*</span> <span class="n">x3</span> <span class="o">/</span> <span class="p">(</span><span class="n">x4</span> <span class="o">+</span> <span class="n">x5</span><span class="p">);</span>
+    
+  <span class="n">cout</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">x1</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">x2</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">x3</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span>
+    <span class="o">&lt;&lt;</span> <span class="n">x4</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">x5</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">r</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>32  22  135  5  2  192
+</code></pre>
+
+
+
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// Floating-point operations
+</span>  <span class="kt">double</span> <span class="n">y1</span> <span class="o">=</span> <span class="mf">27.2</span> <span class="o">+</span> <span class="mf">5.2</span><span class="p">;</span> <span class="c1">// addition
+</span>  <span class="kt">double</span> <span class="n">y2</span> <span class="o">=</span> <span class="mf">27.2</span> <span class="o">-</span> <span class="mf">5.2</span><span class="p">;</span> <span class="c1">// subtraction
+</span>  <span class="kt">double</span> <span class="n">y3</span> <span class="o">=</span> <span class="mf">27.2</span> <span class="o">*</span> <span class="mf">5.2</span><span class="p">;</span> <span class="c1">// multiplication
+</span>  <span class="kt">double</span> <span class="n">y4</span> <span class="o">=</span> <span class="mf">27.2</span> <span class="o">/</span> <span class="mf">5.2</span><span class="p">;</span> <span class="c1">// division
+</span>  
+  <span class="kt">double</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span> <span class="o">*</span> <span class="n">y3</span> <span class="o">/</span> <span class="p">(</span><span class="n">y4</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">);</span>
+
+  <span class="n">cout</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">y1</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">y2</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">y3</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span>
+    <span class="o">&lt;&lt;</span> <span class="n">y4</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">r</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>32.4  22  141.44  5.23077  236.083
+</code></pre>
+
+
+<h2>Automatic type conversion</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+  
+  <span class="c1">// Conversion at assignment:
+</span>
+  <span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">;</span> <span class="c1">// fractional decimal places are truncated
+</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i1</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">i2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="kt">double</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">i1</span><span class="p">;</span> <span class="c1">// auto conversion of int to double
+</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+ 
+  <span class="c1">// Conversion before applying binary operators:
+</span>   
+  <span class="kt">double</span> <span class="n">d2</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mf">1.5</span><span class="p">;</span> <span class="c1">// int becomes double, then 3.0 + 1.5
+</span>  <span class="kt">double</span> <span class="n">d3</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// int becomes double, then 1.5 + 3.0
+</span>
+  <span class="kt">int</span> <span class="n">i3</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mf">1.5</span><span class="p">;</span> <span class="c1">// 3 + 1.5 = 4.5, and then truncated to 4
+</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d2</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">d3</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">i3</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>1  2
+1
+4.5  4.5  4
+</code></pre>
+
+
+<h2>Integer and floating-point division</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">29</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mi">31</span><span class="p">;</span> 
+
+  <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">dd</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+
+  <span class="n">cout</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="o">/</span><span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="o">/</span><span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="o">/</span><span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">y</span><span class="o">/</span><span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">z</span><span class="o">/</span><span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  
+  <span class="n">cout</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="o">/</span><span class="n">dd</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="o">/</span><span class="n">dd</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="o">/</span><span class="n">dd</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">y</span><span class="o">/</span><span class="n">dd</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">z</span><span class="o">/</span><span class="n">dd</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>2  2  3  3  -3
+2.5  2.9  3  3.1  -3.1
+</code></pre>
+
+
+<h2>Typecasts</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+ 
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>     <span class="c1">// integer division
+</span>  <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// integer division, then conversion
+</span>  
+  <span class="n">cout</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// we can do explicit type conversion before division:
+</span>  <span class="kt">double</span> <span class="n">z</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+  <span class="c1">// or
+</span>  <span class="kt">double</span> <span class="n">u</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span> 
+  <span class="c1">// or
+</span>  <span class="kt">double</span> <span class="n">v</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> 
+
+  <span class="n">cout</span> 
+    <span class="o">&lt;&lt;</span> <span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>3  3  
+3.07692  3.07692  3.07692
+</code></pre>
+
+
+<h2>Increment and decrement operators</h2>
+
+<p>To increment a variable <code>x</code>, you can write <code>x = x + 1</code>. However, there is a shortcut increment operator for that:
+you can write <code>++x</code> or <code>x++</code> achieving the same effect. Similarly, you can use <code>--x</code> or <code>x--</code> to decrement <code>x</code>.
+Consider an example:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  
+  <span class="c1">// to increment x
+</span>  <span class="n">x</span><span class="o">++</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="c1">// or
+</span>  <span class="o">++</span><span class="n">x</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// decrement x
+</span>  <span class="n">x</span><span class="o">--</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="c1">// or
+</span>  <span class="o">--</span><span class="n">x</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>0
+1
+2
+1
+0
+</code></pre>
+
+
+<p>However, notice the difference between the post-increment (<code>x++</code>) and pre-increment (<code>++x</code>).
+They would return different values if used as an expression (not as a standalone statement). Consider:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// The difference between x++ and ++x 
+</span>  
+  <span class="c1">// (x++) as an expression returns the initial value of x
+</span>  <span class="c1">// i.e. it returns x, then increments it
+</span>  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  
+  <span class="c1">// (++x) as an expression returns the incremented value 
+</span>  <span class="c1">// i.e. it increments x, then returns it
+</span>  <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="o">++</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>20
+11
+22
+11
+</code></pre>
+
+
+<h2>Standard input and output</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a number: "</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+ 
+  <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The number is positive."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The number is a zero."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The number is negative."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre><code>Enter a number: 10
+The number is positive.
+</code></pre>
