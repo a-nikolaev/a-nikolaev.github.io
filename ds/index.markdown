@@ -7,6 +7,8 @@ title: CSCI 150 - Discrete Structures
 
 Lecture 1. Jan 30, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.    
+[HW1](/ds/docs/hw1.pdf). Due Friday, Feb 6.   
+(Notice that only problems 1, 3, 4, and 6 will be graded; you don't have to write your solutions for the other problems).
 
 <!--
 [HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 10.   
