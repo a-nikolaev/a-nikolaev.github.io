@@ -5,7 +5,8 @@ title: CSCI 135 - Software Analysis and Design 1
 
 ## Software Analysis and Design 1, CSCI-135.
 
-Lecture 1. Jan 30, 2015. [C++ intro. Variables. Types. Arithmetic operations.](lec/1/).   
+Lecture 1. Jan 30, 2015. [C++ intro. Variables. Types. Arithmetic operations.](lec/1/).     
+Reading: 1.1 - 1.5.
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
