@@ -9,7 +9,9 @@ title: CSCI 135 - Software Analysis and Design 1
   **Linux**. You already have everything. Make sure to install **g++** if it is not already there. 
   
   **OSX**.
-  You already have everything. It comes with **g++** installed, open the Terminal and you are good to go.     
+  You already have everything. It may come with **g++** pre-installed. However, if it's not the case, install Xcode or its Command Line Tools.
+  [This link](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/) may be helpful.
+  Open the Terminal and you are good to go.     
 
   **Windows**.
   Install [Cygwin](https://cygwin.com/). 
