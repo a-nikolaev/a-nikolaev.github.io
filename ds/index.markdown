@@ -10,21 +10,17 @@ Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.
 [HW1](/ds/docs/hw1.pdf). Due Friday, Feb 6.   
 (Notice that only problems 1, 3, 4, and 6 will be graded; you don't have to write your solutions for the other problems).
 
-<!--
-[HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 10.   
-(Notice that only problems 2, 3, and 5 will be graded; you don't have to write your solutions for the other problems).
--->
-
-<!--
-Lecture 2. Sep 8, 2014. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Feb 3, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).    
 
-Lecture 3. Sep 10, 2014. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+Lecture 3. Feb 6, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
+
+<!--
 [HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 17.   
 
 Lecture 4. Sep 15, 2014. [Proofs](/ds/docs/lec4.pdf).  

@@ -1,0 +1,123 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 1. Basics of Unix. Small C++ programs</title></p>
+
+<h1>Lab 1. Basics of Unix. Small C++ programs</h1>
+
+<h2>The Unix commands you need to know</h2>
+
+<p>You need to know just a few commands to work comfortably in a Unix terminal:
+<strong><code>ls</code></strong>, <strong><code>cd</code></strong>, <strong><code>less</code></strong>, <strong><code>mkdir</code></strong>, <strong><code>cp</code></strong>, <strong><code>mv</code></strong>, <strong><code>rm</code></strong>.</p>
+
+<p>A brief summary:</p>
+
+<p><code>ls</code> &nbsp; list files in the current directory  <br/>
+<code>ls path/to/a/directory</code> &nbsp; list files in the directory  <br/>
+<code>cd path/to/a/directory</code> &nbsp; change directory  <br/>
+<code>cd ../</code> &nbsp; go to the parent directory</p>
+
+<p><code>pwd</code> &nbsp; print the current working directory</p>
+
+<p><code>less file</code> &nbsp; view the contents of the <code>file</code> (press Q to exit)   <br/>
+<code>cat file</code> &nbsp; print the contents of the <code>file</code> on the screen (stdout)</p>
+
+<p><code>mkdir newdirectoryname</code> &nbsp; create new directory  <br/>
+<code>cp file1 file2</code> &nbsp; copy <code>file1</code> and call the copy <code>file2</code>  <br/>
+<code>mv file1 file2</code> &nbsp; rename (move) <code>file1</code> to <code>file2</code>  <br/>
+<code>rmdir directoryname</code> &nbsp; remove empty directory  <br/>
+<code>rm file</code> &nbsp; remove <code>file</code></p>
+
+<p><code>man command</code> &nbsp; documentation about the command</p>
+
+<p>Try this <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix1.html">Unix tutorial</a> for more information.</p>
+
+<h2>Programming assignments</h2>
+
+<p>Each program should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h3>Task 1. Write a first C++ program</h3>
+
+<p>The goal is to write a simple program that succesfully compiles.
+The program should print &ldquo;Hello World!&rdquo; on the screen.</p>
+
+<p>You can use <code>gedit</code> text editor to write it.</p>
+
+<p>If the program is called <code>task1.cpp</code>, compile it with <code>g++</code> and execute:</p>
+
+<pre><code>$ g++ -o task1 task1.cpp
+$ ./task1
+</code></pre>
+
+<h3>Task 2. Write a program that computes the roots of a quadratic equation with integer coefficients.</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/dulKEJV.png" alt="Quadratic equation" /></p>
+
+<p>The program should ask the user to enter the coefficients of the equation. Use the standard input (<code>cin</code>) for that.</p>
+
+<p>Then, it should print out the roots, correctly handling three possible cases:</p>
+
+<ul>
+<li>when there are two roots,</li>
+<li>one root,</li>
+<li>no roots.</li>
+</ul>
+
+
+<p>Try to write it yourself, without looking at the lecture notes I&rsquo;ve posted.
+Use the notes only if you need help or don&rsquo;t remember something.</p>
+
+<h3>Task 3. Classifying characters.</h3>
+
+<p>The program should ask the user to input a character.</p>
+
+<p>The character should be classified into one of the following groups:</p>
+
+<ul>
+<li>Parenthesis, <code>'('</code> or <code>')'</code></li>
+<li>Square bracket, <code>'['</code> or <code>']'</code></li>
+<li>Curly brace, <code>'{'</code> or <code>'}'</code></li>
+<li>Plus, <code>'+'</code></li>
+<li>Minus, <code>'-'</code></li>
+<li>Digit, <code>'0'</code> - <code>'9'</code></li>
+<li>Other</li>
+</ul>
+
+
+<p>The program should print out name of the character group to which the input character belongs.</p>
+
+<p>Use <code>switch</code> and <code>if</code> statements where appropriate.</p>
+
+<p>Since characters in C++ are represented by their integer ASCII codes, you can check the ASCII table
+and use the comparison operatots <code>&lt;=</code> and <code>&lt;</code> to capture whole ranges of characters, for example a character <code>c</code> is a digit if</p>
+
+<pre class="highlight"><code><span class="n">bool</span> <span class="n">c_is_a_digit</span> <span class="o">=</span> <span class="p">(</span><span class="sc">'0'</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">'9'</span><span class="p">);</span>
+</code></pre>
+
+
+<p>You can get the ASCII table from the the Internet or using the following terminal command:</p>
+
+<pre><code>$ man ascii
+</code></pre>
+
+<p>If you are done with that, how would you make the program recognize Uppercase letters and Lowercase letters?</p>

@@ -5,17 +5,27 @@ title: CSCI 135 - Software Analysis and Design 1
 
 ## Software Analysis and Design 1, CSCI-135.
 
-Lecture 1. Jan 30, 2015. [C++ intro. Variables. Types. Arithmetic operations.](lec/1/).     
+Lecture 1. Jan 30, 2015. [C++ intro. Variables. Types. Arithmetic operations](lec/1/).     
 Reading: 1.1 - 1.5.
+
+Lecture 2. Feb 3, 2015. [Control flow. Branching. if and switch. Enumeration types](lec/2/).     
+Reading: 2.1 - 2.2.   
+Lab 1. [Basics of Unix. Small C++ programs](lab/1/).
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
-Website: <http://a-nikolaev.github.io/cpp/>  
+Website: <https://a-nikolaev.github.io/cpp/>  
 Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu  
 Office: HN 1000C  
+
+[How to setup a Unix development environment on your own computer](setup/).
+
+## Labs
+
+[Linux Lab FAQ](http://www.geography.hunter.cuny.edu/tbw/CS.Linux.Lab.FAQ/department_of_computer_science.faq.htm).
 
 ## Syllabus, policies, and schedule
 [Detailed syllabus and schedule](docs/syllabus.pdf)
