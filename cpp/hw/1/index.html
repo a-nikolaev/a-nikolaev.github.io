@@ -1,0 +1,119 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>HW 1</title></p>
+
+<h1>HW 1.</h1>
+
+<p><strong>Due Saturday, Feb 14, by 11:59pm (Midnight).</strong></p>
+
+<p>All programs should be submitted through Blackboard (Course Materials > HW1).</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: HW 1. Task 1. Printing a rectangle
+  .. you may add a more detailed description if it's necessary ..
+*/</span>
+</code></pre>
+
+
+<h3>Task 1. Printing a rectangle</h3>
+
+<p>Write a program that asks the user to input two positive integers,
+call them &ldquo;width&rdquo; and &ldquo;height&rdquo;. After that, the program should print out a rectangle of dot <code>'.'</code> characters
+with the requested width and height.</p>
+
+<p>If some input numbers happened to be non-positive, don&rsquo;t print anything.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>Please, enter the width = 12
+Please, enter the height = 7
+............
+............
+............
+............
+............
+............
+............
+</code></pre>
+
+<h3>Task 2. Printing a grid</h3>
+
+<p>A modification of the previous task. Again, the program asks the user to input two positive integers.</p>
+
+<p>Then it should print a rectangle of <code>'.'</code>, but now every 5th row and every 5th column
+should be printed with the hash <code>'#'</code> character instead of <code>'.'</code>.</p>
+
+<p>For this problem, you may make use of the modulo operator (<code>%</code>).</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>Please, enter the width = 19
+Please, enter the height = 13
+###################
+#....#....#....#...
+#....#....#....#...
+#....#....#....#...
+#....#....#....#...
+###################
+#....#....#....#...
+#....#....#....#...
+#....#....#....#...
+#....#....#....#...
+###################
+#....#....#....#...
+#....#....#....#...
+</code></pre>
+
+<h3>Task 3. Graph paper</h3>
+
+<p>The same as the previous task, but the horizontal lines should be drawn with dashes <code>'-'</code>, the vertical
+lines should be drawn with the vertical bars <code>'|'</code>, and their intersections drawn with pluses <code>'+'</code>.</p>
+
+<p>Also, instead of the dots, print whitespace characters <code>' '</code>.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>Please, enter the width = 19
+Please, enter the height = 13
++----+----+----+---
+|    |    |    |   
+|    |    |    |   
+|    |    |    |   
+|    |    |    |   
++----+----+----+---
+|    |    |    |   
+|    |    |    |   
+|    |    |    |   
+|    |    |    |   
++----+----+----+---
+|    |    |    |   
+|    |    |    |   
+</code></pre>
+
+<h3>Task 4. Diamond</h3>
+
+<p>Ask the user to input a positive odd integer.</p>
+
+<p>The program should <strong>keep asking</strong> until the input integer is indeed odd and positive.</p>
+
+<p>Assuming that the input number is <em>N</em>, print a diamond that has the height <em>N</em> and the width <em>N</em>.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>Please, enter a positive odd number: 10
+Please, enter a positive odd number: -3
+Please, enter a positive odd number: 7
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+</code></pre>
