@@ -1,0 +1,348 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Control flow. while and for loops</title></p>
+
+<h1>Control flow. <code>while</code> and <code>for</code> loops.</h1>
+
+<h2>Repeating similar tasks</h2>
+
+<p>Ask the user to input 3 positive integers and print the largest of them.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  
+  <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a positive integer: "</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x1</span><span class="p">;</span>
+  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a positive integer: "</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x2</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a positive integer: "</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x3</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">x1</span><span class="p">;</span>
+
+  <span class="c1">// Can you prove that the following conditions are correct?
+</span>  <span class="k">if</span> <span class="p">((</span><span class="n">x1</span> <span class="o">&gt;=</span> <span class="n">x2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">x1</span> <span class="o">&gt;=</span> <span class="n">x3</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="n">x1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="n">x2</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="n">x3</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The largest is "</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre><code>Enter a positive integer: 5
+Enter a positive integer: 3
+Enter a positive integer: 4
+The largest is 5
+</code></pre>
+
+<h2><code>while</code> loop</h2>
+
+<p>As an introduction to the <code>while</code> loop, let&rsquo;s write a program that that
+prints out the integers from 10 to 1.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="c1">// count down from 10 to 1
+</span>  <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"n = "</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>n = 10
+n = 9
+n = 8
+n = 7
+n = 6
+n = 5
+n = 4
+n = 3
+n = 2
+n = 1
+</code></pre>
+
+
+<p>Now, let&rsquo;s get back to the previous problem.
+We want to write a program that asks for 3 positive integers and outputs the largest of them.
+However, this time we are going to use the <code>while</code> loop.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">largest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="c1">// n = how many integers the user has to enter
+</span>  <span class="c1">// we end the loop when n is zero
+</span>  <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a positive integer: "</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">)</span> <span class="p">{</span> <span class="n">largest</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The largest is "</span> <span class="o">&lt;&lt;</span> <span class="n">largest</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre><code>Enter a positive integer: 4
+Enter a positive integer: 6
+Enter a positive integer: 3
+The largest is 6
+</code></pre>
+
+<p>The problem with the program is that it does not check whether or not the input integers are positive!
+Can we fix that?</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">largest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="c1">// n = how many integers the user has to enter
+</span>  <span class="c1">// we end the loop when n is zero
+</span>  <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a positive integer: "</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+
+    <span class="c1">// we add an extra condition here:
+</span>    <span class="c1">// we want to compare this new integer x with the largest int so far 
+</span>    <span class="c1">// only if the input integer was positive.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">)</span> <span class="p">{</span> <span class="n">largest</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="p">}</span>
+      <span class="n">n</span><span class="o">--</span><span class="p">;</span> <span class="c1">// we can decrement n
+</span>    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// otherwise we just print an error message:
+</span>      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"It's not positive."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The largest is "</span> <span class="o">&lt;&lt;</span> <span class="n">largest</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre><code>Enter a positive integer: 5
+Enter a positive integer: 0
+It's not positive.
+Enter a positive integer: -2
+It's not positive.
+Enter a positive integer: 15
+Enter a positive integer: 12
+The largest is 15
+</code></pre>
+
+<h2><code>do while</code> loop. &ldquo;Please answer [y/n]?!&rdquo;</h2>
+
+<p>Write a program that asks the user to answer <code>y</code> or <code>n</code>.
+If the input is something else, it should ask again, and keep asking until it gets a valid answer.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">main</span> <span class="p">(){</span>
+  
+  <span class="kt">char</span> <span class="n">ans</span><span class="p">;</span> <span class="c1">// this initial value of `ans` is irrelevant.
+</span>           <span class="c1">// To emphasize this fact, we don't initialize
+</span>           <span class="c1">// this variable here, although this is generally
+</span>           <span class="c1">// a bad idea, always initialize your variables.
+</span>  <span class="k">do</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Please answer [y/n]?! "</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="n">ans</span> <span class="o">==</span> <span class="sc">'y'</span> <span class="o">||</span> <span class="n">ans</span> <span class="o">==</span> <span class="sc">'n'</span><span class="p">)</span> <span class="p">);</span>  
+  <span class="c1">// the condition (ans != 'y' &amp;&amp; ans != 'n')
+</span>  <span class="c1">// would also work (De Morgan's Law)
+</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Great!"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre><code>Please answer [y/n]?! 1
+Please answer [y/n]?! 5
+Please answer [y/n]?! Q
+Please answer [y/n]?! =
+Please answer [y/n]?! Y
+Please answer [y/n]?! N
+Please answer [y/n]?! n
+Great!
+</code></pre>
+
+<p>Observe that <code>do while</code> loop is slightly different from the <code>while</code> loop:
+it checks the condition after executing the block, so the body
+is guaranteed to be executed at least once.</p>
+
+<h2>Sum of digits.</h2>
+
+<p>Write a program that asks the user to input a non-negative integer, and then
+computes the sum of the digits of that number.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">main</span> <span class="p">(){</span>
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// this initial value for n is irrelevant
+</span>
+  <span class="k">do</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Please enter a non-negative integer: "</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  
+  <span class="k">do</span> <span class="p">{</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The sum of digits is "</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre><code>Please enter a non-negative integer: 99
+The sum of digits is 18
+</code></pre>
+
+<h2><code>for</code> loop</h2>
+
+<p>The <code>while</code> and <code>do while</code> loops are particularly useful when the number of iterations is not known in advance.
+However most of the time, you need a loop to simply iterate through a certain range of values, say from 0 to 100.
+For such regular tasks, <code>for</code> loops may be more suitable.</p>
+
+<p><strong>The <code>for</code> statement is ideal when we know exactly how many times we need to iterate the body of the loop.</strong></p>
+
+<p>Consider an example:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+  <span class="c1">// print all integers from 0 to n-1:
+</span>  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>
+  <span class="p">}</span>
+ 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// print a triangle
+</span>  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">'*'</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>0 1 2 3 4 
+
+*
+**
+***
+****
+*****
+</code></pre>
+
+
+<h2><code>break</code> and <code>continue</code></h2>
+
+<p>Write a program that computes the first integer greater than 1000000 that is divisible by 51 and 117:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">;</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">51</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">117</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span> 
+      <span class="k">break</span><span class="p">;</span> <span class="c1">// we break the loop when the condition is satisfied
+</span>  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>1000467
+</code></pre>
+
+
+<h2>About intervals: 0 &lt;= k &lt; n</h2>
+
+<p>Suggested reading: <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html">Why numbering should start at zero</a> by E. W. Dijkstra.</p>
+
+<p>This topic is quite subjective and there are many exceptions, but it&rsquo;s worth mentioning:
+If you need to run a loop for <code>n</code> times, usually it&rsquo;s better to do it as follows:</p>
+
+<pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">n</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>rather than</p>
+
+<pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">n</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>Notice the difference in the bounds between the two cases.</p>
+
+<p>The second variant often leads to unnecessary <code>+1</code> or <code>-1</code> terms in expressions, and in general
+the code tends to be a bit messier. This is why it&rsquo;s also easier to get <a href="https://en.wikipedia.org/wiki/Off-by-one_error">off-by-one errors</a>.</p>
+
+<p>So, if you have a choice, I would suggest using the first method of iteration rather than the second.
+It also works well with C and C++ arrays, in which the index of the first element is always 0.</p>
+
+<p>Another reference: <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">the article</a> in Wikipedia.</p>
