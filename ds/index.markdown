@@ -18,7 +18,8 @@ Useful links:
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).    
 
 Lecture 3. Feb 6, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
-Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.   
+Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
+[HW2](/ds/docs/hw2.pdf). Due Friday, Feb 13.    
 
 <!--
 [HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 17.   
