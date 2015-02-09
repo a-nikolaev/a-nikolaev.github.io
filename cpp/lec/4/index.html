@@ -1,0 +1,420 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Functions</title></p>
+
+<h1>Functions.</h1>
+
+<p>A <strong>function</strong> (or a subroutine) is a sequence of program instructions that perform a specific task, packaged as a unit.
+This unit can then be used in programs wherever that particular task should be performed.</p>
+
+<p>What are the advantages of using functions? They let us:</p>
+
+<ul>
+<li><strong>break up a program into smaller more comprehensible modules</strong></li>
+<li><strong>suppress detail</strong> (for example, <code>sqrt(x)</code> is easier to understand than 20 lines of code)</li>
+<li><strong>create new language primitives</strong> (we can define our own functions and use them later on
+as a black box that takes some arguments as an input and returns the answer).</li>
+</ul>
+
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/1NZjPha.png" alt="Function call blackbox abstraction figure" /></p>
+
+<h2>Example: Uppercase input</h2>
+
+<p>To get an idea, how functions can be used to make your code more readable,
+please consider the following example. We are going to take a program and rewrite it using a function.</p>
+
+<p>The exact syntax of the function definition will be discussed in the next lecture.
+Don&rsquo;t worry about these details at the moment.</p>
+
+<p><strong>The original program.</strong> The following program asks the user to enter a characted.
+Then it prints the character uppercased (if the input was a lowercase letter).</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a character: "</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">' '</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="sc">'a'</span> <span class="o">&lt;=</span> <span class="n">c</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">'z'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// if it's a lowercase letter, uppercase it
+</span>    <span class="kt">char</span> <span class="n">uppercase_c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">32</span><span class="p">;</span> <span class="c1">// see ASCII table
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">uppercase_c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+    <span class="c1">// otherwise print the original character
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p><strong>Rewrite.</strong>
+We can define a new function <code>uppercase</code> and use it in place of that <code>if</code> statement:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/*  uppercases letters 'a' - 'z' */</span>
+<span class="kt">char</span> <span class="nf">uppercase</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="sc">'a'</span> <span class="o">&lt;=</span> <span class="n">c</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">'z'</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="mi">32</span><span class="p">);</span> <span class="c1">// see ASCII table
+</span>  <span class="k">else</span>
+    <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a character: "</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">' '</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">uppercase</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>The implementation details of the function <code>uppercase</code> are abstracted away
+and packaged into a single block of code that can be now used in any place of our program!</p>
+
+<h2>Some functions from the C++ Standard Library.</h2>
+
+<table>
+<thead>
+<tr>
+<th>Function    </th>
+<th> Description            </th>
+<th> Include     </th>
+<th> Arguments  </th>
+<th> Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sqrt(x)</code>    </td>
+<td>  Square root           </td>
+<td> <code>&lt;cmath&gt;</code>   </td>
+<td> <code>double</code>   </td>
+<td> <code>double</code></td>
+</tr>
+<tr>
+<td><code>pow(x,y)</code>   </td>
+<td>  Power, x<sup>y</sup>            </td>
+<td> <code>&lt;cmath&gt;</code>   </td>
+<td> <code>double</code>   </td>
+<td> <code>double</code></td>
+</tr>
+<tr>
+<td><code>fabs(x)</code>    </td>
+<td>  Absolute value, |x| </td>
+<td> <code>&lt;cmath&gt;</code>   </td>
+<td> <code>double</code>   </td>
+<td> <code>double</code></td>
+</tr>
+<tr>
+<td><code>ceil(x)</code>    </td>
+<td>  Ceiling (round up)    </td>
+<td> <code>&lt;cmath&gt;</code>   </td>
+<td> <code>double</code>   </td>
+<td> <code>double</code></td>
+</tr>
+<tr>
+<td><code>floor(x)</code>   </td>
+<td>  Floor (round down)    </td>
+<td> <code>&lt;cmath&gt;</code>   </td>
+<td> <code>double</code>   </td>
+<td> <code>double</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>abs(x)</code>     </td>
+<td>  Absolute value, |x| </td>
+<td> <code>&lt;cstdlib&gt;</code> </td>
+<td> <code>int</code>      </td>
+<td> <code>int</code></td>
+</tr>
+<tr>
+<td><code>labs(x)</code>    </td>
+<td>  Absolute value, |x| </td>
+<td> <code>&lt;cstdlib&gt;</code> </td>
+<td> <code>long</code>     </td>
+<td> <code>long</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>rand()</code>     </td>
+<td>  Random number         </td>
+<td> <code>&lt;cstdlib&gt;</code> </td>
+<td> <code>void</code>     </td>
+<td> <code>int</code></td>
+</tr>
+<tr>
+<td><code>srand(x)</code>   </td>
+<td>  Set seed for rand     </td>
+<td> <code>&lt;cstdlib&gt;</code> </td>
+<td> <code>int</code>      </td>
+<td> <code>void</code></td>
+</tr>
+<tr>
+<td><code>exit(x)</code>    </td>
+<td>  Exit with status x    </td>
+<td> <code>&lt;cstdlib&gt;</code> </td>
+<td> <code>int</code>      </td>
+<td> <code>void</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2><code>#include</code> preprocessor directive</h2>
+
+<p>If you want to use a function declared in the header <code>&lt;cmath&gt;</code>, add a line</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;cmath&gt;
+</span></code></pre>
+
+
+<p>This <strong>preprocessor directive</strong> inserts the header file &ldquo;cmath&rdquo; in the body of the program before it&rsquo;s compiled.
+If you are curious to see this header file, on Linux systems it can be found in the folder <code>/usr/lib/c++</code>
+(or similar).</p>
+
+<p>We will learn more about header files later, when will be talking about separate compilation.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Include_directive#C.2FC.2B.2B">Read more</a>.</p>
+
+<h2>Mathematical function from <code>&lt;cmath&gt;</code> and <code>&lt;cstdlib&gt;</code></h2>
+
+<p>There are <a href="http://en.cppreference.com/w/cpp/header/cmath">tons</a>, the table above shows just a few.</p>
+
+<h2>Pseudo-random number generation (PRNG)</h2>
+
+<p>Video: <a href="http://youtu.be/itaMNuWLzJo">Random vs Pseudo-random</a></p>
+
+<iframe width="560" height="420" src="https://www.youtube-nocookie.com/embed/itaMNuWLzJo" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Note that the functions <code>rand</code> and <code>srand</code> are old C functions, and they don&rsquo;t really offer a lot:
+You can only generate numbers between <code>0</code> and <code>RAND_MAX</code> (inclusive).
+The new C++11 standard provides a <a href="http://en.cppreference.com/w/cpp/numeric/random">much more feature-complete pseudo-random number generation</a> module:
+for example, you can choose a PRNG engine,
+and you can sample from different mathematical distributions (e.g. Uniform, Normal, Binomial, Poisson, and many more)</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// If you need random numbers that differ each time you run 
+</span>  <span class="c1">// the program, the standard practice is to set the seed 
+</span>  <span class="c1">// equal to the currect system time
+</span>  <span class="kt">int</span> <span class="n">seed</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+  <span class="c1">// The value returned represents the number of seconds since 
+</span>  <span class="c1">// 00:00 hours, Jan 1, 1970 UTC (i.e., the current unix timestamp).
+</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"seed = "</span> <span class="o">&lt;&lt;</span> <span class="n">seed</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  
+  <span class="n">srand</span><span class="p">(</span><span class="n">seed</span><span class="p">);</span> <span class="c1">// set the seed
+</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+ 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"RAND_MAX = "</span> <span class="o">&lt;&lt;</span> <span class="n">RAND_MAX</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// Generating bounded integers, for example 0 .. 99:
+</span>  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// Generatin random floating-point values between 0 and 1:
+</span>  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span> <span class="o">/</span> <span class="n">RAND_MAX</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span> <span class="o">/</span> <span class="n">RAND_MAX</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span> <span class="o">/</span> <span class="n">RAND_MAX</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span> <span class="o">/</span> <span class="n">RAND_MAX</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span> <span class="o">/</span> <span class="n">RAND_MAX</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>seed = 1423519433
+
+595181471
+1915328273
+827486926
+251559006
+989564762
+
+RAND_MAX = 2147483647
+
+98
+25
+27
+28
+84
+
+0.106128
+0.718199
+0.926017
+0.682871
+0.14805
+</code></pre>
+
+
+<h2><code>exit(1)</code></h2>
+
+<p>Function <code>exit(x)</code> exits the program. Its argument is called the <strong>exit status</strong>, this is the number reported to the operating system
+when the program terminates.</p>
+
+<p>The argument (exit status) <code>1</code> means that the program terminates because of an error.
+And the argument <code>0</code> would mean that the program terminates successfully.
+The <code>return 0;</code> statement at the end of the <code>main</code> function serves the same purpose there, reporting the status code <code>0</code> (i.e. success)
+to the operating system.</p>
+
+<p>So, if you have to terminate your program in the middle of execution due to some unexpected failure, you may call <code>exit(1)</code>.</p>
+
+<h2>User-defined functions</h2>
+
+<p>An example of a user-defined function:</p>
+
+<pre class="highlight"><code><span class="c1">// the function rounds a value of type double and returns int
+</span><span class="kt">int</span> <span class="nf">round</span> <span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span> <span class="n">floor</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">);</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>For the reasons we will explain later, it&rsquo;s common to first <strong>declare all the functions at the beginning of the file</strong>,
+and then define them at the end of the file, after the <code>main</code> function</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;cmath&gt;
+</span>
+<span class="c1">// the function rounds a value of type double and returns int
+</span><span class="kt">int</span> <span class="n">round</span> <span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span>              <span class="c1">//  &lt;-- declaration
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">round</span> <span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>             <span class="c1">//  &lt;-- definition
+</span>  <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span> <span class="n">floor</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">);</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h2>Example: The greatest common divisor (a simple algorithm)</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/* GCD, the greatest common divisor */</span>
+<span class="kt">int</span> <span class="n">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span> 
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b = "</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The GCD is "</span> <span class="o">&lt;&lt;</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="kt">int</span> <span class="n">div</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">largest</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span> <span class="n">div</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">%</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">largest</span> <span class="o">=</span> <span class="n">div</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">div</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">largest</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<h2>Example: Integer square root</h2>
+
+<p>Accoding to the <a href="https://en.wikipedia.org/wiki/Integer_square_root">definition</a>,
+the <strong>integer square root</strong> of a positive integer <em>n</em> is the positive integer <em>m</em> which is the greatest integer less than or equal to
+the square root of <em>n</em>.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/* integer square root */</span>
+<span class="kt">int</span> <span class="n">isqrt</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span> 
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a positive integer: "</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Integer square root is "</span> <span class="o">&lt;&lt;</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">isqrt</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">x</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<p>Observe that the same result could be achieved if we defined the function as follows:</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">isqrt</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>  
+  <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span> <span class="n">floor</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>Of course, in this case we are using the library functions <code>sqrt</code> and <code>floor</code>, and so need to include the header <code>&lt;cmath&gt;</code>.</p>

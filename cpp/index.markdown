@@ -16,6 +16,9 @@ Lecture 3. Feb 6, 2015. [Control flow. while and for loops](lec/3/).
 Reading: 2.3.   
 [HW1](hw/1/). Due Saturday, Feb 14, by 11:59pm (Midnight).
 
+Lecture 4. Feb 10, 2015. [Functions](lec/4/).    
+Reading: 3.1, 3.2. 
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.

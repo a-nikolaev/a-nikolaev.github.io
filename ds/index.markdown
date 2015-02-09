@@ -21,11 +21,11 @@ Lecture 3. Feb 6, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
 [HW2](/ds/docs/hw2.pdf). Due Friday, Feb 13.    
 
-<!--
-[HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 17.   
-
-Lecture 4. Sep 15, 2014. [Proofs](/ds/docs/lec4.pdf).  
+Lecture 4. Feb 10, 2015. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
+
+
+<!--
 
 Lecture 5. Sep 17, 2014. [Induction](/ds/docs/lec5.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
