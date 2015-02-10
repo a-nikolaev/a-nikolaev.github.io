@@ -50,11 +50,9 @@ It&rsquo;s called <strong>standard input redirection</strong>.</p>
 so we will be able to read all of it as if it was input from the keyboard
 (in C++, we use<code>std::cin</code> in this case).</p>
 
-<p>How to identify the end of the file? <code>std::cin &gt;&gt; x</code> will return <code>false</code>
-(yes, yes!! it&rsquo;s returning a boolean value, <code>true</code> if the reading operation was successful, and <code>false</code> when nothing was read,
-which means that we reached the end of file).</p>
-
-<p>Thus in C++, the idiomatic way to reads the entire file from the standard input, is the following while loop:</p>
+<p>How to identify the end of the file? <code>std::cin &gt;&gt; x</code> will return a fail-state that works basically like <code>false</code>,
+once you reach the end of file.
+Thus in C++, an easy method to read the entire file from the standard input, is the following while loop:</p>
 
 <pre class="highlight"><code>  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
