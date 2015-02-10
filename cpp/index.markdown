@@ -17,7 +17,8 @@ Reading: 2.3.
 [HW1](hw/1/). Due Saturday, Feb 14, by 11:59pm (Midnight).
 
 Lecture 4. Feb 10, 2015. [Functions](lec/4/).    
-Reading: 3.1, 3.2. 
+Reading: 3.1, 3.2.    
+Lab 2. [Simple file processing using redirection](lab/2/).
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  

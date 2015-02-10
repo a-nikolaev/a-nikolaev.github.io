@@ -1,0 +1,169 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 2. Simple file processing using redirection </title></p>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h1>Lab 2. Simple file processing using redirection</h1>
+
+<p>Reading user&rsquo;s input from the keyboard is a great feature,
+however it&rsquo;s not the only possible source of input for a computer program.</p>
+
+<p>When a lot of data must be processed, you can store this data in a file,
+which in turn can be read by your program.</p>
+
+<p>The textbook describes file streams in the section 2.4.
+However, there is an even easier way to read a file, and we are going to use it today.
+It&rsquo;s called <strong>standard input redirection</strong>.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/RkwdsgI.png" alt="stdin redirection" /></p>
+
+<p>So if we run the program as follows:</p>
+
+<pre><code>$ ./program &lt; file.dat
+</code></pre>
+
+<p>the contents of the file &ldquo;file.dat&rdquo; will be sent to the standard input of our program,
+so we will be able to read all of it as if it was input from the keyboard
+(in C++, we use<code>std::cin</code> in this case).</p>
+
+<p>How to identify the end of the file? <code>std::cin &gt;&gt; x</code> will return <code>false</code>
+(yes, yes!! it&rsquo;s returning a boolean value, <code>true</code> if the reading operation was successful, and <code>false</code> when nothing was read,
+which means that we reached the end of file).</p>
+
+<p>Thus in C++, the idiomatic way to reads the entire file from the standard input, is the following while loop:</p>
+
+<pre class="highlight"><code>  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+</code></pre>
+
+
+<p>In this lab, we are going to read numbers (positive integers) from the file. So, the program that reads
+integers from the file and prints them on the screen (each on its own line) would look like this:</p>
+
+<pre class="highlight"><code>  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre>
+
+
+<h3>Example input data files:</h3>
+
+<p><a href="10.dat">10.dat</a>,
+<a href="20.dat">20.dat</a>,
+<a href="30.dat">30.dat</a>,
+<a href="40.dat">40.dat</a>,
+<a href="50.dat">50.dat</a>,
+<a href="60.dat">60.dat</a>,
+<a href="70.dat">70.dat</a>,
+<a href="80.dat">80.dat</a>,
+<a href="1k.dat">1k.dat</a>,
+<a href="10k.dat">10k.dat</a>,
+<a href="100k.dat">100k.dat</a>. (Also, feel free to write your own input files to test your code)</p>
+
+<h3>Task 1. Maximum value</h3>
+
+<p>  The program should read the file redirected to standard input.
+  The file contains positive integers.</p>
+
+<p>  After reading the file, the program should print out the <strong>largest integer</strong> found in the file.
+  (Hint: In your program, use a variable to keep track of the largest integer so far)</p>
+
+<h3>Task 2. Maximum difference</h3>
+
+<p>  The same as the previous task, but the program should report the
+  <strong>largest absolute value of the difference between two consecutive integers</strong> in the file.</p>
+
+<p>  Basically, you have to find the largest jump (up or down) in the sequence of the integers
+  read from the file and print it.</p>
+
+<p>  Example, for the input:</p>
+
+<pre><code>5
+48
+97
+17
+25
+26
+</code></pre>
+
+<p>  The output sould be <code>80</code>, the largest difference is |97 - 17| = 80.</p>
+
+<h3>Task 3. Printing a bar chart</h3>
+
+<p>  Read the integers from the file, and print a <a href="https://en.wikipedia.org/wiki/Bar_chart">bar chart</a>,
+  such that each integer <em>N</em> read from the file is show as a group of <em>N</em> vertical bar symbols <code>|</code>.</p>
+
+<p>Example, for the input:</p>
+
+<pre><code>10
+15 
+4
+65
+51
+</code></pre>
+
+<p>The output should be:</p>
+
+<pre><code>||||||||||
+|||||||||||||||
+||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||
+</code></pre>
+
+<h3>Task 4. Bonus.</h3>
+
+<p>If you still have time, write a program that generates your own data files.</p>
+
+<p>Using <strong>standard output redirection</strong>, instead of printing on the screen,
+you can print in a file:</p>
+
+<pre><code>$ ./program &gt; outputfile.dat
+</code></pre>
+
+<p>You may use, for example, <code>&lt;cmath&gt;</code> functions and pseudo-random number generation functions <code>rand</code> and <code>srand</code>.</p>
+
+<p>In the program, write a comment explaining what your program is generating, are the numbers random or generated
+using mathematical functions? What kind of result are you trying to achieve (if any)?</p>
+
+<h2>Data files format:</h2>
+
+<p>  I provide some data files for you to test your programs.
+  The format is simple, it&rsquo;s a plain text file with one positive integer per line,
+  for example:</p>
+
+<pre><code>4
+75
+12
+64
+72
+117
+19
+54
+</code></pre>
