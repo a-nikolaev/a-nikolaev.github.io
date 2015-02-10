@@ -130,6 +130,14 @@ p#heart{
 	color:#B50000;
 	}
 
+th {
+  padding: 0.5em 1em 0.5em 1em;
+  background: #cae8ea;
+}
+td {
+  padding: 0.5em 1em 0.5em 1em
+}
+
 /* Home Page
 --------------------------- */
 
