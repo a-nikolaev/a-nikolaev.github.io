@@ -1,0 +1,110 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 2. Solutions </title></p>
+
+<h3>Task 1. Maximum value</h3>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Alexey Nikolaev
+  Description: Lab 2. Task 1. Maximum value
+    Usage: 
+      ./a.out &lt; file
+    
+    Reads a stream of positive integers from the file 
+    redirected to the standard input, keeping track of 
+    the largest integer so far.
+    When the end of file is reached, the program outputs 
+    the largest integer it found.
+*/</span>
+
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">largest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">largest</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">largest</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 2. Maximum difference</h3>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Alexey Nikolaev
+  Description: Lab 2. Task 2. Maximum difference
+    Usage: 
+      ./a.out &lt; file
+
+    Reads a stream of positive integers from the file 
+    redirected to the standard input. Outputs the largest 
+    absolute value of the difference betweeen any two 
+    consecutive numbers that were read.
+
+    The program expects that the file contains at least 2 integers.
+*/</span>
+
+<span class="cp">#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">largest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">diff</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">largest</span> <span class="o">=</span> <span class="n">diff</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">largest</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 3. Printing a bar chart</h3>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Alexey Nikolaev
+  Description: Lab 2. Task 3. Bar chart
+    Usage: 
+      ./a.out &lt; file
+
+    Reads a stream of positive integers from the file 
+    redirected to the standard input.
+    
+    Outputs the numbers as a bar chart printed using 
+    the vertical bar "|" character.
+*/</span>
+
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">'|'</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+
