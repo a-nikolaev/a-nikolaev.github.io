@@ -1,0 +1,288 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> Call by value and call by reference </title></p>
+
+<h1>Call by value and call by reference.</h1>
+
+<h2>Call by value.</h2>
+
+<p><strong> Example: </strong> The function <code>countdown(n)</code> prints the numbers from <code>n</code> down to <code>0</code>.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">countdown</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="n">countdown</span><span class="p">(</span><span class="n">start</span><span class="p">);</span>
+  <span class="c1">// what is the value of 'start' at this point?
+</span><span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">countdown</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>5
+4
+3
+2
+1
+0
+</code></pre>
+
+
+<p>What is the value of the variable <code>start</code> in the main function
+after the function call <code>countdown(start)</code>?
+Is it still equal to <code>5</code> or equal to <code>0</code>?</p>
+
+<p>When you call the function <code>countdown(start)</code>,
+the formal parameter of the function (<code>n</code>) is created
+as a brand new variable, a chunk of memory is allocated for it,
+and the value of the argument (in this case, the number <code>5</code>) is
+copied to it.</p>
+
+<p>So, when you call the function, it gets its own independent copy of all the
+arguments passed to it.</p>
+
+<p>Thus any change to the parameter (for example, the statement <code>n--;</code> in this case), would affect
+only the local copy of the passed value, not the original value of the variable <code>start</code>.</p>
+
+<p>Therefore, after the function call, the value of the variable <code>start</code> remains unchanged and
+equal to <code>5</code>.</p>
+
+<hr />
+
+<p>This approach, when you pass the argument by value is called <strong>Call by value</strong>.
+And it is a really great idea! Because a function is an independent module of your program,
+and it sould not inadvetantly affect the variables declared somewhere else in the program.
+<em>The only result of the function sould be just the value it returns.</em></p>
+
+<p>In the perfect world, this would be enough.</p>
+
+<h2>However, why <strong>Call by value</strong> is not always what we want?</h2>
+
+<ul>
+<li><p>Sometimes, we want our function to return multiple values, not just one.</p>
+
+<p>  Because C and C++ don&rsquo;t have a good built-in <a href="https://en.wikipedia.org/wiki/Tuple">tuple type</a>
+  there is no easy way to return multiple values from the function.
+  So, you might want to emulate this behavior by passing multiple variables to a function,
+  which will assign values to them.</p></li>
+</ul>
+
+
+<pre class="highlight"><code><span class="kt">void</span> <span class="nf">get_coords</span><span class="p">(</span><span class="kt">int</span> <span class="n">location</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">location</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">location</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<ul>
+<li><p>Sometimes, making a whole new copy of the argument is too expensive.</p>
+
+<p> If the argument is a huge object stored in a variable, then it might be desirable
+ to pass a reference to that variable without making its new local copy
+ (which can be a waste of memory and CPU resources).</p></li>
+</ul>
+
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">object_dimensions</span><span class="p">(</span><span class="n">huge_object</span> <span class="o">&amp;</span><span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">obj</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h2>Call by reference</h2>
+
+<p><strong>Example:</strong> Function <code>make_even(x)</code> increments its argument <code>x</code> if it is odd.
+The argument is passed by reference.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">make_even</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="n">make_even</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">make_even</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<pre class = "terminal"><code>x = 6
+</code></pre>
+
+
+<p><strong>Example:</strong> Function <code>normalize(x,y)</code> <a href="http://www.fundza.com/vectors/normalize/index.html">normalizes</a>
+the vector <em>(x,y)</em> by dividing it by its Euclidean norm <em>sqrt(x<sup>2</sup> + y<sup>2</sup>)</em>.
+The function updates its arguments <code>x</code> and <code>y</code> in place (they are passed by reference).</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// normalize components of the vector (x,y)
+</span><span class="n">bool</span> <span class="n">normalize</span><span class="p">(</span><span class="kt">double</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">;</span> 
+  <span class="n">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">"y = "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="nf">normalize</span><span class="p">(</span><span class="kt">double</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">len</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">len</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="n">len</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+
+<pre class = "terminal"><code>x = 0.906183
+y = -0.422885
+</code></pre>
+
+
+<h2><code>swap(a,b)</code></h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">", y = "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">", y = "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">", y = "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<pre class = "terminal"><code>x = 5, y = 10
+x = 10, y = 5
+x = 5, y = 10
+</code></pre>
+
+
+<h2>Exercise</h2>
+
+<p>Write a function</p>
+
+<pre class="highlight"><code><span class="kt">void</span> <span class="n">rational</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">);</span>
+</code></pre>
+
+
+<p>which for the given <strong>positive</strong> double <code>x</code>, searches for the numerator <code>n</code> and denominator <code>d</code>
+that are positive integers &lt;= 10000, such that the error <em>|x - n/d|</em> is the smallest possible.</p>
+
+<h2><code>const</code> call by reference</h2>
+
+<p>With a constant call by reference, we can avoid copying the argument,
+at the same time not allowing to make any changes to this argument.</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">compute</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">arg</span><span class="p">);</span>
+</code></pre>
+
+
+<h2>Overloading a function name</h2>
+
+<p>Multiple functions can be defined using the same name, however
+they must differ either</p>
+
+<ul>
+<li>in the number of parameters, or</li>
+<li>in the types of their parameters.</li>
+</ul>
+
+
+<p>Notice that the difference in the type of the value returned is not enough to allow an overloaded definition.</p>
+
+<p>The overloaded function definitions <strong>must differ in their formal parameters</strong>.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">double</span> <span class="n">average</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">average</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x3</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">average</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">average</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">average</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">average</span><span class="p">(</span><span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>7.5
+13.3333
+</code></pre>
+
+
+<h2>Default parameters</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// vector length (Euclidean norm) for 1D, 2D, and 3D
+</span><span class="kt">double</span> <span class="n">length</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">length</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">length</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">length</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">z</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="o">*</span><span class="n">z</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<pre class = "terminal"><code>7.07107
+8.06226
+10
+</code></pre>
+

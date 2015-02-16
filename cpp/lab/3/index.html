@@ -1,0 +1,94 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 3. Functions </title></p>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h1>Lab 3. Functions</h1>
+
+<h3>Task 1. Is even?</h3>
+
+<p>  Write a function <code>int is_even(int n)</code> that returns true when the argument is an even integer.</p>
+
+<p>  Please use the following program as a starting point. It already implements a testing code for the function:</p>
+
+<p>  <a href="task1.cpp">task1.cpp</a></p>
+
+<h3>Task 2. The number of digits</h3>
+
+<p>  Write a function <code>int num_of_digits(int n)</code> that computes the number of decimal digits in the argument.
+  It should work for any integer (positive, zero, and negative).</p>
+
+<p>  Please use the following program as a starting point. It already implements a testing code for the function:</p>
+
+<p>  <a href="task2.cpp">task2.cpp</a></p>
+
+<h3>Task 3. Is the first digit equal to the last?</h3>
+
+<p>  The goal of this task is to write a function that checks whether or not the first and the last digits of its argument are equal.</p>
+
+<p>  <strong>For this task, we assume that the input is a non-negative integer number.</strong></p>
+
+<p>  Please write three functions:</p>
+
+<ol>
+<li><code>int last(int n)</code> returns the last digit of the argument.</li>
+<li><code>int first(int n)</code> returns the first digit of the argument.</li>
+<li>the third function <code>bool first_equals_last(int n)</code> returns <code>true</code> if the first and the last digits of the
+argument are equal to each other, otherwise returns <code>false</code>.</li>
+</ol>
+
+
+<p>  Please use the following program as a starting point. It already implements a testing code for the function:</p>
+
+<p>  <a href="task3.cpp">task3.cpp</a></p>
+
+<h3>Task 4. Bonus (Extra credit).</h3>
+
+<p>You&rsquo;ve got the source code of a vending machine.</p>
+
+<p>  <a href="machine.cpp">machine.cpp</a></p>
+
+<p>The owner of the machine is very angry, and is not really able to describe the problem in detail.
+It seems that something is wrong with the change dispenser code.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/VqTOnfd.jpg" alt="Vending machine" /></p>
+
+<p>Your task is to test the code, and find why the change dispenser does not work properly.
+Please briefly report your findings (in the comment at the beginning of the source code file) and try to fix the problem.</p>
+
+<p>(Hint: the function <code>void dispense_change(int)</code> seems to be the most likely source of the problem)</p>
+
+<p><strong> About the machine </strong></p>
+
+<p>Machine&rsquo;s interface is emulated using the standard input and the standard output.</p>
+
+<p>Input character <code>n</code> means that a customer inserted a nickel, <code>d</code> means a dime, and <code>q</code> means a quarter.
+Similarly, input <code>1</code>, <code>2</code>, and <code>3</code> denote the buttons for choosing one of the three products that
+are sold by the machine.</p>
+
+<p>To stop the program, press <code>Ctrl+D</code> in the terminal (it means the end of file).
+<code>Ctrl+C</code> is another way to stop it.</p>

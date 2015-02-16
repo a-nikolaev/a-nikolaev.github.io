@@ -23,6 +23,10 @@ Lab 2. [Simple file processing using redirection](lab/2/). [[Solutions](lab/2/so
 Lecture 5. Feb 13, 2015. [More about functions, Scope, Recursion](lec/5/).      
 Reading: 3.2, 3.3.    
 
+Lecture 6. Feb 17, 2015. [Call by value and call by reference](lec/6/).      
+Reading: 4.1.    
+Lab 3. [Functions](lab/3/).
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.
