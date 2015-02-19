@@ -14,18 +14,23 @@ Lab 1. [Basics of Unix. Small C++ programs](lab/1/).
 
 Lecture 3. Feb 6, 2015. [Control flow. while and for loops](lec/3/).     
 Reading: 2.3.   
-[HW1](hw/1/). Due Saturday, Feb 14, by 11:59pm (Midnight).
+[HW1](hw/1/). Due Saturday, Feb 14, by 11:59pm (Midnight). [[Solutions](hw/1/solutions.html)] 
 
 Lecture 4. Feb 10, 2015. [Functions](lec/4/).    
 Reading: 3.1, 3.2.    
 Lab 2. [Simple file processing using redirection](lab/2/). [[Solutions](lab/2/solutions.html)]
 
-Lecture 5. Feb 13, 2015. [More about functions, Scope, Recursion](lec/5/).      
+Lecture 5. Feb 13, 2015. [More about functions, Scope, Recursion](lec/5/)    
 Reading: 3.2, 3.3.    
 
-Lecture 6. Feb 17, 2015. [Call by value and call by reference](lec/6/).      
+Lecture 6. Feb 17, 2015. [Call by value and call by reference. Overloading function names. Default parameters](lec/6/).      
+Rational approximation of a floating point number: [rational.cpp](lec/6/rational.cpp).     
+Also, you may read about [Rational approximation of Pi](http://www.isi.edu/~johnh/BLOG/1999/0728_RATIONAL_PI/).    
 Reading: 4.1.    
-Lab 3. [Functions](lab/3/).
+Lab 3. [Functions](lab/3/). [[Solutions](lab/3/solutions.html)]
+
+Lecture 7. Feb 20, 2015. [Assertions. Testing](lec/7/).      
+Reading: 4.2, 4.3.    
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  

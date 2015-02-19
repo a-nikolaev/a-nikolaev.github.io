@@ -1,0 +1,213 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> Assertions. Testing </title></p>
+
+<h1>Assertions. Testing.</h1>
+
+<h2>Assertions.</h2>
+
+<p><strong>Example:</strong> .</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="c1">//#define NDEBUG
+</span><span class="cp">#include &lt;cassert&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/* GCD, the greatest common divisor */</span>
+<span class="cm">/* assuming the arguments are positive */</span>
+<span class="kt">int</span> <span class="n">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span> 
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b = "</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The GCD is "</span> <span class="o">&lt;&lt;</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// precondition: 
+</span>  <span class="c1">// the arguments are positive
+</span>  <span class="n">assert</span><span class="p">(</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+
+  <span class="kt">int</span> <span class="n">div</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">largest</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span> <span class="n">div</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">%</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">largest</span> <span class="o">=</span> <span class="n">div</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">div</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// postcondition: 
+</span>  <span class="c1">// the number returned is a divisor of both arguments
+</span>  <span class="n">assert</span> <span class="p">(</span> <span class="n">x</span> <span class="o">%</span> <span class="n">largest</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">%</span> <span class="n">largest</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">);</span>
+
+  <span class="k">return</span> <span class="n">largest</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<pre><code>$ ./a.out 
+a = 10
+b = 2
+The GCD is 2
+
+$ ./a.out 
+a = 126
+b = 26
+The GCD is 2
+
+$ ./a.out 
+a = 134
+b = -24
+a.out: p2gcdassert.cpp:27: int gcd(int, int): Assertion `x &gt; 0 &amp;&amp; y &gt; 0' failed.
+Aborted (core dumped)
+</code></pre>
+
+<h2>Warnings: <code>g++ -Wall</code></h2>
+
+<p>Consider an example program:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">thousand</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">thousand</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">thousand</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1000</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>Compiling as follows:</p>
+
+<pre><code>g++ -o prog prog.cpp
+</code></pre>
+
+<p>The compiler would not complain about at least three obvious errors in the program.
+(Can you find them yourself?)</p>
+
+<p>In fact, they are not even considered to be errors, it&rsquo;s a legal C++ code.
+However, fortunately, we can ask the compiler to checks some common mistakes in our code,
+if we compile our program with the option <code>-Wall</code> (which stands for &ldquo;all warnings&rdquo;):</p>
+
+<pre><code>$ g++ -Wall -o prog prog.cpp
+
+prog.cpp: In function 'int thousand(int)':
+prog.cpp:16:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   if (x = 0) {
+            ^
+prog.cpp:19:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+prog.cpp: In function 'int main()':
+prog.cpp:10:21: warning: 'x' is used uninitialized in this function [-Wuninitialized]
+   cout &lt;&lt; thousand(x) &lt;&lt; endl;
+                     ^
+</code></pre>
+
+<h2>Valgrind</h2>
+
+<p><a href="http://www.valgrind.org/docs/manual/quick-start.html">Valgrind</a> is a very useful tool
+to check that your code is correct. It&rsquo;s particularly great for detecting errors
+with dynamic memory allocation, but it shows many other bugs as well, which
+cannot be detected at compile time.</p>
+
+<p>For example, let&rsquo;s compile the buggy code we&rsquo;ve seen before (with the <code>-g</code> option to add the debugging information)</p>
+
+<pre><code>$ g++ -g -o prog prog.cpp
+</code></pre>
+
+<p>And run it with Valgrind:</p>
+
+<pre><code>$ valgrind ./prog
+
+==26298== Memcheck, a memory error detector
+==26298== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==26298== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==26298== Command: ./prog
+==26298== 
+==26298== Use of uninitialised value of size 8
+                &lt; ... snip 5 lines ... &gt;
+==26298== 
+==26298== Conditional jump or move depends on uninitialised value(s)
+                &lt; ... snip 5 lines ... &gt;
+==26298== 
+==26298== Conditional jump or move depends on uninitialised value(s)
+                &lt; ... snip 4 lines ... &gt;
+==26298== 
+0
+==26298== 
+==26298== HEAP SUMMARY:
+==26298==     in use at exit: 0 bytes in 0 blocks
+==26298==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==26298== 
+==26298== All heap blocks were freed -- no leaks are possible
+==26298== 
+==26298== For counts of detected and suppressed errors, rerun with: -v
+==26298== Use --track-origins=yes to see where uninitialised values come from
+==26298== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+</code></pre>
+
+<h2>Testing. Stubs and drivers.</h2>
+
+<pre class="highlight"><code><span class="c1">// Driver program for the function unitPrice.
+</span><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">double</span> <span class="n">unitPrice</span><span class="p">(</span><span class="kt">int</span> <span class="n">diameter</span><span class="p">,</span> <span class="kt">double</span> <span class="n">price</span><span class="p">);</span>
+<span class="c1">// Returns the price per square inch of a pizza.
+// Precondition: The diameter parameter is the diameter of the pizza
+// in inches. The price parameter is the price of the pizza.
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">diameter</span><span class="p">,</span> <span class="n">price</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">ans</span><span class="p">;</span>
+
+  <span class="k">do</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter diameter and price:</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">diameter</span> <span class="o">&gt;&gt;</span> <span class="n">price</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"unit Price is $"</span>
+      <span class="o">&lt;&lt;</span> <span class="n">unitPrice</span><span class="p">(</span><span class="n">diameter</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Test again? (y/n)"</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">ans</span> <span class="o">==</span> <span class="sc">'y'</span> <span class="o">||</span> <span class="n">ans</span> <span class="o">==</span> <span class="sc">'Y'</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">unitPrice</span><span class="p">(</span><span class="kt">int</span> <span class="n">diameter</span><span class="p">,</span> <span class="kt">double</span> <span class="n">price</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">const</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">radius</span><span class="p">,</span> <span class="n">area</span><span class="p">;</span>
+  <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">/</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+  <span class="n">area</span> <span class="o">=</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">price</span><span class="o">/</span><span class="n">area</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
