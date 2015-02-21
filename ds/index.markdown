@@ -31,8 +31,11 @@ Reading: R(ed6): 5.1; R(ed7): 6.1.
 Lecture 6. Feb 17, 2015. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).      
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.    
 
+The video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
+
 Lecture 7. Feb 20, 2015. [Binomial Theorem. Combinations with repetition](/ds/docs/lec7.pdf).    
-Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.  
+Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
+[HW4](/ds/docs/hw4.pdf). Due Friday, Feb 27.    
 
 <!--
 
