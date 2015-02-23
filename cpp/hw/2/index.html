@@ -1,0 +1,91 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>HW 2</title></p>
+
+<h1>HW 2.</h1>
+
+<p><strong>Due Saturday, March 7, by 11:59pm (Midnight).</strong></p>
+
+<p>All programs should be submitted through Blackboard (Course Materials > HW2).</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: HW 1. Task 1. Printing a rectangle
+  .. you may add a more detailed description if it's necessary ..
+*/</span>
+</code></pre>
+
+
+<p>If a program does not do what it&rsquo;s supposed to do (e.g. there are some bugs,
+it behaves differently, or maybe even does not compile), then
+its &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, please briefly describe what is implemented, and what is not.</p>
+
+<h3>Task 1. Von Neumann&rsquo;s Middle Square Pseudo-random number generator</h3>
+
+<p>In the video <a href="http://youtu.be/itaMNuWLzJo">Random vs Pseudo-random</a>,
+we learned about von Neumann&rsquo;s algorithm for generating pseudo-random numbers:</p>
+
+<iframe width="560" height="420" src="https://www.youtube-nocookie.com/embed/itaMNuWLzJo" frameborder="0" allowfullscreen></iframe>
+
+
+<p>The algorithm is called the Middle square method, and it generates a sequence of pseudo-random <em>n</em>-digit numbers.
+In this task, we will be generating <strong>4-digit</strong> pseudo-random numbers.</p>
+
+<p>To setup the generator, a 4-digit number must chosen as a seed.
+We assign this value to a global variable, let&rsquo;s call it <code>state</code>, it will store the state of the generator.</p>
+
+<p>To generate the next pseudo-random number in the sequence, the value of the variable <code>state</code> is squared,
+producing an 8-digit integer (if it&rsquo;s shorter, we assume that it&rsquo;s padded with leading zeroes),
+and we take its middle 4 digits! This is it.</p>
+
+<p>This new value is returned from the procedure, and <code>state</code> is also updated with this new number.</p>
+
+<p>Write two functions that implement the Middle square PRNG:</p>
+
+<pre class="highlight"><code><span class="c1">// set the seed (the seed must be a 4-digit number)
+</span><span class="kt">void</span> <span class="n">seed</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+
+<span class="c1">// generate the next pseudo-random number
+</span><span class="kt">int</span> <span class="n">gen</span><span class="p">();</span>
+</code></pre>
+
+
+<p>Also write a <code>main</code> function that tests your pseudo-random number generator.</p>
+
+<h3>Task 2. Cycles in von Neumann&rsquo;s PRNG</h3>
+
+<p>Any pseudo-random sequence eventually starts repeating itself.
+No matter with what seed you start, the sequence will eventually converge to one of the cycles.</p>
+
+<p>Read a discussion of this issue in the <a href="http://en.wikipedia.org/wiki/Middle-square_method">Wikipedia article</a>.</p>
+
+<p>Using arrays you can keep track of the numbers visited by the PRNG and identify such cycles.
+For this task, please write a program that identifies all cycles of von Neumann&rsquo;s PRNG.</p>
+
+<hr />
+
+<p>It turns out that there are <strong>5 cycles of length one</strong>.  <br/>
+Examples:</p>
+
+<pre><code>0 -&gt; 0 -&gt; 0 -&gt; ...
+100 -&gt; 100 -&gt; 100 -&gt; ...
+3792 -&gt; 3792 -&gt; ...
+</code></pre>
+
+<p>And <strong>3 cycles of length four</strong>.  <br/>
+Example:</p>
+
+<pre><code>540 -&gt; 2916 -&gt; 5030 -&gt; 3009 -&gt; 540
+</code></pre>
+
+<p>There are no cycles other than these eight. And in particular, there are no cycles longer than length four.</p>
+
+<p>Your program should find all of these eight cycles and print them out.
+Try to come up with an algorithm that prints all cycles exactly once. In other words, when a cycles is found,
+you can remember that, and don&rsquo;t print the same cycle again.</p>
