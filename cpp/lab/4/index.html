@@ -1,0 +1,108 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 4. Call by reference </title></p>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h1>Lab 4. Call by reference</h1>
+
+<h3>Task 1. Swap</h3>
+
+<p>  Write a function <code>void swap(int &amp;x, int &amp;y)</code> that gets two integer variables passed by reference,
+  and swaps the values assigned to those integer variables, so if we define two integers <code>a = 5</code> and <code>b = 10</code> and
+  call <code>swap(a,b)</code>:</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="c1">// the values in a and b have been swapped,
+// so now, a == 10, and b == 5
+</span></code></pre>
+
+
+<p>  we get <code>a == 10</code>, and <code>b == 5</code>.</p>
+
+<p>  To test the function, complement your program with a <code>main</code> function that calls</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" b = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" b = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" b = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre>
+
+
+<p>The result should look as follows:</p>
+
+<pre class = "terminal"><code>a = 5 b = 10
+a = 10 b = 5
+a = 5 b = 10
+</code></pre>
+
+
+<h3>Task 2. Simplifying fractions</h3>
+
+<p>  Write a function <code>void simplify(int &amp;n, int &amp;d)</code> that
+  takes two integer parameters, numerator <code>n</code> and denominator <code>d</code>, passed by reference,
+  and simplifies this fraction.</p>
+
+<p>  That is, it updates the values of <code>n</code> and <code>d</code> so that
+  the ratio <em>n/d</em> remains the same, but the absolute value of the demoninator is the smallest possible.</p>
+
+<p>  Make sure that your program can handle the case when <code>n</code> and/or <code>d</code> are negative.
+  Also, you may assume that <code>d</code> is never equal to zero;</p>
+
+<p>  Complement your program with a <code>main</code> function that tests how your function works.</p>
+
+<h3>Task 3. Sorting three integers</h3>
+
+<p>  Write a function <code>void sort(int &amp;a, int &amp;b, int &amp;c)</code> that sorts the values of the integer parameters passed by reference,
+  so that they become arranged in the ascending order <em>a &lt;= b &lt;= c</em>.</p>
+
+<p>  Feel free to use the previously defined function <code>swap</code>.</p>
+
+<p>  Complement your program with a <code>main</code> function that tests how the function <code>sort</code> works.</p>
+
+<h3>Task 4. Bonus</h3>
+
+<p>  In this task, we don&rsquo;t use call by reference. Call by value function seems to be more natural
+  for this application.</p>
+
+<p>  Also, the task is supposed to be quite challenging.</p>
+
+<p>  Write a function <code>int reverse(int x)</code> that reverses the digits of its argument.
+  You may assume that the argument is a <em>positive</em> integer.</p>
+
+<p>  For example</p>
+
+<pre class="highlight"><code><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">reverse</span><span class="p">(</span><span class="mi">23456</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre>
+
+
+<p>  Should print</p>
+
+<pre><code>65432
+</code></pre>

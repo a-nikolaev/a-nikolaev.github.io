@@ -32,6 +32,10 @@ Lab 3. [Functions](lab/3/). [[Solutions](lab/3/solutions.html)]
 Lecture 7. Feb 20, 2015. [Assertions. Testing](lec/7/).      
 Reading: 4.2, 4.3.    
 
+Lecture 8. Feb 24, 2015. [Arrays](lec/8/).      
+Reading: 5.1, 5.2.   
+Lab 4. [Call by reference](lab/4/). 
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.
