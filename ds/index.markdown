@@ -37,6 +37,9 @@ Lecture 7. Feb 20, 2015. [Binomial Theorem. Combinations with repetition](/ds/do
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
 [HW4](/ds/docs/hw4.pdf). Due Friday, Feb 27.    
 
+Lecture 8. Feb 24, 2015. Counting. Problem solving.
+[[problem set](/ds/docs/cc3.pdf)].    
+
 <!--
 
 Lecture 5. Sep 17, 2014. [Induction](/ds/docs/lec5.pdf).  
