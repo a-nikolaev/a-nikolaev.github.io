@@ -34,7 +34,9 @@ Reading: 4.2, 4.3.
 
 Lecture 8. Feb 24, 2015. [Arrays](lec/8/).      
 Reading: 5.1, 5.2.   
-Lab 4. [Call by reference](lab/4/). 
+Lab 4. [Call by reference](lab/4/). [[Solutions](lab/4/solutions.html)] 
+
+[HW2](hw/2/). Due Saturday, Mar 7, by 11:59pm (Midnight).
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  

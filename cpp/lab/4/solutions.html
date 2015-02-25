@@ -1,0 +1,149 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 4. Solutions </title></p>
+
+<h3>Task 1. Swap</h3>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" b = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" b = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" b = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 2. Simplifying fractions</h3>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">simplify</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">401</span> <span class="o">-</span> <span class="mi">200</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">401</span> <span class="o">-</span> <span class="mi">200</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">" / "</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="s">"   </span><span class="se">\t</span><span class="s">  -&gt;  "</span><span class="p">;</span>
+        <span class="n">simplify</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">" / "</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">simplify</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">d</span><span class="p">);</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">d</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="n">i</span><span class="p">;</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">i</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 3. Sorting three integers</h3>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cassert&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="n">sort</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="mi">100</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="mi">100</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span><span class="o">%</span><span class="mi">100</span><span class="p">;</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">)</span> <span class="p">)</span>
+            <span class="n">cout</span>
+                    <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span>
+                    <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span>
+                    <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span>
+                    <span class="o">&lt;&lt;</span> <span class="s">"failure"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// First, make so that 'a' stores the smallest value
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+    <span class="c1">// Now, 'a' contains the smallest value.
+</span>    <span class="c1">// If b &lt;= c we are done, otherwise, swap b and c:
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+
+    <span class="n">assert</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 4. Bonus: Reverse an integer</h3>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cassert&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// reverses the digits of an integer
+// assumes that the argument is a positive integer
+</span><span class="kt">int</span> <span class="n">reverse</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">reverse</span><span class="p">(</span><span class="mi">23456</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">reverse</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">reverse</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">reverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">reverse</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// find the first (most significant) digit
+</span>        <span class="kt">int</span> <span class="n">first</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">dec</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">first</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">first</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="n">dec</span> <span class="o">*=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// the rest of the number x
+</span>        <span class="c1">// (everything except the first digit)
+</span>        <span class="kt">int</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="n">dec</span><span class="p">;</span>
+
+        <span class="c1">// reverse the rest and add the first digit at the end
+</span>        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">first</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
