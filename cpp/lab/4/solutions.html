@@ -108,6 +108,19 @@
 
 <h3>Task 4. Bonus: Reverse an integer</h3>
 
+<p>The trick is to extract the first (most) significant digit (we get it in the variable <code>first</code>),
+and the rest of the number (variable <code>rest</code>).</p>
+
+<p>For example, when we compute <code>reverse(1234)</code>, <code>first == 1</code>, and <code>rest == 234</code>.</p>
+
+<p>Once we have <code>first</code> and <code>rest</code>, we recursively call <code>reverse(rest)</code>, and attach the first digit at the end:</p>
+
+<pre class="highlight"><code><span class="n">answer</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">first</span> 
+</code></pre>
+
+
+<p><code>reverse(rest) == reverse(234) == 432</code>, and we &ldquo;attach&rdquo; <code>1</code> at the end, obtaining <code>4321</code>.</p>
+
 <pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
 #include &lt;cassert&gt;
 </span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
