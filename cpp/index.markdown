@@ -32,9 +32,12 @@ Lab 3. [Functions](lab/3/). [[Solutions](lab/3/solutions.html)]
 Lecture 7. Feb 20, 2015. [Assertions. Testing](lec/7/).      
 Reading: 4.2, 4.3.    
 
-Lecture 8. Feb 24, 2015. [Arrays](lec/8/).      
+Lecture 8. Feb 24, 2015. [Arrays](lec/8/) [[Slides](lec/8/slides.pdf)].      
 Reading: 5.1, 5.2.   
 Lab 4. [Call by reference](lab/4/). [[Solutions](lab/4/solutions.html)] 
+
+Lecture 9. Feb 27, 2015. [Arrays (continued)](lec/9/) [[Slides](lec/9/slides.pdf)].      
+Reading: 5.2, 5.3.   
 
 [HW2](hw/2/). Due Saturday, Mar 7, by 11:59pm (Midnight).
 
