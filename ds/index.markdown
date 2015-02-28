@@ -42,6 +42,11 @@ Lecture 8. Feb 24, 2015. Counting. Problem solving.
 
 Lecture 9. Feb 27, 2015. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+[HW5](/ds/docs/hw5.pdf). Due Friday, Mar 6.    
+
+Lecture 10. Mar 3, 2015. [Recurrences](/ds/docs/lec10.pdf).    
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
 
 <!--
 
