@@ -1,0 +1,184 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 5. Arrays </title></p>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h1>Lab 5. Arrays</h1>
+
+<h3>Task 1. Counting frequencies of integers read from a file</h3>
+
+<p>  Write a program that reads from the standard input (using the method we employed in the Lab 2).
+  However, this time the goal is to count how often different integers occures in the file.
+  Luckily, we know that the file contains only integers in the range <em>0 &lt;= x &lt; 1000</em>.</p>
+
+<p>  So, for example, if we declare a global constant</p>
+
+<pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</code></pre>
+
+
+<p>  Then we can use an array to count how many times each integer in the range <em>0 &lt;= x &lt; N</em> occures in the file.
+  As we know, such an array can be initialized as follows (all elements of the array are set equal to zero):</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">count</span> <span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</code></pre>
+
+
+<p>  <strong>When reading from the file, the program should do two things:</strong></p>
+
+<ol>
+<li> For every integer value <code>i</code> read from the file, increment the corresponding counter <code>count[i]</code>.</li>
+<li> Keep track of the maximum integer <code>max</code> that the file contains.</li>
+</ol>
+
+
+<p>  After the entire file is read, please print a table</p>
+
+<pre><code>i     counter
+-------------
+0     1
+1     16
+2     4
+3     10
+4     14
+5     23
+...
+max   10    &lt;- the table should go all the way to the max value,
+               but not further than that (all numbers beyond this value
+               are zeroes anyway, so they are not interesting to us)
+</code></pre>
+
+<p>It&rsquo;s suggested to use the tab character (denoted by <code>'\t'</code> in C++)  to make two columns line up:</p>
+
+<pre class="highlight"><code><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">'\t'</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre>
+
+
+<p>  <strong>Example.</strong></p>
+
+<p>  If we take the following date file <a href="1.dat">1.dat</a> as an input for our program,
+  it should print the following table:</p>
+
+<pre><code>i   count
+-------------
+0   7
+1   7
+2   11
+3   6
+4   7
+5   10
+6   6
+7   5
+8   5
+9   7
+10  9
+11  4
+12  3
+13  1
+14  3
+15  4
+16  3
+17  0
+18  2
+</code></pre>
+
+<p>Please feel free to create your own data files to test your code.</p>
+
+<h3>Task 2. Histogram</h3>
+
+<p>  Adapt the program from the previous task to print a bar chart (a histogram),
+  instead of simply printing the values of the counter.</p>
+
+<p>  <strong>Example</strong> (for the data file <a href="1.dat">1.dat</a>):</p>
+
+<pre><code>i   count
+-------------
+0   ||||||| 7
+1   ||||||| 7
+2   ||||||||||| 11
+3   |||||| 6
+4   ||||||| 7
+5   |||||||||| 10
+6   |||||| 6
+7   ||||| 5
+8   ||||| 5
+9   ||||||| 7
+10  ||||||||| 9
+11  |||| 4
+12  ||| 3
+13  | 1
+14  ||| 3
+15  |||| 4
+16  ||| 3
+17   0
+18  || 2
+</code></pre>
+
+<h3>Task 3. Histogram printed in the descending order from the most frequent to the least frequent.</h3>
+
+<p>  Adapt the previous program to print the numbers in the <strong>descending order</strong>.</p>
+
+<p>  Although the task can be accomplished using a sorting algorithm, one can use an a bit easier technique instead.</p>
+
+<p>  It&rsquo;s sufficient to simply allocate an array of booleans
+  that tells you if a particular number was printed or not:</p>
+
+<pre class="highlight"><code><span class="n">bool</span> <span class="n">printed</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nb">false</span><span class="p">};</span>
+</code></pre>
+
+
+<p>  When initialized like this, all the elements are set equal to <code>false</code> (to be precise, they all are technically equal to zero,
+  which is interpreted as false).</p>
+
+<p>  When printing the histogram, the program can look for an integer <code>i</code> with the largest <code>count[i]</code> value that was not
+  printed yet (its <code>printed[i] == false</code>). And once this value <code>i</code> is printed, its flag <code>printed[i]</code> should be set to <code>true</code>.
+  Thus we will not print the same value twice.</p>
+
+<p>  <strong>Example</strong> (for the data file <a href="1.dat">1.dat</a>):</p>
+
+<pre><code>i   count
+-------------
+2   ||||||||||| 11
+5   |||||||||| 10
+10  ||||||||| 9
+0   ||||||| 7
+1   ||||||| 7
+4   ||||||| 7
+9   ||||||| 7
+3   |||||| 6
+6   |||||| 6
+7   ||||| 5
+8   ||||| 5
+11  |||| 4
+15  |||| 4
+12  ||| 3
+14  ||| 3
+16  ||| 3
+18  || 2
+13  | 1
+17   0
+</code></pre>
