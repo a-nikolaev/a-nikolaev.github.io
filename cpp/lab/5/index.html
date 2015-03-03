@@ -154,7 +154,7 @@ max   10    &lt;- the table should go all the way to the max value,
 <p>  When initialized like this, all the elements are set equal to <code>false</code> (to be precise, they all are technically equal to zero,
   which is interpreted as false).</p>
 
-<p>  When printing the histogram, the program can look for an integer <code>i</code> with the largest <code>count[i]</code> value that was not
+<p>  When printing the histogram, the program can look for an integer <code>i</code> with the largest <code>count[i]</code> value that has not been
   printed yet (its <code>printed[i] == false</code>). And once this value <code>i</code> is printed, its flag <code>printed[i]</code> should be set to <code>true</code>.
   Thus we will not print the same value twice.</p>
 
@@ -182,3 +182,14 @@ max   10    &lt;- the table should go all the way to the max value,
 13  | 1
 17   0
 </code></pre>
+
+<h3>What else can be done using this (or a similar) program?</h3>
+
+<p>This section is not a task, but supposed to give you a somewhat bigger perspective on the program we have written.</p>
+
+<p>We can take a large plain text file (for example, some classic <a href="http://www.gutenberg.org/">public domain book</a>),
+and count the <a href="https://en.wikipedia.org/wiki/Letter_frequency">frequencies of the letters</a> in the text.</p>
+
+<p>The problem is related to the old encription method called <a href="https://en.wikipedia.org/wiki/Substitution_cipher">substitution cipher</a>,
+when to break an encoded message, you need to count the frequencies of the letters in this encrypted message.
+Read the wikipedia article about the technique, if you want to learn more.</p>
