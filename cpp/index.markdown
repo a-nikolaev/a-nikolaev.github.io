@@ -42,8 +42,9 @@ Reading: 5.2, 5.3.
 [HW2](hw/2/). Due Saturday, Mar 7, by 11:59pm (Midnight).
 
 Lecture 10. Mar 2, 2015. Multidimensional arrays.     
-Reading: 5.2, 5.3.     
-Lab 5. [Arrays](lab/5/)
+Reading: 5.4.     
+
+<!-- Lab 5. [Arrays](lab/5/) -->
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
