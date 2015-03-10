@@ -58,6 +58,9 @@ Office: HN 1000C
 
 [How to setup a Unix development environment on your own computer](setup/).
 
+## Extracurricular 
+New link: [Programming games using SDL 2](sdl/)
+
 ## Labs
 
 [Linux Lab FAQ](http://www.geography.hunter.cuny.edu/tbw/CS.Linux.Lab.FAQ/department_of_computer_science.faq.htm).

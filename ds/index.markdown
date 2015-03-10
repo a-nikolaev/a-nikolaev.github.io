@@ -48,6 +48,9 @@ Lecture 10. Mar 3, 2015. [Recurrences](/ds/docs/lec10.pdf).
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
 
+Lecture 11. Mar 10, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+
 <!--
 
 Lecture 5. Sep 17, 2014. [Induction](/ds/docs/lec5.pdf).  
