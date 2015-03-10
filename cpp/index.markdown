@@ -41,7 +41,7 @@ Reading: 5.2, 5.3.
 
 [HW2](hw/2/). Due Saturday, <del>Mar 7</del> Mar 14, by 11:59pm (Midnight).    
 
-Lecture 10. Mar 2, 2015. Multidimensional arrays.     
+Lecture 10. Mar 2, 2015. Multidimensional arrays. [[Slides](lec/10/slides.pdf)] [[Programs](lec/10/)]     
 Reading: 5.4.     
 
 Midterm 1. Mar 9, 2015.     
