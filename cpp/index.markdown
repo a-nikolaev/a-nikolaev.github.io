@@ -39,12 +39,13 @@ Lab 4. [Call by reference](lab/4/). [[Solutions](lab/4/solutions.html)]
 Lecture 9. Feb 27, 2015. [Arrays (continued)](lec/9/) [[Slides](lec/9/slides.pdf)].      
 Reading: 5.2, 5.3.   
 
-[HW2](hw/2/). Due Saturday, Mar 7, by 11:59pm (Midnight).
+[HW2](hw/2/). Due Saturday, <del>Mar 7</del> Mar 14, by 11:59pm (Midnight).    
 
 Lecture 10. Mar 2, 2015. Multidimensional arrays.     
 Reading: 5.4.     
 
-<!-- Lab 5. [Arrays](lab/5/) -->
+Midterm 1. Mar 9, 2015.     
+Lab 5. [Arrays](lab/5/).
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
