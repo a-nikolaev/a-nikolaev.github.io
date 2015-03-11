@@ -50,6 +50,10 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 
 Lecture 11. Mar 10, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+[HW6](/ds/docs/hw6.pdf). Due Friday, Mar 20.
+(WolframAlpha can be useful to check the correctness of your solutions,
+[example1](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29),
+[example2](http://www.wolframalpha.com/input/?i=f%281%29+%3D+10%2C+f%282%29+%3D+%E2%88%922%2C+f%28n%29+%3D+f%28n+%E2%88%92+1%29+%2B+12f%28n+%E2%88%92+2%29))
 
 <!--
 
