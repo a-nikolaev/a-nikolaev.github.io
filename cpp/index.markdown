@@ -47,6 +47,9 @@ Reading: 5.4.
 Midterm 1. Mar 9, 2015.     
 Lab 5. [Arrays](lab/5/).
 
+Lecture 11. Mar 13, 2015. struct data type. [[Programs](lec/11/)]     
+Reading: 6.1.     
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.

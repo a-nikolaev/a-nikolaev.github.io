@@ -1,0 +1,300 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> struct data type </title></p>
+
+<h1><code>struct</code> data type</h1>
+
+<h2>How to represent structured data?</h2>
+
+<p><strong>A 3-dimensional vector:</strong></p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// a 3-d vector can be represented 
+</span>  <span class="c1">// as an array with 3 elements:
+</span>  <span class="kt">double</span> <span class="n">vec</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">15.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.5</span><span class="p">};</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"y = "</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"z = "</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<pre class = "terminal"><code>x = 5.5
+y = 15.1
+z = -8.5
+</code></pre>
+
+
+<p><strong>The same 3-dimensional vector, but now using a user-defined structure (of three doubles named <code>x</code>, <code>y</code>, and <code>z</code>)</strong></p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">Vec3d</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">y</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">z</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  
+  <span class="n">Vec3d</span> <span class="n">vec</span><span class="p">;</span> <span class="c1">// Declaring a structure vec of type Vec3d
+</span>  <span class="n">vec</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">5.5</span><span class="p">;</span>  <span class="n">vec</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">15.1</span><span class="p">;</span>  <span class="n">vec</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">8.5</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"y = "</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"z = "</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>x = 5.5
+y = 15.1
+z = -8.5
+</code></pre>
+
+
+<h2>Structure members don&rsquo;t have to be the same type</h2>
+
+<p>The example below shows a structure called <code>Brush</code> with two members, <code>double radius</code> and <code>int color</code>.</p>
+
+<p>Also, observe how a structure can be initialized, the same way as the arrays:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">Brush</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">color</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// initialize a brush with
+</span>  <span class="c1">// radius = 5.5, and color = 1
+</span>  <span class="n">Brush</span> <span class="n">b</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"radius = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">radius</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"color = "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">color</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>radius = 5.5
+color = 1
+</code></pre>
+
+
+<h2>Passing structures as function parameters, and returning them from a function.</h2>
+
+<p>In C++, by default, all function parameters are passed by value.
+And in this respect <code>struct</code> types not different from the simple types like <code>int</code> or <code>double</code>.</p>
+
+<p>To make your function receive a structure variable passed by reference, we use the same function definition syntax,
+with the ampersand we used before:</p>
+
+<p><strong>Example:</strong> This program implements the functionality of a simple graphics editor, with a brush painting on the canvas.</p>
+
+<p>We declare two structures:</p>
+
+<ul>
+<li><code>Brush</code> (with the members <code>radius</code> and <code>color</code>), and</li>
+<li><code>Frame</code> (with the members <code>width</code> and <code>height</code>).</li>
+</ul>
+
+
+<p>The canvas is a 2-dimensional array of integers.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">Brush</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">color</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">Frame</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Max canvas dimensions
+</span><span class="k">const</span> <span class="kt">int</span> <span class="n">W</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+
+
+<span class="c1">// returns true if the point (x,y) is within the width and the height of the frame
+</span><span class="n">bool</span> <span class="n">is_inside</span><span class="p">(</span><span class="n">Frame</span> <span class="n">fr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+
+<span class="c1">// paint with the brush
+</span><span class="kt">void</span> <span class="n">paint</span><span class="p">(</span><span class="kt">int</span> <span class="n">canvas</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">],</span> <span class="n">Frame</span> <span class="n">fr</span><span class="p">,</span> <span class="n">Brush</span> <span class="n">br</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+
+<span class="c1">// show the painting of the screen
+</span><span class="kt">void</span> <span class="n">show</span><span class="p">(</span><span class="kt">int</span> <span class="n">canvas</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">],</span> <span class="n">Frame</span> <span class="n">fr</span><span class="p">);</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Brush with radius 1.0 and color 1
+</span>  <span class="n">Brush</span> <span class="n">brush</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">};</span>
+  <span class="c1">// Frame width = 30, height = 15
+</span>  <span class="n">Frame</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">15</span> <span class="p">};</span> 
+  <span class="c1">// Empty canvas - all color zero
+</span>  <span class="kt">int</span> <span class="n">canvas</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+
+  <span class="c1">// first paint stroke
+</span>  <span class="n">brush</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">5.5</span><span class="p">;</span> <span class="n">brush</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">paint</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">brush</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+  
+  <span class="c1">// second paint stroke
+</span>  <span class="n">brush</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span> <span class="n">brush</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="n">paint</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">brush</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+  
+  <span class="c1">// 3rd
+</span>  <span class="n">paint</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">brush</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+ 
+  <span class="c1">// 4th (with color 0)
+</span>  <span class="n">brush</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">3.5</span><span class="p">;</span> <span class="n">brush</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">paint</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">brush</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+  
+  <span class="n">show</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">frame</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="n">bool</span> <span class="nf">is_inside</span><span class="p">(</span><span class="n">Frame</span> <span class="n">fr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">fr</span><span class="p">.</span><span class="n">width</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">fr</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span> <span class="nf">paint</span><span class="p">(</span><span class="kt">int</span> <span class="n">canvas</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">],</span> <span class="n">Frame</span> <span class="n">frame</span><span class="p">,</span> <span class="n">Brush</span> <span class="n">brush</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  
+  <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">brush</span><span class="p">.</span><span class="n">radius</span><span class="p">));</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      
+      <span class="k">if</span> <span class="p">(</span><span class="n">is_inside</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">j</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">brush</span><span class="p">.</span><span class="n">radius</span> <span class="o">*</span> <span class="n">brush</span><span class="p">.</span><span class="n">radius</span><span class="p">)</span>
+          <span class="n">canvas</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">brush</span><span class="p">.</span><span class="n">color</span><span class="p">;</span>
+      <span class="p">}</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+
+<span class="kt">void</span> <span class="nf">show</span><span class="p">(</span><span class="kt">int</span> <span class="n">canvas</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">],</span> <span class="n">Frame</span> <span class="n">frame</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">frame</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">frame</span><span class="p">.</span><span class="n">width</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">switch</span><span class="p">(</span><span class="n">canvas</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">'.'</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span> <span class="o">:</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">canvas</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>........................222222
+........................222222
+...11111................222222
+..1111111...............222222
+.111111111....22222......22222
+11111111111...222222......2222
+1111111111.....222222.........
+111111111.......22222.........
+111111111.......22222.........
+111111111.......22222.........
+.111111111.....222222.........
+..1111111.....222222..........
+...11111......22222...........
+..............................
+..............................
+
+</code></pre>
+
+
+<h2>We can return a structure type from a function</h2>
+
+<p>In this example, we define two functions <code>make_bigger_brush</code> and <code>make_smaller_brush</code>.
+Both of them accept a <code>Brush</code> structure as a parameter and return a new <code>Brush</code> structure
+with the same value of the member variable <code>color</code>, but a different value for its <code>radius</code>:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">Brush</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">color</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Create a bigger brush
+</span><span class="n">Brush</span> <span class="nf">make_bigger_brush</span> <span class="p">(</span><span class="n">Brush</span> <span class="n">br</span><span class="p">)</span> <span class="p">{</span>
+  
+  <span class="c1">// a new brush of x2 radius
+</span>  <span class="n">Brush</span> <span class="n">br2</span><span class="p">;</span>
+  <span class="n">br2</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">br</span><span class="p">.</span><span class="n">radius</span><span class="p">;</span>
+  <span class="n">br2</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">br</span><span class="p">.</span><span class="n">color</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="n">br2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Create a smaller brush
+</span><span class="n">Brush</span> <span class="nf">make_smaller_brush</span> <span class="p">(</span><span class="n">Brush</span> <span class="n">br</span><span class="p">)</span> <span class="p">{</span>
+  
+  <span class="c1">// a new brush of x0.5 radius, copying the original one
+</span>  
+  <span class="n">Brush</span> <span class="n">br2</span> <span class="o">=</span> <span class="n">br</span><span class="p">;</span> <span class="c1">// &lt;-- you can copy the contents of the 
+</span>                  <span class="c1">//     original brush variable 
+</span>                  <span class="c1">//     in the new variable br2
+</span>                  
+  <span class="n">br2</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">br2</span><span class="p">.</span><span class="n">radius</span><span class="p">;</span> <span class="c1">// reduce its radius
+</span>
+  <span class="k">return</span> <span class="n">br2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="n">Brush</span> <span class="n">b1</span> <span class="o">=</span> <span class="p">{</span><span class="mf">5.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+  <span class="n">Brush</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">make_bigger_brush</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+  <span class="n">Brush</span> <span class="n">b3</span> <span class="o">=</span> <span class="n">make_smaller_brush</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b1.radius = "</span> <span class="o">&lt;&lt;</span> <span class="n">b1</span><span class="p">.</span><span class="n">radius</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b1.color = "</span>  <span class="o">&lt;&lt;</span> <span class="n">b1</span><span class="p">.</span><span class="n">color</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b2.radius = "</span> <span class="o">&lt;&lt;</span> <span class="n">b2</span><span class="p">.</span><span class="n">radius</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b2.color = "</span>  <span class="o">&lt;&lt;</span> <span class="n">b2</span><span class="p">.</span><span class="n">color</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b3.radius = "</span> <span class="o">&lt;&lt;</span> <span class="n">b3</span><span class="p">.</span><span class="n">radius</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b3.color = "</span>  <span class="o">&lt;&lt;</span> <span class="n">b3</span><span class="p">.</span><span class="n">color</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>b1.radius = 5
+b1.color = 1
+
+b2.radius = 10
+b2.color = 1
+
+b3.radius = 2.5
+b3.color = 1
+
+</code></pre>
+
+
+<h2>Nested structures</h2>
