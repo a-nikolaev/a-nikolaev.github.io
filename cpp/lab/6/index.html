@@ -1,0 +1,143 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 6. Processing images </title></p>
+
+<h1>Lab 6. Processing images</h1>
+
+<h2>Intro</h2>
+
+<p>In this lab, we are going to write programs that read a graphics file, performs some simple image processing,
+and output the result to a new file.</p>
+
+<pre><code>./prog &lt; input_file &gt; output_file
+</code></pre>
+
+<p>To load an image into our program, we will use an image format called PPM.
+To transform any normal image file like JPEG or PNG into PPM and back, we will use the utility <code>convert</code>, it&rsquo;s
+installed on all computers in the Lab (it&rsquo;s a standard Linux application).</p>
+
+<p>This introduction first describes how an image can be represented in our program as a multidimensional array.
+Then it reviews the PPM graphics format.</p>
+
+<p>Notice that the functions to read and write PPM files (through stdin and stdout) are provided to save your time,
+however they are very simple functions and you may implement them yourself.</p>
+
+<h2>RGB colors</h2>
+
+<p>All colors representable on the screen can be encoded with a triple of integers <em>(Red, Green, Blue)</em>,
+such representation is called the <a href="https://en.wikipedia.org/wiki/RGB_color_model#Additive_primary_colors">RGB color model</a>.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/it6sAW1.png" alt="RGB color model" /></p>
+
+<p>This model defines a color by giving the <strong>intensity level of red, green and blue</strong> light that mix together to create it on the display.
+With most of today&rsquo;s displays, the intensity of each color can vary from 0 to 255, which gives 16,777,216 different colors.</p>
+
+<p>The black color is represented by <em>(0,0,0)</em>, white is <em>(255,255,255)</em>.
+The primary colors, red, green, and blue are <em>(255,0,0)</em>, <em>(0,255,0)</em>, and <em>(0,0,255)</em>, repectively.</p>
+
+<p>If you are not familar with the RGB model, to get more examples, please see this <a href="http://rapidtables.com/web/color/RGB_Color.htm">demo of the RGB color scheme</a>.</p>
+
+<h3>An image is an array</h3>
+
+<p>Any image is a <strong>rectangle of pixels</strong> of the dimension <code>Width</code> x <code>Height</code>. And since we represent the color of each pixel with
+three integers <em>(R, G, B)</em>, we can use a 3D array of the dimension <code>Width</code> x <code>Height</code> x <code>3</code>
+to store the entire image:</p>
+
+<pre><code>int image [Width][Height][3];
+</code></pre>
+
+<h3>Portable Pixmap Format (PPM format)</h3>
+
+<p>While there exist many great formats to compress graphics, such as PNG or JPEG, however, reading and writing such files
+is not a trivial task. We would like to load an image into our program, while avoiding such a complexity.</p>
+
+<p>There exists a rather obscure graphics format called Portable Pixmap Format.
+It represents an image as a plain text file, in a super straight-forward way.</p>
+
+<p>A good description of the <strong>Plain ASCII PPM format</strong> is given in the <a href="https://en.wikipedia.org/wiki/Netpbm_format#PPM_example">Wikipedia article</a>,
+and a more formal description can be found <a href="http://netpbm.sourceforge.net/doc/ppm.html">here</a>.</p>
+
+<p><strong>Consider an example:</strong></p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/pVB6BAd.png" alt="PPM file scaled up" /></p>
+
+<pre class="highlight"><code><span class="n">P3</span>
+<span class="cp"># My PPM image file
+</span><span class="mi">4</span> <span class="mi">5</span>
+<span class="mi">255</span>
+ <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>     <span class="mi">255</span>  <span class="mi">0</span>  <span class="mi">127</span>
+ <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>  <span class="mi">255</span> <span class="mi">127</span>     <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+ <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>  <span class="mi">255</span> <span class="mi">127</span>     <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+<span class="mi">255</span>  <span class="mi">0</span>  <span class="mi">127</span>     <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>      <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+ <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>     <span class="mi">127</span> <span class="mi">127</span> <span class="mi">127</span>     <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>     <span class="mi">127</span> <span class="mi">127</span> <span class="mi">127</span>
+</code></pre>
+
+
+<p>The file starts with the line <code>P3</code> informing us that the file format is Plain PPM.
+The comment line is skipped.</p>
+
+<p>The following line <code>4 5</code> means that the image <strong>width = 4</strong> and the image <strong>height = 5</strong>.
+Then, <code>255</code> tells us that the maximum color value is 255 (this is standard).
+The <strong>remaining numbers are the pixels of the image</strong>, 3 integers per pixel (the whitespace and the
+new-line symbols are disregarded).</p>
+
+<h3>Reading and writing PPM files</h3>
+
+<p>A simple program is avaialble here:</p>
+
+<p style="text-align:center;"> &mdash;&mdash;> <a href="readwrite.cpp">readwrite.cpp</a> &lt;&mdash;&mdash;</p>
+
+<p>This program reads an image file in the PPM format, and outputs a new image file, with
+the blue-component of the colors set to zero:</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/36HZvwC.jpg" alt="cat" /> <img src="http://i.imgur.com/59inNcH.png" alt="is yellow" /></p>
+
+<h3>Converting a normal image into PPM and back.</h3>
+
+<p>We are going to use the utility program <code>convert</code> to transform any normal graphics file
+into the PPM format. The program is available on all Linux Lab machines.</p>
+
+<p><strong>To convert a PNG or JPEG</strong> into PPM:</p>
+
+<pre><code>convert -compress none cat.jpg cat.ppm
+</code></pre>
+
+<p><strong>To convert a PPM</strong> into PNG or JPEG:</p>
+
+<pre><code>convert dog.ppm dog.png
+</code></pre>
+
+<p>Also note that the image viewer application <em>Eye of MATE</em> (<code>eom</code>) can view PPM files directly,
+you can run it from the file manager or from the terminal:</p>
+
+<pre><code>eom cat.ppm
+</code></pre>
+
+<!--
+
+## How to submit your code
+
+Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).
+
+You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard, 
+but then, say 10 minutes later, realizing that there is a bug in it.
+
+Basically, submit when you are sure that it will be your final version.
+
+Each program should start with a comment that contains your name and a short program description, for example: 
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+You can submit incomplete programs, but their "incomplete" status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.
+-->
+
+
+<h1>Assignments: to be added</h1>

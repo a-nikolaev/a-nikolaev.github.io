@@ -50,6 +50,9 @@ Lab 5. [Arrays](lab/5/).
 Lecture 11. Mar 13, 2015. struct data type. [[Programs](lec/11/)]     
 Reading: 6.1.     
 
+Lecture 12. Mar 17, 2015. Classes.    
+Lab 5. [Processing images](lab/6/). Please read this intro to this lab in advance, before coming to the class.
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.
