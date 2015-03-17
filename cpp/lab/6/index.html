@@ -140,4 +140,122 @@ In this case, also briefly describe what is implemented, and what is not.
 -->
 
 
-<h1>Assignments: to be added</h1>
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h1>Assignments</h1>
+
+<h3>Task 1. Using <code>convert</code> and simple image filtering.</h3>
+
+<p>Pick an image file from the Internet of the dimension not more than 250x250, and save it on disk.</p>
+
+<p>Convert this image (assuming it&rsquo;s called &ldquo;image.png&rdquo;) to the PPM format:</p>
+
+<pre><code>convert -compress none image.png image.ppm
+</code></pre>
+
+<p>Take the program <a href="readwrite.cpp">readwrite.cpp</a>, read its <code>main</code> function and make sure that you understand how it
+works. We essentially read the image into the array <code>in</code>, also updating <code>width</code> and <code>height</code> by reference.
+Then we run two nested loops, filling the output array <code>out</code> with the colors of the original image, with the only difference that
+the blue component for each pixel is set to zero (giving the output a yellow shade).</p>
+
+<p>Compile the program as usual:</p>
+
+<pre><code>g++ -o readwrite readwrite.cpp
+</code></pre>
+
+<p>Run the program on your PPM image file:</p>
+
+<pre><code>./readwrite &lt; image.ppm &gt; out-task1.ppm
+</code></pre>
+
+<p>The command above redirects the contents of the file &ldquo;image.ppm&rdquo; into the Standard Input,
+and also it takes everything the program outputs and saves it into the file &ldquo;out-task1.ppm&rdquo;
+(it&rsquo;s called Standard Output redirection).</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/G444pcg.jpg" alt="" /> <img src="http://i.imgur.com/N5aYX6p.png" alt="" /></p>
+
+<p>Now, convert the PPM file into PNG format:</p>
+
+<pre><code>convert out-task1.ppm out-task1.png
+</code></pre>
+
+<p>When submitting your results to Blackboard,
+<strong>submit only the original file &ldquo;image.png&rdquo;, and the output you&rsquo;ve got, &ldquo;out-task1.png&rdquo;.</strong>
+You don&rsquo;t have to submit the source code.</p>
+
+<h3>Task 2. Cyan / Pink.</h3>
+
+<p>Now, let&rsquo;s do some actual programming. Make a modification to the previous program.</p>
+
+<p>It should make the left half of the image Cyan-shaded, and the right half Pink-shaded.
+Such an effect can be acheived if we:</p>
+
+<ul>
+<li>zero the red component in the left half, and</li>
+<li>zero the green component in the right half of the image.</li>
+</ul>
+
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/8lb2asR.png" alt="" /></p>
+
+<p>For this task, as usual, submit the program. Optionally, you may submit your final image (in PNG format).</p>
+
+<h3>Task 3. Top-Right corner.</h3>
+
+<p>Modify the program in such a way that program that takes an image of size <em>Width-by-Height</em>,
+and outputs a new image of size <em>(Width/2)-by-(Height/2)</em> that contains exactly the <strong>Top-Right corner</strong>
+of the original image.</p>
+
+<p>Notice that it&rsquo;s important that both the width and the height of the output image must be twice as small.
+You may use the integer division there to determine the final width and height.
+So, for exmaple, if the input is an image of size 7-by-5, the output will be 3-by-2.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/EF8N9xR.png" alt="" /></p>
+
+<p>For this task, as usual, submit the program. Optionally, you may submit your final image (in PNG format).</p>
+
+<h3>Task 4. Scaling by the factor of two.</h3>
+
+<p>Modify the program to scale (resize) the input image size by the factor of 2.</p>
+
+<p>We would like to scale the image with the simplest approach, in which
+each pixel of the original image becomes a square 2-by-2 of the same color.
+This method is called the <a href="https://en.wikipedia.org/wiki/Image_scaling#Scaling_methods">nearest-neighbor interpolation</a>.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/NJueg1h.png" alt="" /></p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/plehiCX.png" alt="" /></p>
+
+<p>(You may assume that the size of the input image is not more than 250-by-250).</p>
+
+<p>For this task, as usual, submit the program. Optionally, you may submit your final image (in PNG format).</p>
+
+<h3>More advanced image processing</h3>
+
+<p>You may take a look at these two links:</p>
+
+<ul>
+<li><a href="http://lodev.org/cgtutor/filtering.html">Lode Vandevenne, Image Filtering</a>.</li>
+<li><a href="http://www.cs.washington.edu/research/metip/tutor/tutor.images1.html">Clifford Watson, Images</a>.</li>
+</ul>
+
