@@ -76,6 +76,11 @@ Midterm 1. Mar 17, 2015.
 Covers Lectures 1 - 11. Two practice exams are posted on Blackboard.   
 No notes and no books allowed, you will be given a formula sheet with the equivalence formulas and the inference rules.   
 
+Lecture 14. Mar 20, 2015. [Intro to Number Theory](/ds/docs/lec14.pdf).        
+Reading:
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
+
 <!--
 
 Lecture 5. Sep 17, 2014. [Induction](/ds/docs/lec5.pdf).  
