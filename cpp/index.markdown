@@ -45,13 +45,18 @@ Lecture 10. Mar 2, 2015. Multidimensional arrays. [[Slides](lec/10/slides.pdf)] 
 Reading: 5.4.     
 
 Midterm 1. Mar 9, 2015.     
-Lab 5. [Arrays](lab/5/).
+Lab 5. [Arrays](lab/5/). [[Solutions](lab/5/solutions.html)] 
 
 Lecture 11. Mar 13, 2015. struct data type. [[Programs](lec/11/)]     
 Reading: 6.1.     
 
-Lecture 12. Mar 17, 2015. Classes.    
-Lab 5. [Processing images](lab/6/). Please read this intro to this lab in advance, before coming to the class.
+Lecture 12. Mar 17, 2015. Classes. [[Programs](lec/12/)]    
+Reading: 6.2.     
+Lab 6. [Processing images](lab/6/). Please read this intro to this lab in advance, before coming to the class.
+[[Solutions](lab/6/solutions.html)] 
+
+Lecture 13. Mar 20, 2015. Classes continued. Separate compilation. [[Programs](lec/13/)]     
+Reading: 6.2, 11.1.     
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  

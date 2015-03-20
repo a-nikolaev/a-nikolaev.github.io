@@ -1,0 +1,206 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> Separate compilation </title></p>
+
+<h1>Separate compilation.</h1>
+
+<p><strong>intset.h</strong> (the header of IntSet):</p>
+
+<pre class="highlight"><code>
+<span class="cp">#ifndef INTSET_H
+#define INTSET_H
+</span>
+<span class="c1">// Set of integers
+</span>
+<span class="k">class</span> <span class="nc">IntSet</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">;</span> <span class="c1">// max cardinality
+</span>  <span class="kt">int</span> <span class="n">card</span><span class="p">;</span> <span class="c1">// cardinality
+</span>  <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="c1">// makes the set empty
+</span>  <span class="kt">void</span> <span class="n">empty</span><span class="p">();</span>
+
+  <span class="c1">// retruns true v is a member
+</span>  <span class="n">bool</span> <span class="n">member</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+
+  <span class="c1">// adds v to the set
+</span>  <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+
+  <span class="c1">// removes v from the set
+</span>  <span class="kt">void</span> <span class="n">remove</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+
+  <span class="c1">// returns the cardinality of the set
+</span>  <span class="kt">int</span> <span class="n">get_card</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="cp">#endif
+</span></code></pre>
+
+
+<p><strong>intset.cpp</strong> (the implementation of IntSet):</p>
+
+<pre class="highlight"><code><span class="cp">#include "intset.h"
+</span>
+<span class="kt">void</span> <span class="n">IntSet</span><span class="o">::</span><span class="n">empty</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">card</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="n">IntSet</span><span class="o">::</span><span class="n">member</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">card</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span> <span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">IntSet</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="n">member</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">card</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">card</span> <span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">IntSet</span><span class="o">::</span><span class="n">remove</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">card</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// found v in arr
+</span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">card</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+      <span class="p">}</span>
+      <span class="n">card</span> <span class="o">--</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">IntSet</span><span class="o">::</span><span class="n">get_card</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">card</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p><strong>main.cpp</strong> (the main application file):</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include "intset.h"
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="n">IntSet</span> <span class="n">s</span><span class="p">;</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+
+  <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+  
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">member</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"yes"</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h2>To build</h2>
+
+<p>Very simple. We compile each source code file (<strong>&ldquo;.cpp&rdquo;</strong>) separately with the option <strong>-c</strong>,
+obtaining so called <a href="https://en.wikipedia.org/wiki/Object_file">object files</a> (<strong>&ldquo;.o&rdquo;</strong>):</p>
+
+<pre><code>g++ -c intset.cpp
+g++ -c main.cpp
+</code></pre>
+
+<p>After that, we link them together:</p>
+
+<pre><code>g++ -o prog intset.o main.o
+</code></pre>
+
+<p>An now can execute as usual:</p>
+
+<pre><code>./prog
+</code></pre>
+
+<h2><code>make</code> and Makefiles</h2>
+
+<p><strong>Makefile</strong> (put this files in the same folder with your source code files)</p>
+
+<pre class="highlight"><code><span class="cp"># A simple Makefile to build the program. 
+# It can be greatly improved, actually.
+</span>
+<span class="cp"># The main goal is build the executable "prog"
+</span><span class="n">all</span><span class="o">:</span> <span class="n">prog</span>
+
+<span class="cp"># To build the program prog, first who object files 
+# "intset.o" and "main.o" must be built
+</span><span class="n">prog</span><span class="o">:</span> <span class="n">intset</span><span class="p">.</span><span class="n">o</span> <span class="n">main</span><span class="p">.</span><span class="n">o</span> 
+    <span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">o</span> <span class="n">prog</span> <span class="n">intset</span><span class="p">.</span><span class="n">o</span> <span class="n">main</span><span class="p">.</span><span class="n">o</span>
+
+<span class="n">intset</span><span class="p">.</span><span class="n">o</span><span class="o">:</span> <span class="n">intset</span><span class="p">.</span><span class="n">cpp</span> <span class="n">intset</span><span class="p">.</span><span class="n">h</span>
+    <span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">c</span> <span class="n">intset</span><span class="p">.</span><span class="n">cpp</span>
+
+<span class="n">main</span><span class="p">.</span><span class="n">o</span><span class="o">:</span> <span class="n">main</span><span class="p">.</span><span class="n">cpp</span> <span class="n">intset</span><span class="p">.</span><span class="n">h</span>
+    <span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">c</span> <span class="n">main</span><span class="p">.</span><span class="n">cpp</span>
+
+
+<span class="cp"># Remove the object files and the executable "prog"
+</span><span class="n">clean</span><span class="o">:</span>
+    <span class="o">-</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">*</span><span class="p">.</span><span class="n">o</span> <span class="n">prog</span>
+</code></pre>
+
+
+<p>To build the program, type <code>make</code>:</p>
+
+<pre><code>$ make
+g++ -c intset.cpp
+g++ -c main.cpp
+g++ -o prog intset.o main.o
+</code></pre>
+
+<p>To remove the executable and the object files, type <code>make clean</code>:</p>
+
+<pre><code>$ make clean
+rm -rf *.o prog
+</code></pre>
+
+<h2>A much better Makefile</h2>
+
+<pre class="highlight"><code><span class="cp"># A more convenient Makefile to build the program
+</span>
+<span class="n">CC</span> <span class="o">=</span> <span class="n">g</span><span class="o">++</span>
+<span class="n">CFLAGS</span> <span class="o">=</span> <span class="o">-</span><span class="n">Wall</span>
+
+<span class="cp"># just list the object files
+</span><span class="n">OBJS</span> <span class="o">=</span> <span class="n">main</span><span class="p">.</span><span class="n">o</span> <span class="n">intset</span><span class="p">.</span><span class="n">o</span>
+
+<span class="n">all</span><span class="o">:</span> <span class="n">prog</span>
+
+<span class="n">prog</span><span class="o">:</span> <span class="err">$</span><span class="p">(</span><span class="n">OBJS</span><span class="p">)</span>
+    <span class="err">$</span><span class="p">(</span><span class="n">CC</span><span class="p">)</span> <span class="o">-</span><span class="n">o</span> <span class="err">$@</span> <span class="err">$</span><span class="p">(</span><span class="n">OBJS</span><span class="p">)</span>
+
+<span class="n">clean</span><span class="o">:</span>
+    <span class="o">-</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">*</span><span class="p">.</span><span class="n">o</span> <span class="n">prog</span>
+</code></pre>
+
+
+<p>Read more about writing Makefiles:</p>
+
+<ol>
+<li><a href="http://mrbook.org/blog/tutorials/make/">http://mrbook.org/blog/tutorials/make/</a></li>
+<li><a href="http://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/makefile.html">http://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/makefile.html</a></li>
+<li><a href="http://www.haverford.edu/cmsc/course-pages/usingMake.html">http://www.haverford.edu/cmsc/course-pages/usingMake.html</a></li>
+<li><a href="http://blog.semmy.me/post/30334566329/make-makefiles-and-c">http://blog.semmy.me/post/30334566329/make-makefiles-and-c</a></li>
+</ol>
+

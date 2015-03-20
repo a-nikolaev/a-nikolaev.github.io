@@ -1,0 +1,156 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 5. Array </title></p>
+
+<h3>Task 1. Counting frequencies of integers read from a file</h3>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Alexey Nikolaev
+  Description: Lab 5. Task 1. Counting frequencies of integers
+    Usage: 
+      ./a.out &lt; file
+*/</span>
+
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  
+  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">count</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">max</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">count</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"i</span><span class="se">\t</span><span class="s">count"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"-------------"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">'\t'</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 2. Histogram</h3>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Alexey Nikolaev
+  Description: Lab 5. Task 2. Histogram
+    Usage: 
+      ./a.out &lt; file
+*/</span>
+
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+
+<span class="c1">// print a bar of length n
+</span><span class="kt">void</span> <span class="n">bar</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  
+  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">count</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">max</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">count</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"i</span><span class="se">\t</span><span class="s">count"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"-------------"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">'\t'</span><span class="p">;</span>
+    <span class="n">bar</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">bar</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">'|'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 3. Histogram printed in the descending order from the most frequent to the least frequent</h3>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Alexey Nikolaev
+  Description: Lab 5. Task 2. Sorted histogram
+    Usage: 
+      ./a.out &lt; file
+*/</span>
+
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;cassert&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+
+<span class="c1">// print a bar of length n
+</span><span class="kt">void</span> <span class="n">bar</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  
+  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">count</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">max</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">count</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"i</span><span class="se">\t</span><span class="s">count"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"-------------"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="n">bool</span> <span class="n">printed</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// choose the best 
+</span>    <span class="c1">// initialize with an invalid value
+</span>    <span class="kt">int</span> <span class="n">index_best</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">printed</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">index_best</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">count</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">count</span><span class="p">[</span><span class="n">index_best</span><span class="p">]))</span> 
+        <span class="n">index_best</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// assert that index_best is a valid value
+</span>    <span class="n">assert</span><span class="p">(</span><span class="n">index_best</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">index_best</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">);</span>
+
+    <span class="n">printed</span><span class="p">[</span><span class="n">index_best</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">index_best</span> <span class="o">&lt;&lt;</span> <span class="sc">'\t'</span><span class="p">;</span>
+    <span class="n">bar</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">index_best</span><span class="p">]);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">[</span><span class="n">index_best</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">bar</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">'|'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+

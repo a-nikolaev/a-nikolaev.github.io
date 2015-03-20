@@ -1,0 +1,122 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 6. Processing images </title></p>
+
+<p>This solutions show only the main function. the other functions are the same as in
+the provided source code</p>
+
+<h3>Task 2. Cyan / Pink</h3>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">in</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">][</span><span class="n">C</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">out</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">][</span><span class="n">C</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+  
+  <span class="n">read</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+  
+  <span class="c1">// filter
+</span>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">width</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">height</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+      <span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+      <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+    
+      <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="p">{</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+      <span class="p">}</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">write</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 3. Top-right corner</h3>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">in</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">][</span><span class="n">C</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">out</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">][</span><span class="n">C</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+  
+  <span class="n">read</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+  
+  <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+
+  <span class="c1">// filter
+</span>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// x-coordinate in the original image
+</span>      <span class="kt">int</span> <span class="n">i_orig</span> <span class="o">=</span> <span class="n">width</span> <span class="o">-</span> <span class="n">w</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">i_orig</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+      <span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">i_orig</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+      <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">i_orig</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+
+      <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+      <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span>
+      <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">write</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 4. Scaling by the factor of two</h3>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">in</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">][</span><span class="n">C</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">out</span><span class="p">[</span><span class="n">W</span><span class="p">][</span><span class="n">H</span><span class="p">][</span><span class="n">C</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+  
+  <span class="n">read</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+  
+  <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+
+  <span class="c1">// filter
+</span>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// pixel (i,j) of the original image
+</span>      <span class="c1">//  must be copied at 4 coordinates of the output array:
+</span>      <span class="c1">//    (2i, 2j),    (2i + 1, j)
+</span>      <span class="c1">//    (2i, 2j+1),  (2i + 1, 2j + 1)
+</span>          
+      <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ii</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">ii</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">jj</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">jj</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">jj</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+          <span class="c1">// copy 3 color components, red, green, and blue
+</span>          <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">out</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">ii</span><span class="p">][</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span> <span class="o">+</span> <span class="n">jj</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">];</span>
+
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">write</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre>
+
+
+
