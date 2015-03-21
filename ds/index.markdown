@@ -79,7 +79,8 @@ No notes and no books allowed, you will be given a formula sheet with the equiva
 Lecture 14. Mar 20, 2015. [Intro to Number Theory](/ds/docs/lec14.pdf).        
 Reading:
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
-LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.   
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
+[HW7](/ds/docs/hw7.pdf). Due Friday, Mar 27.
 
 <!--
 
