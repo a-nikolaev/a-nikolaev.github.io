@@ -28,3 +28,10 @@ Good introduction to using SDL 2 with C++: [headerphile blog](http://headerphile
 - ...
 
 Another good tutorial: [LazyFoo's SDL2 tutorial](http://lazyfoo.net/tutorials/SDL/index.php)
+
+### A simple shoot em up game
+
+Source code: [inv.cpp](inv.cpp)
+
+![shmup](http://i.imgur.com/qJPxwC5.png)
+
