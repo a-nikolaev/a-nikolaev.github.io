@@ -1,0 +1,220 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>HW 3. Storage bookkeeping</title></p>
+
+<h1>HW 3. Storage bookkeeping</h1>
+
+<p><strong>Due Saturday, April 4, by 11:59pm (Midnight).</strong></p>
+
+<p>There is only one task and only one program to be submitted.</p>
+
+<p>The program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: HW 1. Task 1. Printing a rectangle
+  .. you may add a more detailed description if it's necessary ..
+*/</span>
+</code></pre>
+
+
+<p>If a program does not do what it&rsquo;s supposed to do (e.g. there are some bugs,
+it behaves differently, or maybe even does not compile), then
+its &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, please briefly describe what is implemented, and what is not.</p>
+
+<h3>The task.</h3>
+
+<p>We are going to implement an abstract data type <code>Storage</code>.
+It is quite similar to the set of integers <code>IntSet</code> that we developed in class.
+With the only one difference: The set of integers did not care how many times you add the same element to the set,
+it was counted only once.
+This <code>Storage</code> data type should be able to store the same element multiple times, and count how many
+copies of this element it contains.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/zWPui2T.jpg" alt="Storage" /></p>
+
+<p>Imagine that you have to keep track of the items in a certain storehouse. <strong>All items have a barcode,
+which we will call the item ID number. All identical items have identical ID numbers.</strong></p>
+
+<p>Thus the bookkeeping task reduces to keeping track of how many times the items with the different ID were put in the storage,
+and removed from it.</p>
+
+<p>We want to be able to:</p>
+
+<ul>
+<li>empty the storage</li>
+<li>ask how many different types of items are in the storage (that is, how many distinct IDs are there?)</li>
+<li>ask how many items of the kind <code>id</code> are in the storage</li>
+<li>add an item of the kind <code>id</code></li>
+<li>remove an item of the kind <code>id</code></li>
+<li>pick one item at random from the storage (if there is any)</li>
+</ul>
+
+
+<p><strong>Consider an example</strong></p>
+
+<p>After adding items with the IDs: <code>51</code>, <code>1005</code>, <code>51</code>, <code>51</code>, <code>267</code>,   <br/>
+the storage should contain:</p>
+
+<ul>
+<li>three copies of <code>51</code>,</li>
+<li>one copy of <code>1005</code>,</li>
+<li>and one copy of <code>267</code>.</li>
+</ul>
+
+
+<p><strong>Implementation</strong></p>
+
+<p>We may assume that <strong>the number if distinct IDs will be not more than 1024.</strong>
+The IDs themselves can be as large as you want, as long as they are representable
+by the type <code>int</code>.
+Also, if you want, you may assume that the total capacity (the total number of items stored)
+is also bounded by some integer. If you make this assumption, please mention it in your code.</p>
+
+<p>The abstract data type should be implemented as a class, with all member variables declared private,
+and providing the following public member functions (methods):</p>
+
+<pre class="highlight"><code>  <span class="c1">// make the storage empty
+</span>  <span class="kt">void</span> <span class="n">empty</span><span class="p">();</span>
+
+  <span class="c1">// return how many items with distinct IDs there are in the storage
+</span>  <span class="kt">int</span> <span class="n">number_of_distinct_items</span><span class="p">();</span>
+  
+  <span class="c1">// how many copies of the item `id` are stored
+</span>  <span class="kt">int</span> <span class="n">count</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+
+  <span class="c1">// add an item `id`
+</span>  <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+
+  <span class="c1">// remove an item `id`
+</span>  <span class="kt">void</span> <span class="n">remove</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+
+  <span class="c1">// if the storage is empty, return false,
+</span>  <span class="c1">// otherwise return true, and update the variable `id`
+</span>  <span class="c1">// with the ID of some item stored.
+</span>  <span class="n">bool</span> <span class="n">pick_an_item</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">);</span>
+</code></pre>
+
+
+<p>The last function is important to be able to iterate through the storage, you will see how it is used
+in the next section, where we test the implementation.</p>
+
+<h3>Testing your implementation</h3>
+
+<p>The <code>main</code> function should test the class <code>Storage</code>, verifying that the implementation is correct,
+that the items are added and removed correctly, and nothing gets lost.</p>
+
+<p>Choose yourself, what properties can be tested, and how to implement such tests.</p>
+
+<p>Some possible properties to test are:</p>
+
+<ul>
+<li>Adding an element of the type <code>id</code>, always increases their count by one.</li>
+<li>After adding <em>N</em> items of the type <code>id</code>, the storage contains exactly <em>N</em> of them.</li>
+<li>Trying to remove an item that is not in the storage, does not remove some other item instead (by mistake).</li>
+<li>Trying to remove from an empty storage does not cause an error.</li>
+<li>Picking an arbitrary item from the storage really gives you an item that is present in the storage.</li>
+<li>Trying to add too many items (beyond the capacity of the <code>Storage</code> does not cause an error).</li>
+</ul>
+
+
+<h3>Test 1</h3>
+
+<p>Here is one, quite complex test you may use, although you don&rsquo;t have to.</p>
+
+<p><strong>Note that just one single test is not enough, you have to implement some other test yourself</strong></p>
+
+<p>This test:</p>
+
+<ul>
+<li><p>First, fills the storage with 20 random items. Some of them can be identical.</p></li>
+<li><p>Then, using the function <code>pick_an_item</code>, we pick an item and remove all its copies from the storage.
+We also print how many copies of that item were there.
+We keep removing the items until the storage is empty.</p></li>
+<li><p>In the end, we assert that the total number of items removed from the storage is exactly equal to the number
+of items originally added in the storage.</p></li>
+</ul>
+
+
+<pre class="highlight"><code><span class="kt">void</span> <span class="nf">test1</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Storage</span> <span class="n">storage</span><span class="p">;</span>
+  <span class="n">storage</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+
+  <span class="c1">// Put m random items in the storage
+</span>  <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Adding "</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="s">" items: "</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="n">storage</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// Now, empty the storage iteratively, printing out 
+</span>  <span class="c1">// how many items of each kind was there:
+</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"They are:"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">total_removed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">storage</span><span class="p">.</span><span class="n">pick_an_item</span><span class="p">(</span><span class="n">id</span><span class="p">))</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">storage</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+      <span class="k">while</span><span class="p">(</span><span class="n">storage</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">storage</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+        <span class="n">total_removed</span> <span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="s">" : "</span> <span class="o">&lt;&lt;</span> <span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+    <span class="p">}</span>
+    <span class="k">else</span> 
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Total of "</span> <span class="o">&lt;&lt;</span> <span class="n">total_removed</span> <span class="o">&lt;&lt;</span> <span class="s">" items "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">assert</span> <span class="p">(</span><span class="n">total_removed</span> <span class="o">==</span> <span class="n">m</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Test 1"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"======"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">test1</span><span class="p">();</span> 
+
+<span class="p">}</span>
+</code></pre>
+
+
+
+
+<pre class = "terminal"><code>
+Test 1
+======
+
+Adding 20 items: 34 13 13 34 35 32 32 37 10 12 24 10 29 13 21 33 31 24 15 22 
+
+They are:
+
+35 : 1
+29 : 1
+34 : 2
+15 : 1
+12 : 1
+32 : 2
+31 : 1
+10 : 2
+37 : 1
+33 : 1
+24 : 2
+21 : 1
+22 : 1
+13 : 3
+
+Total of 20 items 
+
+</code></pre>
+
