@@ -58,6 +58,12 @@ Lab 6. [Processing images](lab/6/). Please read this intro to this lab in advanc
 Lecture 13. Mar 20, 2015. Classes continued. Separate compilation. [[Programs](lec/13/)]     
 Reading: 6.2, 11.1.     
 
+Lecture 14. Mar 24, 2015. Streams and file I/O.    
+Reading 12.1, 12.2.    
+Lab 7. [Abstract data types. Implementation and testing.](lab/7/). 
+
+[HW3](hw/3/). Due Saturday, Apr 4, by 11:59pm (Midnight).    
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.

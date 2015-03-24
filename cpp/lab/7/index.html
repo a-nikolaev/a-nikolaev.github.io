@@ -1,0 +1,112 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 7. Abstract data types. Implementation and testing </title></p>
+
+<h1>Lab 7. Abstract data types. Implementation and testing.</h1>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h2>Scheduler - intro.</h2>
+
+<p>You work at a certain software development company, and the management is sure that
+the programmers are not used optimally. So, they devised a program to help scheduling
+when the programmers should work, and for how long.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/qwRCVX9.jpg" alt="mngmnt" /></p>
+
+<p>Of course, they devised the thing, and you have to implement it.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/zuv9QEb.png" alt="24 time slots" /></p>
+
+<ul>
+<li>the program helps to schedule one working day.</li>
+<li>A day is divided into 24 one-hour long time slots.</li>
+<li>Only one employee can be assigned to work per time slot.</li>
+<li>According to the local labor laws, an employee cannot be scheduled
+to work for more than 12 hours in total per day (for example, two
+disjoint intervals of 7 hours are prohibited, because 7+7 > 12).</li>
+</ul>
+
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/aPjgbmn.jpg" alt="programmers" /></p>
+
+<h3>The interface of the data type Scheduler</h3>
+
+<p>You are provided with the specification, what the scheduler is supposed to do.
+In addition to the specification, you are provided with a whole bunch
+of unit test that will test the functions you implement.</p>
+
+<p style="text-align:center;"> >>> Download full source code: <a href="adt.cpp">adt.cpp</a> &lt;&lt;&lt;</p>
+
+<p>The class declaration looks like this (the main function and the tests are not included here
+to keep it short):</p>
+
+<pre class="highlight"><code><span class="c1">// The employees at a certain software development company
+</span><span class="k">enum</span> <span class="n">Programmer</span> <span class="p">{</span>
+    <span class="n">Alice</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Bob</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">Carol</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">Dave</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">Eve</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">Frank</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">Grace</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">UNASSIGNED</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">24</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Scheduler</span> <span class="p">{</span>
+    <span class="n">Programmer</span> <span class="n">timetable</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="k">public</span><span class="o">:</span>
+      <span class="c1">// Sets the schedule to UNASSIGNED for all time slots
+</span>    <span class="kt">void</span> <span class="n">init</span><span class="p">();</span>
+
+      <span class="c1">// Returns who is assigned to work in the time slot t.
+</span>      <span class="c1">// If t is out of bounds [0,N-1], return UNASSIGNED
+</span>    <span class="n">Programmer</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">t</span><span class="p">);</span>
+
+      <span class="c1">// Assigns the programmer to the time interval if the entire interval is vacant.
+</span>      <span class="c1">// The interval must have positive duration (duration &gt; 0).
+</span>      <span class="c1">// Returns true if succeeds, otherwise returns false.
+</span>    <span class="n">bool</span> <span class="n">assign</span><span class="p">(</span><span class="n">Programmer</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">duration</span><span class="p">);</span>
+
+      <span class="c1">// Cancel all time assignments for the Programmer `name`.
+</span>    <span class="kt">void</span> <span class="n">cancel</span><span class="p">(</span><span class="n">Programmer</span> <span class="n">name</span><span class="p">);</span>
+
+      <span class="c1">// Searches for a vacant time interval of length `duration`,
+</span>      <span class="c1">// returns the starting time if it finds such an interval,
+</span>      <span class="c1">// otherwise returns NOT_FOUND.
+</span>    <span class="kt">int</span> <span class="n">find_interval</span><span class="p">(</span><span class="kt">int</span> <span class="n">duration</span><span class="p">);</span>
+
+<span class="p">};</span>
+</code></pre>
+
+
+<h3>Task 1. Implement the abstract data type Scheduler.</h3>
+
+<p>Implement all public member functions of the class <code>Scheduler</code>.
+Check the unit tests, make sure that your implementation passes all of them.</p>
+
+<h3>Task 2. Write your own unit test.</h3>
+
+<p>After your class is ready and passes the tests, come up with a new additional
+unit test for one of the member functions of the class and write the code for it.
+Write a short comment about what property your test is checking.</p>
