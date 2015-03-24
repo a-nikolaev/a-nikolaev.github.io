@@ -15,7 +15,7 @@ Also, you will have to write a 5-6 page report, describing the problem,
 your solution, and the results obtained.
 
 Before you start working on the topic, I have to approve it. 
-The topic should be chosen **before the Novermber 15**.
+The topic should be chosen **before April 17**.
 
 Report you progress regularly (for example, once a week), so I can guide you, and you don't waste time.
 
@@ -35,17 +35,12 @@ Try to find something you are interested in, and we will find a way to add some 
 ### New possible topics
 1. A simple propositional [satisfiability](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) solver. 
 (A program that checks whether the given compound proposition is satisfiable or not).
-
-1. A program that is playing the game [2048](http://gabrielecirulli.github.io/2048/). 
-Some discussion can be found [here](http://stackoverflow.com/questions/22342854/what-is-the-optimal-algorithm-for-the-game-2048). 
-
-1. [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding).
-
-1. Random graphs. 
-  Experimental comparison of [Erdos-Renyi](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) and
-  [Barabasi–Albert](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model) random graph models.
-
+1. Implementing [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding).
 1. Graph [coloring](https://en.wikipedia.org/wiki/Graph_coloring).
+1. [Friendship paradox](https://en.wikipedia.org/wiki/Friendship_paradox). Its verification using real social network data.
+1. Programming fractals, [L-systems](https://en.wikipedia.org/wiki/L-system).
+1. Experimental analysis of the running time complexity of various standard algorithms.
+1. Computing probabilities in card games.
 
 I will add more topics, but, maybe you already know something
 interesting you would like to work on.
@@ -68,4 +63,11 @@ interesting you would like to work on.
 1. Connectivity of random graphs. Giant connected component.
 1. Generating large prime numbers.
 1. A probabilistic strategy for solving the game Minesweeper.
+1. Random graphs. 
+  Experimental comparison of [Erdos-Renyi](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) and
+  [Barabasi–Albert](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model) random graph models.
+1. 2048: The best strategy to play the game
+1. Dijkstra's shortest path algorithm
+1. Breaking the [Substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) using frequency analysis.
+1. [De Bruijn Graphs](https://en.wikipedia.org/wiki/De_Bruijn_graph) and Genome Assembly
 
