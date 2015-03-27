@@ -62,6 +62,11 @@ Lecture 14. Mar 24, 2015. Streams and file I/O.
 Reading 12.1, 12.2.    
 Lab 7. [Abstract data types. Implementation and testing.](lab/7/). 
 
+Lecture 15. Mar 27, 2015. Constructors.    
+Reading: 7.1, 7.2.    
+After the lecture, I'm going to show some other useful features of SDL, primarily focusing on
+loading and using textures (graphics files). Talking more about time and user input is another option.
+
 [HW3](hw/3/). Due Saturday, Apr 4, by 11:59pm (Midnight).    
 
 ## General information
