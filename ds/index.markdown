@@ -90,6 +90,7 @@ Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in
 
 Lecture 16. Mar 27, 2015. [RSA. The fundamental theorem of arithmetic](/ds/docs/lec16.pdf).    
 Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
+[HW8](/ds/docs/hw8.pdf). Due Friday, Apr 17.
 
 [Possible Project Topics](/ds/topics.html).    
 
