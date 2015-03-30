@@ -1,0 +1,157 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 8. File IO </title></p>
+
+<h1>Lab 8. File IO. Reading and processing biological sequences.</h1>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h2>Reading protein sequences from a file</h2>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/0BoD85u.png" alt="Protein" /></p>
+
+<p>A <a href="https://en.wikipedia.org/wiki/Protein">protein molecule</a> is a folded chain of amino acids.
+There are 24 possible types of amino acids, so the sequence can be easily encoded as a string of letters,
+for example:</p>
+
+<pre><code>LVHQRTELVNALRAVLYEFGLVVPQGIAHIRHIEAMLDEAVLPEAVKQECLDLLRQISEQSVRIDVRTKK
+</code></pre>
+
+<p>Each letter represents a certain type of amino acid:  <br/>
+<strong>L</strong> = Leucine, <strong>V</strong> = Valine, <strong>H</strong> = Histidine, <strong>Q</strong> = Glutamine, <strong>R</strong> = Arginine, and so on.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/OsP1dLS.png" alt="Protein structure" /></p>
+
+<p>In bioinformatics, <a href="https://en.wikipedia.org/wiki/FASTA_format">FASTA format</a>
+is a text-based format for representing either nucleotide sequences or amino acid sequences,
+in which nucleotides or amino acids are represented using single-letter codes.</p>
+
+<pre><code>&gt;gi|384117544|ref|YP_005479417.1| transposase [Acetobacter pasteurianus]
+MVVGRNDCAKGRQMKDTVIGVDLAKNIFQVHGASRAGEVMFRKKLRRQQFMQFMATQPPALVVLEACGSA
+HYWARELAGAGHEVRLIAPQYVKPFVKRQKNDAADAEAIVIAARQPEMRFVEPRTEAQQARGVLFRARQR
+LVHQRTELVNALRAVLYEFGLVVPQGIAHIRHIEAMLDEAVLPEAVKQECLDLLRQISEQSVRIDVRTKK
+IRMLAQESENTCRLQSMPGVGPLTALAIEAFAPDLQSFRRGRDFAAWLGLVPRQFSSGGKERLGKISKAG
+QADIRRLLIMGAMTQVNWASRKAPAPGSWLARMLARKPRMLVAIALANRMARAIWAMATKQEDYRDPALS
+VAA
+</code></pre>
+
+<p>A sequence in FASTA format begins with a single-line description, followed by lines of sequence data.
+The description line is distinguished from the sequence data by a greater-than (<code>&gt;</code>) symbol in the first column.
+The word following the <code>&gt;</code> symbol is the identifier of the sequence, and the rest of the line is the description (both are optional).
+There should be no space between the <code>&gt;</code> and the first letter of the identifier.
+It is recommended (but not required) that all lines of text be shorter than 80 characters.</p>
+
+<p>The sequence ends if another line starting with a <code>&gt;</code> appears; this indicates the start of another sequence.</p>
+
+<pre><code>&gt;first
+MYQAINPCPQSWYGSPQLEREIVCKMSGAPHYPNYYPVHPNALGGAWFDTSLNARSLTTT
+PSLTTCTPPSLAACTPPTSLGMVDSPPHINPPRRIGTLCFDFGSAKSPQRCECVASDRPS
+TTSNTAPDTYRLLITNSKTRKNNYGTCRLEPLTYGI
+&gt;second
+MNAKYDTDQGVGRMLFLGTIGLAVVVGGLMAYGYYYDGKTPSSGTSFHTASPSFSSRYRY
+&gt;third
+MRYTVLIALQGALLLLLLIDDGQGQSPYPYPGMPCNSSRQCGLGTCVHSRCAHCSSDGTL
+CSPEDPTMVWPCCPESSCQLVVGLPSLVNHYNCLPNQCTDSSQCPGGFGCMTRRSKCELC
+KADGEACNSPYLDWRKDKECCSGYCHTEARGLEGVCIDPKKIFCTPKNPWQLAPYPPSYH
+QPTTLRPPTSLYDSWLMSGFLVKSTTAPSTQEEEDDY
+</code></pre>
+
+<h2>Download data:</h2>
+
+<p style="text-align:center;"> Download a larger dataset: <a href="main.fasta">main.fasta</a></p>
+
+<p style="text-align:center;"> Download a smaller dataset for testing: <a href="testing.fasta">testing.fasta</a></p>
+
+<p>More FASTA files can be downloaded, for example, from <a href="ftp://ftp.ncbi.nih.gov/genomes/Bacteria/">National Center for Biotechnology Information</a>.
+Look for files with an extension &ldquo;.faa&rdquo; (FASTA amino acid).</p>
+
+<h2>Assignments</h2>
+
+<h3>Preliminary task. Reading a file (don&rsquo;t submit this program).</h3>
+
+<p>Read the file &ldquo;testing.fasta&rdquo; using a file stream object <code>ifstream</code>
+and print its contents on the screen.</p>
+
+<p><strong><code>ifstream</code> usage example:</strong></p>
+
+<pre class="highlight"><code><span class="n">ifstream</span> <span class="n">fin</span><span class="p">;</span>
+<span class="n">fin</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"myfile.txt"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">fin</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"File does not exist"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="n">fin</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 1. Printing certain chosen sequences from the file.</h3>
+
+<p>Read the file &ldquo;testing.fasta&rdquo; using a file stream object <code>ifstream</code>.</p>
+
+<p>Print out the 3rd and the 7th sequences from the file
+including both the description lines and the sequence data.</p>
+
+<p>(If you want, you may assume that the greater-than <code>&gt;</code> symbol appears only at the beginning
+of every description line, and not anywhere else).</p>
+
+<h3>Task 2. Finding the longest stretch composed of a single amino acid type.</h3>
+
+<p>The program should read the input file searching for the longest contiguous stretch of a single amino acid type
+(one letter repeated many times).</p>
+
+<p><strong>Example:</strong>
+when reading the file</p>
+
+<pre><code>&gt;some_protein
+LVHAHILPEAVKQECLDLLRQISEQSVRAAAAAAA
+AAAAAALDFAAWLGLLLLQFSSGGKERLGKISKAG
+&gt;another_one
+CSPEDPTMVWPCCPESSCQLVVGLPSLVNHYNCLP
+NQCTDSSQCPGGFGCMTRRSKCELC
+</code></pre>
+
+<p>the longest stretch would be <code>AAAAAAAAAAAAA</code>, that is <code>A</code> appears 13 times in a row.
+Observe that it can span multiple lines.
+The program should print out:</p>
+
+<pre><code>A x 13: AAAAAAAAAAAAA
+</code></pre>
+
+<p><strong>What to do with the program:</strong></p>
+
+<ul>
+<li>Run the program on &ldquo;testing.fasta&rdquo; and &ldquo;main.fasta&rdquo;.</li>
+<li>On &ldquo;testing.fasta&rdquo;, the output should be <code>L x 6: LLLLLL</code>.
+You can make your own input files for additional testing.</li>
+<li>What is your result on &ldquo;main.fasta&rdquo;?</li>
+</ul>
+
+
+<h3>Task 3. TBA.</h3>

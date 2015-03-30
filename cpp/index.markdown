@@ -67,6 +67,10 @@ Reading: 7.1, 7.2.
 After the lecture, I'm going to show some other useful features of SDL, primarily focusing on
 loading and using textures (graphics files). Talking more about time and user input is another option.
 
+Lecture 16. Mar 31, 2015. More about classes. Static members. Vectors.     
+Reading: 7.2. 7.3.    
+Lab 8. [File IO. Reading and processing biological sequences.](lab/8/). 
+
 [HW3](hw/3/). Due Saturday, Apr 4, by 11:59pm (Midnight).    
 
 ## General information
