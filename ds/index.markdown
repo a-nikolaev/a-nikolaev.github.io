@@ -92,6 +92,9 @@ Lecture 16. Mar 27, 2015. [RSA. The fundamental theorem of arithmetic](/ds/docs/
 Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
 [HW8](/ds/docs/hw8.pdf). Due Friday, Apr 17.
 
+Lecture 17. Mar 31, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
+Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
