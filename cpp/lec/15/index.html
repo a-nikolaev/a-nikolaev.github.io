@@ -1,0 +1,224 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> Constructors </title></p>
+
+<h1>Constructors</h1>
+
+<h2>Defining and using constructors</h2>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+
+<span class="k">class</span> <span class="nc">Robot</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>   <span class="c1">// coordinate
+</span>  <span class="n">bool</span> <span class="n">ok</span><span class="p">;</span> <span class="c1">// true = in a working condition
+</span><span class="nl">public:</span>
+
+  <span class="c1">// Constructors:
+</span>  <span class="n">Robot</span><span class="p">();</span> <span class="c1">// the default constructor
+</span>  <span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">);</span> <span class="c1">// a constructor with one parameter
+</span>  <span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">,</span> <span class="n">bool</span> <span class="n">status</span><span class="p">);</span> <span class="c1">// with two parameters
+</span>
+  <span class="kt">int</span> <span class="n">get_x</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">Robot</span> <span class="n">r1</span><span class="p">;</span> <span class="c1">// the default constructor gets called
+</span>
+  <span class="n">Robot</span> <span class="n">r2</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+  
+  <span class="n">Robot</span> <span class="n">r3</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+  <span class="n">Robot</span> <span class="n">r4</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+
+  <span class="n">Robot</span> <span class="n">r5</span><span class="p">;</span>
+  <span class="n">r5</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="mi">17</span><span class="p">);</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"r1 is at "</span> <span class="o">&lt;&lt;</span> <span class="n">r1</span><span class="p">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"r2 is at "</span> <span class="o">&lt;&lt;</span> <span class="n">r2</span><span class="p">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"r3 is at "</span> <span class="o">&lt;&lt;</span> <span class="n">r3</span><span class="p">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"r4 is at "</span> <span class="o">&lt;&lt;</span> <span class="n">r4</span><span class="p">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"r5 is at "</span> <span class="o">&lt;&lt;</span> <span class="n">r5</span><span class="p">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/************** IMPLEMENTATION ***************/</span>
+
+<span class="n">Robot</span><span class="o">::</span><span class="n">Robot</span><span class="p">()</span> <span class="o">:</span> <span class="n">x</span><span class="p">(</span><span class="mi">777</span><span class="p">),</span> <span class="n">ok</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">Robot</span><span class="o">::</span><span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">coord</span><span class="p">;</span>
+  <span class="n">ok</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Robot</span><span class="o">::</span><span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">,</span> <span class="n">bool</span> <span class="n">status</span><span class="p">)</span> <span class="o">:</span> <span class="n">x</span><span class="p">(</span><span class="n">coord</span><span class="p">),</span> <span class="n">ok</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">Robot</span><span class="o">::</span><span class="n">get_x</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<pre class = "terminal"><code>r1 is at 777
+r2 is at 15
+r3 is at 0
+r4 is at 16
+r5 is at 17
+</code></pre>
+
+
+<h2>The program about robots.</h2>
+
+<p>Notice that there are three constructors. The default constuctor is called
+when you just declare an array of Robots. Then, we explicitly
+call another constructor to individually initialize each of the robots.</p>
+
+<p>Three constructor definitions use different approaches to initializing the member variables:
+it can be done in the function body or before it, in the latter case the body itself can be empty,
+or you may add some extra comutation there.</p>
+
+<p>There is one const member function <code>accept</code> that is called
+by the function <code>find_coord</code>. Since this function takes the
+Robot r as a constant reference, it can call only constant member functions of the class Robot.
+So, it could call the method <code>accept</code>, but, for example, would not be able to call <code>move_right</code> or <code>disable</code>.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">enum</span> <span class="n">Ground</span> <span class="p">{</span><span class="n">FLOOR</span><span class="p">,</span> <span class="n">TRAP</span><span class="p">};</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">SIZE</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">NUM</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robot</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>   <span class="c1">// coordinate
+</span>  <span class="n">bool</span> <span class="n">ok</span><span class="p">;</span> <span class="c1">// true = in a working condition
+</span><span class="nl">public:</span>
+
+  <span class="c1">// Constructors:
+</span>  <span class="n">Robot</span><span class="p">();</span> <span class="c1">// the default constructor
+</span>  <span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">);</span> <span class="c1">// a constructor with one parameter
+</span>  <span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">,</span> <span class="n">bool</span> <span class="n">status</span><span class="p">);</span> <span class="c1">// with two parameters
+</span>
+  <span class="kt">int</span> <span class="n">get_x</span><span class="p">();</span>
+  <span class="kt">void</span> <span class="n">move_left</span><span class="p">();</span>
+  <span class="kt">void</span> <span class="n">move_right</span><span class="p">();</span>
+  <span class="n">bool</span> <span class="n">accept</span><span class="p">(</span><span class="n">Ground</span> <span class="n">g</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span> <span class="c1">// constant member function
+</span>  <span class="kt">void</span> <span class="n">disable</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="c1">// finds a suitable position in the map
+// this function is gets the parameter Robot r by reference
+// passed as constant, so we cannot change it
+</span><span class="kt">int</span> <span class="n">find_coord</span><span class="p">(</span><span class="n">Ground</span> <span class="n">map</span><span class="p">[</span><span class="n">SIZE</span><span class="p">],</span> <span class="k">const</span> <span class="n">Robot</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+
+  <span class="n">Ground</span> <span class="n">map</span><span class="p">[</span><span class="n">SIZE</span><span class="p">];</span>
+  <span class="c1">// make a 1D map that looks like this:
+</span>  <span class="c1">//
+</span>  <span class="c1">//  %..................%
+</span>  <span class="c1">//
+</span>  <span class="c1">//  wher % = trap, and . = floor
+</span>  <span class="c1">//
+</span>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">map</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">FLOOR</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">map</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">TRAP</span><span class="p">;</span>
+  <span class="n">map</span><span class="p">[</span><span class="n">SIZE</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">TRAP</span><span class="p">;</span>
+
+  <span class="n">Robot</span> <span class="n">rob</span><span class="p">[</span><span class="n">NUM</span><span class="p">];</span> <span class="c1">// default constructor gets executed here
+</span>                  <span class="c1">// for each element of the array
+</span>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">NUM</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// call another constructor here to individually initialize
+</span>    <span class="c1">// each of the robots
+</span>    <span class="n">rob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="n">find_coord</span><span class="p">(</span><span class="n">map</span><span class="p">,</span> <span class="n">rob</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// let the robots move to the right for 100 steps,
+</span>  <span class="c1">// eventually all of them get trapped and deactivated.
+</span>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">t</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">rob</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">move_right</span><span class="p">();</span>
+      <span class="n">Ground</span> <span class="n">g</span> <span class="o">=</span> <span class="n">map</span><span class="p">[</span><span class="n">rob</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">get_x</span><span class="p">()];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">rob</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">accept</span><span class="p">(</span><span class="n">g</span><span class="p">))</span> 
+        <span class="n">rob</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">disable</span><span class="p">();</span>
+    <span class="p">}</span>
+
+  <span class="p">}</span>
+ 
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">NUM</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rob</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">get_x</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+
+<span class="cm">/************** IMPLEMENTATION ***************/</span>
+
+<span class="n">Robot</span><span class="o">::</span><span class="n">Robot</span><span class="p">()</span> <span class="o">:</span> <span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">ok</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">Robot</span><span class="o">::</span><span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">coord</span><span class="p">;</span>
+  <span class="n">ok</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Robot</span><span class="o">::</span><span class="n">Robot</span><span class="p">(</span><span class="kt">int</span> <span class="n">coord</span><span class="p">,</span> <span class="n">bool</span> <span class="n">status</span><span class="p">)</span> <span class="o">:</span> <span class="n">x</span><span class="p">(</span><span class="n">coord</span><span class="p">),</span> <span class="n">ok</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="n">Robot</span><span class="o">::</span><span class="n">accept</span><span class="p">(</span><span class="n">Ground</span> <span class="n">g</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">g</span> <span class="o">==</span> <span class="n">FLOOR</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">Robot</span><span class="o">::</span><span class="n">get_x</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Robot</span><span class="o">::</span><span class="n">move_left</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">ok</span><span class="p">)</span> <span class="n">x</span> <span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Robot</span><span class="o">::</span><span class="n">move_right</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">ok</span><span class="p">)</span> <span class="n">x</span> <span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Robot</span><span class="o">::</span><span class="n">disable</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">ok</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Finding a suitable location that is accepted by the robot,
+// using rejection sampling
+</span><span class="kt">int</span> <span class="n">find_coord</span><span class="p">(</span><span class="n">Ground</span> <span class="n">map</span><span class="p">[</span><span class="n">SIZE</span><span class="p">],</span> <span class="k">const</span> <span class="n">Robot</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">SIZE</span><span class="p">;</span>
+    <span class="c1">// we can call only constant methods of the class Robot
+</span>    <span class="c1">// such as the member function `accept`,
+</span>    <span class="c1">// we would not be able to call `move_left` for example.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+
+
+<pre class = "terminal"><code>19 19 19 19 19 
+</code></pre>
+
+
+

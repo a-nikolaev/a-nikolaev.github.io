@@ -1,0 +1,182 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> Streams and file I/O </title></p>
+
+<h1>Streams and file I/O</h1>
+
+<h2>Reading from a file and writing to another file</h2>
+
+<p>Read three integers from the file &ldquo;input.dat&rdquo;, and write them squared
+into the file &ldquo;output.dat&rdquo;</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>
+
+  <span class="c1">// input stream
+</span>  <span class="n">ifstream</span> <span class="n">fin</span><span class="p">;</span>
+  <span class="n">fin</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"input.dat"</span><span class="p">);</span>
+  
+  <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+  <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">;</span>
+  <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">z</span><span class="p">;</span>
+ 
+  <span class="n">fin</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+  <span class="c1">// output stream
+</span>  <span class="n">ofstream</span> <span class="n">fout</span><span class="p">;</span>
+  <span class="n">fout</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"output.dat"</span><span class="p">);</span>
+
+  <span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">fout</span> <span class="o">&lt;&lt;</span> <span class="n">z</span><span class="o">*</span><span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="n">fout</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h2>Reading the entire file using a <code>while</code> loop</h2>
+
+<p>The loop condition fails when you reach the end of file, when nothing could be read.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;fstream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  
+  <span class="c1">// input stream
+</span>  <span class="n">ifstream</span> <span class="n">fin</span><span class="p">;</span>
+  <span class="n">fin</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"input.dat"</span><span class="p">);</span>
+  
+  <span class="c1">// check that the file was opened successfully
+</span>  <span class="c1">// otherwise exit
+</span>  <span class="k">if</span> <span class="p">(</span><span class="n">fin</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"File not found!"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">while</span><span class="p">(</span> <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"i = "</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="n">fin</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre>
+
+
+<h2>Reading all characters one by one, without skipping whitespace</h2>
+
+<p>We can use the <code>ifstream</code> member function <code>get</code>.</p>
+
+<p>The following program prints out the contents of the file &ldquo;p4.cpp&rdquo; on the screen,
+preserving all the original whitespace characters:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;fstream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  
+  <span class="c1">// input stream
+</span>  <span class="n">ifstream</span> <span class="n">fin</span><span class="p">;</span>
+  <span class="n">fin</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"p4.cpp"</span><span class="p">);</span>
+  
+  <span class="c1">// check that the file was opened successfully
+</span>  <span class="c1">// otherwise exit
+</span>  <span class="k">if</span> <span class="p">(</span><span class="n">fin</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"File not found!"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+
+  <span class="k">while</span><span class="p">(</span> <span class="n">fin</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">fin</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre>
+
+
+<h2>Formatting</h2>
+
+<p>Please refer to the book for more information on stream output formatting.</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;fstream&gt;
+</span>
+<span class="cp">#include &lt;iomanip&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">print_table</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kt">double</span> <span class="n">data</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.22</span><span class="p">,</span> <span class="mf">0.000003333</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="mf">11.0</span><span class="p">,</span> <span class="mf">2.222222</span><span class="p">,</span> <span class="mf">0.000000003333</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="mf">111.0</span><span class="p">,</span> <span class="mf">2.22222222222</span><span class="p">,</span> <span class="mf">0.00000000003333</span> <span class="p">},</span>
+  <span class="p">};</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">cout</span><span class="p">.</span><span class="n">width</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">cout</span><span class="p">.</span><span class="n">setf</span><span class="p">(</span><span class="n">ios</span><span class="o">::</span><span class="n">scientific</span><span class="p">);</span>
+  <span class="n">print_table</span><span class="p">();</span>
+
+  <span class="n">cout</span><span class="p">.</span><span class="n">unsetf</span><span class="p">(</span><span class="n">ios</span><span class="o">::</span><span class="n">scientific</span><span class="p">);</span>
+  <span class="n">print_table</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>
+1.000000e+00 2.220000e+00 3.333000e-06 
+1.100000e+01 2.222222e+00 3.333000e-09 
+1.110000e+02 2.222222e+00 3.333000e-11 
+
+
+         1       2.22  3.333e-06 
+        11    2.22222  3.333e-09 
+       111    2.22222  3.333e-11 
+
+</code></pre>
+

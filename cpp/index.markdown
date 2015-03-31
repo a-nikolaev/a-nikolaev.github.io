@@ -58,16 +58,16 @@ Lab 6. [Processing images](lab/6/). Please read this intro to this lab in advanc
 Lecture 13. Mar 20, 2015. Classes continued. Separate compilation. [[Programs](lec/13/)]     
 Reading: 6.2, 11.1.     
 
-Lecture 14. Mar 24, 2015. Streams and file I/O.    
+Lecture 14. Mar 24, 2015. Streams and file I/O. [[Programs](lec/14/)]     
 Reading 12.1, 12.2.    
 Lab 7. [Abstract data types. Implementation and testing.](lab/7/). 
 
-Lecture 15. Mar 27, 2015. Constructors.    
+Lecture 15. Mar 27, 2015. Constructors. [[Programs](lec/15/)]   
 Reading: 7.1, 7.2.    
 After the lecture, I'm going to show some other useful features of SDL, primarily focusing on
 loading and using textures (graphics files). Talking more about time and user input is another option.
 
-Lecture 16. Mar 31, 2015. More about classes. Static members. Vectors.     
+Lecture 16. Mar 31, 2015. Constructors and nested classes. Static members. Vectors.     
 Reading: 7.2. 7.3.    
 Lab 8. [File IO. Reading and processing biological sequences.](lab/8/). 
 

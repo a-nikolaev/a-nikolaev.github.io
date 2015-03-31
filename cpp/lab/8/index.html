@@ -64,7 +64,8 @@ The word following the <code>&gt;</code> symbol is the identifier of the sequenc
 There should be no space between the <code>&gt;</code> and the first letter of the identifier.
 It is recommended (but not required) that all lines of text be shorter than 80 characters.</p>
 
-<p>The sequence ends if another line starting with a <code>&gt;</code> appears; this indicates the start of another sequence.</p>
+<p>The sequence ends if another line starting with a <code>&gt;</code> appears; this indicates the start of another sequence.
+So multiple sequences can be stored in one file:</p>
 
 <pre><code>&gt;first
 MYQAINPCPQSWYGSPQLEREIVCKMSGAPHYPNYYPVHPNALGGAWFDTSLNARSLTTT
@@ -154,4 +155,57 @@ You can make your own input files for additional testing.</li>
 </ul>
 
 
-<h3>Task 3. TBA.</h3>
+<p>Briefly report your findings in the comment to the program.</p>
+
+<h3>Task 3. Searching for a specific substring in the file.</h3>
+
+<p>The task is to read the file &ldquo;main.fasta&rdquo;, searching for a sequence that contains the substring &ldquo;CSCI&rdquo; in it
+(the amino acids: C, S, C, I).</p>
+
+<p>Since we did not learn about strings yet, you may use an array of four characters:</p>
+
+<pre class="highlight"><code><span class="kt">char</span> <span class="n">query</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'C'</span><span class="p">,</span> <span class="sc">'S'</span><span class="p">,</span> <span class="sc">'C'</span><span class="p">,</span> <span class="sc">'I'</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</code></pre>
+
+
+<p>The task is to find an amino acid sequence that contains the substring &ldquo;CSCI&rdquo;
+and print it out. Since you have to print the entire sequence, including its
+description, you may want to use the member functions
+<a href="http://www.cplusplus.com/reference/istream/istream/seekg/">seekg</a>
+and <a href="http://www.cplusplus.com/reference/istream/istream/tellg/">tellg</a> of <code>ifstream</code>.
+The first function lets you set the position of where you are reading from the file.
+And the second lets you find what your current position in the file is (it is simply the number of bytes from the beginning of the file).</p>
+
+<p>So, when used together, the functions let you remember your current position in the file,
+and return to it later, if it is necessary.</p>
+
+<p>It works as follows:</p>
+
+<pre class="highlight"><code><span class="n">ifstream</span> <span class="n">fin</span><span class="p">;</span>
+<span class="n">fin</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"file"</span><span class="p">);</span>
+
+<span class="c1">// remember your current position in the file
+</span><span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">fin</span><span class="p">.</span><span class="n">tellg</span><span class="p">();</span>
+
+<span class="c1">// read something from the file 
+</span><span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">;</span> 
+<span class="p">...</span>
+
+<span class="c1">// return to the remembered position:
+</span><span class="n">fin</span><span class="p">.</span><span class="n">seekg</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+</code></pre>
+
+
+<p><strong>Hint:</strong> So, you may remember the position of the beginning of the sequence (<code>&gt;</code>), and return to it
+if you see that the sequence contains &ldquo;CSCI&rdquo;.</p>
+
+<p>The output should look like:</p>
+
+<pre><code>&gt;sp|A1C874|3HAO2_ASPCL 3-hydroxyanthranilate 3,4-dioxygenase 2 OS=Aspergillus clavatus (strain ATCC 1007 / CBS 513.65 / DSM 816 / NCTC 3887 / NRRL 1) GN=bna1-2 PE=3 SV=2
+MNPMPLSPLFFATWLAENEDQLRPPVNNYCLYQGNDFILMAVGGPNERNDYHVNETEVCL
+QPSWCSREANEQEWFYQVKGDMLLRVVENNAFRDIPIKEGEMFLLPGNTPHNPVRFKDTI
+GLVMERQRPAGSRDRLRWYCTKGDHASPTIIREEVFHCSDLGTQLKPIIEQWQQDEDGRR
+CAECSCIADPK
+</code></pre>
