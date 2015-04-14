@@ -1,0 +1,218 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 9. Constructors, Vectors, and Boxes  </title></p>
+
+<h1>Lab 9. Constructors, Vectors, and Boxes.</h1>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h2>Vector datatype</h2>
+
+<p><code>vector&lt;T&gt;</code> is a <strong>template class</strong> that works essentially like an array, but with many improvements.</p>
+
+<p><strong>Constructors:</strong></p>
+
+<ul>
+<li><code>vector&lt;int&gt; v;</code> makes an empty vector of integers (contains no elements),</li>
+<li><code>vector&lt;double&gt; v(10);</code> makes a vector of double-precision floating point numbers with 10 elements.</li>
+</ul>
+
+
+<p><strong>Accessing the elements of a vector</strong></p>
+
+<p>  The elements of a vector are accessed the same way as the elements of a simple array:</p>
+
+<pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'E'</span><span class="p">;</span>
+</code></pre>
+
+
+<p><strong>Some member functions:</strong></p>
+
+<ul>
+<li><code>v.push_back(x)</code> adds element <code>x</code> at the end of the vector (since vectors are essentailly extensible arrays,
+it&rsquo;s common to create an empty vector, and sequetially add elements to the vector using this function).</li>
+<li><code>v.size()</code> returns the number of elements in the vector <code>v</code>,</li>
+</ul>
+
+
+<p>To read more about the class <code>vector&lt;T&gt;</code>, please refer to <a href="https://www.mochima.com/tutorials/vectors.html">this article</a>
+(in particular, read until the section <em>Iterators</em>).</p>
+
+<h2>Boxes, and boxes inside the boxes, and &hellip;</h2>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/UUNqwQ6.jpg" alt="cardboard boxes" /></p>
+
+<p><strong>A box is a container that may contain other boxes</strong>. And there may be many levels of nested boxes inside &hellip;</p>
+
+<p>There is only one condition: all boxes placed inside another box must be either all arranged horizontally,
+or all arranged vertically. Schematically, it is shown in the figure below.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/GMWnz7O.png" alt="" /></p>
+
+<p><strong>How can we implement such a class <code>Box</code>?</strong></p>
+
+<p><code>Box</code> is a very simple class that has two private member variables:</p>
+
+<ul>
+<li>a vector of the boxes that are put inside, called <code>children</code>, and</li>
+<li>the direction the children are arranged, called <code>dir</code>.</li>
+</ul>
+
+
+<pre class="highlight"><code><span class="k">enum</span> <span class="n">Direction</span> <span class="p">{</span> <span class="n">HORIZONTAL</span><span class="p">,</span> <span class="n">VERTICAL</span> <span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Box</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span> 
+  <span class="n">Direction</span> <span class="n">dir</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Box</span><span class="o">&gt;</span> <span class="n">children</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+
+  <span class="p">...</span>
+
+<span class="p">};</span>
+</code></pre>
+
+
+<p>In your opinion, why do you think we could not use an array for storing internal boxes?</p>
+
+<p><strong>In this lab, we will be writing constructors for this class that make particular arrangements of boxes.</strong></p>
+
+<h2>Printing out a box</h2>
+
+<p>You are provided with a function <code>print</code> for printing a box and all other boxes it contains.</p>
+
+<p>An empty box (with no children) would look like:</p>
+
+<pre><code>+-+
+| |
++-+
+</code></pre>
+
+<p>A box with two empty boxes arranged horizontally would be</p>
+
+<pre><code>+------+
+|+-++-+|
+|| || ||
+|+-++-+|
++------+
+</code></pre>
+
+<p>and so on.</p>
+
+<p style="text-align:center;"> >> <strong><a href="boxes.cpp">Download the source code</a></strong> &lt;&lt;</p>
+
+<h2>The width and the height of a box</h2>
+
+<p>This is not a part of the assignment, but it is worth mentioning that the printing function works using the public methods of the
+class <code>Box</code> that compute the width and the height of a box. This computation is done recursively:</p>
+
+<p>The <strong>base case is the empty box</strong>, it has <em>width = 3</em> (in characters), and <em>height = 3</em>.</p>
+
+<p>To compute the <strong>width</strong> of a bigger box, assuming that the child boxes are placed horizontally,
+the total width <strong>is the sum</strong> the widths of the children <em>+2</em> for margins. Similarly, the <strong>height
+is the max</strong> of the heights of the children <em>+2</em> for margins. <br/>
+(And of course, if the child boxes are arranged in the vertical direction,
+then the total width is the max, and the total height is the sum).</p>
+
+<p>Another example of a complex arrangement of nested boxes:</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/yOyscQQ.png" alt="" /></p>
+
+<h2>Assignments</h2>
+
+<h3>Preliminary task (don&rsquo;t submit).</h3>
+
+<p>Take the source code (<a href="boxes.cpp">boxes.cpp</a>).
+Run the program, make a few boxes using two available constructors and print them out.</p>
+
+<h3>Task 1. Simple box. Constructor <code>Box(Direction d, int num)</code>.</h3>
+
+<p>Add a constructor <code>Box(Direction d, int num)</code> that creates a box with <code>num</code> empty boxes
+arranged in the direction specified by the parameter <code>d</code>.</p>
+
+<p>To test your implementation, write a <code>main</code> function similar to</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Box</span> <span class="n">b1</span><span class="p">(</span><span class="n">HORIZONTAL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">Box</span> <span class="n">b2</span><span class="p">(</span><span class="n">HORIZONTAL</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">Box</span> <span class="n">b3</span><span class="p">(</span><span class="n">VERTICAL</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">Box</span> <span class="n">b4</span><span class="p">(</span><span class="n">HORIZONTAL</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+    <span class="n">print</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">b3</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">b4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p><img src="http://i.imgur.com/559GVMW.png" alt="" /></p>
+
+<h3>Task 2. Rectangular box. Constructor <code>Box(int width, int height)</code>.</h3>
+
+<p>Add a constructor <code>Box(int width, int height)</code> that creates a box with
+<code>height</code>-many narrow boxes arranged vertically. And each of those child boxes
+should contain <code>width</code>-many empty boxes arranged horizontally.</p>
+
+<p>For example, <code>Box b(4,3)</code> should create a box like this:</p>
+
+<p><img src="http://i.imgur.com/JdyAuKy.png" alt="" /></p>
+
+<p>Write a <code>main</code> function to test the program. Test that the constructor works for various values of <code>width</code> and <code>height</code> greater or equal to 1.
+(You may assume that these two parameters cannot be smaller than 1.)</p>
+
+<h3>Task 3. Box from a vector of integers. Constructor <code>Box(vector&lt;int&gt;)</code>.</h3>
+
+<p>Add another constructor <code>Box(vector&lt;int&gt; v)</code> that creates a box where the internal boxes are arranged horizontally, and
+each internal box itself contains <code>v[i]</code>-many children. As a result, we obtain something similar to a bar chart with
+the bars going down.</p>
+
+<p><strong>Example:</strong> <br/>
+When the vector contains <em>{ 1, 4, 2, 0, 3, 1 }</em>, the box should look like:</p>
+
+<p><img src="http://i.imgur.com/JxUXzae.png" alt="" /></p>
+
+<p>Write a <code>main</code> function to verify that the constructor works correctly.</p>
+
+<h3>Task 4. Fibonacci boxes. Constructor <code>Box(int)</code>.</h3>
+
+<p>As we know, <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci numbers</a> are defined recursively as</p>
+
+<p><em>F(0) = 1,</em> <br/>
+<em>F(1) = 1,</em> <br/>
+<em>F(n) = F(n-1) + F(n-2)</em>   for all <em>n > 1</em>.</p>
+
+<p>Similarly, we can define <em>Fibonacci boxes</em>, <em>FB(n)</em>:  <br/>
+When the paramenter <em>n</em> is equal to 0 or 1, it is an empty box.
+Otherwise, when <em>n > 1</em>, a Fibonacci box <em>FB(n)</em> is a made of two smaller boxes <em>FB(n-1)</em> and <em>FB(n-2)</em> composed horizontally:</p>
+
+<p><img src="http://i.imgur.com/ceISblj.png" alt="" /></p>
+
+<p>Add (or edit) a constructor <code>Box(int n)</code> that generates such Fibonacci boxes. Also write a <code>main</code> function that
+prints out the Fibonacci boxes for <em>n = 0</em>, <em>1</em>, <em>2</em>, <em>3</em>, <em>4</em>, and <em>5</em>.</p>

@@ -73,6 +73,10 @@ Lab 8. [File IO. Reading and processing biological sequences.](lab/8/).
 
 [HW3](hw/3/). Due Saturday, Apr 4, by 11:59pm (Midnight).    
 
+Lecture 17. Apr 14, 2015. Generic data structures. Vectors. Intro to using templates.       
+Reading: 7.3.    
+Lab 9. [Constructors, Vectors, and Boxes](lab/9/). 
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.
