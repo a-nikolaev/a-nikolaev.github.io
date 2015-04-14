@@ -95,6 +95,10 @@ Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theor
 Lecture 17. Mar 31, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
 
+Lecture 18. Apr 14, 2015. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
+Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
+Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
