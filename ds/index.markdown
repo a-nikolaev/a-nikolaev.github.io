@@ -99,6 +99,14 @@ Lecture 18. Apr 14, 2015. [Relations. Functions. Bijection and counting](/ds/doc
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 
+Lecture 19. Apr 17, 2015. Functions (continued). [Partial orders](/ds/docs/lec19.pdf).   
+Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+[HW9](/ds/docs/hw9.pdf). Due Friday, Apr 24.   
+[HW9-Bonus](/ds/docs/hw9bonus.pdf). Due Friday, Apr 24.
+
+Lecture 20. Apr 21, 2015. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.     
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
