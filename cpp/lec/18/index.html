@@ -1,0 +1,243 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> C Strings </title></p>
+
+<h1>C Strings.</h1>
+
+<h2>Intro.</h2>
+
+<p>We have used C strings in the past every time we wrote a literal like <code>"Alice"</code> or <code>"Hello World"</code>, for example
+in a program like this:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello!</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x = "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>Hello!
+x = 15
+</code></pre>
+
+
+<h2>C string is an array of type <code>char</code> terminated by <code>'\0'</code>.</h2>
+
+<p>The C string is a simple datatype inherited from the C language, and
+it is simply an array of characters. For example, a C string variable can be can be defined as follows:</p>
+
+<pre class="highlight"><code>
+<span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Some text"</span><span class="p">;</span>
+
+</code></pre>
+
+
+<p>To mark the end of the text in the array, the meaningful text is followed by the so called null-character <code>'\0'</code>,
+it is added in the array automatically by the compiler, so in the memory this string looks like the following sequence of characters:</p>
+
+<pre class="highlight"><code>  <span class="p">{</span><span class="sc">'S'</span><span class="p">,</span> <span class="sc">'o'</span><span class="p">,</span> <span class="sc">'m'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">' '</span><span class="p">,</span> <span class="sc">'t'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'x'</span><span class="p">,</span> <span class="sc">'t'</span><span class="p">,</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="p">...}</span>
+</code></pre>
+
+
+<p>Because of this obligatory zero-character <code>'\0'</code>, C strings are also called <em>Null-terminated</em> strings.</p>
+
+<p>Even though the string <code>str</code> defined above is declared as an array of 15 elements,
+only the first 9 elements store the actual text, then they are followed by <code>'\0'</code>.
+When you print this string, for example using <code>cout</code>:</p>
+
+<pre class="highlight"><code>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre>
+
+
+<p>because of the null-character, the program knows where there is the end of the string, and so it knows where it has to stop
+(it prints the characters one by one until it reaches <code>'\0'</code>).</p>
+
+<p>What is the minimum number of characters to store a string of length <em>n</em>? It requires <em>n+1</em> characters.
+One additional character is necessary to store the null-character.
+For example, to store <code>"Internationalization"</code>, a string of 20 letters, it would require an array of length 21 or greater:</p>
+
+<pre class="highlight"><code><span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Internationalization"</span><span class="p">;</span> <span class="c1">// 20 chracters + 1 to store '\0'
+</span></code></pre>
+
+
+<h2>String initialization</h2>
+
+<p>The following initializations are absolutely equivalent:</p>
+
+<pre class="highlight"><code>  <span class="kt">char</span> <span class="n">s1</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>                         <span class="c1">// 6 initializers
+</span>  <span class="kt">char</span> <span class="n">s2</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'H'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'o'</span><span class="p">,</span> <span class="sc">'\0'</span><span class="p">};</span> <span class="c1">// 6 initializers
+</span></code></pre>
+
+
+<p>Notice that the same final result will be obtained in these cases as well:</p>
+
+<pre class="highlight"><code>  <span class="kt">char</span> <span class="n">s3</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'H'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'o'</span><span class="p">};</span>       <span class="c1">// only 5 initializers
+</span>  <span class="kt">char</span> <span class="n">s2</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'H'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'l'</span><span class="p">,</span> <span class="sc">'o'</span><span class="p">,</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="sc">'\0'</span><span class="p">,</span> <span class="sc">'\0'</span><span class="p">};</span> <span class="c1">// 8 initializers
+</span></code></pre>
+
+
+
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// Correct:
+</span>  <span class="kt">char</span> <span class="n">s1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Green"</span><span class="p">;</span>                           <span class="c1">// ok
+</span>  <span class="kt">char</span> <span class="n">s2</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="sc">'G'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'n'</span><span class="p">,</span> <span class="sc">'\0'</span> <span class="p">};</span> <span class="c1">// ok
+</span>  <span class="kt">char</span> <span class="n">s3</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="sc">'G'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'n'</span> <span class="p">};</span>       <span class="c1">// ok, but be careful
+</span>  <span class="kt">char</span> <span class="n">s4</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>  <span class="o">=</span> <span class="s">"Green"</span><span class="p">;</span>                           <span class="c1">// ok
+</span>  <span class="kt">char</span> <span class="n">s5</span><span class="p">[]</span>   <span class="o">=</span> <span class="s">"Green"</span><span class="p">;</span>                           <span class="c1">// ok, auto length 6
+</span> 
+  <span class="c1">// Incorrect:
+</span>  <span class="kt">char</span> <span class="n">s6</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="o">=</span> <span class="s">"Green"</span><span class="p">;</span>                           <span class="c1">// compile time error
+</span>  <span class="kt">char</span> <span class="n">s7</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="o">=</span> <span class="p">{</span> <span class="sc">'G'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'n'</span><span class="p">,</span> <span class="sc">'\0'</span> <span class="p">};</span> <span class="c1">// compile time error
+</span>  <span class="kt">char</span> <span class="n">s8</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="o">=</span> <span class="p">{</span> <span class="sc">'G'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'n'</span> <span class="p">};</span>       <span class="c1">// no '\0', a bug
+</span>  <span class="kt">char</span> <span class="n">s9</span><span class="p">[]</span>   <span class="o">=</span> <span class="p">{</span> <span class="sc">'G'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">,</span> <span class="sc">'n'</span> <span class="p">};</span>       <span class="c1">// no '\0', a bug
+</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h2>Some standard library functions for C strings.</h2>
+
+<p>To use these functions, you need to include the header:</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;cstring&gt;
+</span></code></pre>
+
+
+<ul>
+<li><code>strlen(s)</code>, retruns the length of the string.</li>
+<li><code>strcmp(s1, s2)</code>, compares the two strings, returns <code>0</code> if the are equal, a negative integer if <code>s1</code> is &ldquo;smaller&rdquo;,
+and a positive integer if <code>s1</code> is &ldquo;greater&rdquo; than <code>s2</code>.
+The strings are compared according to the lexicographic order.</li>
+<li><code>strcat(s1, s2)</code>, the contents of <code>s2</code> is appended to the string <code>s1</code>, which must be large enough to
+store all the characters + the null-character.</li>
+<li><code>strcpy(s1, s2)</code>, copies the contents of <code>s2</code> into the string <code>s1</code>, which must be large enough.</li>
+</ul>
+
+
+<p>  See the book for some other functions.</p>
+
+<h2>Reading C strings from <code>cin</code>.</h2>
+
+<p>The difference between <code>&gt;&gt;</code> and <code>getline</code>.</p>
+
+<pre class="highlight"><code>  <span class="kt">char</span> <span class="n">s1</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+  <span class="kt">char</span> <span class="n">s2</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s1</span><span class="p">;</span>   <span class="c1">// as usual for the &gt;&gt; operator, it skips leading 
+</span>               <span class="c1">// whitespace characters and reads the string 
+</span>               <span class="c1">// until the next whitespace is reached, the result is
+</span>               <span class="c1">// stored in s1.
+</span>               <span class="c1">//
+</span>               <span class="c1">// not safe and may write out of bounds of the array
+</span>
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+  <span class="n">cin</span><span class="p">.</span><span class="n">getline</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// reads all characters until the end of the line 
+</span>                      <span class="c1">// and stores (n-1) characters + '\0' in the string s2
+</span>                     
+</code></pre>
+
+
+<h2>Reading command line arguments. Using <code>argc</code> and <code>argv</code> parameters.</h2>
+
+<p><strong>Example:</strong></p>
+
+<p>The following datafiles &ldquo;cities.dat&rdquo; contains the list of cities in the following format:
+Index, City, State, Popiulation, Area (in sq. miles):</p>
+
+<pre class="highlight"><code><span class="mi">1</span> <span class="n">NewYork</span>       <span class="n">NewYork</span>       <span class="mi">8175133</span>  <span class="mf">302.6</span>
+<span class="mi">2</span> <span class="n">LosAngeles</span>    <span class="n">California</span>    <span class="mi">3792621</span>  <span class="mf">468.7</span>
+<span class="mi">3</span> <span class="n">Chicago</span>       <span class="n">Illinois</span>      <span class="mi">2695598</span>  <span class="mf">227.6</span>
+<span class="mi">4</span> <span class="n">Houston</span>       <span class="n">Texas</span>         <span class="mi">2100263</span>  <span class="mf">599.6</span>
+<span class="mi">5</span> <span class="n">Philadelphia</span>  <span class="n">Pennsylvania</span>  <span class="mi">1526006</span>  <span class="mf">134.1</span>
+<span class="mi">6</span> <span class="n">Phoenix</span>       <span class="n">Arizona</span>       <span class="mi">1445632</span>  <span class="mf">516.7</span>
+<span class="mi">7</span> <span class="n">SanAntonio</span>    <span class="n">Texas</span>         <span class="mi">1327407</span>  <span class="mf">460.9</span>
+<span class="mi">8</span> <span class="n">SanDiego</span>      <span class="n">California</span>    <span class="mi">1307402</span>  <span class="mf">325.2</span>
+<span class="mi">9</span> <span class="n">Dallas</span>        <span class="n">Texas</span>         <span class="mi">1197816</span>  <span class="mf">340.5</span>
+</code></pre>
+
+
+<p>The following program requires two command line arguments: the number of cities to read (<em>N</em>) and the file name.
+It print <em>N</em> first cities from the file: their name + their population density.</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  This program reads two command line arguments,
+  the number of cities to print N, and the file name.
+
+  It reads the datafile with the list of cities,
+  and prints out N first cities, together with their 
+  population densities
+*/</span> 
+
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cstdlib&gt;
+#include &lt;fstream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+
+  <span class="c1">// Exit if the number of arguments is not correct,
+</span>  <span class="c1">// print the error message and a correct usage example
+</span>  <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Usage: ./density N file"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="c1">// n = the number of cities to read.
+</span>  <span class="c1">// we convert the C string to an integer
+</span>  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+  <span class="c1">// open the file for reading
+</span>  <span class="n">fstream</span> <span class="n">fin</span><span class="p">;</span>
+  <span class="n">fin</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">fin</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Usage: ./density N file"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">index</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">city</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">state</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">population</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">area</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">t</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">index</span><span class="p">;</span>
+    <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">city</span><span class="p">;</span>
+    <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">state</span><span class="p">;</span>
+    <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">t</span><span class="p">;</span> <span class="n">population</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+    <span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">t</span><span class="p">;</span> <span class="n">area</span> <span class="o">=</span> <span class="n">atof</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+    <span class="kt">double</span> <span class="n">density</span> <span class="o">=</span> <span class="n">population</span> <span class="o">/</span> <span class="n">area</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">city</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span> <span class="o">&lt;&lt;</span> <span class="n">density</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">fin</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre><code>./density 5 cities.dat 
+NewYork  27016.3
+LosAngeles  8091.79
+Chicago  11843.6
+Houston  3502.77
+Philadelphia  11379.6
+</code></pre>

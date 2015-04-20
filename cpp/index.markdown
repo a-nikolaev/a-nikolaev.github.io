@@ -67,15 +67,22 @@ Reading: 7.1, 7.2.
 After the lecture, I'm going to show some other useful features of SDL, primarily focusing on
 loading and using textures (graphics files). Talking more about time and user input is another option.
 
-Lecture 16. Mar 31, 2015. More about constructors. Static members. Vectors.     
+Lecture 16. Mar 31, 2015. More about constructors. Static members. Vectors.    
 Reading: 7.2. 7.3.    
 Lab 8. [File IO. Reading and processing biological sequences.](lab/8/). 
 
 [HW3](hw/3/). Due Saturday, Apr 4, by 11:59pm (Midnight).    
 
-Lecture 17. Apr 14, 2015. Generic data structures. Vectors. Intro to using templates. Hash tables.      
+Lecture 17. Apr 14, 2015. Generic data structures. Vectors. Intro to using templates. Hash tables. [[Programs](lec/17/)]      
 Reading: 7.3.    
 Lab 9. [Constructors, Vectors, and Boxes](lab/9/). 
+
+Lecture 18. Apr 17, 2015. Old-style C strings. [[Programs](lec/18/)]      
+Reading: 9.1.    
+
+Lecture 19. Apr 21, 2015. New C++ string class.       
+Reading: 9.3.   
+Lab 10.
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
