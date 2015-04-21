@@ -1,0 +1,177 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 10. One-dimensional and two-dimensional vectors  </title></p>
+
+<h1>Lab 10. One-dimensional and two-dimensional vectors.</h1>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h2>Constructors and methods of the class <code>vector&lt;T&gt;</code> you need to know</h2>
+
+<p><strong>Constructors:</strong></p>
+
+<ul>
+<li><code>vector&lt;T&gt; v;</code> default constructor, makes an empty vector.</li>
+<li><code>vector&lt;T&gt; v(n);</code> makes a vector of size <code>n</code>. All elements are initialized using the default
+constructor for the type <code>T</code>. If there is no such a constructor (for example for the primitive
+types like <code>int</code>, <code>double</code>, or <code>bool</code>), they are not initialized at all and contain garbage.</li>
+<li><code>vector&lt;T&gt; v(n, value);</code> makes a vector of size <code>n</code> with all elements equal to <code>value</code>.</li>
+</ul>
+
+
+<p><strong>Methods (member functions):</strong></p>
+
+<ul>
+<li><code>v.size()</code>,</li>
+<li><code>v.push_back(x)</code>,</li>
+<li><code>v.pop_back()</code>,</li>
+<li><code>v.resize(n)</code> change the size of the vector, with all newly created elements initialize using
+their default constructor,</li>
+<li><code>v.resize(n, value)</code> change the size of the vector, all newly created elements are initialized with
+the value <code>value</code>.</li>
+</ul>
+
+
+<h2>Assignments</h2>
+
+<h3>Task 1. One-dimensional <code>vector&lt;int&gt;</code>.</h3>
+
+<p>Implement the following three functions:</p>
+
+<pre class="highlight"><code><span class="c1">// Print a vector of integers
+</span><span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">);</span>
+
+<span class="c1">// Array to Vector conversion function.
+// It copies the contents of the array `arr` of length `n` into the output vector 'v'.
+// It should work correctly even if the vector `v` is not empty
+</span><span class="kt">void</span> <span class="n">array_to_vector</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">);</span>
+
+<span class="c1">// Vector concatenation.
+// Concatenate two vectors `a` and `b`, the result should be stored in the vector `c`
+// the function should work correctly even if the output vector `c` is not empty
+</span><span class="kt">void</span> <span class="n">concat_two</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+</code></pre>
+
+
+<p>Please use the following main function as a test:</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">arr1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">arr2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">};</span>
+
+    <span class="c1">// Initialize vectors
+</span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">;</span>     <span class="c1">// empty vector
+</span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// or nonempty vector
+</span>    
+    <span class="c1">// convert the arrays to vectors
+</span>    <span class="n">array_to_vector</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">v1</span><span class="p">);</span>
+    <span class="n">array_to_vector</span><span class="p">(</span><span class="n">arr2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span>
+
+    <span class="c1">// print two vectors
+</span>    <span class="n">print</span> <span class="p">(</span><span class="n">v1</span><span class="p">);</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">print</span> <span class="p">(</span><span class="n">v2</span><span class="p">);</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    
+    <span class="c1">// concatenate two vectors
+</span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">concat_two</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+
+    <span class="c1">// print out the result
+</span>    <span class="n">print</span> <span class="p">(</span><span class="n">result</span><span class="p">);</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h3>Task 2. Two-dimensional <code>vector &lt;vector&lt;int&gt; &gt;</code>.</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/NGk70BU.png" alt="" /></p>
+
+<p>Creation of a two-dimensional vector of vectors looks somewhat tricky, this is how it can be done:</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="c1">// Initializing a 2-dimensional vector by calling a constructor 
+// vector&lt;T&gt; v(n, value), where the second argument is a constructor call too:
+</span><span class="n">vector</span> <span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">v</span> <span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">width</span><span class="p">));</span>
+
+<span class="c1">// now, you can initialize the 2-dimensional vector in any way you want 
+// by assigning the values to v[i][j]:
+</span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>Implement the following two functions and test them in the <code>main</code> function:</p>
+
+<pre class="highlight"><code><span class="c1">// Print a vector of vectors `v`         Example:
+// v[0] - first line,                    1 2 3 4
+// v[1] - second line,                   5 6 7 8
+// v[2] - third line,                    9 1 2 3
+// ... etc.
+</span><span class="kt">void</span> <span class="n">print_v</span><span class="p">(</span><span class="n">vector</span> <span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">);</span>
+
+<span class="c1">// Concatenate a vector of vectors `v`, store the result in `c`.
+</span><span class="kt">void</span> <span class="n">concat_vector</span> <span class="p">(</span><span class="n">vector</span> <span class="o">&lt;</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+</code></pre>
+
+
+<h3>Task 3. Transposition of two-dimensional vectors</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Transpose">Matrix transposition</a> is the reflection of the matrix over its main diagonal.
+That is, to get a matrix transposed, you write its rows as columns:</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/WUHvbFE.gif" alt="" /></p>
+
+<p>Implement two matrix transposition functions and test them in the <code>main</code> function
+(start with the first function, it&rsquo;s easier to implement than the second one):</p>
+
+<pre class="highlight"><code><span class="c1">// Transpose a square vector of vectors
+// The vector of vectors must be updated in-place
+// 
+// Example:
+//
+//  1 2 3      1 4 7
+//  4 5 6  -&gt;  2 5 8
+//  7 8 9      3 6 9 
+//
+</span><span class="kt">void</span> <span class="n">transpose_square</span> <span class="p">(</span><span class="n">vector</span> <span class="o">&lt;</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">);</span>
+
+<span class="c1">// Transpose a rectangular vector of vectors
+// The vector of vectors must be updated in-place
+//
+// Example:
+// 
+//  1 2 3 4      1 5 9
+//  5 6 7 8  -&gt;  2 6 1
+//  9 1 2 3      3 7 2 
+//               4 8 3
+//
+</span><span class="kt">void</span> <span class="n">transpose_rectangle</span> <span class="p">(</span><span class="n">vector</span> <span class="o">&lt;</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">);</span>
+</code></pre>
+

@@ -82,7 +82,7 @@ Reading: 9.1.
 
 Lecture 19. Apr 21, 2015. New C++ string class.       
 Reading: 9.3.   
-Lab 10.
+Lab 10. [One-dimensional and two-dimensional vectors](lab/10/). 
 
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
