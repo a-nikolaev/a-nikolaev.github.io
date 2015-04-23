@@ -60,10 +60,10 @@ with an error message.</p>
 <pre><code># Number of employees
 5
 # EmployeeID FirstName LastName OfficeLocation
-  11         John      Johnson  11
-  37         Michael   Burke    21
+  11         John      Johnson  513
+  37         Michael   Burke    11
   24         Mary      Clark    8 
-  83         Vincent   Cent     11 
+  183        Vincent   Cent     11 
   19         Roseline  Harp     5
 </code></pre>
 
@@ -77,20 +77,21 @@ spends at least 75% of their time at this place.</p>
 <pre><code># Number of entries
 53
 # Timestamp EmployeeID Location
-  105       11         1
+  105       11         61
   105       24         6
   105       37         17
   105       19         8
   106       37         17
   106       24         5
   106       19         8
-  106       11         2
-  106       83         20
+  106       11         62
+  106       183        20
   107       37         17
   ...
 </code></pre>
 
-<p>(Observe that due to infrequent tracking device failures, the locations of some employees are not
+<p>(In this file, there is supposed to be exactly one record per timestamp for every employee,
+however, observe that due to infrequent tracking device failures, the locations of some employees are not
 reported at some timestamps, assume that their location is unknown at those time intervals)</p>
 
 <p><strong>Smoke detectors data</strong></p>
@@ -100,11 +101,22 @@ reported at some timestamps, assume that their location is unknown at those time
 <pre><code># Number of entries
 7
 # Timestamp Location
-  106       10
-  107       20
+  106       62
+  107       213
   110       11
   112       11
   ...
+</code></pre>
+
+<p>The <code>EmployeeID</code> and <code>Location</code> values are positive integers, but they can be large.</p>
+
+<p><strong>Converting a <code>string</code> to <code>int</code></strong></p>
+
+<p>The easiest way to convert a <code>string</code> to <code>int</code> is to use the function <code>stoi(s)</code>, however
+it&rsquo;s a part of the C++11 language standard, and to compile such code with <code>g++</code>,
+you have to run the compiler with an additional comamnd line option <code>-std=c++11</code>, for example:</p>
+
+<pre><code>g++ -std=c++11 -o program program.cpp
 </code></pre>
 
 <p style="text-align:center;"> >>> <strong>Example datafiles to be added</strong> &lt;&lt;&lt;</p>
@@ -114,23 +126,24 @@ reported at some timestamps, assume that their location is unknown at those time
 <p>The program should provide the following Menu:</p>
 
 <pre><code>Main menu:
-a - Report suspected smokers.
-b - Report slackers.
-c - Report employee's friends.  
-d - Exit
+a - Report slackers.
+b - Report suspected smokers.
+c - Report employee's friends. 
+d - Identify broken tracking devices.
+e - Exit
 </code></pre>
 
-<p>The program should read the user input, and if it&rsquo;s not <code>a</code>, <code>b</code>, <code>c</code>, or <code>d</code>, it should print the menu again.
-If the user enters <code>a</code>, <code>b</code>, or <code>c</code> the program should execute the corresponding section.
-If the user input is <code>d</code>, the program should exit.</p>
+<p>The program should read the user input, and if it&rsquo;s not <code>a</code> - <code>e</code>, it should print the menu again.
+If the user enters <code>a</code> - <code>d</code> the program should execute the corresponding section.
+If the user input is <code>e</code>, the program should exit.</p>
 
 <ul>
-<li><p><strong>Reporting suspected smokers.</strong>
-The program should print the list of all people who were recorded 5 times or more in the rooms where smoke was detected.</p>
-
-<p>After that the program should return to the main menu.</p></li>
 <li><p><strong>Reporting slackers.</strong>
 Report those employees who spend at least 25% of the time not at their office.</p>
+
+<p>After that the program should return to the main menu.</p></li>
+<li><p><strong>Reporting suspected smokers.</strong>
+The program should print the list of all people who spent at least 2% of the time in the rooms where smoke was detected.</p>
 
 <p>Then the program should return to the main menu.</p></li>
 <li><p><strong>Reporting employee&rsquo;s friends</strong>.
@@ -144,6 +157,10 @@ with the queried employee. If the number of possible friends is greater than 10,
 about 10 closest friends.</p>
 
 <p>After that, the program returns to the main menu.</p></li>
+<li><p><strong>Identifying broken tracking devices</strong>.
+The program should find the list of all employees whose tracking devices malfunction and report at less than 95% of the timestamps.</p>
+
+<p>After that, the program should return to the main menu.</p></li>
 </ul>
 
 
@@ -151,7 +168,7 @@ about 10 closest friends.</p>
 
 <h2>Implementation</h2>
 
-<p>The program should be implemented using at least 5 classes  and/or structures,
+<p>The program should be implemented using at least 4-5 classes  and/or structures,
 in at least 3 files (for example, one header file, one implementation file, and one main file).</p>
 
 <p>Always try to separate your code into functions and classes where it&rsquo;s possible,
