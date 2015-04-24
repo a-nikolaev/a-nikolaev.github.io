@@ -84,6 +84,8 @@ Lecture 19. Apr 21, 2015. New C++ string class.
 Reading: 9.3.   
 Lab 10. [One-dimensional and two-dimensional vectors](lab/10/). 
 
+[HW4](hw/4/). Due Saturday, May 16 (or 23?), by 11:59pm (Midnight).    
+
 ## General information
 Tue, Fri, 3:45 pm - 5:00 pm. West W207.  
 Office hours: after the class or by appointment.

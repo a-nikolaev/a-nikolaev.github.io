@@ -20,8 +20,8 @@
 <ul>
 <li><code>vector&lt;T&gt; v;</code> default constructor, makes an empty vector.</li>
 <li><code>vector&lt;T&gt; v(n);</code> makes a vector of size <code>n</code>. All elements are initialized using the default
-constructor for the type <code>T</code>. If there is no such a constructor (for example for the primitive
-types wlike <code>int</code>, <code>double</code>, or <code>bool</code>), they are not initialized at all and contain garbage.</li>
+constructor for the type <code>T</code>. The primitive types (for example <code>int</code>, <code>double</code>, or <code>bool</code>),
+don&rsquo;t have a constructor and they are initialized with <code>0</code>.</li>
 <li><code>vector&lt;T&gt; v(n, value);</code> makes a vector of size <code>n</code> with all elements equal to <code>value</code>.</li>
 </ul>
 
@@ -32,7 +32,10 @@ types wlike <code>int</code>, <code>double</code>, or <code>bool</code>), they a
 <li><code>v.size()</code></li>
 <li><code>v.push_back(x)</code></li>
 <li><code>v.pop_back()</code></li>
-<li><code>v.resize(n)</code>, <code>v.resize(n, value)</code></li>
+<li><code>v.resize(n)</code> change the size of the vector, with all newly created elements initialize using
+their default constructor,</li>
+<li><code>v.resize(n, value)</code> change the size of the vector, all newly created elements are initialized with
+the value <code>value</code>.</li>
 <li><code>v.reserve(n)</code></li>
 <li><code>v.capacity()</code></li>
 </ul>
