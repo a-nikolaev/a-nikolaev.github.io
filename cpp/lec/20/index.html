@@ -1,0 +1,122 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> Hash table </title></p>
+
+<h1>Hash table.</h1>
+
+<p>Here, we implement and test a simple <a href="https://en.wikipedia.org/wiki/Hash_table">hash table</a>
+that maps integers to integers (<em>key -> value</em>).</p>
+
+<p>Here, collision resolution is done &ldquo;by chaining&rdquo;: all entries that should be put in the same bucket,
+are stored in a vector.</p>
+
+<pre class="highlight"><code>
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// Hash table entry. It's a pair (key, value)
+</span><span class="k">struct</span> <span class="n">Entry</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">key</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Ht</span> <span class="p">{</span>
+  <span class="k">private</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Entry</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">bkt</span><span class="p">;</span>
+
+    <span class="c1">// Hash function
+</span>    <span class="c1">// maps any integer to an integer in the range 0 ... bkt.size()-1
+</span>    <span class="kt">int</span> <span class="n">hash_fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">);</span>
+
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">Ht</span><span class="p">();</span>
+    <span class="n">Ht</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+
+    <span class="c1">// add a pair (k,v) to the hash table
+</span>    <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+
+    <span class="c1">// find an entry for the key `k`
+</span>    <span class="c1">// returns true if it's found, and then updates the variable `v`
+</span>    <span class="c1">// with the value corresponding to the key `k`.
+</span>    <span class="c1">//
+</span>    <span class="c1">// if `k` is not found, returns false.
+</span>    <span class="n">bool</span> <span class="n">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">);</span>
+<span class="p">};</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">Ht</span> <span class="n">ht</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+
+  <span class="n">ht</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1234567</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="n">ht</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1234567</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+  <span class="n">ht</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span>
+  <span class="n">ht</span><span class="p">.</span><span class="n">add</span><span class="p">(</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+  <span class="n">ht</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
+
+  <span class="kt">int</span> <span class="n">test</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1234567</span><span class="p">,</span> <span class="o">-</span><span class="mi">1234567</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">13</span><span class="p">};</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ht</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">k</span> <span class="o">&lt;&lt;</span> <span class="s">" -&gt;</span><span class="se">\t</span><span class="s">"</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">else</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">k</span> <span class="o">&lt;&lt;</span> <span class="s">" not found"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Implementation
+</span><span class="kt">int</span> <span class="n">Ht</span><span class="o">::</span><span class="n">hash_fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">abs</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="n">bkt</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">Ht</span><span class="o">::</span><span class="n">Ht</span><span class="p">()</span> <span class="o">:</span> <span class="n">bkt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="n">Ht</span><span class="o">::</span><span class="n">Ht</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="o">:</span> <span class="n">bkt</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Ht</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">bi</span> <span class="o">=</span> <span class="n">hash_fun</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">bkt</span><span class="p">[</span><span class="n">bi</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bkt</span><span class="p">[</span><span class="n">bi</span><span class="p">][</span><span class="n">i</span><span class="p">].</span><span class="n">key</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">bkt</span><span class="p">[</span><span class="n">bi</span><span class="p">][</span><span class="n">i</span><span class="p">].</span><span class="n">val</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="c1">// if not found, add a new entry
+</span>  <span class="n">Entry</span> <span class="n">e</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">};</span>
+  <span class="n">bkt</span><span class="p">[</span><span class="n">bi</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="n">Ht</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">bi</span> <span class="o">=</span> <span class="n">hash_fun</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">bkt</span><span class="p">[</span><span class="n">bi</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bkt</span><span class="p">[</span><span class="n">bi</span><span class="p">][</span><span class="n">i</span><span class="p">].</span><span class="n">key</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">v</span> <span class="o">=</span> <span class="n">bkt</span><span class="p">[</span><span class="n">bi</span><span class="p">][</span><span class="n">i</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// if not found
+</span>  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>1234567 ->    1
+-1234567 -> 2
+105 ->  11
+55 ->   12
+-45 ->  13
+13 not found
+</code></pre>
+
