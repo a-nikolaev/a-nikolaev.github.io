@@ -107,8 +107,9 @@ Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.
 Lecture 20. Apr 21, 2015. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
 Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.     
 
-Lecture 21. Apr 24, 2015. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).   
+Lecture 21. Apr 24, 2015. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).    
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+[HW10](/ds/docs/hw10.pdf). Due Friday, May 1.   
 
 [Possible Project Topics](/ds/topics.html).    
 
