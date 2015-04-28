@@ -1,0 +1,254 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Labs 11 and 12. Implementing a subset of Markdown lightweight markup language </title></p>
+
+<h1>Labs 11 and 12. Implementing a subset of Markdown lightweight markup language.</h1>
+
+<h2>This lab takes two classes April 28 and May 5.</h2>
+
+<p>This lab will take two weeks. So, you don&rsquo;t have to submit your solutions in the first class,
+unless you finish it by the end of the day.</p>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp file) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h2>Intro, part 1: HTML.</h2>
+
+<p>Every web page you see in the browser is actually a text file written in the
+<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction">special format called HTML</a>
+(HyperText Markup Language).</p>
+
+<p>For example, look at this <a href="example.html">example web page</a>.
+It&rsquo;s source code is shown below:</p>
+
+<pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>The page title<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+  <span class="nt">&lt;h1&gt;</span>Intro to HTML<span class="nt">&lt;/h1&gt;</span>
+  
+  <span class="nt">&lt;p&gt;</span> We are going to consider only very basic features of HTML. 
+  For text formatting, you use special tags (<span class="nt">&lt;em&gt;</span>markup elements enclosed
+  between angular brackets<span class="nt">&lt;/em&gt;</span>). <span class="nt">&lt;/p&gt;</span>
+
+  <span class="nt">&lt;p&gt;</span> Each paragraph should be enclosed in its own paragraph tag (p). 
+  A paragraph can span multiple lines: the browser wraps the lines 
+  automatically. Multiple whitespace characters and new line characters 
+  are discarded by the browser, so you have to rely on the paragraph 
+  tags to format the page. <span class="nt">&lt;/p&gt;</span>
+
+  <span class="nt">&lt;h2&gt;</span>Adding emphasis<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;p&gt;</span> The tag em can be used to <span class="nt">&lt;em&gt;</span>emphasize certain phrases<span class="nt">&lt;/em&gt;</span>,
+  the browser shows it with the <span class="nt">&lt;em&gt;</span>italic<span class="nt">&lt;/em&gt;</span> typeface. <span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+
+<h2>Intro, part 2: Markdown.</h2>
+
+<p>To simplify writing web pages, there is a number of lightweight
+markup languages that can be translated into HTML.</p>
+
+<p>The most widespread of them is called <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>.</p>
+
+<p>For example, it is used by services like
+<a href="http://stackoverflow.com/editing-help">StackOverflow</a>,
+<a href="http://www.reddit.com/r/raerth/comments/cw70q/reddit_comment_formatting/">reddit</a>,
+<a href="https://www.tumblr.com/">Tumblr</a>,
+<a href="https://help.github.com/articles/github-flavored-markdown/">Github</a>,
+and <a href="https://wordpress.org/">Wordpress</a> for formatting the user-written articles and user discussions.</p>
+
+<p>This format is designed to be very readable. For example, the HTML code shown above
+looks as follows in Markdown:</p>
+
+<pre class="highlight"><code># Intro to HTML
+We are going to consider only very basic features of HTML. 
+For text formatting, you use special tags (*markup elements enclosed
+between angular brackets*).
+
+Each paragraph should be enclosed in its own paragraph tag (p). 
+A paragraph can span multiple lines: the browser wraps the lines 
+automatically. Multiple whitespace characters and new line characters 
+are discarded by the browser, so you have to rely on the paragraph 
+tags to format the page. 
+
+## Adding emphasis
+The tag em can be used to *emphasize certain phrases*, the browser 
+shows it with the *italic* typeface.
+</code></pre>
+
+
+<p>In particular:</p>
+
+<ul>
+<li><p>Header lines start with <code>#</code>. For example, the following line:  <br/>
+<code># Some header</code>,<br/>
+gets translated into:  <br/>
+<code>&lt;h1&gt;Some header&lt;/h1&gt;</code>.</p>
+
+<p>Similarly, two <code>##</code> characters make a 2nd level header <code>&lt;h2&gt;</code>, and so on until the 6th level header <code>&lt;h6&gt;</code>.</p></li>
+<li><p>Empty lines separate paragraphs.</p></li>
+<li><p>To add an emphasis to a phrase within one paragraph, you can use  <br/>
+<code>*this syntax*</code>,  <br/>
+and it will produce an equivalent HTML code: <br/>
+<code>&lt;em&gt;this syntax&lt;/em&gt;</code>.</p></li>
+<li><p>There are many other features such as hypertext links, images, lists, and so on.</p></li>
+</ul>
+
+
+<p>Here is an <a href="http://markdown.pioul.fr/">online editor</a>
+that lets you write Markdown in the left pane, and it will shows HTML code (or a rendered web page) in the right pane.</p>
+
+<h3>Task 0 (don&rsquo;t submit).</h3>
+
+<ol>
+<li><p> Download the example HTML file <a href="example.html">example.html</a> and the CSS style file <a href="style.css">style.css</a>,
+and save them in the same folder.</p></li>
+<li><p> Open this HTML file in the text editor and in the browser.</p></li>
+<li><p> Edit the HTML file adding a couple of new paragraphs and headers of different level (tags <code>&lt;h1&gt;</code> &hellip; <code>&lt;h6&gt;</code>).
+Refresh this file in the browser (with F5, or Ctrl+R, or Cmd+R) to see how the changes in the file affect the web page.</p></li>
+<li><p> Open the <a href="http://markdown.pioul.fr/">online Markdown editor</a> and edit the Markdown text in the left panel.
+ The resulting HTML (or its preview) will be shown in the right panel.</p>
+
+<p> In this editor, write a Markdown file such that the resulting HTML is identical (or similar) to the HTML file you
+ just created in the previous question.</p>
+
+<p> Observe how the headers and the paragraphs in Markdown get translated into HTML.</p></li>
+</ol>
+
+
+<h3>Limited Markdown</h3>
+
+<p>This simplified version of the original Markdown has only the following syntactic elements:</p>
+
+<ul>
+<li>Headers:</li>
+</ul>
+
+
+<p> <code># Header 1</code>  <br/>
+ <code>## Header 2</code>    <br/>
+ <code>### Header 3</code> <br/>
+ <code>#### Header 4</code>    <br/>
+ <code>##### Header 5</code> <br/>
+ <code>###### Header 6</code></p>
+
+<p> They should be replaced with the corresponding header tags <br/>
+ <code>&lt;h1&gt; Header &lt;/h1&gt;</code>,<br/>
+  etc.</p>
+
+<ul>
+<li><p>The text between the headers is interpreted as a sequence of paragraphs.
+The blank lines denote the breaks between the paragraphs.</p></li>
+<li><p>Each paragraph should be enclosed into the paragraph tag <code>&lt;p&gt; ... &lt;\p&gt;</code>.</p></li>
+<li><p>Within the same paragraph, the text between two asterisks <code>*like this*</code>
+denotes emphasis <code>&lt;em&gt;like this&lt;/em&gt;</code>.</p></li>
+</ul>
+
+
+<h3>Task 1.</h3>
+
+<p>We are going to write a program that reads a file in the Limited Markdown format, and outputs HTML.
+The program should read the input through <code>cin</code>, and print HTML into <code>cout</code>, so it&rsquo;s supposed to be executed
+using stream redirection</p>
+
+<pre><code>./markdown &lt; input.md &gt; output.html
+</code></pre>
+
+<p>In the first task, write a program that recognizes the headers <code>#</code> &hellip; <code>######</code> and replaces them
+with the corresponding <code>&lt;h1&gt;</code> &hellip; <code>&lt;h6&gt;</code> tags.</p>
+
+<p>The rest of the input should be output without any changes (so the resulting HTML still contains the original text,
+but it is not formatted correctly yet).</p>
+
+<p>To read lines one by one from the input stream until it ends, one can use</p>
+
+<pre class="highlight"><code><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+
+<span class="k">while</span><span class="p">(</span> <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something with the string
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>Add the following text at the beginning of the produced HTML file
+to add the CSS style to the generated web page:</p>
+
+<pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Page title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+</code></pre>
+
+
+<p>And the following should be added at the end:</p>
+
+<pre class="highlight"><code><span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+
+<p>Adding these two pieces can be done, for example, using the command line <code>cat</code> that let you concatenate files</p>
+
+<pre class="highlight"><code>cat beginning.html main_text.html ending.html &gt; page.html
+</code></pre>
+
+
+<p>These auxiliary files <a href="beginning.html">beginning.html</a> and <a href="ending.html">ending.html</a> can be downloaded too.</p>
+
+<h3>Task 2.</h3>
+
+<p>Change the program to support paragraphs.
+If the text between two consequtive headers has empty lines,
+such empty lines are interpreted as paragraph breaks.</p>
+
+<p>To identify whitespace characters, you can use the function <code>isspace(c)</code>
+(<a href="http://www.cplusplus.com/reference/cctype/isspace/">Documentation</a>),
+it returns <code>true</code> if <code>c</code> is one of the whitespace characters (<code>'\t'</code>, <code>'\n'</code>, <code>'\r'</code>, <code>'\v'</code>, <code>'\f'</code>, <code>' '</code>),
+or <code>false</code> otherwise. To use it, include the header <code>&lt;cctype&gt;</code>.</p>
+
+<h3>Task 3.</h3>
+
+<p>Change the program to support text emphasis.
+Notice that there may be multiple <code>*emphasized*</code> phrases in a paragraph,
+and such phrases can start on one line, and continue on the next line.
+They can even span multiple lines, however they should end by the end of the paragraph.</p>
+
+<p>Notice that in the standard Markdown the starting <code>*</code> should have a non-whitespace character
+to the right, and the closing <code>*</code> should have a non-whitespace character to the left,
+but you may drop this particular feature. Simply assume that <em>every odd</em> <code>*</code> starts an emphasis
+block, and <em>every even</em> <code>*</code> ends it.</p>
+
+<h3>Task 4.</h3>
+
+<p>Implement some other feature of Markdown that is not a part of <em>Limited Markdown</em>.</p>

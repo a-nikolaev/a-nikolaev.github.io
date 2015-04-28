@@ -88,6 +88,7 @@ Lecture 20. Apr 24, 2015. Review session. [[Hash Tables](lec/20)].
 Reading: 7.3.   
 
 Midterm 2. Apr 28, 2015.     
+Labs 11 and 12. [Implementing a subset of Markdown, lightweight markup language](lab/11/). 
 
 [HW4](hw/4/). Due Saturday, May 16 (or 23?), by 11:59pm (Midnight).    
 
