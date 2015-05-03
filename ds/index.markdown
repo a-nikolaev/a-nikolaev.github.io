@@ -114,6 +114,24 @@ Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.
 Lecture 22. Apr 28, 2015. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
 Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
 
+Lecture 23. May 1, 2015. Trees and Huffman coding (Continued).    
+[HW11](/ds/docs/hw11.pdf). (This is a big homework (Trees + Probability) and it will be x2 points worth).    
+Due Friday, May 15.   
+
+Lecture 24. May 5, 2015. Probability.
+
+Midterm 2. May 8, 2015.     
+
+* Covers lectures from 14 to 24. (There will be one simple question on probability).
+* For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.
+* Practice exams are posted on Blackboard.
+
+Lecture 25. May 12, 2015. Probability 2.
+
+Projects presentation. May 15, 2014.    
+[Information for the speakers](/ds/talks.html).    
+
 [Possible Project Topics](/ds/topics.html).    
 
 <!--
