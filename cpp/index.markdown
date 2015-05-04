@@ -39,7 +39,7 @@ Lab 4. [Call by reference](lab/4/). [[Solutions](lab/4/solutions.html)]
 Lecture 9. Feb 27, 2015. [Arrays (continued)](lec/9/) [[Slides](lec/9/slides.pdf)].      
 Reading: 5.2, 5.3.   
 
-[HW2](hw/2/). Due Saturday, <del>Mar 7</del> Mar 14, by 11:59pm (Midnight).    
+[HW2](hw/2/). Due Saturday, <del>Mar 7</del> Mar 14, by 11:59pm (Midnight). [[Solutions](hw/2/solutions.html)]    
 
 Lecture 10. Mar 2, 2015. Multidimensional arrays. [[Slides](lec/10/slides.pdf)] [[Programs](lec/10/)]     
 Reading: 5.4.     
@@ -71,7 +71,7 @@ Lecture 16. Mar 31, 2015. More about constructors. Static members. Vectors.
 Reading: 7.2. 7.3.    
 Lab 8. [File IO. Reading and processing biological sequences.](lab/8/). 
 
-[HW3](hw/3/). Due Saturday, Apr 4, by 11:59pm (Midnight).    
+[HW3](hw/3/). Due Saturday, Apr 4, by 11:59pm (Midnight). [[Solutions](hw/3/solutions.html)]     
 
 Lecture 17. Apr 14, 2015. Generic data structures. Vectors. Intro to using templates. Hash tables. [[Programs](lec/17/)]      
 Reading: 7.3.    

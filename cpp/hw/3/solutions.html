@@ -1,0 +1,180 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>HW 3</title></p>
+
+<h1>HW 3.</h1>
+
+<p><code>Storage</code> implementation (no additional tests)</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author:
+  Description: HW3. Storage bookkeeping
+*/</span> 
+
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;cassert&gt;
+#include &lt;cstdlib&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">Entry</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Storage</span> <span class="p">{</span>
+  <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">;</span>
+  <span class="n">Entry</span> <span class="n">buf</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">card</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">empty</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">number_of_distinct_items</span><span class="p">();</span>
+  
+  <span class="kt">int</span> <span class="n">count</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="n">remove</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+
+  <span class="n">bool</span> <span class="n">pick_an_item</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">);</span> 
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">test1</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Storage</span> <span class="n">storage</span><span class="p">;</span>
+  <span class="n">storage</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+
+
+  <span class="c1">// Put m random items in the storage
+</span>  <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Adding "</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="s">" items: "</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="n">storage</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// Now, empty the storage iteratively, printing out 
+</span>  <span class="c1">// how many items of each kind was there:
+</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"They are:"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">total_removed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">storage</span><span class="p">.</span><span class="n">pick_an_item</span><span class="p">(</span><span class="n">id</span><span class="p">))</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">storage</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+      <span class="k">while</span><span class="p">(</span><span class="n">storage</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">storage</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+        <span class="n">total_removed</span> <span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="s">" : "</span> <span class="o">&lt;&lt;</span> <span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+    <span class="p">}</span>
+    <span class="k">else</span> 
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Total of "</span> <span class="o">&lt;&lt;</span> <span class="n">total_removed</span> <span class="o">&lt;&lt;</span> <span class="s">" items "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">assert</span> <span class="p">(</span><span class="n">total_removed</span> <span class="o">==</span> <span class="n">m</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Test 1"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"======"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+  <span class="n">test1</span><span class="p">();</span> 
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Storage</span><span class="o">::</span><span class="n">empty</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">card</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">Storage</span><span class="o">::</span><span class="n">number_of_distinct_items</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">card</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">Storage</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">card</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">==</span> <span class="n">id</span><span class="p">)</span> <span class="k">return</span> <span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Storage</span><span class="o">::</span><span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">card</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">==</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="c1">// if id is not found, then if there is a room in the buffer,
+</span>  <span class="c1">// add a new entry at the end:
+</span>  <span class="k">if</span> <span class="p">(</span><span class="n">card</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">buf</span><span class="p">[</span><span class="n">card</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">id</span><span class="p">;</span>
+    <span class="n">buf</span><span class="p">[</span><span class="n">card</span><span class="p">].</span><span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">card</span> <span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Storage</span><span class="o">::</span><span class="n">remove</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">card</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">==</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// count must be positive
+</span>      <span class="n">assert</span><span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="c1">// remove ine item of thie type
+</span>      <span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span> <span class="o">--</span><span class="p">;</span>
+   
+      <span class="k">if</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// if the last item if this type has been removed, compact the array
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">card</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">buf</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">id</span><span class="p">;</span>
+          <span class="n">buf</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">count</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// decrement the cardinality
+</span>        <span class="n">card</span> <span class="o">--</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="n">Storage</span><span class="o">::</span><span class="n">pick_an_item</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">card</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">id</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">card</span><span class="p">].</span><span class="n">id</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<pre class = "terminal"><code>
+Test 1
+======
+
+Adding 20 items: 33 13 35 19 12 12 26 27 18 28 28 26 38 21 22 37 26 33 33 27 
+
+They are:
+
+27 : 2
+12 : 2
+37 : 1
+28 : 2
+35 : 1
+38 : 1
+21 : 1
+22 : 1
+26 : 3
+13 : 1
+18 : 1
+19 : 1
+33 : 3
+
+Total of 20 items 
+
+</code></pre>
+
