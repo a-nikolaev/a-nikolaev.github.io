@@ -90,6 +90,10 @@ Reading: 7.3.
 Midterm 2. Apr 28, 2015.     
 Labs 11 and 12. [Implementing a subset of Markdown, lightweight markup language](lab/11/). 
 
+Lecture 21. May 1, 2015. Algorithms competition. [[Round One and Round Two](docs/vector-algos.pdf)]
+
+Lecture 22. May 5, 2015. Introducing pointers.
+
 [HW4](hw/4/). Due Saturday, May 16 (or 23?), by 11:59pm (Midnight).    
 
 ## General information
