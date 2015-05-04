@@ -189,12 +189,12 @@ bool test_assign() {
             s.assign(Bob,   2,   0) || 
             s.assign(Bob,   5,  -1) || 
             s.assign(Bob,  10, -10) || 
-            s.assign(Bob, N-2,   2) || 
+            s.assign(Bob, N-2,   3) || 
             s.assign(Bob, N-3,  10) ;
 
         b = b && (false == result);
 
-        for(int i = 0; i <= N; i++)
+        for(int i = 0; i < N; i++)
             b = b && (UNASSIGNED == s.get(i));
 
         if (b) { cout << "pass "; } else { cout << "fail "; }

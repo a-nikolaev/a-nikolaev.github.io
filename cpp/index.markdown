@@ -60,7 +60,7 @@ Reading: 6.2, 11.1.
 
 Lecture 14. Mar 24, 2015. Streams and file I/O. [[Programs](lec/14/)]     
 Reading 12.1, 12.2.    
-Lab 7. [Abstract data types. Implementation and testing.](lab/7/). 
+Lab 7. [Abstract data types. Implementation and testing.](lab/7/). [[Solutions](lab/7/solutions.html)] 
 
 Lecture 15. Mar 27, 2015. Constructors. [[Programs](lec/15/)]   
 Reading: 7.1, 7.2.    
