@@ -118,7 +118,9 @@ Lecture 23. May 1, 2015. Trees and Huffman coding (Continued).
 [HW11](/ds/docs/hw11.pdf). (This is a big homework (Trees + Probability) and it will be x2 points worth).    
 Due Friday, May 15.   
 
-Lecture 24. May 5, 2015. Probability.
+Lecture 24. May 5, 2015. Probability.   
+No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
+Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 
 Midterm 2. May 8, 2015.     
 
