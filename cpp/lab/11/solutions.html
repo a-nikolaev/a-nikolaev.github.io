@@ -1,0 +1,223 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Labs 11 &amp; 12. Markdown </title></p>
+
+<h1>Labs 11 &amp; 12. Markdown</h1>
+
+<h2>Task 1 (Identifying headers)</h2>
+
+<pre class="highlight"><code>
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// returns header level 1-6, or 0 if it's not a header
+</span><span class="kt">int</span> <span class="n">header_level</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">NOT_HEADER</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">lvl</span> <span class="o">=</span> <span class="n">header_level</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lvl</span> <span class="o">!=</span> <span class="n">NOT_HEADER</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// header
+</span>            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;h"</span> <span class="o">&lt;&lt;</span> <span class="n">lvl</span> <span class="o">&lt;&lt;</span> <span class="s">"&gt;"</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">lvl</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="n">lvl</span><span class="p">)</span>
+                 <span class="o">&lt;&lt;</span> <span class="s">"&lt;/h"</span> <span class="o">&lt;&lt;</span> <span class="n">lvl</span> <span class="o">&lt;&lt;</span> <span class="s">"&gt;"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// not a header
+</span>            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">header_level</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'#'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<h1>Task 2 &amp; 3. (Paragraphs and emphasis)</h1>
+
+<p>We keep track of the current state of the system using two Boolean variables:</p>
+
+<ul>
+<li><code>mid_para</code>, which is <code>true</code> when <code>&lt;p&gt;</code> tag is open, and</li>
+<li><code>emph</code>, which is <code>true</code> when <code>&lt;em&gt;</code> tag is open.</li>
+</ul>
+
+
+<pre class="highlight"><code>
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// returns true if s contain only whitespace
+</span><span class="n">bool</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+
+<span class="c1">// returns header level 1-6, or 0 if it's not a header
+</span><span class="kt">int</span> <span class="n">header_level</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">NOT_HEADER</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+
+    <span class="c1">// Two state variables:
+</span>    <span class="n">bool</span> <span class="n">mid_para</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// true if &lt;p&gt; tag is open
+</span>
+    <span class="n">bool</span> <span class="n">emph</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>     <span class="c1">// true if &lt;em&gt; tag is open
+</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">lvl</span> <span class="o">=</span> <span class="n">header_level</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lvl</span> <span class="o">!=</span> <span class="n">NOT_HEADER</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// header
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">emph</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;/em&gt;"</span><span class="p">;</span> <span class="c1">// close &lt;em&gt;
+</span>                <span class="n">emph</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">mid_para</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// close the paragraph
+</span>                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;/p&gt;"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                <span class="n">mid_para</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;h"</span> <span class="o">&lt;&lt;</span> <span class="n">lvl</span> <span class="o">&lt;&lt;</span> <span class="s">"&gt;"</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">lvl</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="n">lvl</span><span class="p">)</span>
+                 <span class="o">&lt;&lt;</span> <span class="s">"&lt;/h"</span> <span class="o">&lt;&lt;</span> <span class="n">lvl</span> <span class="o">&lt;&lt;</span> <span class="s">"&gt;"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// not a header
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">is_empty</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="p">{</span>
+                <span class="c1">// empty line
+</span>                <span class="k">if</span> <span class="p">(</span><span class="n">emph</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;/em&gt;"</span><span class="p">;</span>
+                    <span class="n">emph</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">mid_para</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;/p&gt;"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                    <span class="n">mid_para</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// non-empty line
+</span>                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">mid_para</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;p&gt;"</span><span class="p">;</span>
+                    <span class="n">mid_para</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="c1">// print line
+</span>                <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'*'</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">emph</span> <span class="o">=</span> <span class="o">!</span><span class="n">emph</span><span class="p">;</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">emph</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;em&gt;"</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span> <span class="p">{</span>
+                            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;/em&gt;"</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="p">{</span>
+                        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// end of file
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">emph</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;/em&gt;"</span><span class="p">;</span>
+        <span class="n">emph</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mid_para</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"&lt;/p&gt;"</span><span class="p">;</span>
+        <span class="n">mid_para</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">bool</span> <span class="nf">is_empty</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isspace</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">header_level</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'#'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p><strong>Input:</strong></p>
+
+<pre class="highlight"><code># Intro to HTML
+We are going to consider only very basic features of HTML. 
+For text formatting, you use special tags (*markup elements enclosed
+between angular brackets*).
+
+Each paragraph should be enclosed in its own paragraph tag (p). 
+A paragraph can span multiple lines: the browser wraps the lines 
+automatically. Multiple whitespace characters and new line characters 
+are discarded by the browser, so you have to rely on the paragraph 
+tags to format the page. 
+
+## Adding emphasis
+
+The tag em can be used to *emphasize certain phrases*, the browser 
+shows it with the *italic* typeface.
+### Handling errors in formatting
+A valid HTML document *must have all open tags closed*. This is
+why this implementation closes an open (em) tag by the end of 
+the paragraph *even if it does not see a closing asterisk. 
+
+Another *test.
+</code></pre>
+
+
+<p><strong>Output:</strong></p>
+
+<pre class="highlight"><code><span class="nt">&lt;h1&gt;</span> Intro to HTML<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>We are going to consider only very basic features of HTML. 
+For text formatting, you use special tags (<span class="nt">&lt;em&gt;</span>markup elements enclosed
+between angular brackets<span class="nt">&lt;/em&gt;</span>).
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Each paragraph should be enclosed in its own paragraph tag (p). 
+A paragraph can span multiple lines: the browser wraps the lines 
+automatically. Multiple whitespace characters and new line characters 
+are discarded by the browser, so you have to rely on the paragraph 
+tags to format the page. 
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;h2&gt;</span> Adding emphasis<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;p&gt;</span>The tag em can be used to <span class="nt">&lt;em&gt;</span>emphasize certain phrases<span class="nt">&lt;/em&gt;</span>, the browser 
+shows it with the <span class="nt">&lt;em&gt;</span>italic<span class="nt">&lt;/em&gt;</span> typeface.
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;h3&gt;</span> Handling errors in formatting<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;p&gt;</span>A valid HTML document <span class="nt">&lt;em&gt;</span>must have all open tags closed<span class="nt">&lt;/em&gt;</span>. This is
+why this implementation closes an open (em) tag by the end of 
+the paragraph <span class="nt">&lt;em&gt;</span>even if it does not see a closing asterisk. 
+<span class="nt">&lt;/em&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Another <span class="nt">&lt;em&gt;</span>test.
+<span class="nt">&lt;/em&gt;&lt;/p&gt;</span></code></pre>
+
+
+

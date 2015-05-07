@@ -88,7 +88,7 @@ Lecture 20. Apr 24, 2015. Review session. [[Hash Tables](lec/20)].
 Reading: 7.3.   
 
 Midterm 2. Apr 28, 2015.     
-Labs 11 and 12. [Implementing a subset of Markdown, lightweight markup language](lab/11/). 
+Labs 11 and 12. [Implementing a subset of Markdown](lab/11/). [[Solutions](lab/11/solutions.html)]
 
 Lecture 21. May 1, 2015. Algorithms competition. [[Round One and Round Two](docs/vector-algos.pdf)]
 
