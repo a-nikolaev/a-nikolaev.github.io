@@ -94,6 +94,9 @@ Lecture 21. May 1, 2015. Algorithms competition. [[Round One and Round Two](docs
 
 Lecture 22. May 5, 2015. Introducing pointers.
 
+Lecture 23. May 8, 2015. Assignment. Pointers. Stack and heap allocation. [[Slides](lec/23/slides.pdf)].      
+Reading: 10.1.   
+
 [HW4](hw/4/). Due Saturday, May 16 (or 23?), by 11:59pm (Midnight).    
 
 ## General information
