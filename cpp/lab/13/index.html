@@ -1,0 +1,193 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>Lab 13. Separate compilation </title></p>
+
+<h1>Lab 13. Separate compilation</h1>
+
+<h2>How to submit your code</h2>
+
+<p>Each program (the source code .cpp files + Makefile) should be submitted through Blackboard (Course Materials > Lab).</p>
+
+<p>You can submit all your programs at the end of the lab session in one submission. This way, we can hopefully avoid
+the situation when you are quickly writing your program, immediately uploading it to Blackboard,
+but then, say 10 minutes later, realizing that there is a bug in it.</p>
+
+<p>Basically, submit when you are sure that it will be your final version.</p>
+
+<p>Each program should start with a comment that contains your name and a short program description, for example:</p>
+
+<pre class="highlight"><code><span class="cm">/*
+  Author: Your Name 
+  Description: Lab 1. Task 1. Hello world
+*/</span>
+</code></pre>
+
+
+<p>You can submit incomplete programs, but their &ldquo;incomplete&rdquo; status must be clearly mentioned in the comment to the program.
+In this case, also briefly describe what is implemented, and what is not.</p>
+
+<h2>Intro 1. Makefiles</h2>
+
+<p>To execute multiple commands in particular order, taking into account dependencies
+between the files, one can use the program called <code>make</code></p>
+
+<p>A trivial case is when you just want to compile a single file program <a href="demo1/program.cpp">program.cpp</a>,
+a <a href="demo1/Makefile">Makefile</a> may look as follows (Note that indentation symbols should be TABs, not simple spaces,
+otherwise it would not work):</p>
+
+<pre class="highlight"><code>
+<span class="nl">all</span><span class="o">:</span> <span class="nf">program</span>
+
+<span class="nl">program</span><span class="o">:</span> <span class="nf">program.cpp</span>
+    g++ -Wall -o program program.cpp
+
+<span class="nl">clean</span><span class="o">:</span>
+    rm program 
+
+</code></pre>
+
+
+<p>If you have both the cpp file and the <code>Makefile</code> in your current working directory,
+simply type:</p>
+
+<pre class="highlight"><code><span class="n">make</span>
+</code></pre>
+
+
+<p>The program will take your <code>Makefile</code>, read and execute it. By default it will perform the first rule it finds.
+In this case, the first rule is the target called <code>all</code>. This rule does not do anything by itself,
+but it requires to call another rule, <code>program</code>, which actually builds your program.
+And now you can run the program you just built:</p>
+
+<pre class="highlight"><code><span class="p">.</span><span class="o">/</span><span class="n">program</span>
+</code></pre>
+
+
+<p>You can explicitly ask <code>make</code> to execute a particular rule, for example:</p>
+
+<pre class="highlight"><code><span class="n">make</span> <span class="n">all</span>
+</code></pre>
+
+
+<p>or</p>
+
+<pre class="highlight"><code><span class="n">make</span> <span class="n">clean</span>
+</code></pre>
+
+
+<h2>Intro 2. Breaking a program into several files</h2>
+
+<p>The program used in the previous section can be broken down into three files:</p>
+
+<ul>
+<li>the header (interface) of the class <a href="demo2/intset.h">intset.h</a>,</li>
+<li>the implementation of the class <a href="demo2/intset.cpp">intset.cpp</a>,</li>
+<li>the main file that uses the class <a href="demo2/main.cpp">main.cpp</a>.</li>
+</ul>
+
+
+<p>Both <code>.cpp</code> files must be built with <code>g++</code> separately:</p>
+
+<pre class="highlight"><code><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">c</span> <span class="n">intset</span><span class="p">.</span><span class="n">cpp</span>
+<span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">c</span> <span class="n">main</span><span class="p">.</span><span class="n">cpp</span>
+<span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">o</span> <span class="n">prog</span> <span class="n">intset</span><span class="p">.</span><span class="n">o</span> <span class="n">main</span><span class="p">.</span><span class="n">o</span>
+</code></pre>
+
+
+<p>Also note that both of the files depend on the header file,
+because both include it with the preprocessor directive <code>#include</code>.
+The dependencies diagram looks like this.</p>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/hEsSfq5.png" alt="" /></p>
+
+<p>Every time some source code file (<code>.cpp</code> or <code>.h</code>) gets updated, the files that depend on it must be updated!</p>
+
+<p><strong>Let&rsquo;s use make to do this automatically.</strong>
+Instead of calling <code>g++</code> three times every time we want to build the program, we
+can write a <a href="demo2/Makefile">Makefile</a> to do this work:</p>
+
+<pre class="highlight"><code><span class="c"># The main goal is build the executable "prog"
+</span><span class="nl">all</span><span class="o">:</span> <span class="nf">prog</span>
+
+<span class="c"># To build the program prog, two object files 
+# "intset.o" and "main.o" must be built,
+# then we can link them and produce the executable:
+</span><span class="nl">prog</span><span class="o">:</span> <span class="nf">intset.o main.o </span>
+    g++ -Wall -o prog intset.o main.o
+
+<span class="nl">intset.o</span><span class="o">:</span> <span class="nf">intset.cpp intset.h</span>
+    g++ -Wall -c intset.cpp
+
+<span class="nl">main.o</span><span class="o">:</span> <span class="nf">main.cpp intset.h</span>
+    g++ -Wall -c main.cpp
+
+<span class="c"># Remove the object files and the executable "prog"
+</span><span class="nl">clean</span><span class="o">:</span>
+    <span class="p">-</span> rm -rf <span class="k">*</span>.o prog
+</code></pre>
+
+
+<h3>Task 0A (Don&rsquo;t submit).</h3>
+
+<p>Read the sections Intro-1 and Intro-2. For each download the source code files, the Makefile, and build the program using <code>make</code>.</p>
+
+<h3>Task 0B (Don&rsquo;t submit).</h3>
+
+<p>Examine the files from the Intro-2.
+Observe how the previously monolithic program <a href="demo1/program.cpp">program.cpp</a> was divided into three separate files.
+The declarations of the class <code>IntSet</code> are put into its header file, and its implementation is is now in its own <code>.cpp</code> file.</p>
+
+<p>The contents of each header file are enclosed into <code>#ifndef</code> preprocessor directive that prescribes that
+the header is included into the <code>.cpp</code> files only once.</p>
+
+<pre class="highlight"><code><span class="cp">#ifndef INTSET_H
+#define INTSET_H
+</span>
+<span class="p">...</span>
+
+<span class="cp">#endif
+</span></code></pre>
+
+
+<p>All source code files (<code>.cpp</code> or <code>.h</code>) that call functions or use other names declared in the header files,
+have to <em>include</em> those header files, for exmaple:</p>
+
+<pre class="highlight"><code><span class="cp">#include "intset.h"
+</span></code></pre>
+
+
+<h3>Task 1.</h3>
+
+<p>In this task you will be given a C++ program and its Makefile, and you have to divide it into mutiple files.</p>
+
+<p style="text-align:center;"> >>> Download: <a href="task/generate.cpp">generate.cpp</a> and <a href="task/Makefile">Makefile</a> &lt;&lt;&lt;</p>
+
+<p>This program generates a random graph (mathematical object = set of nodes together with the set of edges that connect the nodes).
+In particular, it produces <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdos-Renyi random graph</a>.</p>
+
+<p>To run the program, it requires two parameters, the number of nodes and the filename to save the file, for example:</p>
+
+<pre class="highlight"><code><span class="p">.</span><span class="o">/</span><span class="n">generate</span> <span class="mi">100</span> <span class="n">output</span><span class="p">.</span><span class="n">dot</span>
+</code></pre>
+
+
+<p>The result is saved in the dot-format that can be converted into a graphics file (PDF in this case) using the program Graphviz,
+with the following command:</p>
+
+<pre class="highlight"><code><span class="n">dot</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">Tpdf</span> <span class="o">-</span><span class="n">Kfdp</span> <span class="n">output</span><span class="p">.</span><span class="n">dot</span>
+</code></pre>
+
+
+<p><strong>Your task will be to gradually change the program, eventually dividing it into 7 files:</strong></p>
+
+<ol>
+<li><p>First, separate the class Random into <code>random.cpp</code> and <code>random.h</code>, the rest of the code keep in the
+program <code>main.cpp</code>. Make sure it compiles and works correctly. Only then move on to the next step.
+Use the IntSet example as a model.</p></li>
+<li><p>The same way, separate the class Graph into <code>graph.cpp</code> and <code>graph.h</code>.</p></li>
+<li><p>Separate the function <code>save_graph()</code> in its own <code>dot.cpp</code> and <code>dot.h</code></p></li>
+</ol>
+

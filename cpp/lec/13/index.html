@@ -128,14 +128,14 @@ g++ -c main.cpp
 <pre><code>g++ -o prog intset.o main.o
 </code></pre>
 
-<p>An now can execute as usual:</p>
+<p>And now can execute as usual:</p>
 
 <pre><code>./prog
 </code></pre>
 
 <h2><code>make</code> and Makefiles</h2>
 
-<p><strong>Makefile</strong> (put this files in the same folder with your source code files)</p>
+<p><strong>Makefile</strong> (put these files in the same folder with your source code files)</p>
 
 <pre class="highlight"><code><span class="cp"># A simple Makefile to build the program. 
 # It can be greatly improved, actually.
@@ -143,7 +143,7 @@ g++ -c main.cpp
 <span class="cp"># The main goal is build the executable "prog"
 </span><span class="n">all</span><span class="o">:</span> <span class="n">prog</span>
 
-<span class="cp"># To build the program prog, first who object files 
+<span class="cp"># To build the program prog, first two object files 
 # "intset.o" and "main.o" must be built
 </span><span class="n">prog</span><span class="o">:</span> <span class="n">intset</span><span class="p">.</span><span class="n">o</span> <span class="n">main</span><span class="p">.</span><span class="n">o</span> 
     <span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">o</span> <span class="n">prog</span> <span class="n">intset</span><span class="p">.</span><span class="n">o</span> <span class="n">main</span><span class="p">.</span><span class="n">o</span>

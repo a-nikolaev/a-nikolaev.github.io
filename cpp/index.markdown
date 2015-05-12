@@ -97,6 +97,9 @@ Lecture 22. May 5, 2015. Introducing pointers.
 Lecture 23. May 8, 2015. Assignment. Pointers. Stack and heap allocation. [[Slides](lec/23/slides.pdf)].      
 Reading: 10.1.   
 
+Lecture 24. May 12, 2015. Dynamic arrays allocation.      
+Lab 13. [Separate compilation](lab/13/). 
+
 [HW4](hw/4/). Due Saturday, May 16 (or 23?), by 11:59pm (Midnight).    
 
 ## General information
