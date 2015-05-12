@@ -18,11 +18,11 @@ class Random {
   public:
     // returns a random floating point number 
     // uniformly distributed in the interval [0,1] 
-    static double u_double ();
+    static double uniform_double ();
 
     // returns a random integer uniformly distributed 
     // in the interval [0, n-1] 
-    static int u_int (int n);
+    static int uniform_int (int n);
 };
   
 /*
@@ -83,11 +83,11 @@ int main(int argc, char *argv[]) {
 // ***************** Implementation *******************
 
 
-double Random::u_double () {
+double Random::uniform_double () {
   return static_cast<double>(rand()) / static_cast<double>(RAND_MAX);
 }
 
-int Random::u_int (int n) {
+int Random::uniform_int (int n) {
   return rand() % n;
 }
 
@@ -97,7 +97,7 @@ Graph::Graph(int nn, double p) :
 {
   for(int i = 0; i < n; ++i) {
     for(int j = 0; j < i; ++j) {
-      if (Random::u_double() < p) {
+      if (Random::uniform_double() < p) {
         m[i][j] = true;
         m[j][i] = true; // adj matrix is symmetric
       }
