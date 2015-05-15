@@ -127,7 +127,9 @@ Midterm 2. May 8, 2015.
 * Covers lectures from 14 to 24. (There will be one simple question on probability).
 * For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
 The formula sheet should be handed in after the exam.
-* Practice exams are posted on Blackboard.
+* Practice exams are posted on Blackboard.      
+
+[Midterm 2 - Statistics](/ds/docs/stats/stats-midterm2.pdf).  
 
 Lecture 25. May 12, 2015. Probability 2.
 
@@ -135,6 +137,15 @@ Projects presentation. May 15, 2014.
 [Information for the speakers](/ds/talks.html).    
 [Possible Project Topics](/ds/topics.html).    
 [Schedule](/ds/presentation.html).
+
+By Sunday, May 17, your letter grade for everything except for the Final exam will be posted on Blackboard.
+The results of the Final will improve this grade if you do better than on one of the midterms.
+
+Final Exam. Tuesday. May 19. 9:00 - 11:00 am. The same room. 
+Cumulative. You will be provided with a formula sheet with the logical equivalences and the inference rules.   
+You can prepare your own **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.    
+Practice exams are be posted on Blackboard.
 
 <!--
 
@@ -168,7 +179,8 @@ WolframAlpha can be useful to check the correctness of your solutions,
 [example2](http://www.wolframalpha.com/input/?i=f%280%29+%3D+3%2C+f%281%29+%3D+1%2C+f%28n%29+%3D+4f%28n+%E2%88%92+1%29+%2B+21f%28n+%E2%88%92+2%29).
 
 Midterm I. Oct 6, 2014.    
-Covers lectures from 1 to 7. No books, no notes allowed. You will be provided with a 
+Covers lectures from 1 to 7. No books, no notes allowed. 
+You will be provided with a 
 formula sheet with the logical equivalences and the inference rules.   
 
 A **Practice exam** is posted on Blackboard. I will try to post the solutions for it by Saturday.   
