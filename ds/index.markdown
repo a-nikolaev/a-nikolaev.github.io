@@ -143,9 +143,9 @@ The results of the Final will improve this grade if you do better than on one of
 
 Final Exam. Tuesday. May 19. 9:00 - 11:00 am. The same room. 
 Cumulative. You will be provided with a formula sheet with the logical equivalences and the inference rules.   
-You can prepare your own **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+You can prepare **your own formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
 The formula sheet should be handed in after the exam.    
-Practice exams are be posted on Blackboard.
+Practice exams are posted on Blackboard.
 
 <!--
 
