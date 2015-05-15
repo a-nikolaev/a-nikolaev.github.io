@@ -133,8 +133,8 @@ Lecture 25. May 12, 2015. Probability 2.
 
 Projects presentation. May 15, 2014.    
 [Information for the speakers](/ds/talks.html).    
-
 [Possible Project Topics](/ds/topics.html).    
+[Schedule](/ds/presentation.html).
 
 <!--
 
