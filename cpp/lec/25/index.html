@@ -1,0 +1,146 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title> Dynamic memory allocation </title></p>
+
+<h1>Objects that use dynamic memory allocation</h1>
+
+<h2>Our own vector class</h2>
+
+<p>This program implements a small class that mimics the functionality of the Standard Library class <code>vector</code>.</p>
+
+<p><strong>Usage example:</strong></p>
+
+<pre class="highlight"><code>  <span class="n">MyVector</span> <span class="n">v</span><span class="p">;</span> <span class="c1">// creates an empty MyVector
+</span>  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>       
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre>
+
+
+<h2>Implemention</h2>
+
+<p>To <strong>allow dynamically increasing the size of our vector</strong>,
+we store its elements in a dynamically allocated array,
+and when we storage has to be increased, we allocate another array of bigger size,
+copy all data in this new array, and then free the memory of the old array.</p>
+
+<p><strong>A important note about this implementation:</strong>
+If we copy an object of this class:</p>
+
+<pre class="highlight"><code>  <span class="n">MyVector</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+</code></pre>
+
+
+<p>the object <code>v2</code> is a &ldquo;shallow&rdquo; copy, because now both objects, the old one and the new one
+share the same pointer.</p>
+
+<p>If one of the objects, <code>v</code> or <code>v2</code>, would like to increase the size of
+the heap-allocated array, the other one will not know about this change,
+so its pointer will be pointing to a region in the heap that became invalid.
+The program will misbehave and may eventually crash.</p>
+
+<p>To resolve this issue, C++ let us redefine the assignment operator and the copy constructor,
+but we don&rsquo;t do it here (see the book to read more about this issue).</p>
+
+<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyVector</span> <span class="p">{</span>
+  <span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">cap</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">used</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">arr</span><span class="p">;</span> 
+  <span class="k">public</span><span class="o">:</span>
+    
+    <span class="n">MyVector</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="n">push_back</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span> 
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">MyVector</span> <span class="n">v</span><span class="p">;</span> <span class="c1">// creates an empty MyVector
+</span>  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>       
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// copying this object makes a "shallow" copy, because both
+</span>  <span class="c1">// objects, the old one and the new one will share the same pointer:
+</span> 
+  <span class="c1">// we make a copy anyway:
+</span>  <span class="n">MyVector</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+  
+  <span class="c1">// if one of the objects, v or v2, would like to increase the size of 
+</span>  <span class="c1">// the heap-allocated array, the other one will not know about this change,
+</span>  <span class="c1">// so its pointer will be pointing to a region in the heap that became invalid.
+</span>  <span class="c1">// The program will misbehave and may eventually crash.
+</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v2</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>       
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="n">MyVector</span> <span class="o">::</span> <span class="n">MyVector</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="n">cap</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">used</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">cap</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">MyVector</span> <span class="o">::</span> <span class="n">size</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">used</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">MyVector</span> <span class="o">::</span> <span class="n">get</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">// does not check that we access a valid index
+</span><span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">MyVector</span> <span class="o">::</span> <span class="n">push_back</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">used</span> <span class="o">&lt;</span> <span class="n">cap</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// if the capacity is enough to add one more element
+</span>    <span class="n">arr</span><span class="p">[</span><span class="n">used</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">used</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+
+    <span class="kt">int</span> <span class="n">new_cap</span><span class="p">;</span>
+    <span class="n">new_cap</span> <span class="o">=</span> <span class="n">cap</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">new_arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">new_cap</span><span class="p">];</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">used</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">new_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">arr</span><span class="p">;</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">new_arr</span><span class="p">;</span>
+    <span class="n">cap</span> <span class="o">=</span> <span class="n">new_cap</span><span class="p">;</span>
+
+    <span class="n">arr</span><span class="p">[</span><span class="n">used</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">used</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+
+<pre class = "terminal"><code>1 4 12 
+1 4 12 
+</code></pre>
+
