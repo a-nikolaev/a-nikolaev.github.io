@@ -5,25 +5,28 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Jan 30, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
-Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.    
-[HW1](/ds/docs/hw1.pdf). Due Friday, Feb 6.   
-(Notice that only problems 1, 3, 4, and 6 will be graded; you don't have to write your solutions for the other problems).
+Lecture 1. Jun 1, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
+Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.   
 
-Lecture 2. Feb 3, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+<!-- [HW1](/ds/docs/hw1.pdf). Due Friday, Feb 6.   
+(Notice that only problems 1, 3, 4, and 6 will be graded; you don't have to write your solutions for the other problems). -->
+
+Lecture 2. Jun 2, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).    
 
-Lecture 3. Feb 6, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+Lecture 3. Jun 3, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
-[HW2](/ds/docs/hw2.pdf). Due Friday, Feb 13.    
 
-Lecture 4. Feb 10, 2015. [Proofs](/ds/docs/lec4.pdf).  
+<!-- [HW2](/ds/docs/hw2.pdf). Due Friday, Feb 13.    -->
+
+Lecture 4. Jun 4, 2015. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
 
+<!--
 Lecture 5. Feb 13, 2015. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
 [HW3](/ds/docs/hw3.pdf). Due Friday, Feb 20.    
@@ -146,6 +149,7 @@ Cumulative. You will be provided with a formula sheet with the logical equivalen
 You can prepare **your own formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
 The formula sheet should be handed in after the exam.    
 Practice exams are posted on Blackboard.
+-->
 
 <!--
 
@@ -451,7 +455,7 @@ Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room
 
 ## Syllabus
 
-Tue, Fri, 11:10 am - 12:25 pm. North C-004.  
+Mon, Tue, wed, Thr, 11:40 am - 12:50 pm. West W-116.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -465,7 +469,7 @@ Office: HN 1000C
 [![pdf][pdfimg]](/docs/mit-mathcs.pdf)
 
 ### Grading Policy
-  Homeworks every week (Due Friday). No late homeworks accepted. Homeworks must be handed in at the beginning of the class.
+  Homeworks twice a week (Due Monday and Thursday). No late homeworks accepted. Homeworks must be handed in at the beginning of the class.
 
 ####Distribution  
   
@@ -479,11 +483,13 @@ Office: HN 1000C
   However, you still have to attend and write the final exam,
   even if you already have 100% for the midterms.
 
+<!--
 ####Project    
   An optional project is a possibility to improve your grade, and (hopefully) do something fun.
 
   More details will be added later.
-  
+-->
+
 <!--
   If your total grade X = HWs + Exams is a number between 0 and 1, and if your grade for the project is P (again, a number between 0 and 1), 
   then the additive bonus is 0.1 * P * (1-X/2). Effectively, it gives you a bonus between 5% and 10%, depending on your 
@@ -503,101 +509,102 @@ Office: HN 1000C
 
 ### Tentative Course Content
 
-Jan 30 (Fri).
+Jun 1 (Mon).
 Propositional Logic.
 <br />
-Feb 03 (Tue).
+Jun 2 (Tue).
 Satisfiability and Rules of Inference.
 <br />
-Feb 06 (Fri).
+Jun 3 (Wed).
 Predicates and Quantifiers.
 <br />
-Feb 10 (Tue).
+Jun 4 (Thr).
 Proofs.
 
-Feb 13 (Fri).
+Jun 8 (Mon).
 Counting. Intro.
 <br />
-Feb 17 (Tue).
+Jun 9 (Tue).
 The Pigeonhole Principle. Permutations and Combinations. 
 <br />
-Feb 20 (Fri).
+Jun 10 (Wed).
 Binomial Theorem. Combinations with repetition.
 <br />
-Feb 24 (Tue).
+Jun 11 (Thr).
 Counting. Practice session. 
 
 
-Feb 27 (Fri).
+Jun 15 (Mon).
 Induction.
 <br />
-Mar 03 (Tue).
+Jun 16 (Tue).
 Recurrences.
 <br />
-Mar 06 (Fri).
+Jun 17 (Wed).
 Fibonacci Numbers. Solving Linear Recurrences.
 <br />
-Mar 10 (Tue).
+Jun 18 (Thr).
 Strong Induction. Catalan Numbers.
-<br />
-Mar 13 (Fri).
+
+Jun 22 (Mon).
 Recursion in Mathematics and Programming.
+<br />
+Jun 23 (Tue).
+Review session.
 
-
-Mar 17 (Tue).
+Jun 24 (Wed).
 Midterm 1.
 
-
-Mar 20 (Fri).
+Jun 25 (Thr).
 Intro to Number Theory.
-<br />
-Mar 23 (Tue).
+
+Jun 29 (Mon).
 Modular arithmetic.
 <br />
-Mar 27 (Fri).
+Jun 30 (Tue).
+Modular arithmetic and Extended Euclidean algorithm.
+<br />
+Jul 1 (Wed).
 Fermat's little theorem. RSA.
-
-Mar 31 (Tue).
+<br />
+Jul 2 (Thr).
 Sets. Ordered pairs.
 
-Apr 03 (Fri) Spring Recess.
-<br />
-Apr 07 (Tue) Spring Recess.
-<br />
-Apr 10 (Fri) Spring Recess.
-
-Apr 14 (Tue).
+Jul 6 (Mon).
 Relations. Functions. Bijection and counting.
 <br />
-Apr 17 (Fri).
+Jul 7 (Tue).
 Relations and partial orders. 
-
-
-Apr 21 (Tue).
+<br />
+Jul 8 (Wed).
 Graphs. Bipartite graphs. Paths.
 <br />
-Apr 24 (Fri).
+Jul 9 (Thr).
 Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
-<br />
-Apr 28 (Tue).
-Trees. Huffman coding.
 
-May 1 (Fri).
+Jul 13 (Mon).
+Trees. Huffman coding.
+<br />
+Jul 14 (Tue).
 Probability.
 <br />
-May 5 (Tue). 
+Jul 15 (Wed).
 Probability. Random variables. Expected value.
 
-May 8 (Fri). 
+
+Jul 16 (Thr).
 Midterm 2.
 
-May 12 (Tue).
-Projects presentation.
-
-May 15 (Fri). 
+Jul 20 (Mon).
+Infinity. Countable and uncountable sets. Diagonalization.
+<br />
+Jul 21 (Tue).
+Computation with functions. Lambda calculus. 
+<br />
+Jul 22 (Wed).
 Review Session.
 
-May 19 (Tue). Final Exam. 9:00 - 11:00 am. The same room. 
+Jul 23 (Thr). Final Exam.  
 
 
 <!--
