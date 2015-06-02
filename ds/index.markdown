@@ -8,15 +8,15 @@ title: CSCI 150 - Discrete Structures
 Lecture 1. Jun 1, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.   
 
-<!-- [HW1](/ds/docs/hw1.pdf). Due Friday, Feb 6.   
-(Notice that only problems 1, 3, 4, and 6 will be graded; you don't have to write your solutions for the other problems). -->
-
 Lecture 2. Jun 2, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
-[3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).    
+[3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).     
+[HW1](/ds/docs/hw1.pdf). Due Thursday, Jun. 4.   
+(Notice that only problems 2, 3, 4, 5, and 6 will be graded; you don't have to write your solutions for the other problems).
+
 
 Lecture 3. Jun 3, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
