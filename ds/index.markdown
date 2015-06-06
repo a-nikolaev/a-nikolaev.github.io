@@ -21,10 +21,9 @@ Useful links:
 Lecture 3. Jun 3, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
 
-<!-- [HW2](/ds/docs/hw2.pdf). Due Friday, Feb 13.    -->
-
 Lecture 4. Jun 4, 2015. [Proofs](/ds/docs/lec4.pdf).  
-Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.    
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
+[HW2](/ds/docs/hw2.pdf). Due Monday, Jun. 8. 
 
 <!--
 Lecture 5. Feb 13, 2015. [Counting. Sets](/ds/docs/lec5.pdf).  
