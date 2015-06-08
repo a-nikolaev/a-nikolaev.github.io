@@ -25,15 +25,16 @@ Lecture 4. Jun 4, 2015. [Proofs](/ds/docs/lec4.pdf).
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
 [HW2](/ds/docs/hw2.pdf). Due Monday, Jun. 8. 
 
-<!--
-Lecture 5. Feb 13, 2015. [Counting. Sets](/ds/docs/lec5.pdf).  
+Lecture 5. Jun 8, 2015. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
-[HW3](/ds/docs/hw3.pdf). Due Friday, Feb 20.    
 
-Lecture 6. Feb 17, 2015. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).      
+<!-- [HW3](/ds/docs/hw3.pdf). Due Friday, Feb 20.    -->
+
+Lecture 6. Jun 9, 2015. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).      
 Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.    
 
-The video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
+<!--
+A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
 
 Lecture 7. Feb 20, 2015. [Binomial Theorem. Combinations with repetition](/ds/docs/lec7.pdf).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
