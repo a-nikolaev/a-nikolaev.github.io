@@ -37,6 +37,9 @@ A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.
 Lecture 7. Jun 10, 2015. [Binomial Theorem. Combinations with repetition](/ds/docs/lec7.pdf).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
 
+Lecture 7 (continued). Jun 11, 2015.     
+[HW4](/ds/docs/hw4.pdf). Due Monday, Jun. 15.  
+
 <!--
 [HW4](/ds/docs/hw4.pdf). Due Friday, Feb 27.    
 
