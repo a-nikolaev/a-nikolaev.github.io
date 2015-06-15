@@ -40,8 +40,10 @@ Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.
 Lecture 7 (continued). Jun 11, 2015.     
 [HW4](/ds/docs/hw4.pdf). Due Monday, Jun. 15.  
 
+Lecture 8. Jun 15, 2015. Counting. Problem solving.
+[[problem set with answers](/ds/docs/cc3.pdf)].    
+
 <!--
-[HW4](/ds/docs/hw4.pdf). Due Friday, Feb 27.    
 
 Lecture 8. Feb 24, 2015. Counting. Problem solving.
 [[problem set with answers](/ds/docs/cc3.pdf)].    
