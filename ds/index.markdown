@@ -45,6 +45,7 @@ Lecture 8. Jun 15, 2015. Counting. Problem solving.
 
 Lecture 9. Jun 16, 2015. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+[HW5](/ds/docs/hw5.pdf). Due Thursday, Jun. 18.    
 
 <!--
 
