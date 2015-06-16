@@ -43,6 +43,9 @@ Lecture 7 (continued). Jun 11, 2015.
 Lecture 8. Jun 15, 2015. Counting. Problem solving.
 [[problem set with answers](/ds/docs/cc3.pdf)].    
 
+Lecture 9. Jun 16, 2015. [Induction](/ds/docs/lec9.pdf).  
+Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+
 <!--
 
 Lecture 8. Feb 24, 2015. Counting. Problem solving.
