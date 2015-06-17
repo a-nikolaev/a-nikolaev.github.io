@@ -47,18 +47,12 @@ Lecture 9. Jun 16, 2015. [Induction](/ds/docs/lec9.pdf).
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
 [HW5](/ds/docs/hw5.pdf). Due Thursday, Jun. 18.    
 
-<!--
-
-Lecture 8. Feb 24, 2015. Counting. Problem solving.
-[[problem set with answers](/ds/docs/cc3.pdf)].    
-
-Lecture 9. Feb 27, 2015. [Induction](/ds/docs/lec9.pdf).  
-Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
-[HW5](/ds/docs/hw5.pdf). Due Friday, Mar 6.    
-
-Lecture 10. Mar 3, 2015. [Recurrences](/ds/docs/lec10.pdf).    
+Lecture 10. Jun 17, 2015. [Recurrences](/ds/docs/lec10.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
+
+<!--
+
 
 Lecture 11. Mar 10, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
