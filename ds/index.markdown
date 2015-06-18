@@ -51,11 +51,12 @@ Lecture 10. Jun 17, 2015. [Recurrences](/ds/docs/lec10.pdf).
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
 
+Lecture 11. Jun 18, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+
 <!--
 
 
-Lecture 11. Mar 10, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
-Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 [HW6](/ds/docs/hw6.pdf). Due Friday, Mar 20.
 (WolframAlpha can be useful to check the correctness of your solutions,
 [example1](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29),
