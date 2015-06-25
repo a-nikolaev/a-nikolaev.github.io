@@ -58,6 +58,8 @@ Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.
 [example1](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29),
 [example2](http://www.wolframalpha.com/input/?i=f%280%29+%3D+3%2C+f%281%29+%3D+1%2C+f%28n%29+%3D+4f%28n+%E2%88%92+1%29+%2B+21f%28n+%E2%88%92+2%29)).
 
+<!-- [example2](http://www.wolframalpha.com/input/?i=f%281%29+%3D+10%2C+f%282%29+%3D+%E2%88%922%2C+f%28n%29+%3D+f%28n+%E2%88%92+1%29+%2B+12f%28n+%E2%88%92+2%29)) -->
+
 Lecture 13. Jun 22, 2015. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
 Source code in [Julia](http://julialang.org/):
 [sum.jl](/ds/code/sum.jl),
@@ -76,26 +78,13 @@ Midterm 1. Jun 24, 2015.
 Covers Lectures 1 - 11. Two practice exams are posted on Blackboard.   
 No notes and no books allowed, you will be given a formula sheet with the equivalence formulas and the inference rules.     
 
-<!-- [example2](http://www.wolframalpha.com/input/?i=f%281%29+%3D+10%2C+f%282%29+%3D+%E2%88%922%2C+f%28n%29+%3D+f%28n+%E2%88%92+1%29+%2B+12f%28n+%E2%88%92+2%29)) -->
+Lecture 14. Jun 25, 2015. [Intro to Number Theory](/ds/docs/lec14.pdf).        
+Reading:
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
+
 
 <!--
-
-Lecture 12 & 13. Mar 13, 2015.    
-Part 1. [Strong Induction. <del>Catalan Numbers</del>](/ds/docs/lec12.pdf).  
-Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.  
-["Catalan numbers"](http://mathcircle.berkeley.edu/BMC6/pdf0607/catalan.pdf) by Tom Davis.     
-Part 2. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
-Source code in [Julia](http://julialang.org/):
-[sum.jl](/ds/code/sum.jl),
-[fact.jl](/ds/code/fact.jl),
-[fib.jl](/ds/code/fib.jl),
-[mset.jl](/ds/code/mset.jl),
-[graph.jl](/ds/code/graph.jl),
-[lsys.jl](/ds/code/lsys.jl),
-[turtle.jl](/ds/code/turtle.jl),
-[merge.jl](/ds/code/merge.jl).    
-
-There will be office hours this Friday, after 5pm, I will stay for 2-3 hours.
 
 Midterm 1. Mar 17, 2015.    
 Covers Lectures 1 - 11. Two practice exams are posted on Blackboard.   
@@ -103,11 +92,8 @@ No notes and no books allowed, you will be given a formula sheet with the equiva
 [Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 
-Lecture 14. Mar 20, 2015. [Intro to Number Theory](/ds/docs/lec14.pdf).        
-Reading:
-[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
-LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
 [HW7](/ds/docs/hw7.pdf). Due Friday, Mar 27.
+
 
 Lecture 15. Mar 24, 2015. [Modular arithmetic](/ds/docs/lec15.pdf).   
 Reading: the same.    
