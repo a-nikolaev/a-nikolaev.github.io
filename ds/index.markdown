@@ -77,12 +77,17 @@ Reading: LL: Chapter 3; R(ed6): 4.2; R(ed7): 5.2.
 Midterm 1. Jun 24, 2015.   
 Covers Lectures 1 - 11. Two practice exams are posted on Blackboard.   
 No notes and no books allowed, you will be given a formula sheet with the equivalence formulas and the inference rules.     
+[Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 Lecture 14. Jun 25, 2015. [Intro to Number Theory](/ds/docs/lec14.pdf).        
 Reading:
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
 LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
 [HW7](/ds/docs/hw7.pdf). Due Monday, Jun 29.
+
+Lecture 15. Jun 29, 2015. [Modular arithmetic](/ds/docs/lec15.pdf).   
+Reading: the same.    
+Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
 
 
 <!--
@@ -93,10 +98,6 @@ No notes and no books allowed, you will be given a formula sheet with the equiva
 [Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 
-
-Lecture 15. Mar 24, 2015. [Modular arithmetic](/ds/docs/lec15.pdf).   
-Reading: the same.    
-Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
 
 Lecture 16. Mar 27, 2015. [RSA. The fundamental theorem of arithmetic](/ds/docs/lec16.pdf).    
 Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
