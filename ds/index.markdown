@@ -89,8 +89,11 @@ Lecture 15. Jun 29, 2015. [Modular arithmetic](/ds/docs/lec15.pdf).
 Reading: the same.    
 Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
 
+Lecture 16. Jun 30, 2015. [RSA. The fundamental theorem of arithmetic](/ds/docs/lec16.pdf).    
+Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
 
 <!--
+[HW8](/ds/docs/hw8.pdf). Due Friday, Apr 17.
 
 Midterm 1. Mar 17, 2015.    
 Covers Lectures 1 - 11. Two practice exams are posted on Blackboard.   
