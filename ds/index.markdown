@@ -93,6 +93,11 @@ Lecture 16. Jun 30, 2015. [RSA. The fundamental theorem of arithmetic](/ds/docs/
 Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
 [HW8](/ds/docs/hw8.pdf). Due Thursday, Jul 2.
 
+Lecture 16 (continued). Jul 1, 2015.
+
+Lecture 17. Jul 2, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
+Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+
 <!--
 
 Midterm 1. Mar 17, 2015.    
@@ -105,9 +110,6 @@ No notes and no books allowed, you will be given a formula sheet with the equiva
 Lecture 16. Mar 27, 2015. [RSA. The fundamental theorem of arithmetic](/ds/docs/lec16.pdf).    
 Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
 [HW8](/ds/docs/hw8.pdf). Due Friday, Apr 17.
-
-Lecture 17. Mar 31, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
-Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
 
 Lecture 18. Apr 14, 2015. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
