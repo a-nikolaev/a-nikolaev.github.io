@@ -97,6 +97,7 @@ Lecture 16 (continued). Jul 1, 2015.
 
 Lecture 17. Jul 2, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+[HW9](/ds/docs/hw9.pdf). Due Monday, Jul 6.   
 
 <!--
 
