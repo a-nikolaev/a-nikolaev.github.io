@@ -99,22 +99,12 @@ Lecture 17. Jul 2, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
 [HW9](/ds/docs/hw9.pdf). Due Monday, Jul 6.   
 
-<!--
-
-Midterm 1. Mar 17, 2015.    
-Covers Lectures 1 - 11. Two practice exams are posted on Blackboard.   
-No notes and no books allowed, you will be given a formula sheet with the equivalence formulas and the inference rules.     
-[Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
-
-
-
-Lecture 16. Mar 27, 2015. [RSA. The fundamental theorem of arithmetic](/ds/docs/lec16.pdf).    
-Reading: The previous slides for RSA, and LL: pp.67-68 for the fundamental theorem of arithmetic.     
-[HW8](/ds/docs/hw8.pdf). Due Friday, Apr 17.
-
-Lecture 18. Apr 14, 2015. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
+Lecture 18. Jul 6, 2015. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+
+<!--
+
 
 Lecture 19. Apr 17, 2015. Functions (continued). [Partial orders](/ds/docs/lec19.pdf).   
 Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
