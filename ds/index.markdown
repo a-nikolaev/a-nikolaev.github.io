@@ -105,6 +105,7 @@ Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
 
 Lecture 19. Jul 7, 2015. [Partial orders](/ds/docs/lec19.pdf).   
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+[HW10](/ds/docs/hw10.pdf). Due Thursday, Jul 9.   
 
 <!--
 
