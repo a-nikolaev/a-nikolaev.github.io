@@ -103,6 +103,9 @@ Lecture 18. Jul 6, 2015. [Relations. Functions. Bijection and counting](/ds/docs
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 
+Lecture 19. Jul 7, 2015. [Partial orders](/ds/docs/lec19.pdf).   
+Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+
 <!--
 
 
