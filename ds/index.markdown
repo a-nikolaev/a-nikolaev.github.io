@@ -107,6 +107,10 @@ Lecture 19. Jul 7, 2015. [Partial orders](/ds/docs/lec19.pdf).
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
 [HW10](/ds/docs/hw10.pdf). Due Thursday, Jul 9.   
 
+Lecture 20. Jul 8, 2015. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.     
+
+
 <!--
 
 
