@@ -112,9 +112,24 @@ Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.
 
 Lecture 21. Jul 9, 2015. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).    
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+[HW11](/ds/docs/hw11.pdf). Due Monday, Jul 13.   
+
+
+Lecture 22. Trees.
+
+Lecture 23. Probability.
+
+Lecture 24. Probability.
+
+Midterm 2. Jul 16, 2015.     
+
+* Covers lectures from 14 to 24. (There will be one simple question on probability).
+* For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.
+* Practice exams are posted on Blackboard.      
+
 
 <!--
-
 
 Lecture 19. Apr 17, 2015. Functions (continued). [Partial orders](/ds/docs/lec19.pdf).   
 Reading (Partial orders): LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
@@ -469,7 +484,7 @@ Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room
 
 ## Syllabus
 
-Mon, Tue, wed, Thr, 11:40 am - 12:50 pm. West W-116.  
+Mon, Tue, Wed, Thr, 11:40 am - 12:50 pm. West W-116.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
