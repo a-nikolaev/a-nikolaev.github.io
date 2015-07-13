@@ -114,8 +114,8 @@ Lecture 21. Jul 9, 2015. [Paths. Connectivity. Euler and Hamilton Paths. Planar 
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
 [HW11](/ds/docs/hw11.pdf). Due Monday, Jul 13.   
 
-
-Lecture 22. Trees.
+Lecture 22. Jul 13, 2015. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
+Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
 
 Lecture 23. Probability.
 
