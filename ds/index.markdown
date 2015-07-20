@@ -132,6 +132,17 @@ Midterm 2. Jul 16, 2015.
 The formula sheet should be handed in after the exam.
 * Practice exams are posted on Blackboard.      
 
+[Midterm 2 - Statistics](/ds/docs/stats/stats-midterm2.pdf).  
+
+
+Lecture 25. Jul 20, 2014. Probability. Random variables. Expected value.    
+Also maybe: [Lambda calculus](/ds/docs/lec25.pdf).    
+Reading: the same.
+
+Lecture 26. Jul 21, 2014. [Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec26.pdf).  
+Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.   
+Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
+
 
 <!--
 
