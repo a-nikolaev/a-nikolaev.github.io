@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/xhtml+xml; charset=UTF-8" />
+  <title>Counting</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+<!--
+var worker = new Worker ("code.js");
+var worker_handler = new Object ();
+
+worker.onmessage = function (m) {
+    if (typeof m.data == 'string') {
+        console.log("" + m.data);
+    } else {
+        console.log ("[ASYNCH] back from " + m.data.fname);
+        var handler = worker_handler[m.data.fname];
+        handler (m.data.result);
+    }
+}
+
+function ASYNCH (action_name, action_args, cont) {
+    worker_handler[action_name] = cont;
+    worker.postMessage ({fname: action_name, args: action_args});
+    console.log ("[ASYNCH] " + action_name + " (" + action_args + ")");
+}
+
+function process_input () {
+  var txt = document.getElementById ("formula").value;
+  ASYNCH ("process", [txt], function (resp) { 
+    //alert (resp) 
+    document.getElementById("output").innerHTML += "<pre>" + resp + "</pre>";
+  })
+}
+
+function ctrlEnter(event, formElem)
+{
+  if((event.ctrlKey) && ((event.keyCode == 0xA)||(event.keyCode == 0xD))) {
+    document.getElementById("EnterButton").click();
+  }
+}
+
+//-->
+</script>
+</head>
+
+<body>
+  <div id="output"></div>
+  <textarea id="formula" rows="2" cols="40" onkeydown="ctrlEnter(event,this);">x = reusable 5</textarea> 
+  <br />
+  <button id="EnterButton" onclick="process_input()">Ctrl+Enter</button>
+</body>
+
+</html>
