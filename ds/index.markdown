@@ -5,15 +5,17 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Jun 1, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
+Lecture 1. Aug 31, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.   
 
-Lecture 2. Jun 2, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Sep 2, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).     
+
+<!--
 [HW1](/ds/docs/hw1.pdf). Due Thursday, Jun. 4.   
 (Notice that only problems 2, 3, 4, 5, and 6 will be graded; you don't have to write your solutions for the other problems).
 
@@ -58,7 +60,7 @@ Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.
 [example1](http://www.wolframalpha.com/input/?i=f%280%29+%3D+1%3B+f%281%29+%3D+-1%3B+f%28n%29+%3D+f%28n-2%29),
 [example2](http://www.wolframalpha.com/input/?i=f%280%29+%3D+3%2C+f%281%29+%3D+1%2C+f%28n%29+%3D+4f%28n+%E2%88%92+1%29+%2B+21f%28n+%E2%88%92+2%29)).
 
-<!-- [example2](http://www.wolframalpha.com/input/?i=f%281%29+%3D+10%2C+f%282%29+%3D+%E2%88%922%2C+f%28n%29+%3D+f%28n+%E2%88%92+1%29+%2B+12f%28n+%E2%88%92+2%29)) -->
+[example2](http://www.wolframalpha.com/input/?i=f%281%29+%3D+10%2C+f%282%29+%3D+%E2%88%922%2C+f%28n%29+%3D+f%28n+%E2%88%92+1%29+%2B+12f%28n+%E2%88%92+2%29)) 
 
 Lecture 13. Jun 22, 2015. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
 Source code in [Julia](http://julialang.org/):
@@ -143,6 +145,7 @@ Lecture 26. Jul 21, 2014. [Cardinality of infinite sets. Diagonalization argumen
 Reading (Cardinality of infinite sets): R(ed6):n/a; R(ed7): 2.5.   
 Also: [Counting and cardinality](http://www.millersville.edu/~bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
 
+-->
 
 <!--
 
@@ -499,7 +502,7 @@ Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room
 
 ## Syllabus
 
-Mon, Tue, Wed, Thr, 11:40 am - 12:50 pm. West W-116.  
+Mon, Wed, 7:00 - 8:15 pm. Hunter North C107.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -513,8 +516,9 @@ Office: HN 1000C
 [![pdf][pdfimg]](/docs/mit-mathcs.pdf)
 
 ### Grading Policy
-  Homeworks twice a week (Due Monday and Thursday). No late homeworks accepted. Homeworks must be handed in at the beginning of the class.
+  Homeworks once a week. No late homeworks accepted. Homeworks must be handed in at the beginning of the class.
 
+<!--
 ####Distribution  
   
   HWs: 25%  
@@ -526,6 +530,8 @@ Office: HN 1000C
 
   However, you still have to attend and write the final exam,
   even if you already have 100% for the midterms.
+
+-->
 
 <!--
 ####Project    
