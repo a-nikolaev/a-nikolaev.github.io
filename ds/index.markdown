@@ -511,7 +511,7 @@ Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 Office: HN 1000C  
 
 ### Literature
-1. Rosen "Discrete Mathematics and its Applications" edition 6 or 7.
+1. Rosen "Discrete Mathematics and its Applications" edition 6 or 7. [![pdf][pdfimg]](http://www.mif.vu.lt/~valdas/DISKRMAT/Literatura/Rosen/Discrete%20Mathematics%20and%20Its%20Applications,%207%20edition%20-%20Rosen.pdf)
 2. Lehman and Leighton "Mathematics for Computer Science" (2004).
 [![pdf][pdfimg]](/docs/mit-mathcs.pdf)
 
