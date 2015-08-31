@@ -32,18 +32,26 @@ a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 * July 2010 - July 2011. Research Assistant. 
 
 ###The City University of New York, Computer Science Program
-* August 2011 - present. Research Assistant at Hunter College.
+* August 2011 - present. Research Assistant at Hunter College and CUNY Graduate Center.
   * Work with Professor Saad Mneimneh.
+  * Work with Professor Amotz Bar-Noy.
 * August 2013 - present. Adjunct Lecturer at Hunter College. 
-  * Teaching CSCI 150: Discrete Structures (Fall 2013, Spring 2014, Summer 2014, Fall 2014, Spring 2015).
+  * Teaching CSCI 150: Discrete Structures (Fall 2013, Spring 2014, Summer 2014, Fall 2014, Spring 2015, Summer 2015, Fall 2015).
   * Teaching CSCI 135: Software Analysis and Design 1 (Spring 2015).
+  * Teaching CSCI 136: Software Analysis and Design 1 Labs (Spring 2015, Fall 2015).
 
 ##Research
 
 ###Publications
 
-* "A mathematical model for secondary structure in proteins." Alexey Nikolaev, Saad Mneimneh.
-BIBE 2013: 1-6.
+* "Stochastic approximation for regulating circadian cycles, a precision medicine viewpoint."
+Alexey Nikolaev and Felisa J. Vazquez-Abad. Proc. 2015 Winter Simulation Conference. December 2015.
+
+* "Measuring the Strength of Networks of Teams: Metrics and Properties."
+Ali Assarpour et al. Proc. IEEE NetSciCom 2015 (colocated with INFOCOM), Hong Kong, April 2015. 
+
+* "A mathematical model for secondary structure in proteins." Alexey Nikolaev and Saad Mneimneh.
+BIBE 2013, 1-6.
 
 <!--
 * "Polymer translocation through an electrically tunable nanopore in a multilayered semiconductor membrane", 

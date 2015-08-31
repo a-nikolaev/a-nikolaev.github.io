@@ -36,7 +36,9 @@ Office: HN 1000C
 ####Distribution  
   
   HWs: 25%  
-  Midterm I, Midterm II, Final: 25% + 25% + 25%.  
+  Midterm I: 25%   
+  Midterm II: 25%   
+  Final: 25%.  
 
 <!--
   The Final is cumulative. *The worst exam out of three will be dropped*, so the total final score is computed as follows:
