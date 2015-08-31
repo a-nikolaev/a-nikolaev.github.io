@@ -15,6 +15,143 @@ Useful links:
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).     
 
+## Syllabus
+
+Mon, Wed, 7:00 - 8:15 pm. Hunter North C107.  
+Office hours: after the class or by appointment.
+
+Instructor: Alexey Nikolaev  
+Website: <http://a-nikolaev.github.io/ds/>  
+Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu  
+Office: HN 1000C  
+
+### Literature
+1. Rosen "Discrete Mathematics and its Applications" edition 6 or 7.
+2. Lehman and Leighton "Mathematics for Computer Science" (2004).
+[![pdf][pdfimg]](/docs/mit-mathcs.pdf)
+
+### Grading Policy
+  Homeworks once a week. No late homeworks accepted. Homeworks must be handed in at the beginning of the class.
+
+####Distribution  
+  
+  HWs: 25%  
+  Midterm I, Midterm II, Final: 25% + 25% + 25%.  
+
+<!--
+  The Final is cumulative. *The worst exam out of three will be dropped*, so the total final score is computed as follows:
+  
+  X = HW * 0.25 + MAX((M1 + M2), (M1 + F), (M2 + F)) * 0.5 * 0.75
+
+  However, you still have to attend and write the final exam,
+  even if you already have 100% for the midterms.
+-->
+
+####Project    
+  An optional project is a possibility to improve your grade, and (hopefully) do something fun.
+
+  More details will be added later.
+
+### Tentative Course Content
+
+Aug 31 (Mon).
+Propositional Logic.
+<br />
+Sep 2 (Wed).
+Satisfiability and Rules of Inference.
+<br />
+Sep 7 (Mon). <span style="color:#969086;">College is closed.</span>
+<br />
+Sep 9 (Wed).
+Predicates and Quantifiers.
+<br />
+Sep 10 (Thr).
+Proofs.
+
+Sep 14 (Mon). <span style="color:#969086;">No classes scheduled.</span>
+<br />
+Sep 16 (Wed).
+Induction.
+<br />
+Sep 21 (Mon).
+Recurrences.
+<br />
+Sep 23 (Wed). <span style="color:#969086;">No classes scheduled.</span>
+<br />
+Sep 28 (Mon).
+Fibonacci Numbers. Solving Linear Recurrences.
+<br />
+Sep 30 (Wed).
+Strong Induction. Recursion in Mathematics and Programming.
+
+
+Oct 5 (Mon).
+Midterm 1.
+
+Oct 7 (Wed).
+Intro to Number Theory.
+<br />
+Oct 12 (Mon). <span style="color:#969086;">College is close.</span>
+<br />
+Oct 14 (Wed).
+Modular arithmetic.
+<br />
+Oct 19 (Mon).
+Modular arithmetic and Extended Euclidean algorithm.
+<br />
+Oct 21 (Wed).
+Fermat's little theorem. RSA.
+
+
+Oct 26 (Mon).
+Counting. Intro.
+<br />
+Oct 28 (Wed).
+The Pigeonhole Principle. Permutations and Combinations. 
+<br />
+Nov 2 (Mon).
+Binomial Theorem. Combinations with repetition.
+<br />
+Nov 4 (Wed).
+Counting. Practice session. 
+
+
+Nov 9 (Mon).
+Midterm 2.
+
+
+Nov 11 (Wed).
+Sets. Ordered pairs.
+<br />
+Nov 16 (Mon).
+Relations. Functions. Bijection and counting.
+<br />
+Nov 18 (Wed).
+Relations and partial orders. 
+<br />
+Nov 23 (Mon).
+Graphs. Bipartite graphs. Paths.
+<br />
+Nov 25 (Wed).
+Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
+<br />
+Nov 30 (Mon).
+Trees. Huffman coding.
+<br />
+Dec 2 (Wed).
+Probability.
+<br />
+Dec 7 (Mon).
+Probability. Random variables. Expected value.
+
+Dec 9 (Wed).
+Review Session.
+
+Dec 14 (Mon).
+Projects presentation.
+
+Dec 21 (Mon). Final Exam. Same room. 6:20 - 8:20pm.
+
 <!--
 [HW1](/ds/docs/hw1.pdf). Due Thursday, Jun. 4.   
 (Notice that only problems 2, 3, 4, 5, and 6 will be graded; you don't have to write your solutions for the other problems).
@@ -500,45 +637,6 @@ Projects presentation. May 13, 2014.
 Final Exam. May 19, 2014 (Notice, this is Monday). 9:00 - 11:00am. The same room.
 -->
 
-## Syllabus
-
-Mon, Wed, 7:00 - 8:15 pm. Hunter North C107.  
-Office hours: after the class or by appointment.
-
-Instructor: Alexey Nikolaev  
-Website: <http://a-nikolaev.github.io/ds/>  
-Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu  
-Office: HN 1000C  
-
-### Literature
-1. Rosen "Discrete Mathematics and its Applications" edition 6 or 7.
-2. Lehman and Leighton "Mathematics for Computer Science" (2004).
-[![pdf][pdfimg]](/docs/mit-mathcs.pdf)
-
-### Grading Policy
-  Homeworks once a week. No late homeworks accepted. Homeworks must be handed in at the beginning of the class.
-
-<!--
-####Distribution  
-  
-  HWs: 25%  
-  Midterm I, Midterm II, Final: 37.5% + 37.5%.  
-
-  The Final is cumulative. *The worst exam out of three will be dropped*, so the total final score is computed as follows:
-  
-  X = HW * 0.25 + MAX((M1 + M2), (M1 + F), (M2 + F)) * 0.5 * 0.75
-
-  However, you still have to attend and write the final exam,
-  even if you already have 100% for the midterms.
-
--->
-
-<!--
-####Project    
-  An optional project is a possibility to improve your grade, and (hopefully) do something fun.
-
-  More details will be added later.
--->
 
 <!--
   If your total grade X = HWs + Exams is a number between 0 and 1, and if your grade for the project is P (again, a number between 0 and 1), 
@@ -557,6 +655,7 @@ Office: HN 1000C
   even if you already have 100% for the midterms.
 -->
 
+<!--
 ### Tentative Course Content
 
 Jun 1 (Mon).
@@ -656,6 +755,7 @@ Review Session.
 
 Jul 23 (Thr). Final Exam.  
 
+-->
 
 <!--
 Mon 07/21
