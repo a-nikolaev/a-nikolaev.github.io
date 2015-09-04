@@ -17,7 +17,7 @@ Useful links:
 [HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 9.   
 (Notice that only problems 2, 3, 5, and 6 will be graded; you don't have to write your solutions for the other problems).
 
-[Ask a question](/ds/discussion/)
+[[discussion board](/ds/discussion/)]
 
 ## Syllabus
 
