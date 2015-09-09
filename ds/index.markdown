@@ -17,6 +17,12 @@ Useful links:
 [HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 9.   
 (Notice that only problems 2, 3, 5, and 6 will be graded; you don't have to write your solutions for the other problems).
 
+Lecture 3. Sep 9, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
+
+Lecture 4. Sep 10, 2015. [Proofs](/ds/docs/lec4.pdf).  
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
+
 [[discussion board](/ds/discussion/)]
 
 ## Syllabus
