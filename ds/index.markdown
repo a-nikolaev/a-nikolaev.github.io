@@ -24,6 +24,9 @@ Lecture 4. Sep 10, 2015. [Proofs](/ds/docs/lec4.pdf).
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
 [HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 16. 
 
+Lecture 5. Sep 16, 2015. [Induction](/ds/docs/lec5.pdf).  
+Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+
 [[discussion board](/ds/discussion/)]
 
 ## Syllabus
