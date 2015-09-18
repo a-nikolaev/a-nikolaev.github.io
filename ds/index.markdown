@@ -26,6 +26,7 @@ Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
 Lecture 5. Sep 16, 2015. [Induction](/ds/docs/lec5.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+[HW3](/ds/docs/hw3.pdf). Due Monday, Sep. 21.  
 
 [[discussion board](/ds/discussion/)]
 
