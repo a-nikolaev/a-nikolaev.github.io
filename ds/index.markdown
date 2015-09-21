@@ -28,6 +28,10 @@ Lecture 5. Sep 16, 2015. [Induction](/ds/docs/lec5.pdf).
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
 [HW3](/ds/docs/hw3.pdf). Due Monday, Sep. 21.  
 
+Lecture 6. Sep 21, 2015. [Recurrences](/ds/docs/lec6.pdf).    
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
+
 [[discussion board](/ds/discussion/)]
 
 ## Syllabus
