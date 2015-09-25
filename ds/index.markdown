@@ -26,11 +26,15 @@ Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
 Lecture 5. Sep 16, 2015. [Induction](/ds/docs/lec5.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
-[HW3](/ds/docs/hw3.pdf). Due Monday, Sep. 21.  
+[HW3](/ds/docs/hw3.pdf). Due Monday, Sep 21.  
 
 Lecture 6. Sep 21, 2015. [Recurrences](/ds/docs/lec6.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
-[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)     
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
+[HW4](/ds/docs/hw4.pdf). Due Wednesday, Sep 30.  
+
+Also, you can play this logical game: [http://incredible.nomeata.de/](http://incredible.nomeata.de/), where you are constructing 
+proofs out of pieces ([an example](http://i.imgur.com/CFrgtAW.png)).
 
 [[discussion board](/ds/discussion/)]
 
