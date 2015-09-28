@@ -36,6 +36,9 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 Also, you can play this logical game: [http://incredible.nomeata.de/](http://incredible.nomeata.de/), where you are constructing 
 proofs out of pieces ([an example](http://i.imgur.com/CFrgtAW.png)).
 
+Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+
 [[discussion board](/ds/discussion/)]
 
 ## Syllabus
