@@ -40,9 +40,9 @@ Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/doc
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 [HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 7.  
 
-Lecture 8. Sep 30, 2015.
-[Strong Induction](/ds/docs/lec12.pdf) &
-[Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
+Lectures 8 & 9. Sep 30, 2015.
+[Strong Induction](/ds/docs/lec8.pdf) &
+[Recursion in Mathematics and Programming](/ds/docs/lec9.pdf).     
 Source code in [Julia](http://julialang.org/):
 [sum.jl](/ds/code/sum.jl),
 [fact.jl](/ds/code/fact.jl),
@@ -52,6 +52,16 @@ Source code in [Julia](http://julialang.org/):
 [lsys.jl](/ds/code/lsys.jl),
 [turtle.jl](/ds/code/turtle.jl),
 [merge.jl](/ds/code/merge.jl).    
+
+Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images 
+using a simple declarative/recursive description language. See some examples, they are very cool!
+
+Midterm 1. Oct 5, 2015.   
+
+Lecture 10. Oct 7, 2015. [Intro to Number Theory](/ds/docs/lec10.pdf).        
+Reading:
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
 
 [[discussion board](/ds/discussion/)]
 
