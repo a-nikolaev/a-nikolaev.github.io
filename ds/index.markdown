@@ -62,6 +62,7 @@ Lecture 10. Oct 7, 2015. [Intro to Number Theory](/ds/docs/lec10.pdf).
 Reading:
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
 LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
+[HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 14.  
 
 [[discussion board](/ds/discussion/)]
 
