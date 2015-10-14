@@ -56,7 +56,8 @@ Source code in [Julia](http://julialang.org/):
 Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images 
 using a simple declarative/recursive description language. See some examples, they are very cool!
 
-Midterm 1. Oct 5, 2015.   
+Midterm 1. Oct 5, 2015.    
+[Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 Lecture 10. Oct 7, 2015. [Intro to Number Theory](/ds/docs/lec10.pdf).        
 Reading:
