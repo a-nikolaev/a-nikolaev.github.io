@@ -15,7 +15,7 @@ Also, you will have to write a 5-6 page report, describing the problem,
 your solution, and the results obtained.
 
 Before you start working on the topic, I have to approve it. 
-The topic should be chosen **before April 17**.
+The topic should be chosen **before November 10**.
 
 Report you progress regularly (for example, once a week), so I can guide you, and you don't waste time.
 
@@ -37,10 +37,10 @@ Try to find something you are interested in, and we will find a way to add some 
 (A program that checks whether the given compound proposition is satisfiable or not).
 1. Implementing [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding).
 1. Graph [coloring](https://en.wikipedia.org/wiki/Graph_coloring).
-1. [Friendship paradox](https://en.wikipedia.org/wiki/Friendship_paradox). Its verification using real social network data.
-1. Programming fractals, [L-systems](https://en.wikipedia.org/wiki/L-system).
+1. Programming fractals, [L-systems](https://en.wikipedia.org/wiki/L-system), etc.
+1. Another fractal drawing topic: [Context-free art program](http://www.contextfreeart.org/). 
+1. Analysis of [social network data](http://snap.stanford.edu/data/). (You will need a specific topic / research goal here).
 1. Experimental analysis of the running time complexity of various standard algorithms.
-1. Computing probabilities in card games.
 
 I will add more topics, but, maybe you already know something
 interesting you would like to work on.
@@ -66,8 +66,13 @@ interesting you would like to work on.
 1. Random graphs. 
   Experimental comparison of [Erdos-Renyi](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) and
   [Barabasi–Albert](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model) random graph models.
-1. 2048: The best strategy to play the game
-1. Dijkstra's shortest path algorithm
+1. 2048: The best strategy to play the game.
+1. Dijkstra's shortest path algorithm.
 1. Breaking the [Substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher) using frequency analysis.
-1. [De Bruijn Graphs](https://en.wikipedia.org/wiki/De_Bruijn_graph) and Genome Assembly
-
+1. [De Bruijn Graphs](https://en.wikipedia.org/wiki/De_Bruijn_graph) and Genome Assembly.
+1. [Shortest path algorithms](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html) (A-star and Dijkstra's).
+1. Optimality of Change in Currency Systems.
+1. [Friendship paradox](https://en.wikipedia.org/wiki/Friendship_paradox). Its verification using [real social network data](http://snap.stanford.edu/data/).
+1. Finding the optimal strategy in 5 card draw poker.
+1. [Catalan numbers](https://en.wikipedia.org/wiki/Catalan_number) and Gambler's ruin problem.
+1. Finding Euler cyles in Eulerian graphs.
