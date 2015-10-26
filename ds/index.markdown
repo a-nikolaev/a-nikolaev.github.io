@@ -76,6 +76,9 @@ Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem
 Lecture 12 (continued). Oct 21, 2015.    
 [HW8](/ds/docs/hw8.pdf). Due Wednesday, Oct 28.
 
+Lecture 13. Oct 26, 2015. [Counting. Sets](/ds/docs/lec13.pdf).  
+Reading: R(ed6): 5.1; R(ed7): 6.1.    
+
 [Possible Project Topics](/ds/topics.html).    
 
 [[discussion board](/ds/discussion/)]
