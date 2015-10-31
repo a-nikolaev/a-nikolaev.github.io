@@ -80,7 +80,8 @@ Lecture 13. Oct 26, 2015. [Counting. Sets](/ds/docs/lec13.pdf).
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
 
 Lecture 14. Oct 28, 2015. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec14.pdf).      
-Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.    
+Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.     
+[HW9](/ds/docs/hw9.pdf). Due Wednesday, Nov 4.
 
 [Possible Project Topics](/ds/topics.html).    
 
