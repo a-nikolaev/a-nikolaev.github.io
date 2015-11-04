@@ -88,6 +88,9 @@ A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.
 Lecture 15. Nov 2, 2015. [Binomial Theorem. Combinations with repetition](/ds/docs/lec15.pdf).    
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
 
+Lecture 16. Nov 4, 2015. Counting. Problem solving.
+[[problem set](/ds/docs/cc3.pdf)].    
+
 [Possible Project Topics](/ds/topics.html).    
 
 [[discussion board](/ds/discussion/)]
