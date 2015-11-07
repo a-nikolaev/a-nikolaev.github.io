@@ -89,7 +89,15 @@ Lecture 15. Nov 2, 2015. [Binomial Theorem. Combinations with repetition](/ds/do
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
 
 Lecture 16. Nov 4, 2015. Counting. Problem solving.
-[[problem set](/ds/docs/cc3.pdf)].    
+[[problem set with answers](/ds/docs/cc3.pdf)].    
+[HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 11.
+
+Midterm 2. Nov 9, 2015.    
+
+* Covers lectures from 10 to 15 (Number theory and Counting).
+* For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.
+* An example practice exam is posted on Blackboard.
 
 [Possible Project Topics](/ds/topics.html).    
 
