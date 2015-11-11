@@ -99,6 +99,9 @@ Midterm 2. Nov 9, 2015.
 The formula sheet should be handed in after the exam.
 * An example practice exam is posted on Blackboard.
 
+Lecture 17. Nov 11, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
+Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+
 [Possible Project Topics](/ds/topics.html).    
 
 [[discussion board](/ds/discussion/)]
