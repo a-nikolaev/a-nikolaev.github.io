@@ -101,6 +101,7 @@ The formula sheet should be handed in after the exam.
 
 Lecture 17. Nov 11, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+[HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
 
 [Possible Project Topics](/ds/topics.html).    
 
