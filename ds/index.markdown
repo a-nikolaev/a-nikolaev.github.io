@@ -99,6 +99,8 @@ Midterm 2. Nov 9, 2015.
 The formula sheet should be handed in after the exam.
 * An example practice exam is posted on Blackboard.
 
+[Midterm 2 - Statistics](/ds/docs/stats/stats-midterm2.pdf).  
+
 Lecture 17. Nov 11, 2015. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
 [HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
@@ -106,6 +108,9 @@ Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.
 Lecture 18. Nov 16, 2015. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+
+Lecture 19. Nov 18, 2015. [Partial orders](/ds/docs/lec19.pdf).   
+Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
 
 [Possible Project Topics](/ds/topics.html).    
 
