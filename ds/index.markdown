@@ -111,6 +111,7 @@ Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
 
 Lecture 19. Nov 18, 2015. [Partial orders](/ds/docs/lec19.pdf).   
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+[HW12](/ds/docs/hw12.pdf). Due Wednesday, Nov 25.
 
 [Possible Project Topics](/ds/topics.html).    
 
