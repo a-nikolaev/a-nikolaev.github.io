@@ -113,6 +113,9 @@ Lecture 19. Nov 18, 2015. [Partial orders](/ds/docs/lec19.pdf).
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
 [HW12](/ds/docs/hw12.pdf). Due Wednesday, Nov 25.
 
+Lecture 20. Nov 23, 2015. Partial orders. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.     
+
 [Possible Project Topics](/ds/topics.html).    
 
 [[discussion board](/ds/discussion/)]
