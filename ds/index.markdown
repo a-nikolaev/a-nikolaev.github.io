@@ -123,6 +123,11 @@ Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.
 Lecture 22. Nov 30, 2015. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
 Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
 
+Lecture 23. Dec 2, 2015. Probability.   
+No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
+Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.    
+[HW14](/ds/docs/hw14.pdf). Due Wednesday, Dec 9.
+
 [Possible Project Topics](/ds/topics.html).    
 
 [[discussion board](/ds/discussion/)]
