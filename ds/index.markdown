@@ -128,6 +128,13 @@ No slides, only [supplementary notes](/ds/docs/cc4.pdf).
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.    
 [HW14](/ds/docs/hw14.pdf). Due Wednesday, Dec 9.
 
+Lecture 24. Dec 7, 2015. Probability.   
+
+Lecture 25. Dec 9, 2015. Review session (See the example problem set on Blackboard).
+[HW15](/ds/docs/hw15.pdf). Due Monday, Dec 14.
+
+Project presentation. Dec 14, 2015.
+
 [Possible Project Topics](/ds/topics.html).    
 
 [[discussion board](/ds/discussion/)]
