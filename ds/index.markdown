@@ -133,7 +133,9 @@ Lecture 24. Dec 7, 2015. Probability.
 Lecture 25. Dec 9, 2015. Review session (See the example problem set on Blackboard).
 [HW15](/ds/docs/hw15.pdf). Due Monday, Dec 14.
 
-Project presentation. Dec 14, 2015.
+Project presentation. Dec 14, 2015.    
+**If you present a project**, email me the title of your project at least one hour before the class. Also, **meet with me in advance**, if we did not meet last week.   
+[Helpful information for all speakers how to give a talk](/ds/talks.html).    
 
 [Possible Project Topics](/ds/topics.html).    
 
