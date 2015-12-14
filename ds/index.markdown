@@ -137,6 +137,8 @@ Project presentation. Dec 14, 2015.
 **If you present a project**, email me the title of your project at least one hour before the class. Also, **meet with me in advance**, if we did not meet last week.   
 [Helpful information for all speakers how to give a talk](/ds/talks.html).    
 
+[Talk schedule](/ds/presentation.html).
+
 [Possible Project Topics](/ds/topics.html).    
 
 [[discussion board](/ds/discussion/)]

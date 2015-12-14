@@ -3,6 +3,14 @@ layout: page
 title: Projects Presentation
 ---
 
+* 7:05 **Rishabh Rana** "Graph Coloring"
+* 7:15 **Nayema Laboni** "Understanding why rumor spread so quickly using models for complex networks"
+* 7:25 **Raphael Kashtelian** "Dynamic Programming - Box Stacking"
+* 7:35 **Christopher Eidangbe** "Prime numbers generation"
+* 7:45 **Lemuel Gomez** "Connect Four: A solved game"
+
+
+<!--
 1. 11:15 **Brittany Sternberg** "A-star and Dijkstra algorithms"
 
 1. 11:22 **Matthew Schneider** "Optimality of Change in Currency Systems"
@@ -16,6 +24,8 @@ title: Projects Presentation
 1. 11:50 **Sebastien Dalencourt** "Finding Euler cyles in Eularian graphs"
 
 1. 11:57 **Rafid Amin** "Satisfiability solver"
+
+-->
 
 <!--
 1. 7:05 **Nishad Sharker** "Generating Random Graphs"
