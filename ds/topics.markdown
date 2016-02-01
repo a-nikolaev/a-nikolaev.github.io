@@ -10,14 +10,14 @@ it is a way to improve your grade if you did not do well on the exams,
 or just want to get some extra credit.
 
 All projects will be due by the end of the semester. 
-You will have to make a short (5 minutes) presentation in the last class, showing your work. 
+You will have to make a short (5-8 minutes) presentation in the last class, showing your work. 
 Also, you will have to write a 5-6 page report, describing the problem, 
 your solution, and the results obtained.
 
 Before you start working on the topic, I have to approve it. 
-The topic should be chosen **before November 10**.
+The topic should be chosen **before Spring Recess, April 20**.
 
-Report you progress regularly (for example, once a week), so I can guide you, and you don't waste time.
+**Report you progress regularly (for example, once a week), so I can guide you, and you don't waste time**.
 
 ## How to choose a topic
 
@@ -35,8 +35,6 @@ Try to find something you are interested in, and we will find a way to add some 
 ### New possible topics
 1. A simple propositional [satisfiability](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) solver. 
 (A program that checks whether the given compound proposition is satisfiable or not).
-1. Implementing [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding).
-1. Graph [coloring](https://en.wikipedia.org/wiki/Graph_coloring).
 1. Programming fractals, [L-systems](https://en.wikipedia.org/wiki/L-system), etc.
 1. Another fractal drawing topic: [Context-free art program](http://www.contextfreeart.org/). 
 1. Analysis of [social network data](http://snap.stanford.edu/data/). (You will need a specific topic / research goal here).
@@ -76,3 +74,8 @@ interesting you would like to work on.
 1. Finding the optimal strategy in 5 card draw poker.
 1. [Catalan numbers](https://en.wikipedia.org/wiki/Catalan_number) and Gambler's ruin problem.
 1. Finding Euler cyles in Eulerian graphs.
+1. Implementing [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding).
+1. Graph [coloring](https://en.wikipedia.org/wiki/Graph_coloring).
+1. [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming).
+1. Prime numbers generation.
+

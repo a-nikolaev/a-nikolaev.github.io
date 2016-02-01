@@ -5,15 +5,17 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Aug 31, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
+Lecture 1. Feb 1, 2015. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.   
 
-Lecture 2. Sep 2, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Feb 3, 2015. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).     
+
+<!--
 [HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 9.   
 (Notice that only problems 2, 3, 5, and 6 will be graded; you don't have to write your solutions for the other problems).
 
@@ -137,16 +139,17 @@ Project presentation. Dec 14, 2015.
 **If you present a project**, email me the title of your project at least one hour before the class. Also, **meet with me in advance**, if we did not meet last week.   
 [Helpful information for all speakers how to give a talk](/ds/talks.html).    
 
-[Talk schedule](/ds/presentation.html).
-
 [Possible Project Topics](/ds/topics.html).    
 
-[[discussion board](/ds/discussion/)]
+[Talk schedule](/ds/presentation.html).
+-->
+
+[[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 ## Syllabus
 
-Mon, Wed, 7:00 - 8:15 pm. Hunter North C107.  
-Office hours: after the class or by appointment.
+Mon, Wed, 8:25 - 9:40 pm. Hunter North C107.  
+Office hours: before the class or by appointment.
 
 Instructor: Alexey Nikolaev  
 Website: <http://a-nikolaev.github.io/ds/>  
@@ -164,123 +167,117 @@ Office: HN 1000C
 ####Distribution  
   
   HWs: 25%  
-  Midterm I: 25%   
-  Midterm II: 25%   
-  Final: 25%.  
+  Midterm I + Midterm II + Final: 37.5% + 37.5%.  
 
-<!--
   The Final is cumulative. *The worst exam out of three will be dropped*, so the total final score is computed as follows:
   
-  X = HW * 0.25 + MAX((M1 + M2), (M1 + F), (M2 + F)) * 0.5 * 0.75
+  X = HW * 0.25 + MAX{(M1 + M2), (M1 + F), (M2 + F)} * 0.5 * 0.75
 
   However, you still have to attend and write the final exam,
   even if you already have 100% for the midterms.
--->
 
 ####Project    
   An optional project is a possibility to improve your grade, and (hopefully) do something fun.
-
-  More details will be added later.
+  [More details about projects & possible topics](/ds/topics.html).    
 
 ### Tentative Course Content
 
-Aug 31 (Mon).
+Feb 1 (Mon).
 Propositional Logic.
 <br />
-Sep 2 (Wed).
+Feb 3 (Wed).
 Satisfiability and Rules of Inference.
 <br />
-Sep 7 (Mon). <span style="color:#969086;">College is closed.</span>
-<br />
-Sep 9 (Wed).
+Feb 8 (Mon).
 Predicates and Quantifiers.
 <br />
-Sep 10 (Thr).
+Feb 10 (Wed).
 Proofs.
+<br />
+Feb 15 (Mon).
+<span style="color:#969086;">College is closed.</span>
 
-Sep 14 (Mon). <span style="color:#969086;">No classes scheduled.</span>
-<br />
-Sep 16 (Wed).
-Induction.
-<br />
-Sep 21 (Mon).
-Recurrences.
-<br />
-Sep 23 (Wed). <span style="color:#969086;">No classes scheduled.</span>
-<br />
-Sep 28 (Mon).
-Fibonacci Numbers. Solving Linear Recurrences.
-<br />
-Sep 30 (Wed).
-Strong Induction. Recursion in Mathematics and Programming.
-
-
-Oct 5 (Mon).
-Midterm 1.
-
-Oct 7 (Wed).
-Intro to Number Theory.
-<br />
-Oct 12 (Mon). <span style="color:#969086;">College is close.</span>
-<br />
-Oct 14 (Wed).
-Modular arithmetic.
-<br />
-Oct 19 (Mon).
-Modular arithmetic and Extended Euclidean algorithm.
-<br />
-Oct 21 (Wed).
-Fermat's little theorem. RSA.
-
-
-Oct 26 (Mon).
+Feb 17 (Wed).
 Counting. Intro.
 <br />
-Oct 28 (Wed).
+Feb 22 (Mon).
 The Pigeonhole Principle. Permutations and Combinations. 
 <br />
-Nov 2 (Mon).
+Feb 24 (Wed).
 Binomial Theorem. Combinations with repetition.
 <br />
-Nov 4 (Wed).
+Feb 29 (Mon).
 Counting. Practice session. 
 
 
-Nov 9 (Mon).
-Midterm 2.
+Mar 2 (Wed).
+Induction.
+<br />
+Mar 7 (Mon).
+Recurrences.
+<br />
+Mar 9 (Wed).
+Fibonacci Numbers. Solving Linear Recurrences.
+<br />
+Mar 14 (Mon).
+Strong Induction. Recursion in Mathematics and Programming.
+
+Mar 16 (Wed).
+Midterm 1.
 
 
-Nov 11 (Wed).
+Mar 21 (Mon).
+Intro to Number Theory.
+<br />
+Mar 23 (Wed).
+<span style="color:#969086;">Classes follow Friday schedule.</span>
+<br />
+Mar 28 (Mon). 
+Modular arithmetic.
+<br />
+Mar 30 (Wed).
+Modular arithmetic and Extended Euclidean algorithm.
+<br />
+Apr 4 (Mon).
+Fermat's little theorem. RSA.
+
+Apr 6 (Wed).
 Sets. Ordered pairs.
 <br />
-Nov 16 (Mon).
+Apr 11 (Mon).
 Relations. Functions. Bijection and counting.
 <br />
-Nov 18 (Wed).
+Apr 13 (Wed).
 Relations and partial orders. 
 <br />
-Nov 23 (Mon).
+Apr 18 (Mon).
 Graphs. Bipartite graphs. Paths.
 <br />
-Nov 25 (Wed).
+Apr 20 (Wed).
 Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
 <br />
-Nov 30 (Mon).
+Apr 22 - Apr 30. <span style="color:#969086;">Spring Recess.</span>
+<br />
+May 2 (Mon).
 Trees. Huffman coding.
 <br />
-Dec 2 (Wed).
-Probability.
+
+May 4 (Wed).
+Midterm 2.
+
+May 9 (Mon).
+Infinity. Countable sets. Diagonalization.
 <br />
-Dec 7 (Mon).
-Probability. Random variables. Expected value.
+May 11 (Mon).
+Probability.
 
-Dec 9 (Wed).
-Review Session.
-
-Dec 14 (Mon).
+May 16 (Mon).
+Review session.
+<br />
+May 18 (Wed).
 Projects presentation.
 
-Dec 21 (Mon). Final Exam. Same room. 6:20 - 8:20pm.
+May 25 (Wed). Final Exam. Same room. 7:30 - 9:30pm.
 
 <!--
 [HW1](/ds/docs/hw1.pdf). Due Thursday, Jun. 4.   
