@@ -109,7 +109,7 @@ Reading: 10.3.
 -->
 
 ## General information
-Fri, 3:25 pm - 5:25 pm. Hunter North 1000G.  
+Wed, 3:25 pm - 5:25 pm. Hunter North 1000G.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -118,7 +118,17 @@ Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 Office: HN 1000C  
 
 ## Assignments
-Posted on Blackboard
+Posted on Blackboard. You submit your solutions through Blackboard as well. 
+
+Most of the labs are supposed to be finished by the end of the class.
+However it was decided to extend all lab submission deadlines by one week. 
+More precisely, your solution is due exactly one week after the lab began.
+
+### Your grades for CS-135 and CS-136
+All CS-135 assignments (programming homeworks and tests) contribute to your CS-135 grade.
+Whereas all labs contribute only to your CS-136 grade. Both classes follow the same grading criteria.
+
+For more detailed information, see you CS-135 syllabus.
 
 ## Links and Info
 [Basic Linux command line commands](linux/).
@@ -128,7 +138,7 @@ Posted on Blackboard
 [How to setup a Unix development environment on your own computer](setup/).
 
 ### Literature
-  * Walter Savitch, Absolute C++, 5th ed. Addison Wesley. 2010. ISBN-10: 0-13-283071-X.
+  * Walter Savitch, Absolute C++, 6th Edition, ISBN 0-13-397078-7
 
 [pdfimg]: /img/pdf1.png
 [fbimg]: /img/fb.png
