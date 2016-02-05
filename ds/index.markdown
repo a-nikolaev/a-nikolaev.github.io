@@ -14,16 +14,21 @@ Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).     
+[HW1](/ds/docs/hw1.pdf). Due Wednesday, Feb 10. 
+(Notice that only problems 2, 4, 5, 6(a), and 8(c) will be graded; you don't have to write your solutions for the other problems).
 
-<!--
-[HW1](/ds/docs/hw1.pdf). Due Wednesday, Sep 9.   
-(Notice that only problems 2, 3, 5, and 6 will be graded; you don't have to write your solutions for the other problems).
+Also, you can play this logical game: [http://incredible.nomeata.de/](http://incredible.nomeata.de/), where you are constructing 
+proofs out of blocks ([an example](http://i.imgur.com/CFrgtAW.png)). Those blocks are essentially the inference rules we learned in Lecture 2,
+but you are provided with only some of those rules.
 
-Lecture 3. Sep 9, 2015. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+Lecture 3. Feb 8, 2016. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
 
-Lecture 4. Sep 10, 2015. [Proofs](/ds/docs/lec4.pdf).  
+<!--
+
+Lecture 4. Feb 10, 2016. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
+
 [HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 16. 
 
 Lecture 5. Sep 16, 2015. [Induction](/ds/docs/lec5.pdf).  
@@ -34,9 +39,6 @@ Lecture 6. Sep 21, 2015. [Recurrences](/ds/docs/lec6.pdf).
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
 [HW4](/ds/docs/hw4.pdf). Due Wednesday, Sep 30.  
-
-Also, you can play this logical game: [http://incredible.nomeata.de/](http://incredible.nomeata.de/), where you are constructing 
-proofs out of pieces ([an example](http://i.imgur.com/CFrgtAW.png)).
 
 Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
