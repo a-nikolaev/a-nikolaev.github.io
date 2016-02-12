@@ -26,6 +26,7 @@ Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.
 
 Lecture 4. Feb 10, 2016. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
+[HW2](/ds/docs/hw2.pdf). Due Wednesday, Feb 17. 
 
 <!--
 
