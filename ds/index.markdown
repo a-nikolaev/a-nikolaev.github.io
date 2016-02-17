@@ -28,9 +28,26 @@ Lecture 4. Feb 10, 2016. [Proofs](/ds/docs/lec4.pdf).
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
 [HW2](/ds/docs/hw2.pdf). Due Wednesday, Feb 17. 
 
-<!--
+Lecture 5. Feb 16, 2016. [Counting. Sets](/ds/docs/lec5.pdf).  
+Reading: R(ed6): 5.1; R(ed7): 6.1.    
 
-[HW2](/ds/docs/hw2.pdf). Due Wednesday, Sep 16. 
+<!--
+Lecture 13. Oct 26, 2015. [Counting. Sets](/ds/docs/lec13.pdf).  
+Reading: R(ed6): 5.1; R(ed7): 6.1.    
+
+Lecture 14. Oct 28, 2015. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec14.pdf).      
+Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.     
+[HW9](/ds/docs/hw9.pdf). Due Wednesday, Nov 4.
+
+A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
+
+Lecture 15. Nov 2, 2015. [Binomial Theorem. Combinations with repetition](/ds/docs/lec15.pdf).    
+Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
+
+Lecture 16. Nov 4, 2015. Counting. Problem solving.
+[[problem set with answers](/ds/docs/cc3.pdf)].    
+[HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 11.
+
 
 Lecture 5. Sep 16, 2015. [Induction](/ds/docs/lec5.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
@@ -81,21 +98,6 @@ Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem
 Lecture 12 (continued). Oct 21, 2015.    
 [HW8](/ds/docs/hw8.pdf). Due Wednesday, Oct 28.
 
-Lecture 13. Oct 26, 2015. [Counting. Sets](/ds/docs/lec13.pdf).  
-Reading: R(ed6): 5.1; R(ed7): 6.1.    
-
-Lecture 14. Oct 28, 2015. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec14.pdf).      
-Reading: R(ed6): 5.2-5.3; R(ed7): 6.2-6.3.     
-[HW9](/ds/docs/hw9.pdf). Due Wednesday, Nov 4.
-
-A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
-
-Lecture 15. Nov 2, 2015. [Binomial Theorem. Combinations with repetition](/ds/docs/lec15.pdf).    
-Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
-
-Lecture 16. Nov 4, 2015. Counting. Problem solving.
-[[problem set with answers](/ds/docs/cc3.pdf)].    
-[HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 11.
 
 Midterm 2. Nov 9, 2015.    
 
