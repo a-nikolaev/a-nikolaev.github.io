@@ -30,6 +30,10 @@ Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.
 
 Lecture 5. Feb 16, 2016. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
+[HW3](/ds/docs/hw3.pdf). Due Wednesday, Feb 24. 
+
+Lecture 6. Feb 22, 2015. [Counting. Sets](/ds/docs/lec6.pdf).  
+Reading: R(ed6): 5.1; R(ed7): 6.1.    
 
 <!--
 Lecture 13. Oct 26, 2015. [Counting. Sets](/ds/docs/lec13.pdf).  
