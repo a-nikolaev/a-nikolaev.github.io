@@ -41,6 +41,9 @@ Lecture 7. Feb 24, 2016. [Binomial Theorem. Combinations with repetition](/ds/do
 Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
 [HW4](/ds/docs/hw4.pdf). Due Wednesday, Mar 2. 
 
+Lecture 8. Feb 29, 2016. Counting. Problem solving.
+[[problem set](/ds/docs/cc3.pdf)].    
+
 <!--
 
 A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
