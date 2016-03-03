@@ -44,20 +44,11 @@ Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.
 Lecture 8. Feb 29, 2016. Counting. Problem solving.
 [[problem set](/ds/docs/cc3.pdf)].    
 
+Lecture 9. Mar 2, 2016. [Induction](/ds/docs/lec9.pdf).  
+Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+
 <!--
 
-A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
-
-Lecture 15. Nov 2, 2015. [Binomial Theorem. Combinations with repetition](/ds/docs/lec15.pdf).    
-Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
-
-Lecture 16. Nov 4, 2015. Counting. Problem solving.
-[[problem set with answers](/ds/docs/cc3.pdf)].    
-[HW10](/ds/docs/hw10.pdf). Due Wednesday, Nov 11.
-
-
-Lecture 5. Sep 16, 2015. [Induction](/ds/docs/lec5.pdf).  
-Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
 [HW3](/ds/docs/hw3.pdf). Due Monday, Sep 21.  
 
 Lecture 6. Sep 21, 2015. [Recurrences](/ds/docs/lec6.pdf).    
