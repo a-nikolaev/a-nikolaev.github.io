@@ -48,13 +48,13 @@ Lecture 9. Mar 2, 2016. [Induction](/ds/docs/lec9.pdf).
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
 [HW5](/ds/docs/hw5.pdf). Due Wednesday, Mar 9. 
 
+Lecture 10. Mar 7, 2016. [Recurrences](/ds/docs/lec10.pdf).    
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
+
 <!--
 
 [HW3](/ds/docs/hw3.pdf). Due Monday, Sep 21.  
-
-Lecture 6. Sep 21, 2015. [Recurrences](/ds/docs/lec6.pdf).    
-Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
-[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
 [HW4](/ds/docs/hw4.pdf). Due Wednesday, Sep 30.  
 
 Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
