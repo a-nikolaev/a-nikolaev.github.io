@@ -52,6 +52,9 @@ Lecture 10. Mar 7, 2016. [Recurrences](/ds/docs/lec10.pdf).
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
 
+Lecture 11. Mar 9, 2016. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+
 <!--
 
 [HW3](/ds/docs/hw3.pdf). Due Monday, Sep 21.  
