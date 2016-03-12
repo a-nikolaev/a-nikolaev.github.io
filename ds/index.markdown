@@ -54,6 +54,15 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 
 Lecture 11. Mar 9, 2016. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+[HW6](/ds/docs/hw6.pdf). Due Wednesday, Mar 16. 
+
+Lecture 11 (continued). Mar 14, 2016.
+
+Lecture 12. Mar 16, 2016. Strong Induction. Recursion in Mathematics and Programming.
+
+**Midterm I. Mar 21, 2016.** *Warning! The midterm is postponed to March 21, Monday.*   
+There are practice tests posted on Blackboard.    
+No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.
 
 <!--
 
