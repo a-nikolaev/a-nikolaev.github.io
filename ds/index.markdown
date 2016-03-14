@@ -58,7 +58,7 @@ Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.
 
 Lecture 11 (continued). Mar 14, 2016.
 
-Lecture 12. Mar 16, 2016. Strong Induction. Recursion in Mathematics and Programming.
+Lecture 12. Mar 16, 2016. [Strong Induction](/ds/docs/lec12.pdf). Recursion in Mathematics and Programming.
 
 **Midterm I. Mar 21, 2016.** *Warning! The midterm is postponed to March 21, Monday.*   
 There are practice tests posted on Blackboard.    
