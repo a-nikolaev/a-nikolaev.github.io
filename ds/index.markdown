@@ -58,24 +58,7 @@ Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.
 
 Lecture 11 (continued). Mar 14, 2016.
 
-Lecture 12. Mar 16, 2016. [Strong Induction](/ds/docs/lec12.pdf). Recursion in Mathematics and Programming.
-
-**Midterm I. Mar 21, 2016.** *Warning! The midterm is postponed to March 21, Monday.*   
-There are practice tests posted on Blackboard.    
-No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.
-
-<!--
-
-[HW3](/ds/docs/hw3.pdf). Due Monday, Sep 21.  
-[HW4](/ds/docs/hw4.pdf). Due Wednesday, Sep 30.  
-
-Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
-Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
-[HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 7.  
-
-Lectures 8 & 9. Sep 30, 2015.
-[Strong Induction](/ds/docs/lec8.pdf) &
-[Recursion in Mathematics and Programming](/ds/docs/lec9.pdf).     
+Lecture 12. Mar 16, 2016. [Strong Induction](/ds/docs/lec12.pdf) & [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
 Source code in [Julia](http://julialang.org/):
 [sum.jl](/ds/code/sum.jl),
 [fact.jl](/ds/code/fact.jl),
@@ -88,6 +71,25 @@ Source code in [Julia](http://julialang.org/):
 
 Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images 
 using a simple declarative/recursive description language. See some examples, they are very cool!
+
+**Midterm I. Mar 21, 2016.** *Warning! The midterm is postponed to March 21, Monday.*   
+There are practice tests posted on Blackboard.    
+No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.
+
+[HW7](/ds/docs/hw7.pdf). Due Wednesday, Mar 30. 
+
+Lecture 14. Mar 28, 2016. [Intro to Number Theory](/ds/docs/lec14.pdf).        
+Reading:
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
+
+<!--
+
+Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+[HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 7.  
+
+Lectures 8 & 9. Sep 30, 2015.
 
 Midterm 1. Oct 5, 2015.    
 [Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  

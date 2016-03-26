@@ -1,4 +1,4 @@
-require("turtle.jl")
+include("turtle.jl")
 
 orange = (1.0, 0.5, 0.0)
 red    = (0.9, 0.1, 0.0)
@@ -27,17 +27,17 @@ end
 function draw()
   line, turn, start, done = drawing("lsys.pdf", 800)
 
-  rules = [ 
+  rules = Dict( 
     'F' => ['F','L','F','R','F','R','F','L','F'],
     'R' => ['R'] ,
     'L' => ['L'] 
-  ]
+  )
   
-  actions(len) = [
+  actions(len) = Dict(
     'F' => ()-> line(len),
     'L' => ()-> turn(90),
     'R' => ()-> turn(-90)
-  ]
+  )
 
   function path(initial,rules, actions, pos, color, len, n)
     start(pos, color)
@@ -57,22 +57,22 @@ function draw()
 
   # Hilbert curve
   # rules 
-  rlH = [ 
+  rlH = Dict( 
     'A' => ['L','B','F','R','A','F','A','R','F','B','L'],
     'B' => ['R','A','F','L','B','F','B','L','F','A','R'],
     'F' => ['F'],
     'L' => ['L'],
     'R' => ['R'] 
-  ]
+  )
 
   # actions 
-  acH(len) = [
+  acH(len) = Dict(
     'F' => ()-> line(len),
     'L' => ()-> turn(90),
     'R' => ()-> turn(-90),
     'A' => ()-> (),
     'B' => ()-> ()
-  ]
+  )
 
   #path(['A'], rlH, acH, (-25,-25), blue, 1, 1)
   
@@ -86,11 +86,11 @@ function draw()
 end
 
 function draw_alt()
-  rules = [ 
+  rules = Dict(
     'A' => ['B','R','A','R','B'],
     'B' => ['A','L','B','L','A'],
     'R' => ['R'] ,
     'L' => ['L'] 
-  ]
+  )
 
 end

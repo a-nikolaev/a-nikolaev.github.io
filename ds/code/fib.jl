@@ -14,6 +14,26 @@ end
 
 
 
+
+
+# Iterative Fibonacci
+
+function fib_array(n)
+  fib = Dict{Int,Int}() # make an empty array
+  fib[0] = 0            # two base cases
+  fib[1] = 1            #
+  
+  for i = 2 : n 
+    fib[i] = fib[i-1] + fib[i-2]
+  end
+
+  fib[n] # return the answer
+end
+
+
+
+
+
 # Improved iterative Fibonacci
 
 function fib_loop(n)

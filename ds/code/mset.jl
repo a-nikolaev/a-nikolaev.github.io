@@ -1,4 +1,4 @@
-require("graph.jl")
+include("graph.jl")
 
 function mset(z, c, num)
   if num > 0
