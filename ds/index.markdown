@@ -74,7 +74,8 @@ using a simple declarative/recursive description language. See some examples, th
 
 **Midterm I. Mar 21, 2016.** *Warning! The midterm is postponed to March 21, Monday.*   
 There are practice tests posted on Blackboard.    
-No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.
+No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
+[Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 [HW7](/ds/docs/hw7.pdf). Due Wednesday, Mar 30. 
 
@@ -82,6 +83,10 @@ Lecture 14. Mar 28, 2016. [Intro to Number Theory](/ds/docs/lec14.pdf).
 Reading:
 [Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
 LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
+
+Lecture 15. Mar 30, 2016. [Modular arithmetic](/ds/docs/lec15.pdf).   
+Reading: the same.    
+Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
 
 <!--
 
