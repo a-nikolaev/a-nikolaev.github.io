@@ -89,6 +89,9 @@ Reading: the same.
 Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
 [HW8](/ds/docs/hw8.pdf). Due Wednesday, Apr 6. 
 
+Lecture 16. Apr 4, 2016. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).    
+Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
+
 <!--
 
 Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
