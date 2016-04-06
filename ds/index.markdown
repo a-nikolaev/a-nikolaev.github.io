@@ -92,34 +92,11 @@ Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in
 Lecture 16. Apr 4, 2016. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).    
 Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
 
+Lecture 17. Apr 6, 2016. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
+Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+
 <!--
-
-Lecture 7. Sep 28, 2015. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec7.pdf).   
-Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
-[HW5](/ds/docs/hw5.pdf). Due Wednesday, Oct 7.  
-
-Lectures 8 & 9. Sep 30, 2015.
-
-Midterm 1. Oct 5, 2015.    
-[Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
-
-Lecture 10. Oct 7, 2015. [Intro to Number Theory](/ds/docs/lec10.pdf).        
-Reading:
-[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
-LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.    
-[HW6](/ds/docs/hw6.pdf). Due Wednesday, Oct 14.  
-
-Lecture 11. Oct 14, 2015. [Modular arithmetic](/ds/docs/lec11.pdf).   
-Reading: the same.    
-Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
-[HW7](/ds/docs/hw7.pdf). Due Wednesday, Oct 21.
-
-Lecture 12. Oct 19, 2015. [Fermat's little theorem. RSA](/ds/docs/lec12.pdf).    
-Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
-
-Lecture 12 (continued). Oct 21, 2015.    
-[HW8](/ds/docs/hw8.pdf). Due Wednesday, Oct 28.
-
+[HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
 
 Midterm 2. Nov 9, 2015.    
 
