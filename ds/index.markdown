@@ -101,7 +101,8 @@ Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 
 Lecture 19. Apr 13, 2016. [Partial orders](/ds/docs/lec19.pdf).   
-Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.   
+Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.    
+[HW10](/ds/docs/hw10.pdf). Due Wednesday, Apr 20. 
 
 <!--
 [HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
