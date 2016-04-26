@@ -1,7 +1,18 @@
 name: Alexey Nikolaev
-markdown: kramdown
-pygments: true
+
 safe: true
 lsi: false
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+
+# markdown: kramdown
+# pygments: true
+
 
 #exclude: ['/docs', '/ds/docs']
