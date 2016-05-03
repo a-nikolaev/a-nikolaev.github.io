@@ -111,15 +111,17 @@ Lecture 21. Apr 20, 2016. [Paths. Connectivity. Euler and Hamilton Paths. Planar
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
 [HW11](/ds/docs/hw11.pdf). Due Monday, May 2.  
 
+Lecture 22. May 2, 2016. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
+Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
+
+Midterm 2. May 4, 2016.    
+* Covers lectures from 14 to 22.    
+* For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.
+
 <!--
 [HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
 
-Midterm 2. Nov 9, 2015.    
-
-* Covers lectures from 10 to 15 (Number theory and Counting).
-* For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
-The formula sheet should be handed in after the exam.
-* An example practice exam is posted on Blackboard.
 
 [Midterm 2 - Statistics](/ds/docs/stats/stats-midterm2.pdf).  
 
