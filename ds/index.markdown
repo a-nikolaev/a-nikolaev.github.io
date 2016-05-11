@@ -118,7 +118,8 @@ Midterm 2. May 4, 2016.
 + Covers lectures from 14 to 22.    
 + For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
 The formula sheet should be handed in after the exam.    
-No homework assigned.
+No homework assigned.    
+[Midterm 2 - Statistics](/ds/docs/stats/stats-midterm2.pdf).  
 
 
 Lecture 23. May 9, 2016. [Infinity. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec23.pdf).   
@@ -192,8 +193,7 @@ Office: HN 1000C
 ### Grading Policy
   Homeworks once a week. No late homeworks accepted. Homeworks must be handed in at the beginning of the class.
 
-####Distribution  
-  
+**Distribution**  
   HWs: 25%  
   Midterm I + Midterm II + Final: 37.5% + 37.5%.  
 
@@ -204,7 +204,7 @@ Office: HN 1000C
   However, you still have to attend and write the final exam,
   even if you already have 100% for the midterms.
 
-####Project    
+**Project**    
   An optional project is a possibility to improve your grade, and (hopefully) do something fun.
   [More details about projects & possible topics](/ds/topics.html).    
 
