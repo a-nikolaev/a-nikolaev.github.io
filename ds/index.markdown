@@ -125,6 +125,13 @@ No homework assigned.
 Lecture 23. May 9, 2016. [Infinity. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec23.pdf).   
 Reading: R(ed6):n/a; R(ed7): 2.5.   
 Also: [Counting and cardinality](http://sites.millersville.edu/bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
+[HW12](/ds/docs/hw12.pdf). Due Wednesday, May 18.  
+
+Lecture 24. May 16, 2016. Review session.
+
+Project presentation. May 18, 2016.    
+**If you present a project**, email me the title of your project at least one hour before the class. Also, **meet with me in advance** to show your progress.   
+[Helpful information for all speakers how to give a talk](/ds/talks.html).    
 
 <!--
 [HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
