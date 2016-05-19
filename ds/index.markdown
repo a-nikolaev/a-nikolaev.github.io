@@ -132,6 +132,7 @@ Lecture 24. May 16, 2016. Review session.
 Project presentation. May 18, 2016.    
 **If you present a project**, email me the title of your project at least one hour before the class. Also, **meet with me in advance** to show your progress.   
 [Helpful information for all speakers how to give a talk](/ds/talks.html).    
+[Talk schedule](/ds/presentation.html).
 
 <!--
 [HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.

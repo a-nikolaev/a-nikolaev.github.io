@@ -3,12 +3,21 @@ layout: page
 title: Projects Presentation
 ---
 
+* 8:30 **Christopher Eidangbe**, Prime numbers generation.
+* 8:40 **Suzen Fylke**, Random "Word" Generation with First Order Markov Chains.
+* 8:50 **Iurii Gurkov**, Bioinformatics: Sequence alignment algorithm.
+* 9:00 **Garrison Shepard**, The Graceful Tree Conjecture.
+* 9:10 **Nader Abdelrahman**, Context Free.
+* 9:20 **Ahmad Raza**, Tetris game.
+
+
+<!--
 * 7:05 **Rishabh Rana** "Graph Coloring"
 * 7:15 **Nayema Laboni** "Understanding why rumor spread so quickly using models for complex networks"
 * 7:25 **Raphael Kashtelian** "Dynamic Programming - Box Stacking"
 * 7:35 **Christopher Eidangbe** "Prime numbers generation"
 * 7:45 **Lemuel Gomez** "Connect Four: A solved game"
-
+-->
 
 <!--
 1. 11:15 **Brittany Sternberg** "A-star and Dijkstra algorithms"
