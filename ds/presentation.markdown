@@ -3,12 +3,11 @@ layout: page
 title: Projects Presentation
 ---
 
-* 8:30 **Christopher Eidangbe**, Prime numbers generation.
-* 8:40 **Suzen Fylke**, Random "Word" Generation with First Order Markov Chains.
-* 8:50 **Iurii Gurkov**, Bioinformatics: Sequence alignment algorithm.
-* 9:00 **Garrison Shepard**, The Graceful Tree Conjecture.
-* 9:10 **Nader Abdelrahman**, Context Free.
-* 9:20 **Ahmad Raza**, Tetris game.
+* 8:30 **Suzen Fylke**, Random "Word" Generation with First Order Markov Chains.
+* 8:40 **Iurii Gurkov**, Bioinformatics: Sequence alignment algorithm.
+* 8:50 **Garrison Shepard**, The Graceful Tree Conjecture.
+* 9:00 **Nader Abdelrahman**, Context Free.
+* 9:10 **Ahmad Raza**, Tetris game.
 
 
 <!--
