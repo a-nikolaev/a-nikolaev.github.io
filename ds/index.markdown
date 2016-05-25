@@ -138,6 +138,7 @@ Project presentation. May 18, 2016.
 + Covers everything.    
 + You can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
 The formula sheet should be handed in after the exam.    
++ You will be provided with the list of logical identities and inference rules (no need to include them in your formula sheet).     
 
 <!--
 [HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
