@@ -8,10 +8,10 @@ Hunter College of CUNY
 695 Park Avenue, HN 1000C  
 New York, NY 10065
 
-###Email
+### Email
 a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 
-##Education
+## Education
 
 1. Incomplete **Ph.D. Computer Science**, The Graduate Center of CUNY, New York, NY.  
   Adviser: Saad Mneimneh.  
@@ -24,25 +24,26 @@ a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 3. **Specialist** degree in Physics (Magna Cum Laude), Moscow State University, Russia (2008).  
   Specialization: Computer Methods in Physics.
 
-##Employment
-###Clarkson University, Department of Physics
-* August 2008 - July 2010. Teaching Assistant.
-  * Instructor for PH131 - Physics I (Fall 2008, Fall 2009).  
-  * Instructor for PH132 - Physics II (Spring 2009, Spring 2010).  
-* July 2010 - July 2011. Research Assistant. 
+## Employment
 
-###The City University of New York, Computer Science Program
-* August 2011 - present. Research Assistant at Hunter College and CUNY Graduate Center.
-  * Work with Professor Saad Mneimneh.
-  * Work with Professor Amotz Bar-Noy.
-* August 2013 - present. Adjunct Lecturer at Hunter College. 
-  * Teaching CSCI 150: Discrete Structures (Fall 2013, Spring 2014, Summer 2014, Fall 2014, Spring 2015, Summer 2015, Fall 2015).
-  * Teaching CSCI 135: Software Analysis and Design 1 (Spring 2015).
-  * Teaching CSCI 136: Software Analysis and Design 1 Labs (Spring 2015, Fall 2015).
+### Clarkson University, Department of Physics     
++ August 2008 - July 2010. Teaching Assistant.     
+  + Instructor for PH131 - Physics I (Fall 2008, Fall 2009).    
+  + Instructor for PH132 - Physics II (Spring 2009, Spring 2010).   
++ July 2010 - July 2011. Research Assistant.   
 
-##Research
+### The City University of New York, Computer Science Program     
++ August 2011 - present. Research Assistant at Hunter College and CUNY Graduate Center.    
+  + Work with Professor Saad Mneimneh.   
+  + Work with Professor Amotz Bar-Noy.   
++ August 2013 - present. Adjunct Lecturer at Hunter College.    
+  + Teaching CSCI 150: Discrete Structures (Fall 2013, Spring 2014, Summer 2014, Fall 2014, Spring 2015, Summer 2015, Fall 2015).   
+  + Teaching CSCI 135: Software Analysis and Design 1 (Spring 2015).   
+  + Teaching CSCI 136: Software Analysis and Design 1 Labs (Spring 2015, Fall 2015).   
 
-###Publications
+## Research
+
+### Publications
 
 * "Stochastic approximation for regulating circadian cycles, a precision medicine viewpoint."
 Alexey Nikolaev and Felisa J. Vazquez-Abad. Proc. 2015 Winter Simulation Conference. December 2015.

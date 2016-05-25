@@ -134,6 +134,11 @@ Project presentation. May 18, 2016.
 [Helpful information for all speakers how to give a talk](/ds/talks.html).    
 [Talk schedule](/ds/presentation.html).
 
+**Final exam. May 25, 2016.** Same room. 7:30 - 9:30pm.    
++ Covers everything.    
++ You can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.    
+
 <!--
 [HW11](/ds/docs/hw11.pdf). Due Wednesday, Nov 18.
 
