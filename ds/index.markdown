@@ -14,8 +14,9 @@ Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php),
 [2](http://www.millersville.edu/~bikenaga/math-proof/rules-of-inference/rules-of-inference.html),
 [3](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf).     
-[HW1](/ds/docs/hw1.pdf). Due Wednesday, Feb 10. 
-(Notice that only problems 2, 4, 5, 6(a), and 8(c) will be graded; you don't have to write your solutions for the other problems).
+
+<!-- [HW1](/ds/docs/hw1.pdf). Due Wednesday, Feb 10. 
+(Notice that only problems 2, 4, 5, 6(a), and 8(c) will be graded; you don't have to write your solutions for the other problems). -->
 
 Also, you can play this logical game: [http://incredible.nomeata.de/](http://incredible.nomeata.de/), where you are constructing 
 proofs out of blocks ([an example](http://i.imgur.com/CFrgtAW.png)). Those blocks are essentially the inference rules we learned in Lecture 2,
