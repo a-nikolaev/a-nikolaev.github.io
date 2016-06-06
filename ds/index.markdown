@@ -26,6 +26,7 @@ but you are provided with only some of those rules.
 
 Lecture 3. Jun 6, 2016. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
+[HW2](/ds/docs/hw2.pdf). Due Thursday, Jun 9. 
 
 Lecture 4. Jun 7, 2016. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     

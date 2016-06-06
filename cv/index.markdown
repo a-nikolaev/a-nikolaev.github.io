@@ -70,10 +70,10 @@ A. Nikolaev, M. E. Gracheva, Nanotechnology, 2011, **22** (16) 165202.
 N.N. Nefedov, A. Nikolaev, et al., ZhVMiMF, 2007, **47** (8), 1356-1364.
 
 ###Posters and Talks
+
 * Poster "Simulation of Infinite Time Turing Machines on a Classical Turing Machine",
 A. Nikolaev, Computer Science Student Workshop 2013, CUNY, New York, New York, May 3rd (2013).
 [![pdf][pdfimg]](/docs/poster-cssw-2013-ittm.pdf)
-
 * Talk "A Probabilistic Model for Deriving Structure of Proteins from Their Sequence Information",
 A. Nikolaev, S. Mneimneh, STAR-W 2013: STudents Algoritmic Reserach Workshop, CUNY, New York, New York, March 22nd (2013).
 [![pdf][pdfimg]](/docs/slides-star-w-2013.pdf)
