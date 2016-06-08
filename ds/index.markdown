@@ -31,11 +31,12 @@ Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.
 Lecture 4. Jun 7, 2016. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
 
+Lecture 5. Jun 8, 2016. Proofs. [Counting. Sets](/ds/docs/lec5.pdf).  
+Reading: R(ed6): 5.1; R(ed7): 6.1.    
 
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
-[HW2](/ds/docs/hw2.pdf). Due Wednesday, Feb 17. 
 
 Lecture 5. Feb 16, 2016. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
