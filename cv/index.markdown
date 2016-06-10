@@ -69,7 +69,7 @@ A. Nikolaev, M. E. Gracheva, Nanotechnology, 2011, **22** (16) 165202.
 * "On formation of sharp transition layers in two-dimensional reaction-diffusion models" _(Russian)_, 
 N.N. Nefedov, A. Nikolaev, et al., ZhVMiMF, 2007, **47** (8), 1356-1364.
 
-###Posters and Talks
+### Posters and Talks
 
 * Poster "Simulation of Infinite Time Turing Machines on a Classical Turing Machine",
 A. Nikolaev, Computer Science Student Workshop 2013, CUNY, New York, New York, May 3rd (2013).
