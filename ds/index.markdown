@@ -46,6 +46,8 @@ Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.
 
 Continue Lecture 7. Jun 14, 2016. 
 
+Lecture 8. Jun 15, 2016. Counting. Problem solving.
+[[problem set](/ds/docs/cc3.pdf)].    
 
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
@@ -53,8 +55,6 @@ Continue Lecture 7. Jun 14, 2016.
 
 [HW4](/ds/docs/hw4.pdf). Due Wednesday, Mar 2. 
 
-Lecture 8. Feb 29, 2016. Counting. Problem solving.
-[[problem set](/ds/docs/cc3.pdf)].    
 
 Lecture 9. Mar 2, 2016. [Induction](/ds/docs/lec9.pdf).  
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
@@ -238,102 +238,109 @@ Office: HN 1000C
 
 ### Tentative Course Content
 
-Feb 1 (Mon).
+Jun 1 (Wed).
 Propositional Logic.
 <br />
-Feb 3 (Wed).
+Jun 2 (Thr).
 Satisfiability and Rules of Inference.
-<br />
-Feb 8 (Mon).
+
+
+Jun 8 (Mon).
 Predicates and Quantifiers.
 <br />
-Feb 10 (Wed).
+Jun 9 (Tue).
 Proofs.
 <br />
-Feb 15 (Mon).
-<span style="color:#969086;">College is closed.</span>
-
-Feb 17 (Wed).
+Jun 10 (Wed).
+Proofs.
+<br />
+Jun 11 (Thr).
 Counting. Intro.
+
 <br />
-Feb 22 (Mon).
-The Pigeonhole Principle. Permutations and Combinations. 
+Jun 13 (Mon).
+The Pigeonhole Principle. Permutations and Combinations.
 <br />
-Feb 24 (Wed).
+Jun 14 (Tue).
 Binomial Theorem. Combinations with repetition.
 <br />
-Feb 29 (Mon).
-Counting. Practice session. 
-
-
-Mar 2 (Wed).
-Induction.
+Jun 15 (Wed).
+Counting. Practice session.
 <br />
-Mar 7 (Mon).
+Jun 16 (Thr).
+Induction.
+
+
+Jun 20 (Mon).
 Recurrences.
 <br />
-Mar 9 (Wed).
+Jun 21 (Tue).
 Fibonacci Numbers. Solving Linear Recurrences.
 <br />
-Mar 14 (Mon).
+Jun 22 (Wed).
 Strong Induction. Recursion in Mathematics and Programming.
+<br />
+Jun 23 (Thr).
+Continue recursion. (Review session).
 
-Mar 16 (Wed).
+Jun 27 (Mon).
 Midterm 1.
 
-
-Mar 21 (Mon).
+Jun 28 (Tue).
 Intro to Number Theory.
 <br />
-Mar 23 (Wed).
-<span style="color:#969086;">Classes follow Friday schedule.</span>
-<br />
-Mar 28 (Mon). 
+Jun 29 (Wed).
 Modular arithmetic.
 <br />
-Mar 30 (Wed).
+Jun 30 (Thr).
 Modular arithmetic and Extended Euclidean algorithm.
-<br />
-Apr 4 (Mon).
-Fermat's little theorem. RSA.
 
-Apr 6 (Wed).
+
+Jul 4  (Mon). <span style="color:#969086;">College is closed.</span>
+<br />
+Jul 5 (Tue).
+Fermat's little theorem. RSA.
+<br />
+Jul 6 (Wed).
 Sets. Ordered pairs.
 <br />
-Apr 11 (Mon).
+Jul 7 (Thr).
 Relations. Functions. Bijection and counting.
-<br />
-Apr 13 (Wed).
+
+
+Jul 11 (Mon).
 Relations and partial orders. 
 <br />
-Apr 18 (Mon).
+Jul 12 (Tue).
 Graphs. Bipartite graphs. Paths.
 <br />
-Apr 20 (Wed).
+Jul 13 (Wed).
 Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
 <br />
-Apr 22 - Apr 30. <span style="color:#969086;">Spring Recess.</span>
-<br />
-May 2 (Mon).
+Jul 14 (Thr).
 Trees. Huffman coding.
 <br />
 
-May 4 (Wed).
+Jul 18 (Mon).
 Midterm 2.
 
-May 9 (Mon).
+
+Jul 19 (Tue).
+Probability.
+<br />
+Jul 20 (Wed).
+Conditional Probability. Independent Bernoulli trials.
+<br />
+Jul 20 (Thr).
+Expected value.
+
+Jul 25 (Mon).
 Infinity. Countable sets. Diagonalization.
 <br />
-May 11 (Mon).
-Probability.
-
-May 16 (Mon).
+Jul 26 (Tue).
 Review session.
-<br />
-May 18 (Wed).
-Projects presentation.
 
-May 25 (Wed). Final Exam. Same room. 7:30 - 9:30pm.
+Jul 27 (Wed). Final Exam. Same room. Same time.
 
 <!--
 [HW1](/ds/docs/hw1.pdf). Due Thursday, Jun. 4.   
