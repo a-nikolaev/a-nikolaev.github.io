@@ -49,6 +49,9 @@ Continue Lecture 7. Jun 14, 2016.
 Lecture 8. Jun 15, 2016. Counting. Problem solving.
 [[problem set](/ds/docs/cc3.pdf)].    
 
+Lecture 9. Jun 16, 2016. [Induction](/ds/docs/lec9.pdf).  
+Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
