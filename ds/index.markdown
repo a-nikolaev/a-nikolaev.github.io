@@ -53,6 +53,10 @@ Lecture 9. Jun 16, 2016. [Induction](/ds/docs/lec9.pdf).
 Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
 [HW5](/ds/docs/hw5.pdf). Due Monday, Jun 20.   
 
+Lecture 10. Jun 20, 2016. [Recurrences](/ds/docs/lec10.pdf).    
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
