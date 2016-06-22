@@ -61,6 +61,8 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 Lecture 11. Jun 21, 2016. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
+Lecture 12. Jun 22, 2016. Continue Linear Recurrences & [Strong Induction](/ds/docs/lec12.pdf).     
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
