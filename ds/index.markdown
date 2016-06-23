@@ -63,6 +63,26 @@ Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.
 
 Lecture 12. Jun 22, 2016. Continue Linear Recurrences & [Strong Induction](/ds/docs/lec12.pdf).     
 
+Lecture 13. Jun 23, 2016. [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
+Source code in [Julia](http://julialang.org/):
+[sum.jl](/ds/code/sum.jl),
+[fact.jl](/ds/code/fact.jl),
+[fib.jl](/ds/code/fib.jl),
+[mset.jl](/ds/code/mset.jl),
+[graph.jl](/ds/code/graph.jl),
+[lsys.jl](/ds/code/lsys.jl),
+[turtle.jl](/ds/code/turtle.jl),
+[merge.jl](/ds/code/merge.jl).    
+HW6 Bonus. Will be posted on Friday. Due Monday, Jun 27.   
+
+Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images
+using a simple declarative/recursive description language. See some examples, they are very cool!
+
+**Midterm I. Jun 27, 2016.**    
+Will cover lectures 1 through 11 (until and including linear recurrences).   
+There are practice tests posted on Blackboard.    
+No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
