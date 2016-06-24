@@ -73,7 +73,7 @@ Source code in [Julia](http://julialang.org/):
 [lsys.jl](/ds/code/lsys.jl),
 [turtle.jl](/ds/code/turtle.jl),
 [merge.jl](/ds/code/merge.jl).    
-HW6 Bonus. Will be posted on Friday. Due Monday, Jun 27.   
+[HW6-Bonus](/ds/docs/hw6-bonus.pdf). Due Monday, Jun 27.   
 
 Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images
 using a simple declarative/recursive description language. See some examples, they are very cool!
