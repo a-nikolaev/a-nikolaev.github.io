@@ -83,44 +83,23 @@ Will cover lectures 1 through 11 (until and including linear recurrences).
 There are practice tests posted on Blackboard.    
 No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
 
+Lecture 14. Jun 28, 2016. [Intro to Number Theory](/ds/docs/lec14.pdf).        
+Reading:
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.      
+[HW7](/ds/docs/hw7.pdf). Due Thursday, Jun 30. 
+
+Lecture 15. Jun 29, 2016. [Modular arithmetic](/ds/docs/lec15.pdf).   
+Reading: the same.    
+Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
+
+Lecture 16. Jun 30, 2016. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).    
+Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
 
-[HW4](/ds/docs/hw4.pdf). Due Wednesday, Mar 2. 
-
-
-Lecture 9. Mar 2, 2016. [Induction](/ds/docs/lec9.pdf).  
-Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
-[HW5](/ds/docs/hw5.pdf). Due Wednesday, Mar 9. 
-
-Lecture 10. Mar 7, 2016. [Recurrences](/ds/docs/lec10.pdf).    
-Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
-[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
-
-Lecture 11. Mar 9, 2016. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
-Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
-[HW6](/ds/docs/hw6.pdf). Due Wednesday, Mar 16. 
-
-Lecture 11 (continued). Mar 14, 2016.
-
-Lecture 12. Mar 16, 2016. [Strong Induction](/ds/docs/lec12.pdf) & [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
-Source code in [Julia](http://julialang.org/):
-[sum.jl](/ds/code/sum.jl),
-[fact.jl](/ds/code/fact.jl),
-[fib.jl](/ds/code/fib.jl),
-[mset.jl](/ds/code/mset.jl),
-[graph.jl](/ds/code/graph.jl),
-[lsys.jl](/ds/code/lsys.jl),
-[turtle.jl](/ds/code/turtle.jl),
-[merge.jl](/ds/code/merge.jl).    
-
-Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images 
-using a simple declarative/recursive description language. See some examples, they are very cool!
-
-**Midterm I. Mar 21, 2016.** *Warning! The midterm is postponed to March 21, Monday.*   
-There are practice tests posted on Blackboard.    
-No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
 [Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 [HW7](/ds/docs/hw7.pdf). Due Wednesday, Mar 30. 
