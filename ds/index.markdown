@@ -82,6 +82,7 @@ using a simple declarative/recursive description language. See some examples, th
 Will cover lectures 1 through 11 (until and including linear recurrences).   
 There are practice tests posted on Blackboard.    
 No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
+[Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
 
 Lecture 14. Jun 28, 2016. [Intro to Number Theory](/ds/docs/lec14.pdf).        
 Reading:
