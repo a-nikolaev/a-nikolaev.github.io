@@ -96,6 +96,7 @@ Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in
 
 Lecture 16. Jun 30, 2016. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).    
 Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
+[HW8](/ds/docs/hw8.pdf). Due Tuesday, Jul 5. 
 
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
