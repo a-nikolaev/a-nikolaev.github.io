@@ -98,6 +98,9 @@ Lecture 16. Jun 30, 2016. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).
 Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
 [HW8](/ds/docs/hw8.pdf). Due Tuesday, Jul 5. 
 
+Continue Lecture 16. Jul 5, 2016.       
+[HW9](/ds/docs/hw9.pdf). Due Thursday, Jul 7. 
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
