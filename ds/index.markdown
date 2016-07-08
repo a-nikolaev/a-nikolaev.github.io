@@ -106,7 +106,8 @@ Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.
 
 Lecture 18. Jul 7, 2016. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
-Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.      
+[HW10](/ds/docs/hw10.pdf). Due Monday, Jul 11. 
 
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
