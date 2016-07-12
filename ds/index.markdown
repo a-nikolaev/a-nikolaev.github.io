@@ -111,6 +111,7 @@ Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
 
 Lecture 19. Jul 11, 2016. [Partial orders](/ds/docs/lec19.pdf).   
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.    
+[HW11](/ds/docs/hw11.pdf). Due Thursday, Jul 11. 
 
 Lecture 20. Jul 12, 2016. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
 Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.     
@@ -120,6 +121,11 @@ Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.
 
 Lecture 22. Jul 14, 2016. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
 Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
+
+**Midterm 2.** Jul 18, 2016.    
++ Covers lectures from 14 to 22 (maybe not including 22).    
++ For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+The formula sheet should be handed in after the exam.    
 
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
