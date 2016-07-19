@@ -127,6 +127,15 @@ Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.
 + For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
 It must be made individually by you. The formula sheet should be handed in after the exam.    
 
+Continue Lecture 22. Jul 19, 2016. Trees.    
+[HW12](/ds/docs/hw12.pdf). Due Thursday, Jul 21. 
+
+Lecture 23. Jul 20, 2016. Probability.   
+No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
+Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.    
+
+Lecture 24. Jul 21, 206. Probability. Random variables. Expected value.    
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
