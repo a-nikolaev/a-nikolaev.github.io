@@ -135,7 +135,8 @@ Lecture 23. Jul 20, 2016. Probability.
 No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
 Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.    
 
-Lecture 24. Jul 21, 206. Probability. Random variables. Expected value.    
+Lecture 24. Jul 21, 206. Probability. Random variables. Expected value.     
+[HW13](/ds/docs/hw13.pdf). Due Monday, Jul 25. 
 
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
