@@ -138,6 +138,18 @@ Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.
 Lecture 24. Jul 21, 206. Probability. Random variables. Expected value.     
 [HW13](/ds/docs/hw13.pdf). Due Monday, Jul 25. 
 
+Lecture 25. Jul 25, 2016. [Infinity. Cardinality of infinite sets. Diagonalization argument](/ds/docs/lec25.pdf).   
+Reading: R(ed6):n/a; R(ed7): 2.5.   
+Also: [Counting and cardinality](http://sites.millersville.edu/bikenaga/math-proof/cardinality/cardinality.pdf) lecture notes by Bruce Ikenaga.    
+
+Review session. Jul 26, 2016.
+
+**Final exam. Jul 27, 2016.** Same room. Same time.    
++ Covers everything.    
++ You can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+It must be made individually by you. The formula sheet should be handed in after the exam.    
++ You will be provided with the list of logical identities and inference rules (no need to include them in your formula sheet).     
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
