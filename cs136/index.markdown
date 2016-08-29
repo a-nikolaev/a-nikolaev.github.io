@@ -109,7 +109,7 @@ Reading: 10.3.
 -->
 
 ## General information
-Wed, 3:25 pm - 5:25 pm. Hunter North 1000G.  
+Mon, 12:10 pm - 2:00 pm. Hunter North 1000G.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -120,12 +120,11 @@ Office: HN 1000C
 ## Assignments
 Posted on Blackboard. You submit your solutions through Blackboard as well. 
 
-Most of the labs are supposed to be finished by the end of the class.
-However it was decided to extend all lab submission deadlines by one week. 
-More precisely, your solution is due exactly one week after the lab began.
+All labs should be finished and submitted by the end of the class. 
+The instructor can extend the submission deadline by up to 24 hours if they find it necessary.
 
 ### Your grades for CS-135 and CS-136
-All CS-135 assignments (programming homeworks and tests) contribute to your CS-135 grade.
+All CS-135 assignments (programming projects and tests) contribute to your CS-135 grade.
 Whereas all labs contribute only to your CS-136 grade. Both classes follow the same grading criteria.
 
 For more detailed information, see you CS-135 syllabus.

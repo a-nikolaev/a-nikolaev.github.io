@@ -26,7 +26,7 @@ title: CSCI 135 - Software Analysis and Design 1
 ## Text Editor
   **For this class, I strongly discourage using Xcode or any other IDE.** We need only a text editor and a terminal window.
   
-  **On Mac OSX**, use a simpler text editor, for example [TextMate](http://macromates.com/download), it's a good free option.
-  Use it only for editing code, run your programs from the terminal.
+  **On Mac OSX**, use a simpler text editor, for example [TextMate](http://macromates.com/download) or [Sublime Text](http://www.sublimetext.com/),
+  they are good free options. Use it only for editing code, run your programs from the terminal.
   
-  **On Windows**, [Notepad++](http://notepad-plus-plus.org/) is a good free text editor I can recommend.
+  **On Windows**, [Notepad++](http://notepad-plus-plus.org/) and [Sublime Text](http://www.sublimetext.com/) are a good free text editors I can recommend.
