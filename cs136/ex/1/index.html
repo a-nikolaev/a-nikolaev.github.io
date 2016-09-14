@@ -1,0 +1,195 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>C++ Exercises. Part 1.</title></p>
+
+<h1>C++ Exercises. Part 1.</h1>
+
+<h2>Exercises for practicing <code>if</code> statement.</h2>
+
+<h3>Problem 1. Find the smaller of two integers.&emsp;(Easy)</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/FzG71JC.jpg" alt="" /></p>
+
+<p>Write a program that asks the user to input <strong>two integer numbers</strong> and prints out the smaller of the two.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>Enter the first number: 15
+Enter the second number: -24
+
+The smaller of the two is -24
+</code></pre>
+
+<h3>Problem 2. Find the smaller of three integers.&emsp;(Medium)</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/3EJLfnP.jpg" alt="" /></p>
+
+<p>Write a program that asks the user to input <strong>three integer numbers</strong>, and prints out the smallest of the three.</p>
+
+<p>(Hint: There are many possible solutions here. One possible strategy: Given number <code>x</code>, <code>y</code>, and <code>z</code>, you can first compare <code>x</code> and <code>y</code>,
+take whichever is smaller and compare it with <code>z</code>.)</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>Enter the first number: 23
+Enter the second number: 76
+Enter the third number: 37
+
+The smaller of the three is 23
+</code></pre>
+
+<h3>Problem 3. A leap year or a common year?&emsp;(Medium)</h3>
+
+<p>In C++, the operator <code>%</code> (usage example <code>(x % y)</code>) let us compute the remainder of the division of <code>x</code> by <code>y</code>.
+In particular, <code>37 % 10</code> would return <code>7</code>, since this is the remainder of <code>37</code> when divided by <code>10</code>.
+Think, what would be the result of <code>1234567 % 200</code>? (You may write a short program if you want to check your answer.)</p>
+
+<p>The actual task:
+Write a program that asks the user to input an integer representing a year number (1999, 2016, etc.).
+If the input year is a <em>leap year</em>, it should print <code>Leap year</code>, otherwise, print <code>Common year</code>.</p>
+
+<p>In the modern Gregorian calendar, a year is a <em>leap year</em> if it is divisible by 4, but century years are not leap years unless they are divisible by 400.</p>
+
+<p>This means that 2010, 2016, 2020, and 2040 are all leap years.<br/>
+However, the century years 1800, 1900, 2100, 2200, 2300 and 2500 are NOT.<br/>
+Yet, 2000, 2400, 2800 are still leap years.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>Enter the year: 2016
+
+Leap year
+</code></pre>
+
+<h3>Problem 4. Possible or impossible date?&emsp;(Hard)</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/LmnIW7m.jpg" alt="" /></p>
+
+<p>Ask the user to input three integers, representing Month, Day, and Year (ask for input in this exact order).
+The program should decide and report to the user whether the numbers correspond to a <strong>possible date</strong> (like <code>9/15/2016</code>),
+or it is <strong>impossible</strong> (for example, <code>27/99/1989</code>, <code>6/31/2016</code>, <code>0/32/2000</code>, etc.)</p>
+
+<p><strong>You may assume that all input numbers are non-negative integers (so assume they can be positive or equal to zero).</strong></p>
+
+<p>The caveat is that on a leap year, February has 29 days, while there are only 28 on a normal year.</p>
+
+<p>To help you save one internet search, here&rsquo;s how many days is in each of the months:
+jan 31, feb 28/29, mar 31, apr 30, may 31, jun 30, jul 31, aug 31, sep 30, oct 31, nov 30, dec 31.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>Enter the month: 9
+Enter the day: 13
+Enter the year: 2016
+
+Possible
+</code></pre>
+
+<p><strong>Solution</strong></p>
+
+<p style="text-align:center;"> <a href="http://lpaste.net/4740887993424805888">possible-impossible</a>  (hopefully there are no mistakes there, but I did not test it very extensively)</p>
+
+<h2>Exercises for practicing loops.</h2>
+
+<h3>Problem 5. Divisible by 14.&emsp;(Easy)</h3>
+
+<p>Write a program that prints out all integers between <code>1</code> and <code>100</code> that are divisible by <code>14</code>.</p>
+
+<p>(Hint: Will need to use a <code>for</code> loop and the modulo operator <code>%</code>)</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>14
+28
+42
+56
+70
+84
+98
+</code></pre>
+
+<h3>Problem 6. A simple primality test.&emsp;(Medium)</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/h17b083.png" alt="" /></p>
+
+<p>A natural number greater than 1 is called a <a href="https://en.wikipedia.org/wiki/Prime_number">prime</a> if it is divisible only by 1 and by itself.
+So, for exmaple, the first few primes are</p>
+
+<p style="text-align:center;"> <strong>2</strong>, <strong>3</strong>, <strong>5</strong>, <strong>7</strong>, <strong>11</strong>, <strong>13</strong>, <strong>17</strong>, <strong>19</strong>, <strong>23</strong>, &hellip;</p>
+
+<p>There is a simple way to test if a given number <code>x</code> is a prime: it should be greater than 1 and should
+not divide evenly by any of the numbers between <code>2</code> and <code>x-1</code>.</p>
+
+<p>Write a program that decides whether or not the input number is a prime.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>Enter an integer: 19
+
+It is a prime.
+</code></pre>
+
+<pre><code>Enter an integer: 25
+
+It is NOT a prime.
+</code></pre>
+
+<h3>Problem 7. All primes between 1 and 100.&emsp;(Medium)</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/N7mEBYy.png" alt="" /></p>
+
+<p>Write a program that prints all primes between 1 and 100.</p>
+
+<h3>Problem 8. ASCII table.&emsp;(Medium)</h3>
+
+<p style="text-align:center;"> <img src="http://i.imgur.com/4HVkxHp.png" alt="" /></p>
+
+<p>In this task, you learn about the <code>char</code> type and the standard computer character encoding called
+<a href="http://www.tntbasic.com/learn/help/guides/asciicodesexplained.htm">ASCII table</a>.</p>
+
+<p>In C and C++, <code>char</code> is the datatype representing characters, for example one can write:</p>
+
+<pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">c1</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">c2</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">c3</span> <span class="o">=</span> <span class="sc">'$'</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c1</span> <span class="o">&lt;&lt;</span> <span class="n">c2</span> <span class="o">&lt;&lt;</span> <span class="n">c3</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Aa$
+</code></pre>
+
+<p>For historical reasons <code>char</code> is actually an integer type one byte long.
+Depending on your computer architecture the range of its values can be either from -127 to 127 or from 0 to 255.</p>
+
+<p>The exact mapping between the code and the character is called the <a href="http://www.rapidtables.com/code/text/ascii-table.htm">ASCII table</a>.</p>
+
+<p>All <strong>characters in the range from 32 to 126 are printable characters</strong>.</p>
+
+<p>Write a program that will print out all of these printable characters together with their codes.
+(Also note that you may need to typecast a variable of the <code>char</code> type to <code>int</code> if you want to print the code of the character instead of its sybmol.)</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>32  
+33 !
+34 "
+35 #
+36 $
+37 %
+38 &amp;
+
+...
+
+123 {
+124 |
+125 }
+126 ~
+</code></pre>
