@@ -50,7 +50,7 @@ int main() {
 
 	// We would also want to read words from a text file,
 	// the same way the type `string` would do that:
-	fstream fin("file.txt");
+	ifstream fin("file.txt");
 	while(fin >> s) {
 		cout << "[" << s << "]" << endl;
 	}
