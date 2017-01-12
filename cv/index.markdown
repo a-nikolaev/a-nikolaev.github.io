@@ -73,7 +73,7 @@ combinations and permutations with or without repetition
 \[[more&nbsp;info&nbsp;![][pageimg]](http://www.cs.hunter.cuny.edu/~saad/count/)\]
 \[[run&nbsp;in&nbsp;the&nbsp;browser&nbsp;![][runimg]](http://a-nikolaev.github.io/counting/)\].
 
-**Modeling compound semiconductor-electrolyte nano-devices (Master's thesis).**
+**Modeling semiconductor-electrolyte nano-devices (Master's thesis).**
 With Maria Gracheva. Developed a model for a semiconductor membrane with a nanopore
 submerged in KCl electrolyte, its electrostatic (Poisson-Boltzmann) and dynamic (Poisson-Nernst-Planck) cases.
 Numerical integration of the resulting system of partial differential equation. 
