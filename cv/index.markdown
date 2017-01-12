@@ -15,7 +15,7 @@ a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 
 1. Incomplete **Ph.D. Computer Science**, The Graduate Center of CUNY, New York, NY.  
   Adviser: Saad Mneimneh.  
-  Area of Study: Computational Biology and Bioinformatics.
+  Area of Study: Network Science, Computational Biology, Simulation.
 
 2. **M.S. Physics**, Clarkson University, Postdam, NY (2011).  
   Adviser: Maria E. Gracheva.  
@@ -37,19 +37,71 @@ a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
   + Work with Professor Saad Mneimneh.   
   + Work with Professor Amotz Bar-Noy.   
 + August 2013 - present. Adjunct Lecturer at Hunter College.    
-  + Teaching CSCI 150: Discrete Structures (Fall 2013, Spring 2014, Summer 2014, Fall 2014, Spring 2015, Summer 2015, Fall 2015).   
+  + Teaching CSCI 150: Discrete Structures (Fall 2013, Spring 2014, Summer 2014, Fall 2014, Spring 2015, Summer 2015, Fall 2015,
+    Spring 2016, Summer 2016, Spring 2017).   
   + Teaching CSCI 135: Software Analysis and Design 1 (Spring 2015).   
-  + Teaching CSCI 136: Software Analysis and Design 1 Labs (Spring 2015, Fall 2015).   
+  + Teaching CSCI 136: Supervised Programming Labs (Spring 2015, Fall 2015, Spring 2016, Fall 2016, Spring 2017).   
 
 ## Research
 
+**Network Science: Teams and higher-order interactions.**
+With Saad Mneimneh and Amotz Bar-Noy.
+Study collaborative networks of teams, primarily focusing on the
+[abstract simplicial complex](https://en.wikipedia.org/wiki/Abstract_simplicial_complex) (SC) model 
+instead of the more standard graph model.
+Studied several metrics for evaluating collaborative *network strength* (analytically and experimentally)
+\[[paper&nbsp;![pdf][pdfimg]](https://pdfs.semanticscholar.org/c796/20efa50b7ed63b6d0f673c2d6e2306fa4db0.pdf)\].
+Proposed an *evolutionary generation procedure* for simplicial complex networks, 
+which has the *preferential attachment growth* mechanism and the facet degree distribution following a power law
+\[[poster&nbsp;![pdf][pdfimg]](/docs/poster-netscix-2017.pdf)\].
+Use real-life networks of teams, such as Wikipedia Talk pages, call-graph networks in source code, DBLP. 
+Simulation of bots interaction and their performance with [Volunteer Science](https://volunteerscience.com/) project.
+Developed a tool *visualsc* for visualizing abstract simplicial complexes \[[github&nbsp;![][codeimg]](https://github.com/a-nikolaev/visualsc)\].
+
+**Systems Biology: Stochastic approximation for Gene Regulatory Networks (GRNs).**
+With Felisa Vazquez-Abad. A hybrid model for estimating periodic oscillations in gene regulatory networks 
+(applied to a circadian clock GRN) and gradient estimation of the period w.r.t. the reaction rates 
+\[[paper&nbsp;![pdf][pdfimg]](https://pdfs.semanticscholar.org/0dc2/58e96178c50e18c7d19734216609c95e1602.pdf)].
+
+**Computational Biology: Protein folding.**
+With Saad Mneimneh. A probabilistic model for predicting secondary structures in proteins.
+
+**A computer language for teaching Combinatorics.**
+With Saad Mneimneh. Developed an interactive programming language for teaching counting principles
+and systematic problem solving. Particularly geared towards applying multiplication rule, and
+combinations and permutations with or without repetition
+\[[more&nbsp;info&nbsp;![][pageimg]](http://www.cs.hunter.cuny.edu/~saad/count/)\]
+\[[run&nbsp;in&nbsp;the&nbsp;browser&nbsp;![][runimg]](http://a-nikolaev.github.io/counting/)\].
+
+**Modeling compound semiconductor-electrolyte nano-devices (Master's thesis).**
+With Maria Gracheva. Developed a model for a semiconductor membrane with a nanopore
+submerged in KCl electrolyte, its electrostatic (Poisson-Boltzmann) and dynamic (Poisson-Nernst-Planck) cases.
+Numerical integration of the resulting system of partial differential equation. 
+Proposed and designed a transistor MOSFET-like nanopore structure.
+
+**Other topics of interest:** 
+Functional programming and language design. Process calculi and models of concurrency. Formal methods. Linear Logic. 
+Computability and non-standard models of computation (CRNs, biocomputing, cellular automata, infinitary computability
+\[[poster&nbsp;![pdf][pdfimg]](/docs/poster-cssw-2013-ittm.pdf)\], etc.). 
+Procedural generation and complex behaviors emerging from simple rules. 
+Game programming \[[github&nbsp;![][codeimg]](https://github.com/a-nikolaev/wanderers)\]. Agent-based social simulation. 
+
 ### Publications
+
+* "Testing Higher-Order Network Structures in an Online Experiment." 
+Jason Radford, Amotz Barnoy, Alexey Nikolaev, Saad Mneimneh, David Lazer, Ram Ramanathan.
+CSCW Companion 2016: 377-380.
 
 * "Stochastic approximation for regulating circadian cycles, a precision medicine viewpoint."
 Alexey Nikolaev and Felisa J. Vazquez-Abad. Proc. 2015 Winter Simulation Conference. December 2015.
+  [![pdf][pdfimg]](https://pdfs.semanticscholar.org/0dc2/58e96178c50e18c7d19734216609c95e1602.pdf)
 
 * "Measuring the Strength of Networks of Teams: Metrics and Properties."
 Ali Assarpour et al. Proc. IEEE NetSciCom 2015 (colocated with INFOCOM), Hong Kong, April 2015. 
+  [![pdf][pdfimg]](https://pdfs.semanticscholar.org/c796/20efa50b7ed63b6d0f673c2d6e2306fa4db0.pdf)
+
+* "Poisson-Nernst-Planck model for an ionic transistor based on a semiconductor membrane", 
+A. Nikolaev, M. Gracheva, Journal of Computational Electronics (Special Issue) **13**(4), p. 818-825 (2014). 
 
 * "A mathematical model for secondary structure in proteins." Alexey Nikolaev and Saad Mneimneh.
 BIBE 2013, 1-6.
@@ -71,6 +123,11 @@ N.N. Nefedov, A. Nikolaev, et al., ZhVMiMF, 2007, **47** (8), 1356-1364.
 
 ### Posters and Talks
 
+* Poster "Controlled evolution of collaborative networks: is it a good idea?",
+A. Nikolaev, S. Mneimneh, A. Bar-Noy, R. Ramanathan. NetSci-X 2017, January 15th (2017).
+[![pdf][pdfimg]](/docs/poster-netscix-2017.pdf)
+* Talk "A Hybrid Stochastic Model for Self-Regulated Biochemical Systems",
+A. Nikolaev, F. Vazquez-Abad, 4th Rutgers Applied Probability Conference, October 3rd (2015).
 * Poster "Simulation of Infinite Time Turing Machines on a Classical Turing Machine",
 A. Nikolaev, Computer Science Student Workshop 2013, CUNY, New York, New York, May 3rd (2013).
 [![pdf][pdfimg]](/docs/poster-cssw-2013-ittm.pdf)
@@ -102,3 +159,7 @@ N. Grachev, A. Nikolaev, Conference ’Lomonosov - 2006’, Moscow, Russia (2006
 
 
 [pdfimg]: /img/pdf1.png
+[codeimg]: /img/code.png
+[pageimg]: /img/page.png
+[runimg]: /img/run.png
+
