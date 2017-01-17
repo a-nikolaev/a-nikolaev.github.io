@@ -13,7 +13,7 @@ a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 
 ## Education
 
-1. Currently enrolled in the **Ph.D. Computer Science** program at the Graduate Center of CUNY, New York, NY.  
+1. Currently enrolled in the **Ph.D. Computer Science** program at the Graduate Center of the City University of New York, New York, NY.  
   Adviser: Saad Mneimneh.  
   Area of Study: Network Science, Computational Biology, Simulation.
 
