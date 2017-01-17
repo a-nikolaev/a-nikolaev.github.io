@@ -13,7 +13,7 @@ a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 
 ## Education
 
-1. Incomplete **Ph.D. Computer Science**, The Graduate Center of CUNY, New York, NY.  
+1. Currently enrolled in the **Ph.D. Computer Science** program at The Graduate Center of CUNY, New York, NY.  
   Adviser: Saad Mneimneh.  
   Area of Study: Network Science, Computational Biology, Simulation.
 
@@ -46,17 +46,16 @@ a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu
 
 **Network Science: Teams and higher-order interactions.**
 With Saad Mneimneh and Amotz Bar-Noy.
-Study collaborative networks of teams, primarily focusing on the
-[abstract simplicial complex](https://en.wikipedia.org/wiki/Abstract_simplicial_complex) (SC) model 
-instead of the more standard graph model.
-Studied several metrics for evaluating collaborative *network strength* (analytically and experimentally)
+Study collaborative networks of teams using an
+[abstract simplicial complex](https://en.wikipedia.org/wiki/Abstract_simplicial_complex) model.
+Studied metrics for evaluating *strength* of such collaborative networks
 \[[paper&nbsp;![pdf][pdfimg]](https://pdfs.semanticscholar.org/c796/20efa50b7ed63b6d0f673c2d6e2306fa4db0.pdf)\].
-Proposed an *evolutionary generation procedure* for simplicial complex networks, 
-which has the *preferential attachment growth* mechanism and the facet degree distribution following a power law
+Proposed an *evolutionary generation process* for simplicial complex networks with
+the *preferential attachment* property and the facet degree distribution following a power law
 \[[poster&nbsp;![pdf][pdfimg]](/docs/poster-netscix-2017.pdf)\].
-Use real-life networks of teams, such as Wikipedia Talk pages, call-graph networks in source code, DBLP. 
-Simulation of bots interaction and their performance with [Volunteer Science](https://volunteerscience.com/) project.
-Developed a tool *visualsc* for visualizing abstract simplicial complexes \[[github&nbsp;![][codeimg]](https://github.com/a-nikolaev/visualsc)\].
+Research real-life networks of teams, such as Wikipedia Talk pages, call-graph networks in source code, DBLP. 
+Simulated bots' interaction and their performance with [Volunteer Science](https://volunteerscience.com/) project.
+Developed a tool for visualizing abstract simplicial complexes \[[github&nbsp;![][codeimg]](https://github.com/a-nikolaev/visualsc)\].
 
 **Systems Biology: Stochastic approximation for Gene Regulatory Networks (GRNs).**
 With Felisa Vazquez-Abad. A hybrid model for estimating periodic oscillations in gene regulatory networks 
@@ -68,16 +67,15 @@ With Saad Mneimneh. A probabilistic model for predicting secondary structures in
 
 **A computer language for teaching Combinatorics.**
 With Saad Mneimneh. Developed an interactive programming language for teaching counting principles
-and systematic problem solving. Particularly geared towards applying multiplication rule, and
-combinations and permutations with or without repetition
+particularly geared towards applying multiplication rule, combinations, and permutations with or without repetition
 \[[more&nbsp;info&nbsp;![][pageimg]](http://www.cs.hunter.cuny.edu/~saad/count/)\]
 \[[run&nbsp;in&nbsp;the&nbsp;browser&nbsp;![][runimg]](http://a-nikolaev.github.io/counting/)\].
 
 **Modeling semiconductor-electrolyte nano-devices (Master's thesis).**
 With Maria Gracheva. Developed a model for a semiconductor membrane with a nanopore
-submerged in KCl electrolyte, its electrostatic (Poisson-Boltzmann) and dynamic (Poisson-Nernst-Planck) cases.
+submerged in KCl electrolyte. Its electrostatic (Poisson-Boltzmann) and dynamic (Poisson-Nernst-Planck) models.
 Numerical integration of the resulting system of partial differential equation. 
-Proposed and designed a transistor MOSFET-like nanopore structure.
+Proposed and explored the properties of a nanopore-based ionic MOSFET-like transistor.
 
 **Other topics of interest:** 
 Functional programming and language design. Process calculi and models of concurrency. Formal methods. Linear Logic. 
