@@ -109,7 +109,7 @@ Reading: 10.3.
 -->
 
 ## General information
-Mon, 12:10 pm - 2:00 pm. Hunter North 1000G.  
+Mon, 1:10 - 3:00 pm or 4:10 - 6:00 pm. Hunter North 1000G.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -135,6 +135,10 @@ For more detailed information, see you CS-135 syllabus.
 [Linux Lab FAQ](http://www.geography.hunter.cuny.edu/tbw/CS.Linux.Lab.FAQ/department_of_computer_science.faq.htm).
 
 [How to setup a Unix development environment on your own computer](setup/).
+
+## Additional exercises
+
+  1. [Exercises on practicing if statements and loops](ex/1/)
 
 ### Literature
   * Walter Savitch, Absolute C++, 6th Edition, ISBN 0-13-397078-7
