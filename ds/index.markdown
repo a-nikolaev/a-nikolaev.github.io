@@ -5,10 +5,10 @@ title: CSCI 150 - Discrete Structures
 
 ## Discrete Structures, CSCI-150.
 
-Lecture 1. Jun 1, 2016. [Propositional Logic](/ds/docs/lec1.pdf).   
+Lecture 1. Jan 30, 2017. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.   
 
-Lecture 2. Jun 2, 2016. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Feb 1, 2017. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php).
@@ -16,6 +16,8 @@ Useful links:
 [2](http://cs.gmu.edu/~henryh/330/Trans-pdf/3.pdf). -->
 You may also read more in depth on [Natural Deduction proofs](https://whythis.s3.amazonaws.com/media/teaching/lecturenotes/natural_deduction.pdf),
 it's using tree-like proof structure instead of the linear one, but fear not.
+
+<!--
 
 [HW1](/ds/docs/hw1.pdf). Due Monday, Jun 6. 
 (Notice that only problems 2, 3, and 5 will be graded; you don't have to write your solutions for the other problems).
@@ -150,6 +152,8 @@ Review session. Jul 26, 2016.
 It must be made individually by you. The formula sheet should be handed in after the exam.    
 + You will be provided with the list of logical identities and inference rules (no need to include them in your formula sheet).     
 
+-->
+
 [[Discussion Board](/ds/discussion/)] <- you may ask questions here
 
 <!--
@@ -270,7 +274,7 @@ Project presentation. Dec 14, 2015.
 
 ## Syllabus
 
-Mon, Tue, Wed, Thr, 11:40 - 12:50 pm. Hunter North C004.  
+Mon, Wed, 7:25 - 9:40 pm. Hunter North C107.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
@@ -297,11 +301,9 @@ Office: HN 1000C
   However, you still have to attend and write the final exam,
   even if you already have 100% for the midterms.
 
-<!--
 **Project**    
   An optional project is a possibility to improve your grade, and (hopefully) do something fun.
   [More details about projects & possible topics](/ds/topics.html).    
--->
 
 ### Tentative Course Content
 
