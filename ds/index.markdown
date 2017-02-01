@@ -7,6 +7,7 @@ title: CSCI 150 - Discrete Structures
 
 Lecture 1. Jan 30, 2017. [Propositional Logic](/ds/docs/lec1.pdf).   
 Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.   
+[HW1](/ds/docs/hw1.pdf). Due Monday, Feb 6. 
 
 Lecture 2. Feb 1, 2017. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
@@ -274,7 +275,7 @@ Project presentation. Dec 14, 2015.
 
 ## Syllabus
 
-Mon, Wed, 7:25 - 9:40 pm. Hunter North C107.  
+Mon, Wed, 8:25 - 9:40 pm. Hunter North C107.  
 Office hours: after the class or by appointment.
 
 Instructor: Alexey Nikolaev  
