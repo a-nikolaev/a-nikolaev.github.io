@@ -10,7 +10,7 @@ Reading: R(ed6): 1.1-1.2; R(ed7): 1.1-1.3.
 [HW1](/ds/docs/hw1.pdf). Due Monday, Feb 6.
 (Notice that only problems 2, 3, and 5 will be graded; you don't have to write your solutions for the other problems).
 
-Lecture 2. Feb 1, 2017. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). [[handout](/ds/docs/cc1.pdf)].  
+Lecture 2. Feb 1, 2017. [Satisfiability and Rules of Inference](/ds/docs/lec2.pdf). \[[handout](/ds/docs/cc1.pdf)\].  
 Reading: R(ed6): 1.5; R(ed7): 1.6.  
 Useful links:
 [Tutorial](http://www.cs.colostate.edu/~cs122/.Fall14/tutorials/tut_3.php).
@@ -19,14 +19,15 @@ Useful links:
 You may also read more in depth on [Natural Deduction proofs](https://whythis.s3.amazonaws.com/media/teaching/lecturenotes/natural_deduction.pdf),
 it's using tree-like proof structure instead of the linear one, but fear not.
 
+Also, you can play this logical game: [http://incredible.nomeata.de/](http://incredible.nomeata.de/), where you are constructing 
+proofs out of blocks ([an example](http://i.imgur.com/CFrgtAW.png)). Those blocks are essentially the inference rules we learned in Lecture 2,
+but you are provided with only some of those rules.
+
 <!--
 
 [HW1](/ds/docs/hw1.pdf). Due Monday, Jun 6. 
 (Notice that only problems 2, 3, and 5 will be graded; you don't have to write your solutions for the other problems).
 
-Also, you can play this logical game: [http://incredible.nomeata.de/](http://incredible.nomeata.de/), where you are constructing 
-proofs out of blocks ([an example](http://i.imgur.com/CFrgtAW.png)). Those blocks are essentially the inference rules we learned in Lecture 2,
-but you are provided with only some of those rules.
 
 Lecture 3. Jun 6, 2016. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
