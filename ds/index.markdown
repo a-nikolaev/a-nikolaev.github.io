@@ -23,6 +23,12 @@ Also, you can play this logical game: [http://incredible.nomeata.de/](http://inc
 proofs out of blocks ([an example](http://i.imgur.com/CFrgtAW.png)). Those blocks are essentially the inference rules we learned in Lecture 2,
 but you are provided with only some of those rules.
 
+Lecture 3. Feb 6, 2017. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
+Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
+
+Lecture 4. Feb 8, 2017. [Proofs](/ds/docs/lec4.pdf).  
+Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
+
 <!--
 
 [HW1](/ds/docs/hw1.pdf). Due Monday, Jun 6. 
