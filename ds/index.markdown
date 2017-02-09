@@ -27,7 +27,7 @@ Lecture 3. Feb 6, 2017. [Predicates and Quantifiers](/ds/docs/lec3.pdf).
 Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
 [HW2](/ds/docs/hw2.pdf). Due Monday, Feb 13. 
 
-Also, practice exam problem sets from two previous semesters were posted on Blackboard (in the Course Materials section).
+**Practice exam problems** from the previous semesters were posted **on Blackboard** (in the Course Materials section).
 
 Lecture 4. Feb 8, 2017. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
