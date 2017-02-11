@@ -10,7 +10,7 @@ title: CSCI 135/136 - Configuring Vim text editor
 Although you are advised to configure Vim manually as described in the next section,
 you also may use the following script that can do everything automatically.
 Copy this shell script
-[setup-vim.sh](https://gist.githubusercontent.com/a-nikolaev/54d45eb14d80905452dcafadadc5635f/raw/f0e6729cb844f645a786b115e32e4d3dd138ad23/setup-vim.sh)
+[setup-vim.sh](https://gist.githubusercontent.com/a-nikolaev/54d45eb14d80905452dcafadadc5635f/raw/e3435ea9a2a3393cdb33373df6354c3b7a3bc104/setup-vim.sh)
 (you may save it in HOME, for example). Then give it executable permissions and run:
 
     chmod +x setup-vim.sh
