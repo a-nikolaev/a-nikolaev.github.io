@@ -1,16 +1,29 @@
 ---
 layout: page
-title: CSCI 135 - Setup Vim text editor
+title: CSCI 135/136 - Configuring Vim text editor
 ---
 
-## The lazy way: A quick shell script that will do all setup automatically:
+## Configuring Vim
 
-Copy this shell script [setup-vim.sh](https://gist.githubusercontent.com/a-nikolaev/54d45eb14d80905452dcafadadc5635f/raw/59b21652a8a2ccde43829c6c05119bf10683b937/setup-vim.sh). Then make it executable and run in:
+## The lazy way: A quick shell script that will do all setup automatically
+
+Although you are advised to configure Vim manually as described in the next section,
+you also may use the following script that can do everything automatically.
+Copy this shell script
+[setup-vim.sh](https://gist.githubusercontent.com/a-nikolaev/54d45eb14d80905452dcafadadc5635f/raw/59b21652a8a2ccde43829c6c05119bf10683b937/setup-vim.sh)
+(you may save it in HOME, for example). Then give it executable permissions and run:
 
     chmod +x setup-vim.sh
     ./setup-vim.sh
 
-## The good way: And the intro on configuring Vim
+It will create the following files in your file system:
+
+    ~/.vimrc
+    ~/.vim/colors/harlequin.vim
+    ~/.vim/colors/getafe.vim
+    ~/.vim/colors/wombat256mod.vim
+
+## The good way: And the intro to configuring Vim
 
 **Vim** (Vi improved) can be run from the terminal as follows:
 
@@ -49,9 +62,8 @@ Edit the `.vimrc` configuration file to choose the color scheme you like. For ex
 
     colorscheme getafe
 
-The `.vimrc` I gave you, already contains the lines to enable the color schemes you just downloaded. Just uncomment the corresponding line.
+The `.vimrc` I gave you, already contains the lines to enable the color schemes you just downloaded. Just uncomment the corresponding line
+(note that the file is using double quote symbol `"` to mark comments).
 
-Find more color schemes, if you want: \[[See this huge list](http://vimcolors.com/)\].
-
-
+You can find more color schemes here: \[[See this huge list](http://vimcolors.com/)\].
 
