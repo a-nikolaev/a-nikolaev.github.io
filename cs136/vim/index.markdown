@@ -5,7 +5,7 @@ title: CSCI 135 - Setup Vim text editor
 
 ## The lazy way: A quick shell script that will do all setup automatically:
 
-Copy this shell script [setup-vim.sh](https://gist.githubusercontent.com/a-nikolaev/54d45eb14d80905452dcafadadc5635f/raw/d127731e5d206d8cbd727cf9967746a9b6ef4b28/setup-vim.sh). Then make it executable and run in:
+Copy this shell script [setup-vim.sh](https://gist.githubusercontent.com/a-nikolaev/54d45eb14d80905452dcafadadc5635f/raw/59b21652a8a2ccde43829c6c05119bf10683b937/setup-vim.sh). Then make it executable and run in:
 
     chmod +x setup-vim.sh
     ./setup-vim.sh
