@@ -31,6 +31,6 @@ title: CSCI 135 - Software Analysis and Design 1
   
   **On Windows**, [Notepad++](http://notepad-plus-plus.org/) and [Sublime Text](http://www.sublimetext.com/) are a good free text editors I can recommend.
 
-  ** If you are using Vim (and Vi) text editor:**
+  **If you are using Vim (and Vi) text editor:**
   The editor does not come with a good default configuration.
   Please refer to this [quick guide](/cs136/vim/) to make it suitable for editing code.

@@ -136,6 +136,8 @@ For more detailed information, see you CS-135 syllabus.
 
 [How to setup a Unix development environment on your own computer](setup/).
 
+[Configuring Vim (and Vi) text editor](vim/).
+
 ### Additional exercises
 
   1. [Exercises on practicing if statements and loops](ex/1/)

@@ -15,7 +15,7 @@ To enable this code editing functionality, you need to make a configuration file
 
 ## .vimrc file
 
-Download this [.vimrc](.vimrc) file and put in your HOME directory.
+Download this [.vimrc](https://gist.githubusercontent.com/a-nikolaev/a8bfc7988319944608b57f06df2376ea/raw/7d34f82b9e3df690899c856c8210d3c7530aef11/.vimrc) file and put in your HOME directory.
 
 >   Note that in Unix, the **files that start with a dot are hidden**, so you might not be able to see it by default
     after copying. To make the command `ls` show all hidden files,
