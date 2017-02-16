@@ -387,7 +387,7 @@ Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
 <br />
 May 1 (Mon).
 Trees. Huffman coding.
-<br />
+
 May 3 (Wed).
 **Midterm 2**.
 
