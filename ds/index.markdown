@@ -32,21 +32,10 @@ Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.
 Lecture 4. Feb 8, 2017. [Proofs](/ds/docs/lec4.pdf).  
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
 
-<!--
-
-[HW1](/ds/docs/hw1.pdf). Due Monday, Jun 6. 
-(Notice that only problems 2, 3, and 5 will be graded; you don't have to write your solutions for the other problems).
-
-
-Lecture 3. Jun 6, 2016. [Predicates and Quantifiers](/ds/docs/lec3.pdf).   
-Reading: R(ed6): 1.3-1.4; R(ed7): 1.4-1.5.    
-[HW2](/ds/docs/hw2.pdf). Due Thursday, Jun 9. 
-
-Lecture 4. Jun 7, 2016. [Proofs](/ds/docs/lec4.pdf).  
-Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
-
-Lecture 5. Jun 8, 2016. Proofs. [Counting. Sets](/ds/docs/lec5.pdf).  
+Lecture 5. Feb 15, 2017. [Counting. Sets](/ds/docs/lec5.pdf).  
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
+
+<!--
 
 Lecture 6. Jun 9, 2016. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).     
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
@@ -166,7 +155,7 @@ It must be made individually by you. The formula sheet should be handed in after
 
 -->
 
-[[Discussion Board](/ds/discussion/)] <- you may ask questions here
+\[[Discussion Board](/ds/discussion/)\] <- you may ask questions here
 
 <!--
 
@@ -319,109 +308,104 @@ Office: HN 1000C
 
 ### Tentative Course Content
 
-Jun 1 (Wed).
+Jan 30 (Mon).
 Propositional Logic.
 <br />
-Jun 2 (Thr).
+Feb 1 (Wed).
 Satisfiability and Rules of Inference.
-
-
-Jun 8 (Mon).
+<br />
+Feb 6 (Mon).
 Predicates and Quantifiers.
 <br />
-Jun 9 (Tue).
+Feb 8 (Wed).
 Proofs.
-<br />
-Jun 10 (Wed).
-Proofs.
-<br />
-Jun 11 (Thr).
-Counting. Intro.
 
+
+Feb 13 (Mon).
+<span style="color:#969086;">College is closed.</span>
 <br />
-Jun 13 (Mon).
+Feb 15 (Wed).
+Counting. Intro.
+<span style="color:#969086;">(Classes follow Monday schedule.)</span>
+<br />
+Feb 20 (Mon).
+<span style="color:#969086;">College is closed.</span>
+<br />
+Feb 22 (Wed).
 The Pigeonhole Principle. Permutations and Combinations.
 <br />
-Jun 14 (Tue).
+Feb 27 (Mon).
 Binomial Theorem. Combinations with repetition.
 <br />
-Jun 15 (Wed).
+Mar 1 (Wed).
 Counting. Practice session.
-<br />
-Jun 16 (Thr).
+
+Mar 6 (Mon).
 Induction.
-
-
-Jun 20 (Mon).
+<br />
+Mar 8 (Wed).
 Recurrences.
 <br />
-Jun 21 (Tue).
+Mar 13 (Mon).
 Fibonacci Numbers. Solving Linear Recurrences.
 <br />
-Jun 22 (Wed).
+Mar 15 (Wed).
 Strong Induction. Recursion in Mathematics and Programming.
 <br />
-Jun 23 (Thr).
-Continue recursion. (Review session).
-
-Jun 27 (Mon).
-Midterm 1.
-
-Jun 28 (Tue).
-Intro to Number Theory.
-<br />
-Jun 29 (Wed).
-Modular arithmetic.
-<br />
-Jun 30 (Thr).
-Modular arithmetic and Extended Euclidean algorithm.
-
-
-Jul 4  (Mon). <span style="color:#969086;">College is closed.</span>
-<br />
-Jul 5 (Tue).
-Fermat's little theorem. RSA.
-<br />
-Jul 6 (Wed).
-Sets. Ordered pairs.
-<br />
-Jul 7 (Thr).
-Relations. Functions. Bijection and counting.
-
-
-Jul 11 (Mon).
-Relations and partial orders. 
-<br />
-Jul 12 (Tue).
-Graphs. Bipartite graphs. Paths.
-<br />
-Jul 13 (Wed).
-Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
-<br />
-Jul 14 (Thr).
-Trees. Huffman coding.
-<br />
-
-Jul 18 (Mon).
-Midterm 2.
-
-
-Jul 19 (Tue).
-Probability.
-<br />
-Jul 20 (Wed).
-Conditional Probability. Independent Bernoulli trials.
-<br />
-Jul 20 (Thr).
-Expected value.
-
-Jul 25 (Mon).
-Infinity. Countable sets. Diagonalization.
-<br />
-Jul 26 (Tue).
+Mar 20 (Mon).
 Review session.
 
-Jul 27 (Wed). Final Exam. Same room. Same time.
+Mar 22 (Wed).
+**Midterm 1**.
+
+Mar 27 (Mon).
+Intro to Number Theory.
+<br />
+Mar 29 (Wed).
+Modular arithmetic.
+<br />
+April 3 (Mon).
+Modular arithmetic and Extended Euclidean algorithm.
+<br />
+April 5 (Wed).
+Fermat's little theorem. RSA.
+
+April 10 - April 18. <span style="color:#969086;">Spring recess.</span>
+
+April 19 (Wed).
+Sets. Ordered pairs.
+<br />
+April 20 (Thr).
+Relations. Functions. Bijection and counting.
+<span style="color:#969086;">(Classes follow Monday schedule.)</span>
+<br />
+April 24 (Mon).
+Relations and partial orders. 
+<br />
+April 26 (Wed).
+Graphs. Bipartite graphs. Paths.
+<br />
+May 1 (Mon).
+Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
+<br />
+May 3 (Wed).
+Trees. Huffman coding.
+
+May 8 (Mon).
+**Midterm 2**.
+
+
+May 10 (Wed).
+Probability.
+<br />
+May 15 (Mon).
+Conditional Probability. Independent Bernoulli trials. Expected value.
+<br />
+May 17 (Wed).
+Infinity. Countable sets. Diagonalization.
+Review session.
+
+May 24 (Wed). **Final Exam**. Same room. 7:30 -- 9:30pm.
 
 <!--
 [HW1](/ds/docs/hw1.pdf). Due Thursday, Jun. 4.   
