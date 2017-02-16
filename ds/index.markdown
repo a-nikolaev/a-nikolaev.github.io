@@ -353,56 +353,54 @@ Mar 15 (Wed).
 Strong Induction. Recursion in Mathematics and Programming.
 <br />
 Mar 20 (Mon).
-Review session.
-
-Mar 22 (Wed).
 **Midterm 1**.
 
-Mar 27 (Mon).
+Mar 22 (Wed).
 Intro to Number Theory.
 <br />
-Mar 29 (Wed).
+Mar 27 (Mon).
 Modular arithmetic.
 <br />
-April 3 (Mon).
+Mar 29 (Wed).
 Modular arithmetic and Extended Euclidean algorithm.
 <br />
-April 5 (Wed).
+April 3 (Mon).
 Fermat's little theorem. RSA.
+<br />
+April 5 (Wed).
+Sets. Ordered pairs.
+<br />
 
 April 10 - April 18. <span style="color:#969086;">Spring recess.</span>
 
 April 19 (Wed).
-Sets. Ordered pairs.
-<br />
-April 20 (Thr).
 Relations. Functions. Bijection and counting.
+April 20 (Thr).
+Relations and partial orders. 
 <span style="color:#969086;">(Classes follow Monday schedule.)</span>
 <br />
 April 24 (Mon).
-Relations and partial orders. 
-<br />
-April 26 (Wed).
 Graphs. Bipartite graphs. Paths.
 <br />
-May 1 (Mon).
+April 26 (Wed).
 Paths. Connectivity. Euler and Hamilton Paths. Planar graphs.
 <br />
-May 3 (Wed).
+May 1 (Mon).
 Trees. Huffman coding.
-
-May 8 (Mon).
+<br />
+May 3 (Wed).
 **Midterm 2**.
 
-
-May 10 (Wed).
+May 8 (Mon).
 Probability.
 <br />
-May 15 (Mon).
+May 10 (Wed).
 Conditional Probability. Independent Bernoulli trials. Expected value.
 <br />
-May 17 (Wed).
+May 15 (Mon).
 Infinity. Countable sets. Diagonalization.
+<br />
+May 17 (Wed).
 Review session.
 
 May 24 (Wed). **Final Exam**. Same room. 7:30 -- 9:30pm.
