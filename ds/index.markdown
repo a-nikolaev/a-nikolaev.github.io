@@ -351,7 +351,7 @@ Fibonacci Numbers. Solving Linear Recurrences.
 <br />
 Mar 15 (Wed).
 Strong Induction. Recursion in Mathematics and Programming.
-<br />
+
 Mar 20 (Mon).
 **Midterm 1**.
 
