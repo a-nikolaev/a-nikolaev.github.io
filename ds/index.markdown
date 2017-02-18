@@ -33,7 +33,8 @@ Lecture 4. Feb 8, 2017. [Proofs](/ds/docs/lec4.pdf).
 Reading: LL: Chapter 1; R(ed6): 1.6-1.7; R(ed7): 1.7-1.8.     
 
 Lecture 5. Feb 15, 2017. [Counting. Sets](/ds/docs/lec5.pdf).  
-Reading: R(ed6): 5.1; R(ed7): 6.1.    
+Reading: R(ed6): 5.1; R(ed7): 6.1.     
+[HW3](/ds/docs/hw3.pdf). Due Wednesday, Feb 22. 
 
 <!--
 
