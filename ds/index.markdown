@@ -36,6 +36,8 @@ Lecture 5. Feb 15, 2017. [Counting. Sets](/ds/docs/lec5.pdf).
 Reading: R(ed6): 5.1; R(ed7): 6.1.     
 [HW3](/ds/docs/hw3.pdf). Due Wednesday, Feb 22. 
 
+Lecture 6. Feb 22, 2017. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).     
+Reading: R(ed6): 5.1; R(ed7): 6.1.    
 <!--
 
 Lecture 6. Jun 9, 2016. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).     
