@@ -38,6 +38,7 @@ Reading: R(ed6): 5.1; R(ed7): 6.1.
 
 Lecture 6. Feb 22, 2017. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).     
 Reading: R(ed6): 5.1; R(ed7): 6.1.    
+
 <!--
 
 Lecture 6. Jun 9, 2016. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).     
