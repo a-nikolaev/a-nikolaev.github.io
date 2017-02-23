@@ -141,6 +141,7 @@ For more detailed information, see you CS-135 syllabus.
 ### Additional exercises
 
   1. [Exercises on practicing if statements and loops](ex/1/)
+  1. [Exercises on processing data](ex/2/)
 
 ### Literature
   * Walter Savitch, Absolute C++, 6th Edition, ISBN 0-13-397078-7

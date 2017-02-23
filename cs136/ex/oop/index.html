@@ -1,0 +1,146 @@
+<link rel='stylesheet' href='../../pagescss/normalize.css'/> 
+<link rel='stylesheet' href='../../pagescss/markdown.css'/>
+
+<link rel='stylesheet' href='../../pagescss/syntax.css'/>
+<link rel='stylesheet' href='../../pagescss/term.css'/>
+<p><title>C++ Exercises. Part 2.</title></p>
+
+<h1>An exercise in object-oriented programming (OOP)</h1>
+
+<h2>Making a custom <code>string</code>-like class</h2>
+
+<p>Let&rsquo;s write our own class that behaves similarly to the C++ built-in type <code>string</code>.
+We don&rsquo;t have to implement a perfect copy of the built-in type, with all its functions, but at least
+let&rsquo;s try to write some of the most important functions.</p>
+
+<p>We can call this new class <code>MyString</code>.</p>
+
+<h3>A usage example. The following <code>main</code> function should work:</h3>
+
+<pre class="highlight"><code><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyString</span> <span class="n">s</span><span class="p">;</span>      <span class="c1">// Default constructor is called, makes an empty MyString
+</span>  <span class="n">s</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"ABC"</span><span class="p">);</span> <span class="c1">// "ABC" gets appended to it
+</span>  <span class="n">s</span> <span class="o">+=</span> <span class="s">"DEF"</span><span class="p">;</span>      <span class="c1">// and "DEF" too.
+</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// Prints "6" and end-of-line
+</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// Prints "ABCDEF" and end-of-line
+</span>
+  <span class="c1">// We would also want to read words from a text file,
+</span>  <span class="c1">// the same way the type `string` would do that:
+</span>  <span class="n">ifstream</span> <span class="n">fin</span><span class="p">(</span><span class="s">"file.txt"</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">fin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">fin</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p style="text-align:center;"> <strong><span style="background-color:#aaeeff">Download an (incomplete) implementation > <a href="mystring.cpp">mystring.cpp</a> &lt; </span></strong></p>
+
+<p style="text-align:center;"> <strong><span>Download an example input file > <a href="file.txt">file.txt</a> &lt; </span></strong></p>
+
+<h3>A proposed interface of the class <code>MyString</code>:</h3>
+
+<pre class="highlight"><code><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">size</span><span class="p">();</span> <span class="c1">// Returns the number of characters in it
+</span>  <span class="kt">void</span> <span class="n">append</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// Append the characters from s at the end of the current MyString
+</span>  <span class="kt">void</span> <span class="k">operator</span><span class="o">+=</span> <span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// A "fancy" way to do append
+</span>
+  <span class="c1">// Stream input and output operators
+</span>  <span class="k">friend</span> <span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="n">MyString</span> <span class="n">t</span><span class="p">);</span>
+  <span class="k">friend</span> <span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">istream</span> <span class="o">&amp;</span><span class="n">is</span><span class="p">,</span> <span class="n">MyString</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+
+
+<p>A few comments. You might have noticed that <code>append</code> and the <code>+=</code> operator are void functions
+and don&rsquo;t return the resulting string themselves. So in this respect the
+new type differs from the built-in <a href="http://www.cplusplus.com/reference/string/string/append/">type <code>string</code></a>.</p>
+
+<p>Also, we don&rsquo;t pass parameters by reference unless we really have to.
+You may change that and pass parameters by reference where it&rsquo;s possible,
+that will improve the efficiency of the code.</p>
+
+<p>By default, if you don&rsquo;t define any constructors for your class, a default one gets created for you.
+So this is why we don&rsquo;t have any of them in the above code.
+However, if you wish, you may add more constructors to the class, for example:</p>
+
+<pre class="highlight"><code><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="p">...</span>
+  <span class="n">MyString</span><span class="p">();</span> <span class="c1">// The default constructor
+</span>  <span class="n">MyString</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// A constructor creating MyString from a string
+</span>  <span class="p">...</span>
+<span class="p">};</span>
+</code></pre>
+
+
+<p>But again, this is not necessary here, because you will get the default constructor for free,
+created automatically by the compiler.</p>
+
+<h3>MyString internal representation</h3>
+
+<p>Internally, our new string data type <strong>should store its sequence of characters somewhere</strong>.</p>
+
+<p>Let&rsquo;s do it without using the built-in C++ string. As a possible solution, you may keep the characters in a vector of characters:</p>
+
+<pre class="highlight"><code><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span> 
+<span class="k">public</span><span class="o">:</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>Notice it is a private field and will not be accessible from outside the class.</p>
+
+<p>You can choose a different internal representation if you wish.</p>
+
+<p style="text-align:center;"> <strong><span style="background-color:#aaeeff">Download an (incomplete) implementation > <a href="mystring.cpp">mystring.cpp</a> &lt; </span></strong></p>
+
+<p style="text-align:center;"> <strong><span>Download an example input file > <a href="file.txt">file.txt</a> &lt; </span></strong></p>
+
+<h3>Where to start implementing the class?</h3>
+
+<p>First, implement the functions <code>size()</code> and <code>append(s)</code>.</p>
+
+<p>For testing purposes, you may extend the interface of the class <code>MyString</code> and add a new member function <code>print()</code> which prints the
+MyString into <code>cout</code>.</p>
+
+<p>After that, overload the operator <code>+=</code>.</p>
+
+<p>Then make the <code>&lt;&lt;</code> friend function. And finally, the <code>&gt;&gt;</code> friend functions.</p>
+
+<h4>Questions to answer:</h4>
+
+<ul>
+<li><p><strong>Do you know why operators <code>&lt;&lt;</code> and <code>&gt;&gt;</code> are friend functions</strong> and technically don&rsquo;t belong to the
+class <code>MyString</code>?
+Look, <strong>there was no such a problem with the operator <code>+=</code></strong>, which was just a normal member function of the class.
+And for whatever reason we cannot do the same for <code>&lt;&lt;</code> and <code>&gt;&gt;</code>. Why?
+If you don&rsquo;t see the answer, try implementing these operators as simple member functions of the class.</p></li>
+<li><p><strong>Do you see the reason why <code>&lt;&lt;</code> and <code>&gt;&gt;</code> have to return the stream at the very end?</strong>
+If you don&rsquo;t see that, think of this code:</p></li>
+</ul>
+
+
+<pre class="highlight"><code>  <span class="n">MyString</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+</code></pre>
+
+
+<p>In C++, the expression <code>x + y + z + w</code> actually means <code>((x + y) + z) + w</code>.
+The program is not able to magically add all these numbers simultaneously,
+but does that sequentially, according to the operator precedence order. Then think what is happening when you write</p>
+
+<pre class="highlight"><code>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="p">;</span>
+</code></pre>
+
+
+
