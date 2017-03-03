@@ -47,6 +47,7 @@ Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.
 
 Lecture 8. Mar 1, 2017. Counting. Problem solving.
 \[[problem set](/ds/docs/cc3.pdf)\].    
+[HW5](/ds/docs/hw5.pdf). Due Monday, Mar 6.   
 
 <!--
 
