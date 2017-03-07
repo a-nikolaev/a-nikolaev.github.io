@@ -57,7 +57,7 @@ Here's a very nice example of a nested inductive proof:
 (In a nested induction proof, you are using another induction argument within the inductive step.
 It is not going to be in the tests, but it's a nice example so it's recommended to read.)
 
-Lecture 10. Jun 20, 2016. [Recurrences](/ds/docs/lec10.pdf).    
+Lecture 10. Mar 8, 2017. [Recurrences](/ds/docs/lec10.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
 
