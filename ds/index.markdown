@@ -49,26 +49,20 @@ Lecture 8. Mar 1, 2017. Counting. Problem solving.
 \[[problem set](/ds/docs/cc3.pdf)\].    
 [HW5](/ds/docs/hw5.pdf). Due Monday, Mar 6.   
 
+Lecture 9. Mar 6, 2017. [Induction](/ds/docs/lec9.pdf).  
+Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
+
+Here's a very nice example of a nested inductive proof:
+[Buckets of fish](http://jdh.hamkins.org/buckets-of-fish/) by Joel Hamkins.
+(In a nested induction proof, you are using another induction argument within the inductive step.
+It is not going to be in the tests, but it's a nice example so it's recommended to read.)
+
+Lecture 10. Jun 20, 2016. [Recurrences](/ds/docs/lec10.pdf).    
+Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
+[Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
+
 <!--
 
-Lecture 6. Jun 9, 2016. [Permutations and Combinations. The Pigeonhole Principle.](/ds/docs/lec6.pdf).     
-Reading: R(ed6): 5.1; R(ed7): 6.1.    
-[HW3](/ds/docs/hw3.pdf). Due Monday, Jun 13. 
-
-A video about the 6 persons theorem: [Friends and Strangers Theorem](http://www.youtube.com/watch?v=xdiL-ADRTxQ).
-
-Lecture 7. Jun 13, 2016. [Binomial Theorem. Combinations with repetition](/ds/docs/lec7.pdf).    
-Reading: R(ed6): 5.4-5.5; R(ed7): 6.4-6.5.     
-[HW4](/ds/docs/hw4.pdf). Due Thursday, Jun 16.   
-
-Continue Lecture 7. Jun 14, 2016. 
-
-Lecture 8. Jun 15, 2016. Counting. Problem solving.
-[[problem set](/ds/docs/cc3.pdf)].    
-
-Lecture 9. Jun 16, 2016. [Induction](/ds/docs/lec9.pdf).  
-Reading: LL: Chapter 2; R(ed6): 4.1; R(ed7): 5.1.    
-[HW5](/ds/docs/hw5.pdf). Due Monday, Jun 20.   
 
 Lecture 10. Jun 20, 2016. [Recurrences](/ds/docs/lec10.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
