@@ -60,6 +60,12 @@ It is not going to be in the tests, but it's a nice example so it's recommended 
 Lecture 10. Mar 8, 2017. [Recurrences](/ds/docs/lec10.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
+[HW6](/ds/docs/hw6.pdf). Due Monday, Mar 13.   
+
+
+Midterm 1 on March 20. Get ready.    
+There are practice tests posted on Blackboard.
+No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
 
 <!--
 
