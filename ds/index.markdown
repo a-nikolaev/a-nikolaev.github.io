@@ -62,6 +62,9 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
 [HW6](/ds/docs/hw6.pdf). Due Monday, Mar 13.   
 
+Lecture 11. Mar 13, 2017. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
+Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
+
 
 Midterm 1 on March 20. Get ready.    
 There are practice tests posted on Blackboard.
@@ -74,9 +77,6 @@ Lecture 10. Jun 20, 2016. [Recurrences](/ds/docs/lec10.pdf).
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
 [Towers of Hanoi](http://www.mathsisfun.com/games/towerofhanoi.html)      
 [HW6](/ds/docs/hw6.pdf). Due Thursday, Jun 23.   
-
-Lecture 11. Jun 21, 2016. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
-Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
 Lecture 12. Jun 22, 2016. Continue Linear Recurrences & [Strong Induction](/ds/docs/lec12.pdf).     
 
