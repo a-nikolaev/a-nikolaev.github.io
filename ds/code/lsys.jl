@@ -15,7 +15,7 @@ function fold(f,acc,ls)
 end
 
 function rewrite(rules, x)
-  fold(((acc,c)->[acc,rules[c]]),[],x)
+  fold(((acc,c)->vcat(acc,rules[c])),[],x)
 end
 
 function run(actions, x)
@@ -29,8 +29,8 @@ function draw()
 
   rules = Dict( 
     'F' => ['F','L','F','R','F','R','F','L','F'],
-    'R' => ['R'] ,
-    'L' => ['L'] 
+    'R' => ['R'],
+    'L' => ['L'], 
   )
   
   actions(len) = Dict(
@@ -49,11 +49,24 @@ function draw()
   end
 
   # Experiments
-  x=['F']
-  path(x,rules,actions, (-25,-30), orange, 1,  0)
-  #path(x,rules,actions, (-25,-27), red,    1,  1)
-  #path(x,rules,actions, (-25,-21), green,  1,  2)
-  #path(x,rules,actions, (-25, -9),  blue,  1,  3)
+  x = ['F']
+  path(x,rules,actions, (-30,0), orange, 1,  0)
+  path(x,rules,actions, (-25,0), red,    1,  1)
+  #path(x,rules,actions, (-18,0), green,  1,  2)
+  #path(x,rules,actions, (-5,0), blue,   1,  3)
+
+
+  # Koch Snowflake
+  rules_snowflake = Dict( 
+    'F' => ['F','L','F','R','F','L','F'],
+    'R' => ['R'],
+    'L' => ['L'], 
+  )
+  actions_snowflake(len) = Dict(
+    'F' => ()-> line(len),
+    'L' => ()-> turn(60),
+    'R' => ()-> turn(-120)
+  )
 
   # Hilbert curve
   # rules 

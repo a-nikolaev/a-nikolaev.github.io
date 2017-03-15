@@ -1,8 +1,8 @@
 include("graph.jl")
 
-function mset(z, c, num)
+function iterate(z, c, num)
   if num > 0
-    mset(z^2 + c, c, num-1)
+    iterate(z^2 + c, c, num-1)
   else
     z
   end
@@ -14,8 +14,11 @@ function check(num, dot, color)
   for y = -1.2 : h : 1.2
     for x = -2.2: h : 0.6
       
+      # constant c
       c = complex(x,y)
-      z = mset(0, c, num)
+      
+      # compute the recurrence formula
+      z = iterate(0, c, num)
       
       if abs(z) < 2 
         dot((x,y), color)
@@ -36,7 +39,7 @@ function draw()
   c5 = (0.0, 0.1, 0.3)
 
 
-  check(4, dot, c0)
+  #check(4, dot, c0)
   #check(8, dot, c1)
   #check(16, dot, c2)
   #check(32, dot, c3)

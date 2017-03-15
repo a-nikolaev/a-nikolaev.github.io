@@ -42,7 +42,7 @@ function drawing(file, size)
     finish(s)
   end
   
-  set_source_rgb(c, 0.8, 0.8, 0.8)
+  set_source_rgb(c, 0.9, 0.9, 0.9)
   set_line_width(c,1.0)
   grid(size/(2*zoom), size/(2*zoom))
   stroke(c)
