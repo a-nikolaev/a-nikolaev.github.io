@@ -68,6 +68,7 @@ Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.
 Lecture 12. Mar 15, 2017.
 [Strong Induction](/ds/docs/lec12.pdf).
 [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
+
 Source code in [Julia](http://julialang.org/):
 [sum.jl](/ds/code/sum.jl),
 [fact.jl](/ds/code/fact.jl),
@@ -76,7 +77,8 @@ Source code in [Julia](http://julialang.org/):
 [graph.jl](/ds/code/graph.jl),
 [lsys.jl](/ds/code/lsys.jl),
 [turtle.jl](/ds/code/turtle.jl).    
-Video ["Doodling in Math Class: DRAGONS"](https://www.youtube.com/watch?v=EdyociU35u8).
+
+Also watch the video [Doodling in Math Class: DRAGONS](https://www.youtube.com/watch?v=EdyociU35u8).
 
 **Midterm I. Mar 20, 2017.**    
 will cover lectures 1 through 11 (until and including linear recurrences).    
