@@ -65,20 +65,23 @@ Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.
 Lecture 11. Mar 13, 2017. [Fibonacci Numbers. Solving Linear Recurrences](/ds/docs/lec11.pdf).   
 Reading: LL: Chapter 13; R(ed6): 7.2; R(ed7): 8.2.   
 
-Lecture 12. Mar 15, 2017.
-[Strong Induction](/ds/docs/lec12.pdf).
-[Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).     
+Lectures 12 and 13. Mar 15, 2017.
+[Strong Induction](/ds/docs/lec12.pdf). [Recursion in Mathematics and Programming](/ds/docs/lec13.pdf).
+Source code in [Julia](http://julialang.org/): 
+  [sum.jl](/ds/code/sum.jl),
+  [fact.jl](/ds/code/fact.jl),
+  [fib.jl](/ds/code/fib.jl),
+  [mset.jl](/ds/code/mset.jl),
+  [graph.jl](/ds/code/graph.jl),
+  [lsys.jl](/ds/code/lsys.jl),
+  [turtle.jl](/ds/code/turtle.jl).    
 
-Source code in [Julia](http://julialang.org/):
-[sum.jl](/ds/code/sum.jl),
-[fact.jl](/ds/code/fact.jl),
-[fib.jl](/ds/code/fib.jl),
-[mset.jl](/ds/code/mset.jl),
-[graph.jl](/ds/code/graph.jl),
-[lsys.jl](/ds/code/lsys.jl),
-[turtle.jl](/ds/code/turtle.jl).    
+- Here's a nice video on L-systems rewriting: [Doodling in Math Class: DRAGONS](https://www.youtube.com/watch?v=EdyociU35u8).
+- Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images
+  using a simple declarative/recursive description language. See some examples, they are very cool!
 
-Also watch the video [Doodling in Math Class: DRAGONS](https://www.youtube.com/watch?v=EdyociU35u8).
+No homework this week, but you can do [supplementary exercises on linear recurrences](/ds/linrec.html)
+(and there is a recursive programming exercise there as well if you are interested).
 
 **Midterm I. Mar 20, 2017.**    
 will cover lectures 1 through 11 (until and including linear recurrences).    
@@ -106,9 +109,6 @@ Source code in [Julia](http://julialang.org/):
 [turtle.jl](/ds/code/turtle.jl),
 [merge.jl](/ds/code/merge.jl).    
 [HW6-Bonus](/ds/docs/hw6-bonus.pdf). Due Monday, Jun 27.   
-
-Another interesting link: "[Context-free art](http://www.contextfreeart.org/)" is a program for creating images
-using a simple declarative/recursive description language. See some examples, they are very cool!
 
 **Midterm I. Jun 27, 2016.**    
 will cover lectures 1 through 11 (until and including linear recurrences).   
