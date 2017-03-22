@@ -88,6 +88,11 @@ will cover lectures 1 through 11 (until and including linear recurrences).
 There are practice tests posted on Blackboard.
 No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
 
+Lecture 14. Mar 22, 2017. [Intro to Number Theory](/ds/docs/lec14.pdf).        
+Reading:
+[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
+LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.      
+
 <!--
 
 
