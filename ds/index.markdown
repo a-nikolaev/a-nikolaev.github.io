@@ -94,6 +94,13 @@ Reading:
 LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.      
 [HW7](/ds/docs/hw7.pdf). Due Monday, Mar 27.   
 
+Lecture 15. Mar 27, 2017. [Modular arithmetic](/ds/docs/lec15.pdf).   
+Reading: the same.    
+Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
+
+Lecture 16. Mar 28, 2017. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).    
+Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
+
 <!--
 
 
@@ -121,12 +128,6 @@ will cover lectures 1 through 11 (until and including linear recurrences).
 There are practice tests posted on Blackboard.    
 No notes, no textbooks allowed. However, you will be provided with a formula sheet with all logical identities and inference rules.     
 [Midterm 1 - Statistics](/ds/docs/stats/stats-midterm1.pdf).  
-
-Lecture 14. Jun 28, 2016. [Intro to Number Theory](/ds/docs/lec14.pdf).        
-Reading:
-[Lecture notes](http://www.cs.hunter.cuny.edu/~saad/courses/dm/notes/note7.pdf) by Prof. Saad Mneimneh;  
-LL: Chapters 4 and 5; R(ed6): 3.4-3.5; R(ed7): 4.1-4.3.      
-[HW7](/ds/docs/hw7.pdf). Due Thursday, Jun 30. 
 
 Lecture 15. Jun 29, 2016. [Modular arithmetic](/ds/docs/lec15.pdf).   
 Reading: the same.    
