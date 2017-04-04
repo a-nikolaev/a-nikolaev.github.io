@@ -98,15 +98,15 @@ Lecture 15. Mar 27, 2017. [Modular arithmetic](/ds/docs/lec15.pdf).
 Reading: the same.    
 Source code of the [extended Euclid's algorithm](http://codepad.org/IOQsqHax) in C.    
 
-Lecture 16. Mar 29, 2017. Modular arithmetic and Extended Euclidean algorithm (continued).     
+Lecture 15. Mar 29, 2017. Modular arithmetic and Extended Euclidean algorithm (continued).     
 Reading: the same.    
 [HW8](/ds/docs/hw8.pdf). Due Monday, Apr 3.   
 
-<!--
-Lecture 16. Mar 28, 2017. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).    
+Lecture 16. Apr 3, 2017. [Fermat's little theorem. RSA](/ds/docs/lec16.pdf).    
 Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem of arithmetic.     
 
 
+<!--
 
 Lecture 10. Jun 20, 2016. [Recurrences](/ds/docs/lec10.pdf).    
 Reading: LL: Chapter 12; R(ed6): 4.4; R(ed7): 5.4.   
