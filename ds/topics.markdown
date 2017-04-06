@@ -9,13 +9,14 @@ Doing a project is optional,
 it is a way to improve your grade if you did not do well on the exams,
 or just want to get some extra credit.
 
-All projects will be due by the end of the semester. 
-You will have to make a short (5-8 minutes) presentation in the last class, showing your work. 
-Also, you will have to write a 5-6 page report, describing the problem, 
+All projects will be due by the end of the semester. You will have to:
+
+1. make a short (5-8 minutes) presentation in the last class, showing your work. 
+1. Also, you will have to write a 5-6 page report, describing the problem, 
 your solution, and the results obtained.
 
 Before you start working on the topic, I have to approve it. 
-The topic should be chosen **before Spring Recess, April 20**.
+The topic should be chosen **before** the end of Spring Recess, **April 18**.
 
 **Report you progress regularly (for example, once a week), so I can guide you, and you don't waste time**.
 
@@ -38,6 +39,7 @@ Try to find something you are interested in, and we will find a way to add some 
 1. Programming fractals, [L-systems](https://en.wikipedia.org/wiki/L-system), etc.
 1. Another fractal drawing topic: [Context-free art program](http://www.contextfreeart.org/). 
 1. Analysis of [social network data](http://snap.stanford.edu/data/). (You will need a specific topic / research goal here).
+1. Solving logical puzzles with SMT solvers or Prolog.
 1. Experimental analysis of the running time complexity of various standard algorithms.
 
 I will add more topics, but, maybe you already know something
@@ -78,4 +80,8 @@ interesting you would like to work on.
 1. Graph [coloring](https://en.wikipedia.org/wiki/Graph_coloring).
 1. [Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming).
 1. Prime numbers generation.
+1. Random word generation with [Markov chains](https://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators).
+1. Bioinformatics: [Sequence alignment algorithm](https://en.wikipedia.org/wiki/Sequence_alignment).
+1. Solving the [Graceful Tree conjecture](https://en.wikipedia.org/wiki/Graceful_labeling) with
+[SMT solvers](https://en.wikipedia.org/wiki/Satisfiability_modulo_theories).
 
