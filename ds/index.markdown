@@ -108,6 +108,7 @@ Reading: The previous reading, and also LL: pp.67-68 for the fundamental theorem
 
 Lecture 17. Apr 5, 2017. [Sets. Ordered pairs](/ds/docs/lec17.pdf).  
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
+[HW9](/ds/docs/hw9.pdf). Due Wednesday, Apr 19.   
 
 <!--
 
