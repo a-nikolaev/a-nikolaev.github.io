@@ -110,6 +110,13 @@ Lecture 17. Apr 5, 2017. [Sets. Ordered pairs](/ds/docs/lec17.pdf).
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
 [HW9](/ds/docs/hw9.pdf). Due Wednesday, Apr 19.   
 
+Lecture 18. Apr 19, 2016. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
+Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
+Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
+
+Lecture 19. Apr 20, 2016. [Partial orders](/ds/docs/lec19.pdf).   
+Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.    
+
 <!--
 
 Lecture 10. Jun 20, 2016. [Recurrences](/ds/docs/lec10.pdf).    
