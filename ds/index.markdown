@@ -116,6 +116,7 @@ Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.
 
 Lecture 19. Apr 20, 2016. [Partial orders](/ds/docs/lec19.pdf).   
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.    
+[HW10](/ds/docs/hw10.pdf). Due Wednesday, Apr 26.   
 
 <!--
 
@@ -426,6 +427,7 @@ April 10 - April 18. <span style="color:#969086;">Spring recess.</span>
 
 April 19 (Wed).
 Relations. Functions. Bijection and counting.
+<br />
 April 20 (Thr).
 Relations and partial orders. 
 <span style="color:#969086;">(Classes follow Monday schedule.)</span>
