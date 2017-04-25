@@ -110,13 +110,19 @@ Lecture 17. Apr 5, 2017. [Sets. Ordered pairs](/ds/docs/lec17.pdf).
 Reading: R(ed6): 2.1-2.2; R(ed7): 2.1-2.2.    
 [HW9](/ds/docs/hw9.pdf). Due Wednesday, Apr 19.   
 
-Lecture 18. Apr 19, 2016. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
+Lecture 18. Apr 19, 2017. [Relations. Functions. Bijection and counting](/ds/docs/lec18.pdf).   
 Reading: R(ed6): 2.3, 8.1; R(ed7): 2.3, 9.1; LL: Chapter 14.   
 Also: [Bijections](http://yufeizhao.com/olympiad/bijections.pdf) by Yufei Zhao.   
 
-Lecture 19. Apr 20, 2016. [Partial orders](/ds/docs/lec19.pdf).   
+Lecture 19. Apr 20, 2017. [Partial orders](/ds/docs/lec19.pdf).   
 Reading: LL: Chapter 9.  R(ed6): 8.1, 8.6; R(ed7): 9.1, 9.6.    
 [HW10](/ds/docs/hw10.pdf). Due Wednesday, Apr 26.   
+
+Lecture 20. Apr 24, 2017. [Graphs. Bipartite graphs. Paths](/ds/docs/lec20.pdf).   
+Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.     
+
+Lecture 21. Apr 26, 2017. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).    
+Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
 
 <!--
 
