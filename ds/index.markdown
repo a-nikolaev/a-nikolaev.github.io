@@ -123,6 +123,16 @@ Reading: R(ed6): 9.1-9.3, 9.8; R(ed7): 10.1-10.3, 10.8; LL: Chapters 6, 7.
 
 Lecture 21. Apr 26, 2017. [Paths. Connectivity. Euler and Hamilton Paths. Planar graphs](/ds/docs/lec21.pdf).    
 Reading: R(ed6): 9.4-9.7; R(ed7): 10.4-10.7; LL: Chapters 6, 7.    
+The Wolverine Problem and Graph Coloring \[[video](https://www.youtube.com/watch?v=59aljcwo7aw)\].       
+[HW11](/ds/docs/hw11.pdf). Due Monday, May 8.   
+
+May 1, 2017. There is no class on Monday. The midterm is on Wednesday.
+
+**Midterm 2.** May 3, 2017.    
++ Covers lectures from 14 to 21.    
++ For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
+It must be made individually by you. The formula sheet should be handed in after the exam.    
+
 
 <!--
 
