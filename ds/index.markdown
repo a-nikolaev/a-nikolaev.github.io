@@ -133,6 +133,18 @@ May 1, 2017. There is no class on Monday. The midterm is on Wednesday.
 + For this exam, you can prepare a **formula sheet** (a standard piece of paper, Letter size or A4), you can write on both sides.
 It must be made individually by you. The formula sheet should be handed in after the exam.    
 
+Lecture 22. May 8, 2017. [Trees. Huffman coding](/ds/docs/lec22.pdf).   
+Reading: R(ed6): 10.1-10.2; R(ed7): 11.1-11.2; LL: Chapters 6, 7.    
+
+Lecture 23. May 10, 2017. Probability.   
+No slides, only [supplementary notes](/ds/docs/cc4.pdf).   
+Reading: R(ed6): 6.2 ; R(ed7): 7.2. LL: Chapters 18, 19.    
+
+Lecture 24. May 15, 2017. Probability (Continued). Review Session.    
+
+Lecture 25. May 17, 2017. Projects Presentation. Review Session.    
+
+**Final exam. May 24, 2017.** Same room. 7:30 – 9:30pm.
 
 <!--
 
