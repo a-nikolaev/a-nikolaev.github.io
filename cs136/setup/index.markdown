@@ -14,10 +14,14 @@ title: CSCI 135 - Software Analysis and Design 1
   Open the Terminal and you are good to go.     
 
   **Windows**.
-  Install [Cygwin](https://cygwin.com/). 
-  [These instructions](http://cs.calvin.edu/curriculum/cs/112/resources/installingEclipse/cygwin/) (although a bit old) can help you 
-  to install it together with **g++**.
-  When installing Cygwin, make sure you chose to install **gcc-g++** package.    
+  We have to install [Cygwin](https://cygwin.com/) -- a Unix environment for Windows.    
+  [These instructions](http://cs.calvin.edu/curriculum/cs/112/resources/installingEclipse/cygwin/) can help you 
+  install it together with the **g++** compiler. When doing installation, make sure you chose to install **gcc-g++** package.    
+
+  > **Video tutorials for installing and using Cygwin on Windows:**
+  > 1. [Installing Cygwin with the g++ compiler](https://www.youtube.com/watch?v=ziRGT-8Td40),
+  > 2. [Compiling a simple program](https://www.youtube.com/watch?v=0FzjiSneLv8).    
+  > (The main takeaway is to put your code in the Cygwin **home directory**, which is located at `C:\cygwin\home\<your-user-name>\`)
 
   **Web-based**. 
   If the above options don't work for you, there is a good
