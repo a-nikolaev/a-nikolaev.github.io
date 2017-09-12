@@ -25,7 +25,7 @@ title: CSCI 135 - Software Analysis and Design 1
 
   **Web-based**. 
   If the above options don't work for you, there are several web applications 
-  to compile and run your code online: [C++Shell](http://www.cpp.sh/) or [JDoodle](https://www.jdoodle.com/online-compiler-c++) (switch it to interactive mode).
+  to compile and run your code online: [C++Shell](http://www.cpp.sh/) or [JDoodle](https://www.jdoodle.com/online-compiler-c++) (turn the interactive mode on).
   
   <!-- [](http://www.tutorialspoint.com/compile_cpp_online.php) -->
 
