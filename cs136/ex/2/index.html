@@ -33,13 +33,14 @@ However, there is an even easier way to read a file, and we are going to use it 
 
 <p>In Unix, if we run the program as follows:</p>
 
-<pre><code>./program &lt; myfile.txt
-</code></pre>
+<pre>./program < myfile.txt
+</pre>
+
 
 <p>Every time you read from <code>cin</code>, for example as in the statement</p>
 
-<pre class="highlight"><code><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>
-</code></pre>
+<pre class=highlight><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>
+</pre>
 
 
 <p>the string is read not from the keyboard, but from the text file <code>myfile.txt</code> you specified. Isn&rsquo;t it neat?
@@ -47,7 +48,7 @@ It is called file redirection. The text from the file is redirected character by
 
 <p>To read the full contents of the file, you can write a program:</p>
 
-<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+<pre class=highlight><span class="cp">#include &lt;iostream&gt;
 </span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
@@ -55,7 +56,7 @@ It is called file redirection. The text from the file is redirected character by
 </span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// print the read word
 </span>    <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
+</pre>
 
 
 <p>It relies on the fact that the expression <code>cin &gt;&gt; s</code> is not only reading a string into the variable <code>s</code>,
@@ -68,7 +69,7 @@ anything from the file, evaluating to <code>false</code>, and indicating that th
 
 <p>Consider the following program, it reads a text from <code>cin</code> word by word, and prints the longest word that was input:</p>
 
-<pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+<pre class=highlight><span class="cp">#include &lt;iostream&gt;
 </span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
@@ -82,16 +83,16 @@ anything from the file, evaluating to <code>false</code>, and indicating that th
     
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">longest</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
+</pre>
 
 
 <p>Before you proceed doing the assignment, check that the above program works on some short input file.
 A particularly fun way to run it is to feed the program&rsquo;s source code as the input. If this program is called <code>prog.cpp</code>,
 then if you use this file as the input, you will get:</p>
 
-<pre class="highlight"><code><span class="p">.</span><span class="o">/</span><span class="n">a</span><span class="p">.</span><span class="n">out</span> <span class="o">&lt;</span> <span class="n">prog</span><span class="p">.</span><span class="n">cpp</span>
+<pre class=highlight><span class="p">.</span><span class="o">/</span><span class="n">a</span><span class="p">.</span><span class="n">out</span> <span class="o">&lt;</span> <span class="n">prog</span><span class="p">.</span><span class="n">cpp</span>
 <span class="n">longest</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
-</code></pre>
+</pre>
 
 
 <p>Because <code>"longest.size())"</code> is the longest sequence of characters not interrupted by whitespaces.</p>
@@ -100,23 +101,25 @@ then if you use this file as the input, you will get:</p>
 
 <p style="text-align:center;"> <img src="http://i.imgur.com/uWwYY0P.jpg" alt="repeat" /></p>
 
-<p>Write a program <code>task1.cpp</code> that reads a text from <code>cin</code>,
+<p>Write a program <code>repeated.cpp</code> that reads a text from <code>cin</code>,
 and prints the <strong>word that was repeated in succession</strong> the largest number of times.</p>
 
 <p>For example, if you have a file <code>puddle.txt</code> that contains this:</p>
 
-<pre><code>river canal bay lake lake ocean ocean ocean ocean spring
+<pre>river canal bay lake lake spring ocean ocean ocean ocean 
 lagoon lake lake river river estuary pond sea spring bay
 swamp lake 
-</code></pre>
+</pre>
+
 
 <p>then if you redirect it into your program, it should print <code>ocean</code>:</p>
 
-<pre><code>./a.out &lt; puddle.txt
+<pre>./a.out < puddle.txt
 ocean
-</code></pre>
+</pre>
 
-<p>Because <code>ocean ocean ocean ocean</code> is the longest stretch of a repeated word.</p>
+
+<p>Because <code>ocean ocean ocean ocean</code> is the longest stretch of a repeated word (which can span multiple lines, in principle).</p>
 
 <h2>Task 2. A <code>+</code> <code>-</code> Calculator</h2>
 
@@ -127,44 +130,51 @@ formulas composed of symbols <code>+</code>, <code>-</code>, and non-negative in
 
 <p>Imagine you have a file <code>formula.txt</code> with the summation formula such as:</p>
 
-<pre><code>100 + 50 - 25 + 0 + 123 - 1
-</code></pre>
+<pre>100 + 50 - 25 + 0 + 123 - 1
+</pre>
+
 
 <p>(And by the way, observe that all <code>+</code> and <code>-</code> symbols are separated by spaces.)<br/>
 If you redirect the file into your program, it should compute and print the answer:</p>
 
-<pre><code>./a.out &lt; formula.txt
+<pre>./a.out < formula.txt
 247
-</code></pre>
+</pre>
+
 
 <p>Is that cool? It may sound tricky, but it is actually easy to write such a program,
 and you already know all the needed tools. Just think carefully how to put it all together.</p>
 
-<p>Specifically, write a program <code>task2.cpp</code> that reads from the <code>cin</code> a sequence of
+<p>Specifically, write a program <code>calc.cpp</code> that reads from the <code>cin</code> a sequence of
 <strong>one or more non-negative integers</strong> written to be <strong>added or subtracted</strong>.
 After the input ends (end-of-file is reached), the program should compute and print the result of the input summation.</p>
 
 <p>Possible inputs may look like:</p>
 
-<pre><code>15
-</code></pre>
+<pre>15
+</pre>
 
-<pre><code>10 + 3 + 0 + 25 
-</code></pre>
 
-<pre><code>5 + 6 - 7 - 8 + 9 + 10 - 11 
-</code></pre>
+<pre>10 + 3 + 0 + 25 
+</pre>
 
-<pre><code>1 + 1 + 1 + 1 + 
+
+<pre>5 + 6 - 7 - 8 + 9 + 10 - 11 
+</pre>
+
+
+<pre>1 + 1 + 1 + 1 + 
 1 + 1 + 1 + 1 + 
 1 + 1 + 1 + 1 + 
 1 + 1 + 1 + 1
-</code></pre>
+</pre>
 
-<pre><code>1000 
+
+<pre>1000 
 + 100 
 + 10 - 2
-</code></pre>
+</pre>
+
 
 <p>(Each of the inputs above is a separate file containing one single formula.) <br/>
 The corresponding outputs should be: <code>15</code>, <code>38</code>, <code>4</code>, <code>16</code>, and <code>1108</code>.</p>
@@ -183,10 +193,11 @@ the input has ended.</p>
 
 <p>So, you can test your program like this:</p>
 
-<pre><code>./a.out
-15 - 4 + 13 - 2 + 1  &lt;Enter&gt; &lt;Ctrl+D&gt;
+<pre>./a.out
+15 - 4 + 13 - 2 + 1  <Enter> <Ctrl+D>
 23
-</code></pre>
+</pre>
+
 
 <p>(finalizing your input by pressing <code>Enter</code> and <code>Ctrl+D</code>).</p>
 </body>
