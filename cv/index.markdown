@@ -86,6 +86,14 @@ Game programming \[[github&nbsp;![][codeimg]](https://github.com/a-nikolaev/wand
 
 ### Publications
 
+* "Controlled Growth of Simplicial Complex Networks." 
+Alexey Nikolaev, Saad Mneimneh, Amotz Bar-Noy, Ram Ramanathan. 
+IEEE International Workshop on Network Science for Communication Networks (NetSciCom). Atlanta, GA, USA, May 2017.
+
+* "Counting with Code."
+Saad Mneimneh and Alexey Nikolaev. 
+ACM Journal of Computing Sciences in Colleges, April 2017 (also presented at CCSCNE 2017)
+
 * "Testing Higher-Order Network Structures in an Online Experiment." 
 Jason Radford, Amotz Barnoy, Alexey Nikolaev, Saad Mneimneh, David Lazer, Ram Ramanathan.
 CSCW Companion 2016: 377-380.
