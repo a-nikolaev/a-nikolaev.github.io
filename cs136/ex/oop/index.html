@@ -1,9 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8"/>
+
 <link rel='stylesheet' href='../../pagescss/normalize.css'/> 
 <link rel='stylesheet' href='../../pagescss/markdown.css'/>
 
 <link rel='stylesheet' href='../../pagescss/syntax.css'/>
 <link rel='stylesheet' href='../../pagescss/term.css'/>
-<p><title>C++ Exercises. Part 2.</title></p>
+</head>
+
+<body>
+<p><title>C++ Exercises. Part 3.</title></p>
 
 <h1>An exercise in object-oriented programming (OOP)</h1>
 
@@ -17,7 +27,7 @@ let&rsquo;s try to write some of the most important functions.</p>
 
 <h3>A usage example. The following <code>main</code> function should work:</h3>
 
-<pre class="highlight"><code><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<pre class=highlight><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">MyString</span> <span class="n">s</span><span class="p">;</span>      <span class="c1">// Default constructor is called, makes an empty MyString
@@ -35,7 +45,7 @@ let&rsquo;s try to write some of the most important functions.</p>
   <span class="p">}</span>
   <span class="n">fin</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre>
+</pre>
 
 
 <p style="text-align:center;"> <strong><span style="background-color:#aaeeff">Download an (incomplete) implementation > <a href="mystring.cpp">mystring.cpp</a> &lt; </span></strong></p>
@@ -44,7 +54,7 @@ let&rsquo;s try to write some of the most important functions.</p>
 
 <h3>A proposed interface of the class <code>MyString</code>:</h3>
 
-<pre class="highlight"><code><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
+<pre class=highlight><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
   <span class="kt">int</span> <span class="n">size</span><span class="p">();</span> <span class="c1">// Returns the number of characters in it
 </span>  <span class="kt">void</span> <span class="n">append</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// Append the characters from s at the end of the current MyString
@@ -54,7 +64,7 @@ let&rsquo;s try to write some of the most important functions.</p>
 </span>  <span class="k">friend</span> <span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="n">MyString</span> <span class="n">t</span><span class="p">);</span>
   <span class="k">friend</span> <span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">istream</span> <span class="o">&amp;</span><span class="n">is</span><span class="p">,</span> <span class="n">MyString</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
 <span class="p">};</span>
-</code></pre>
+</pre>
 
 
 <p>A few comments. You might have noticed that <code>append</code> and the <code>+=</code> operator are void functions
@@ -69,14 +79,14 @@ that will improve the efficiency of the code.</p>
 So this is why we don&rsquo;t have any of them in the above code.
 However, if you wish, you may add more constructors to the class, for example:</p>
 
-<pre class="highlight"><code><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
+<pre class=highlight><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
   <span class="p">...</span>
   <span class="n">MyString</span><span class="p">();</span> <span class="c1">// The default constructor
 </span>  <span class="n">MyString</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// A constructor creating MyString from a string
 </span>  <span class="p">...</span>
 <span class="p">};</span>
-</code></pre>
+</pre>
 
 
 <p>But again, this is not necessary here, because you will get the default constructor for free,
@@ -88,13 +98,13 @@ created automatically by the compiler.</p>
 
 <p>Let&rsquo;s do it without using the built-in C++ string. As a possible solution, you may keep the characters in a vector of characters:</p>
 
-<pre class="highlight"><code><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
+<pre class=highlight><span class="k">class</span> <span class="nc">MyString</span> <span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
   <span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span> 
 <span class="k">public</span><span class="o">:</span>
   <span class="p">...</span>
 <span class="p">}</span>
-</code></pre>
+</pre>
 
 
 <p>Notice it is a private field and will not be accessible from outside the class.</p>
@@ -129,18 +139,22 @@ If you don&rsquo;t see that, think of this code:</p></li>
 </ul>
 
 
-<pre class="highlight"><code>  <span class="n">MyString</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
+<pre class=highlight>  <span class="n">MyString</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
 
   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-</code></pre>
+</pre>
 
 
 <p>In C++, the expression <code>x + y + z + w</code> actually means <code>((x + y) + z) + w</code>.
 The program is not able to magically add all these numbers simultaneously,
 but does that sequentially, according to the operator precedence order. Then think what is happening when you write</p>
 
-<pre class="highlight"><code>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="p">;</span>
-</code></pre>
+<pre class=highlight>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="p">;</span>
+</pre>
 
 
+<h2>A possible solution</h2>
 
+<p>Here&rsquo;s a possible implementatoin of this MyString class: <a href="mystring-sol.cpp">mystring-sol.cpp</a>.</p>
+</body>
+</html>
