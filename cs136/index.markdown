@@ -26,14 +26,14 @@ Plagiarism is not allowed. Each program you submit, must be your own individual 
 To be clear: discussing the programs and algorithms with your classmates is good and acceptable,
 however each person writes their own program. Copying someone else's code is not allowed.
 
-## Style Check
+### Style Check
 
 At the end of the lab, the instructor checks code style for every student. 
 This serves two goals: to give you advice on your code, which cannot be done automatically via Gradescope, 
 and also to check your attendance. The **style check is mandatory**. 
 Failure to attend the class and show your code results in a grade penalty for that lab (up to 1/3 of the grade). 
 
-## Grades for CS-135 and CS-136
+### Grades for CS-135 and CS-136
 All CS-135 assignments (programming projects and tests) contribute to your CS-135 grade.
 Whereas all labs contribute only to your CS-136 grade. Both classes follow the same grading criteria.
 
