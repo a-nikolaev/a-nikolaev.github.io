@@ -3,7 +3,7 @@ layout: page
 title: Alexey Nikolaev
 ---
 
-Hi,  
+Hello,  
 My name is Alexey Nikolaev, I am a Computer Science PhD student at [The Graduate Center of CUNY](http://gc.cuny.edu), New York, NY.
 
 
