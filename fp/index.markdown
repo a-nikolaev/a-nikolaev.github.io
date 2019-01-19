@@ -34,6 +34,12 @@ Supplementary reading on OCaml:
 &ndash; [Jason Hickey, Introduction to OCaml](http://courses.cms.caltech.edu/cs134/cs134b/book.pdf) (2008) ![pdf][pdfimg]   
 &ndash; [Real World OCaml 2nd Edition](http://dev.realworldocaml.org/) (in progress)   
 
+Functional programming:     
+&ndash; [Structure and Interpretation of Computer Programs](https://www.youtube.com/watch?v=2Op3QLzMgSY&list=PLE18841CABEA24090), 
+video lectures of the classical course on functional programming from MIT
+([the text of the book](https://mitpress.mit.edu/sites/default/files/sicp/index.html)) (1986)
+![video][videoimg]
+
 Theoretical background, lambda calculus:   
 &ndash; [Introduction to Functional Programming](docs/Harrison1999.pdf), John Harrison (1999) ![pdf][pdfimg]   
 &ndash; [Foundations of Functional Programming](docs/Paulson2000.pdf), Lawrence C Paulson (2000) ![pdf][pdfimg]     
