@@ -37,9 +37,13 @@ Main text:
 Supplementary reading on OCaml:    
 &ndash; [Jason Hickey, Introduction to OCaml](http://courses.cms.caltech.edu/cs134/cs134b/book.pdf) (2008) ![pdf][pdfimg]   
 &ndash; [Real World OCaml 2nd Edition](http://dev.realworldocaml.org/) (in progress)     
+
+Online documentation for OCaml:    
+&ndash; [OCaml.org](https://ocaml.org/), the official community website   
+&ndash; Module [Pervasives](http://caml.inria.fr/pub/docs/manual-ocaml/libref/Pervasives.html) of the standard library     
+&ndash; [Reference manual](http://caml.inria.fr/pub/docs/manual-ocaml/)    
 &ndash; [Github/Awesome-OCaml](https://github.com/ocaml-community/awesome-ocaml),
-a curated collection of awesome OCaml tools and libraries   
-&ndash; [OCaml.org](https://ocaml.org/), official website   
+a curated collection of OCaml tools and libraries   
 
 Functional programming:     
 &ndash; [Structure and Interpretation of Computer Programs](https://www.youtube.com/watch?v=2Op3QLzMgSY&list=PLE18841CABEA24090), 
@@ -52,7 +56,6 @@ Theoretical background, lambda calculus:
 &ndash; [Foundations of Functional Programming](docs/Paulson2000.pdf), Lawrence C Paulson (2000) ![pdf][pdfimg]     
 &ndash; Video lectures by Frank Pfenning on [Basic Proof Theory](https://www.cs.uoregon.edu/research/summerschool/summer15/curriculum.html), 
 discussing the relation between programs and proofs (2015) ![video][videoimg]
-
 
 ## Tentative schedule
 
