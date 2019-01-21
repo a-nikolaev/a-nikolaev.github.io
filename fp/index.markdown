@@ -60,14 +60,14 @@ discussing the relation between programs and proofs (2015) ![video][videoimg]
 ## Tentative schedule
 
 - **Jan 31.**
-Expressions. Int and bool types. If conditions. Simple function definitions.
+Expressions. Int. Bool. If conditions. Simple function definitions.
 - Recursive functions.
 - **Feb 7.**
 Tuples. Lists. Pattern matching. 
 - **Feb 14.**
 Algebraic data types. Option type.
 - **Feb 21.**
-Float. Bool. Char. String. Printf. I/O.
+Float. Char. String. Printf. I/O.
 - Scoping rules. Parentheses. Semicolon.
 - **Feb 28.**
 Tail-call optimization.
