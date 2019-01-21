@@ -16,7 +16,11 @@ Office: HN 1000C
 
 ### Overview
 
-This is a practical hands-on course on functional programming using OCaml. We will be solving programming problems in class, in groups and individually.
+This is a practical hands-on course on functional programming using OCaml. The goals of the course are:
+to help you learn the functional programming paradigm, and more broadly, to improve your ability to learn any new technology or programming language,
+which will make you a better programmer and computer scientist.
+
+We will be solving programming problems in class, in groups and individually.
 Small homework assigned every week for better material retention. A project in the second half of the semester, in which you will be 
 implementing a program or tool of your choice using functional programming principles. A final exam at the end of the semester.
 
@@ -32,7 +36,10 @@ Main text:
 
 Supplementary reading on OCaml:    
 &ndash; [Jason Hickey, Introduction to OCaml](http://courses.cms.caltech.edu/cs134/cs134b/book.pdf) (2008) ![pdf][pdfimg]   
-&ndash; [Real World OCaml 2nd Edition](http://dev.realworldocaml.org/) (in progress)   
+&ndash; [Real World OCaml 2nd Edition](http://dev.realworldocaml.org/) (in progress)     
+&ndash; [Github/Awesome-OCaml](https://github.com/ocaml-community/awesome-ocaml),
+a curated collection of awesome OCaml tools and libraries   
+&ndash; [OCaml.org](https://ocaml.org/), official website   
 
 Functional programming:     
 &ndash; [Structure and Interpretation of Computer Programs](https://www.youtube.com/watch?v=2Op3QLzMgSY&list=PLE18841CABEA24090), 
@@ -50,7 +57,7 @@ discussing the relation between programs and proofs (2015) ![video][videoimg]
 ## Tentative schedule
 
 - **Jan 31.**
-Simple function definitions. Integers. If conditions.
+Expressions. Int and bool types. If conditions. Simple function definitions.
 - Recursive functions.
 - **Feb 7.**
 Tuples. Lists. Pattern matching. 
