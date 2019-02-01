@@ -14,6 +14,10 @@ Website: <https://a-nikolaev.github.io/fp/>
 Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu  
 Office: HN 1000C
 
+### Lecture notes
+
+* [Expressions. Functions. Recursion](lec/1/)
+
 ### Overview
 
 This is a practical hands-on course on functional programming using OCaml. The goals of the course are:
