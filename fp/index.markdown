@@ -16,7 +16,7 @@ Office: HN 1000C
 
 ### Lecture notes
 
-* [Expressions. Functions. Recursion](lec/1/)
+* [Expressions. Functions. Recursion](lec/1/) (Reading: 2.1 - 2.9).
 
 ### Overview
 
