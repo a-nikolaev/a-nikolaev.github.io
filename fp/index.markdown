@@ -17,6 +17,7 @@ Office: HN 1000C
 ### Lecture notes
 
 * [Expressions. Functions. Recursion](lec/1/) (Reading: 2.1 - 2.9).
+* [Lists. Pattern matching. Local name binding](lec/2/) (Reading: 3.1 - 3.5, 2.13).
 
 ### Overview
 
