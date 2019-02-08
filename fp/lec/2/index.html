@@ -767,7 +767,7 @@ we can simply put the wildcard <code>_</code> there, the head value is matched, 
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-ocaml hljs" data-lang="ocaml">let rec is_sorted ls =
   match ls with
-  | a :: b :: tl -&gt; a &lt; b &amp;&amp; is_sorted (b::tl)
+  | a :: b :: tl -&gt; a &lt;= b &amp;&amp; is_sorted (b::tl)
   | a :: [] -&gt; true
   | [] -&gt; true</code></pre>
 </div>
@@ -777,7 +777,7 @@ we can simply put the wildcard <code>_</code> there, the head value is matched, 
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-ocaml hljs" data-lang="ocaml">let rec is_sorted ls =
   match ls with
-  | a :: b :: tl -&gt; a &lt; b &amp;&amp; is_sorted (b::tl)
+  | a :: b :: tl -&gt; a &lt;= b &amp;&amp; is_sorted (b::tl)
   | [a] -&gt; true   (* [a] is the same as a::[] *)
   | [] -&gt; true</code></pre>
 </div>
@@ -787,7 +787,7 @@ we can simply put the wildcard <code>_</code> there, the head value is matched, 
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-ocaml hljs" data-lang="ocaml">let rec is_sorted ls =
   match ls with
-  | a :: b :: tl -&gt; a &lt; b &amp;&amp; is_sorted (b::tl)
+  | a :: b :: tl -&gt; a &lt;= b &amp;&amp; is_sorted (b::tl)
   | _ -&gt; true    (* Wildcard pattern _ matches anything *)</code></pre>
 </div>
 </div>
@@ -1140,7 +1140,7 @@ let sq = x * x in
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-02-07 14:39:48 -0500
+Last updated 2019-02-08 14:25:57 -0500
 </div>
 </div>
 <link rel="stylesheet" href="../highlight/styles/github.min.css">
