@@ -22,6 +22,10 @@ Office: HN 1000C
 * [Tail call optimization. Option type. Map, filter, iter](lec/4) (Reading: 3.5, 3.21, 4.1-4.4)
 * [Variant types. Reading a file. MiniMake](lec/5) (Reading: 3.12, 3.23, 3.24)
 
+### Projects
+
+[Information about projects](projects)
+
 ### Overview
 
 This is a practical hands-on course on functional programming using OCaml. The goals of the course are:
