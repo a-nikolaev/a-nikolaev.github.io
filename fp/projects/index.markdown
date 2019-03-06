@@ -11,7 +11,7 @@ In the second half of the semester, you will work on a project, which will repla
 - March 7 - **Choose a project topic**.
 - March 14 - **First draft of your project proposal**: 3-5 paragraphs description of the project goal, scope, and implementation plan.
 - March 28 - **Finalized project proposal**: Have a proof of concept. Create a Github repository and send me its link.
-- May - Project presentations (presentation and a 2-3 page report).
+- May - Project presentations (quick presentation in class and a 2-3 page report).
 
 The topic for your project must be discussed and aproved before you start working on it.
 
