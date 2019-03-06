@@ -90,7 +90,7 @@ make sure:
 - **it has some documentation you can work with**
 - **it provides examples, and you are able to compile and run these examples** (so you can start modifying them, developing your program right away)
 - if it is using some complex technology, you should **know that technology** before you start the project
-- if it is a binding of a C library, you should know how that C library works. You may have to read the docs for the original C library, 
+- if it is OCaml bindings of a C library, you should know how that C library works. You may have to read the docs for the original C library, 
 since they will be more complete and will have more examples.
 
 It is also highly recommended to use only the libraries that can be **installed with _opam_ package manager** 
