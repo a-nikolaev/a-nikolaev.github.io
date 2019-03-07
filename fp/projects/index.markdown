@@ -11,7 +11,7 @@ In the second half of the semester, you will work on a project, which will repla
 - March 7 - **Choose a project topic**.
 - March 14 - **First draft of your project proposal**: 3-5 paragraphs description of the project goal, scope, and implementation plan.
 - March 28 - **Finalized project proposal**: Have a proof of concept. Create a Github repository and send me its link.
-- May - Project presentations (quick presentation in class and a 2-3 page report).
+- May - **Project presentations** (quick presentation in class and a 2-3 page report).
 
 The topic for your project must be discussed and aproved before you start working on it.
 
@@ -108,6 +108,24 @@ module [List](https://caml.inria.fr/pub/docs/manual-ocaml/libref/List.html) from
 contains full documentation about the module. (In fact most of the time, the HTML documentation *is* generated from .mli files.)
 
 While .mli files are not always very easy to read, they can be very useful, especially if you don't have any other documentation for the library.
+
+#### How to compile code that is using a library
+
+Generally, to compile your program that is using a library, a good strategy is to consult the examples provided by the library iteself.
+
+However, most of the time, the `ocamlfind` works. Especially if the library is installed with opam,
+then adding the library is only a matter of adding options `-package NAME -linkpkg` to the `ocamlfind` command (here replace `NAME` with the name of the library 
+you want to use). 
+
+**For example:**
+Suppose you want to use library `cairo2`, your own code consists of 3 files: `file1.ml`, `file2.ml`, and `file3.ml`,
+and you want to compile it into an executable called `program`. Then the following command will work:
+
+```
+ocamlfind ocamlopt -package NAME -linkpkg -o program file1.ml file2.ml file3.ml
+```
+
+For more information, consult [this article](https://ocaml.org/learn/tutorials/compiling_ocaml_projects.html).
 
 [pdfimg]: /img/pdf1.png
 [videoimg]: /img/video.png
