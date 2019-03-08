@@ -122,7 +122,7 @@ Suppose you want to use library `cairo2`, your own code consists of 3 files: `fi
 and you want to compile it into an executable called `program`. Then the following command will work:
 
 ```
-ocamlfind ocamlopt -package NAME -linkpkg -o program file1.ml file2.ml file3.ml
+ocamlfind ocamlopt -package cairo2 -linkpkg -o program file1.ml file2.ml file3.ml
 ```
 
 For more information, consult [this article](https://ocaml.org/learn/tutorials/compiling_ocaml_projects.html).
