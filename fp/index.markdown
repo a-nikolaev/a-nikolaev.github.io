@@ -7,10 +7,11 @@ title: CSCI 49201 - Functional Programming in OCaml
 
 ### General information
 Thr, 3:10 - 5:00 pm. Hunter North 1001C.  
-Office hours: after the class or by appointment.
+Office hours: after the class or by appointment.  
 
 Instructor: Alexey Nikolaev  
 Website: <https://a-nikolaev.github.io/fp/>  
+Syllabus: [PDF](docs/syllabus.pdf)   
 Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu  
 Office: HN 1000C
 
