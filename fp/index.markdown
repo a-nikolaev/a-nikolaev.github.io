@@ -22,6 +22,8 @@ Office: HN 1000C
 * [Common built-in types. Printing. Semicolon. Tuples. Accumulators](lec/3/) (Reading: 2.15, 3.15)
 * [Tail call optimization. Option type. Map, filter, iter](lec/4) (Reading: 3.5, 3.21, 4.1-4.4)
 * [Variant types. Reading a file. MiniMake](lec/5) (Reading: 3.12, 3.23, 3.24)
+* [Currying. Pipeline operator. Fold](lec/6) (Reading: 2.11, 4.13, 4.12, 2.12, 4.5-4.9)
+* Next class (March 21), we will cover records and modules
 
 ### Projects
 
