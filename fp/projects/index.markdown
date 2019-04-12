@@ -3,6 +3,38 @@ layout: page
 title: CSCI 49201 - Functional Programming in OCaml - Projects
 ---
 
+## Presentations Schedule
+
+### May 2
+
+1. Shawn Guthrie  -  Chess
+2. Tushar Malakar  -  Huffman Coding
+3. Kent Feng & Jin Huai Xuan  -  Cellular Automata Simulator
+4. Savannah Nester  -  Snake Game
+5. Maria Volpe  -  OCaml FFI (interfacing with C)
+6. Ali Almashhadani  -  Markdown to HTML
+7. Aaron Lopez  -  Functional KMP Algorithm
+8. Ratul Ahmed  -  NBA Data Visualizer
+9. Brandon Foster  -  LISP Interpreter
+10. Zhifan Yang  -  Klotski Game and Solver
+11. Stephen Duke  -  Tour Scheduler
+
+### May 9
+
+12. Tenzin Kunsang  -  Stock Analyzer
+13. Jonah Alexander-awad  -  GUI application
+14. Elijah Augustin  -  Markdown Converter
+15. Alexander Bortoc  -  Bookshelf using PostgreSQL
+16. Daniel Segarra & Angel Checo  -  ReasonML Game
+17. Clara Fairbanks  -  Infinite Runner
+18. Pasang Sherpa  -  City Art Generation
+19. Ram Vakada  -  OCamlAlert, client-server application using Lwt
+20. Jeffrey Lin  -  Lambda Calculus
+21. Jonathan Trachtenberg  -  Stock Tracker
+22. Hugh Leow  -  Spaceship Destroyer
+23. Garrison Shepard  -  Story Generator
+
+
 ## Projects
 
 In the second half of the semester, you will work on a project, which will replace regular weekly homeworks.

@@ -26,6 +26,7 @@ Office: HN 1000C
 * [Records and modules](lec/7) (Reading: 3.14, 5.1-5.6)
 * [Recursive variant types. Binary search trees](lec/8) (Reading: 3.32, 3.31, 8.5)
 * [More binary trees. S-expressions. Examples with Opal and Cairo](lec/9)
+* [Module signatures. Functors. Map and Set](lec/10) (Reading: 5.5, 5.22-5.25)
 
 ### Projects
 
