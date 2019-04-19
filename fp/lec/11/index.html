@@ -930,7 +930,7 @@ let return x = Some x
 let (&gt;&gt;=) am f =
   match am with
   | Some a -&gt; f a
-  | None</code></pre>
+  | None -&gt; None</code></pre>
 </div>
 </div>
 </div>
@@ -941,7 +941,7 @@ let (&gt;&gt;=) am f =
 </div>
 </div>
 <div class="paragraph">
-<p>Using this type (called <strong>Maybe monad</strong>), the <code>read_int_from_file</code> function reduces to much cleaner code</p>
+<p>Using this type (called <strong>Maybe monad</strong>), the <code>read_int_from_file</code> function reduces to a much cleaner program:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -950,7 +950,7 @@ let (&gt;&gt;=) am f =
 </div>
 </div>
 <div class="paragraph">
-<p>Or in a somewhat more verbous, but more explicit way:</p>
+<p>Or somewhat more verbosely:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -965,6 +965,22 @@ let (&gt;&gt;=) am f =
 <tr>
 <td class="icon">
 <i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>According to <em><a href="https://wiki.haskell.org/Monad_laws">monad laws</a></em>,
+<code>(m &gt;&gt;= f) &gt;&gt;= g</code> is equivalent to <code>m &gt;&gt;= (fun x -&gt; f x &gt;&gt;= g)</code>, so the two above programs are equivalent,
+after computing <code>get_arg 1</code>, first the function <code>open_file</code> is applied, then the function <code>input_int_opt</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1010,7 +1026,7 @@ However, they are also employed in non-pure languages such as OCaml. Examples in
 <p>Chapters 8.22 - 8.26</p>
 </li>
 <li>
-<p><a href="http://book.realworldhaskell.org/read/monads.html">Intro to monads in Haskell</a></p>
+<p><a href="https://en.wikibooks.org/wiki/Haskell/Understanding_monads">Haskell / Understanding monads</a></p>
 </li>
 </ul>
 </div>
@@ -1252,7 +1268,7 @@ OCaml that is designed for better interoperability with JavaScript, relying on B
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-18 22:41:50 -0400
+Last updated 2019-04-18 23:56:12 -0400
 </div>
 </div>
 <link rel="stylesheet" href="../highlight/styles/github.min.css">
