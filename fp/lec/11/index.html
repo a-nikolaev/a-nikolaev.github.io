@@ -872,7 +872,7 @@ fib 50  --&gt;  12586269025</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Consider the following program that reads the filename from
-the first command line argument (<code>argv.(1)</code>), and</p>
+the first command line argument, opens that file, and reads an integer number from it:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -911,6 +911,28 @@ let () =
   | Some x -&gt; Printf.printf "%i\n" x
   | None -&gt; Printf.printf "Error\n"</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>If the integer is read successfully, the program prints it out:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./a.out good-file
+1234</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Otherwise, if something goes wrong (there is no command-line argument, the file does not exist,
+or there is no integer in the file), the program prints <code>Error</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./a.out bad-file
+Error</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The program works fine, but the function <code>read_int_from_file</code> contains repetitive pattern matchings, and that can be improved.</p>
 </div>
 <div class="sect2">
 <h3 id="_define_a_helper_wrapping_type_a_m">Define a helper wrapping type <code>'a m</code></h3>
@@ -1268,7 +1290,7 @@ OCaml that is designed for better interoperability with JavaScript, relying on B
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-18 23:56:12 -0400
+Last updated 2019-04-19 00:08:21 -0400
 </div>
 </div>
 <link rel="stylesheet" href="../highlight/styles/github.min.css">
