@@ -6,7 +6,7 @@ title: CSCI 49201 - Functional Programming in OCaml
 ## Functional Programming in OCaml, CSCI 49201
 
 ### General information
-Thr, 3:10 - 5:00 pm. Hunter North 1001C.  
+Mon, Wed, 3:20 - 5:25 pm. Hunter North 1516.  
 Office hours: after the class or by appointment.  
 
 Instructor: Alexey Nikolaev  
@@ -15,6 +15,7 @@ Syllabus: [PDF](docs/syllabus.pdf)
 Email: a<span style="color:#969086;">(my last name)</span>@gradcenter.cuny.edu  
 Office: HN 1000C
 
+<!--
 ### Lecture notes
 
 * [Expressions. Functions. Recursion](lec/1/) (Reading: 2.1 - 2.9).
@@ -33,6 +34,8 @@ Office: HN 1000C
 
 [Information about projects](projects)
 
+-->
+
 ### Overview
 
 This is a practical hands-on course on functional programming using OCaml. The goals of the course are:
@@ -40,14 +43,14 @@ to help you learn the functional programming paradigm, and more broadly, to impr
 which will make you a better programmer and computer scientist.
 
 We will be solving programming problems in class, in groups and individually.
-Small homework assigned every week for better material retention. A project in the second half of the semester, in which you will be 
+Small homework assigned every class for better material retention. A project in the second half of the semester, in which you will be 
 implementing a program or tool of your choice using functional programming principles. A final exam at the end of the semester.
 
 ### Grading 
 - 25% attendance and work in class
 - 15% homework
-- 45% project
-- 15% final exam
+- 40% project
+- 20% final exam
 
 ## Literature    
 Main text:    
@@ -78,35 +81,31 @@ discussing the relation between programs and proofs (2015) ![video][videoimg]
 
 ## Tentative schedule
 
-- **Jan 31.**
-Expressions. Int. Bool. If conditions. Simple function definitions.
-- Recursive functions.
-- **Feb 7.**
-Lists. Pattern matching. 
-- **Feb 14.**
-Float. Char. String. Printf. I/O.
-- Scoping rules. Parentheses. Semicolon.
-- **Feb 21.**
-Tuples. Algebraic data types. Option type.
-- **Feb 28.**
-Tail-call optimization.
-- **Mar 7.**
-Passing functions as arguments. Higher-order functions. Iter and fold.
-- **Mar 14.** 
-Trees and recursive data types.
-- **Mar 21.**
-Records.
-- Modules. Functors.
-- **Mar 28.**
-List, Set, Map. Persistent data structures 
-- **Apr 4.** 
-Mutual recursion.
-- **Apr 11.** Imperative constructs. Arrays. Hash-tables. Loops. Mutable records.
-- **Apr 18.** Polymorphic variants.
-- Objects and row types.
-- **May 2.** Project presentations.
-- **May 9.** Project presentations.
-- **May 16.** Exam.
+- **May 29.**
+Expressions. Functions. Recursion.
+- **Jun 3.**
+Lists. Pattern matching. Local name binding.
+- **Jun 5.**
+Common built-in types. Printing. Semicolon. Tuples. Accumulators.
+- **Jun 10.**
+Tail call optimization. Option type. Map, filter, iter.
+- **Jun 12.**
+Variant types. Reading files.
+- **Jun 17.**
+Currying. Pipeline operator. Fold.
+- **Jun 19.**
+Records and modules
+- **Jun 24.**
+Recursive variant types. Binary search trees.
+S-expressions. Examples with Opal and Cairo.
+- **Jun 26.**
+Module signatures. Functors. Map and Set.
+- **Jul 1.**
+Monads. Memoization. Delayed computation. Sequences. Lambda calculus.
+- **Jul 3.**
+Final Exam.
+- **Jul 8.**
+Project presentations.
 
 [pdfimg]: /img/pdf1.png
 [videoimg]: /img/video.png
