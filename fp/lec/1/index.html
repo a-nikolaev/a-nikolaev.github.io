@@ -1053,51 +1053,220 @@ else (it is a leap year)</p>
 <div class="sect1">
 <h2 id="_exercises_2">Exercises</h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>sum_range a b</code> </dt>
-<dd>
-<p>the sum of all integers in the range from <code>a</code> to <code>b</code>.<br>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>sum_range a b</code></p>
+</div>
+<div class="paragraph">
+<p>The sum of all integers in the range from <code>a</code> to <code>b</code> (that is, for all <code>a</code> &le; <code>x</code> &le; <code>b</code> ).<br>
 <strong>Example:</strong> <code>sum_range 1 5</code> should be equal to <code>1 + 2 + 3 + 4 + 5 = 15</code>.</p>
-</dd>
-<dt class="hdlist1"><code>prod_range a b</code> </dt>
-<dd>
-<p>the product of all integers in the range from <code>a</code> to <code>b</code></p>
-</dd>
-<dt class="hdlist1"><code>num_digits x</code> </dt>
-<dd>
-<p>the number of (decimal) digits in the integer <code>x</code>. (Should work correctly for all integers.)</p>
-</dd>
-<dt class="hdlist1"><code>sum_digits x</code></dt>
-<dd>
-<p>the sum of all (decimal) digits of <code>x</code></p>
-</dd>
-<dt class="hdlist1"><code>nth_digit i x</code></dt>
-<dd>
+</div>
+<div class="paragraph">
+<p> <details><summary style="cursor: pointer; color: #baa;"> &#x1f424; <i>click to open</i> </summary><div> </p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let rec sum_range a b =
+  if a &gt; b then
+    0  (* base case: empty range *)
+  else
+    sum_range a (b-1) + b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p> </div></details> </p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>prod_range a b</code></p>
+</div>
+<div class="paragraph">
+<p>The product of all integers in the range from <code>a</code> to <code>b</code></p>
+</div>
+<div class="paragraph">
+<p> <details><summary style="cursor: pointer; color: #baa;"> &#x1f424; <i>click to open</i> </summary><div> </p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let rec prod_range a b =
+  if a &gt; b then
+    1
+  else
+    prod_range a (b-1) * b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p> </div></details> </p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>num_digits x</code></p>
+</div>
+<div class="paragraph">
+<p>The number of (decimal) digits in the integer <code>x</code>. (Should work correctly for all integers.)</p>
+</div>
+<div class="paragraph">
+<p> <details><summary style="cursor: pointer; color: #baa;"> &#x1f424; <i>click to open</i> </summary><div> </p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let rec num_digits n =
+  if abs n &lt; 10 then
+    1
+  else
+    num_digits (n/10) + 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p> </div></details> </p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>sum_digits x</code></p>
+</div>
+<div class="paragraph">
+<p>The sum of all (decimal) digits of <code>x</code></p>
+</div>
+<div class="paragraph">
+<p> <details><summary style="cursor: pointer; color: #baa;"> &#x1f424; <i>click to open</i> </summary><div> </p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let rec sum_digits n =
+  if abs n &lt; 10 then
+    abs n
+  else
+    sum_digits (n/10) + abs (n mod 10)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Without using function <code>abs</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let rec sum_digits n =
+  if n &lt; 0 then
+    sum_digits (-n)
+  else
+    if n &lt; 10 then
+      n
+    else
+      sum_digits (n/10) + (n mod 10)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p> </div></details> </p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>nth_digit i x</code></p>
+</div>
+<div class="paragraph">
 <p><code>i</code>-th (decimal) digit of the integer <code>x</code>. Assume digits are indexed left-to-right, starting at <code>i</code>=1.
-The function should return 0 for invalid values of <code>i</code>.<br>
-<strong>Examples:</strong><br>
-<code>nth_digit 1 7025 = 7</code><br>
-<code>nth_digit 2 7025 = 0</code><br>
-<code>nth_digit 3 7025 = 2</code><br>
-<code>nth_digit 4 7025 = 5</code><br>
-<code>nth_digit 1 0 = 0</code><br>
-<code>nth_digit 1 (-7025) = 7</code><br>
-<code>nth_digit 2 (-7025) = 0</code><br>
-<code>nth_digit (-1) 7025 = 0</code><br>
-<code>nth_digit 0 7025 = 0</code><br>
-<code>nth_digit 5 7025 = 0</code><br></p>
-</dd>
-<dt class="hdlist1"><code>binom n k</code></dt>
-<dd>
+The function should return 0 for invalid values of <code>i</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>nth_digit 1 7025 = 7
+nth_digit 2 7025 = 0
+nth_digit 3 7025 = 2
+nth_digit 4 7025 = 5
+nth_digit 1 0 = 0
+nth_digit 1 (-7025) = 7
+nth_digit 3 (-7025) = 2
+nth_digit (-1) 7025 = 0
+nth_digit 0 7025 = 0
+nth_digit 5 7025 = 0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><code>binom n k</code></p>
+</div>
+<div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Binomial_coefficient">Binomial coefficient</a> <em>C(n,k)</em>,
-implemented recursively using <a href="https://en.wikipedia.org/wiki/Pascal%27s_rule">Pascal&#8217;s identity</a>.<br>
-Since this mathematical function is normally defined only for <em>0 &le; k &le; n</em>,
+implemented recursively using <a href="https://en.wikipedia.org/wiki/Pascal%27s_rule">Pascal&#8217;s identity</a>.</p>
+</div>
+<div class="paragraph">
+<p>Since this mathematical function is normally defined only for <em>0 &le; k &le; n</em>,
 make the function return zero for other values of <code>n</code> and <code>k</code>.
 This extension of the definition is consistent with Pascal&#8217;s identity and the meaning of the coefficient
 (for instance, there is 0 ways to select 10 items out of 9 available).</p>
-</dd>
-</dl>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>binom 5 0 = 1
+binom 5 1 = 5
+binom 5 2 = 10
+binom 5 100 = 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p> <details><summary style="cursor: pointer; color: #baa;"> &#x1f424; <i>click to open</i> </summary><div> </p>
+</div>
+<div class="paragraph">
+<p>A simpler solution that does not handle impossible cases of, e.g. <em>k &lt; 0</em> or <em>k &gt; n</em>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>(*  (n, k) = (n-1,k-1) + (n-1,k)   *)
+let rec binom n k =
+  if k = 0 then
+    1  (* Left edge of Pascal's tringle *)
+  else if k = n then
+    1  (* Right edge of Pascal's triangle *)
+  else
+    binom (n-1) (k-1) + binom (n-1) k</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A more complex solution that handles impossible cases:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let rec binom n k =
+  if k &lt; 0 || k &gt; n then 0
+  else if k = 0 || k = n then 1
+  else binom (n-1) (k-1) + binom (n-1) k</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>let rec binom n k =
+  if k &lt; 0 || k &gt; n then 0
+  else if k = 0 &amp;&amp; n = 0 then 1
+  else binom (n-1) (k-1) + binom (n-1) k</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p> </div></details> </p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1227,7 +1396,7 @@ val y : (('a -&gt; 'b) -&gt; 'a -&gt; 'b) -&gt; 'a -&gt; 'b = &lt;fun&gt;
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-05-29 13:22:26 -0400
+Last updated 2019-05-29 19:14:40 -0400
 </div>
 </div>
 <link rel="stylesheet" href="../highlight/styles/github.min.css">
