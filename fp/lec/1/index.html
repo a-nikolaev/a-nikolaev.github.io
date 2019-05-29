@@ -443,7 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_lets_get_started_with_a_code_example">Let&#8217;s get started with a code example</h3>
 <div class="paragraph">
 <p>When learning a new programming language, it&#8217;s usually very helpful to see some example code
-in that language. Compare C and OCaml code for computing factorial:</p>
+in that language.</p>
 </div>
 <div class="exampleblock">
 <div class="title">Example 1. Comparing C and OCaml factorial programs. Note that the factorial function in mathematics is undefined for negative arguments. Our implementation (incorrectly) returns 1 for these input values.</div>
@@ -926,20 +926,33 @@ val max_of_two : 'a -&gt; 'a -&gt; 'a = &lt;fun&gt;
 - : int = 25</code></pre>
 </div>
 </div>
-<div class="imageblock right">
-<div class="content">
-<img src="https://i.imgur.com/lTA0HsT.jpg" alt="Dynamic typing and static typing" width="400">
 </div>
 </div>
-<div class="openblock">
-<div class="content">
+<div class="sect1">
+<h2 id="_type_inference_in_ocaml">Type inference in OCaml</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Why does the type of the function <code>square</code> is <code>int &#8594; int</code>,<br>
+<p>Why the type of the function <code>square</code> is <code>int &#8594; int</code>,
 whereas for the function <code>max_of_two</code>, it is <code>'a &#8594; 'a &#8594; 'a</code>?</p>
 </div>
 <div class="paragraph">
-<p>In OCaml, types are inferred by the compiler if you don&#8217;t specify types yourself.</p>
+<p>In OCaml, <strong>types are inferred</strong> by the compiler if you don&#8217;t specify them yourself.
+The type inference algorithm is using the fact that each previously defined operator or function already has a type.</p>
 </div>
+<div class="paragraph">
+<p>Since the multiplication operator <code>*</code> has the type <code>int &#8594; int &#8594; int</code> (takes two integers and returns an integer),
+the <code>square</code> function must have the type <code>int &#8594; int</code> to conform to the type of <code>*</code>.</p>
+</div>
+<div class="paragraph">
+<p>On the other hand, the <code>&gt;</code> operator is <em>polymorphic</em>, which means it can compare not only integers, but also floats, strings, and any other
+compound data types. The polymorphism of the <code>&gt;</code> operator is expressed in its type: <code>'a &#8594; 'a &#8594; bool</code>
+(here, <code>'a</code> is a <em>type variable</em>, which indicates that the operator arguments can be of <em>any type</em>).
+Because of that, the type inference algorithm deduces that the function <code>max_of_two</code> is also polymorphic,
+and has the type <code>'a &#8594; 'a &#8594; 'a</code>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="https://i.imgur.com/lTA0HsT.jpg" alt="Dynamic typing and static typing" width="400">
 </div>
 </div>
 </div>
@@ -1214,7 +1227,7 @@ val y : (('a -&gt; 'b) -&gt; 'a -&gt; 'b) -&gt; 'a -&gt; 'b = &lt;fun&gt;
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-31 06:26:03 -0500
+Last updated 2019-05-29 13:22:26 -0400
 </div>
 </div>
 <link rel="stylesheet" href="../highlight/styles/github.min.css">
