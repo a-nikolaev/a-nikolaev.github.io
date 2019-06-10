@@ -38,7 +38,7 @@ title: CSCI 49201 - Functional Programming in OCaml - Projects
 
 ## Projects
 
-In the second half of this course, you will work on a project, which will replace regular homeworks.
+In the second half of this course, you will work on a project, which will replace regular homework assignments.
 
 ### Timeline:
 - June 12 - **Choose a project topic**.
@@ -46,7 +46,7 @@ In the second half of this course, you will work on a project, which will replac
 - June 24 - **Finalized project proposal**: Have a proof of concept. Create a Github repository and send me its link.
 - July 8 - **Project presentations** (quick presentation in class and a 2-3 page report).
 
-The topic for your project must be discussed and aproved before you start working on it.
+The topic for your project must be discussed and approved before you start working on it.
 
 All projects are individual.
 
@@ -62,7 +62,7 @@ Try to keep borrowed code in separate modules (separate files) from your own cod
 
 **Functional style:**
 Your implementation should use only functional aspects of the language 
-(modules List, Map, Set, and String should be your main data structure, together with varaint types, tuples, and immutable records).
+(modules List, Map, Set, and String should be your main data structure, together with variant types, tuples, and immutable records).
 You still can use libraries that work in the imperative fashion with hidden mutable state, however your own code should stay functional or mostly functional.
 
 <center><img src="https://i.imgur.com/pA52XaK.png" /></center>
@@ -150,7 +150,7 @@ While .mli files are not always very easy to read, they can be very useful, espe
 
 #### How to compile code that is using a library
 
-Generally, to compile your program that is using a library, a good strategy is to consult the examples provided by the library iteself.
+Generally, to compile your program that is using a library, a good strategy is to consult the examples provided by the library itself.
 
 However, most of the time, the `ocamlfind` works. Especially if the library is installed with opam,
 then adding the library is only a matter of adding options `-package NAME -linkpkg` to the `ocamlfind` command (here replace `NAME` with the name of the library 
