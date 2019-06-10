@@ -101,10 +101,10 @@ built-in module [Graphics](https://caml.inria.fr/pub/docs/manual-ocaml/libref/Gr
 
 ### Example projects from Spring 2019:
 
-- https://github.com/BrandonFoster/csci-49201-01-simple-interpreter-in-ocaml (Interpreter for a subset of Lisp)
-- https://github.com/jengajenga/Tour-Scheduler (Scheduler application)
-- https://github.com/ocamlca/Cellular-Automaton-Ocaml (Cellular automata)
-- https://github.com/buhotech/OGalaga (ReasonML game)
+- [Interpreter for a subset of Lisp](https://github.com/BrandonFoster/csci-49201-01-simple-interpreter-in-ocaml)
+- [Scheduler application](https://github.com/jengajenga/Tour-Scheduler)
+- [Cellular automata](https://github.com/ocamlca/Cellular-Automaton-Ocaml)
+- [ReasonML game](https://github.com/buhotech/OGalaga)
 
 ### Grading criteria
 
