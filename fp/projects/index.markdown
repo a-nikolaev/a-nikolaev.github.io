@@ -3,6 +3,7 @@ layout: page
 title: CSCI 49201 - Functional Programming in OCaml - Projects
 ---
 
+<!--
 ## Presentations Schedule
 
 ### May 2
@@ -33,26 +34,25 @@ title: CSCI 49201 - Functional Programming in OCaml - Projects
 21. Jonathan Trachtenberg  -  Stock Tracker
 22. Hugh Leow  -  Spaceship Destroyer
 23. Garrison Shepard  -  Story Generator
-
+-->
 
 ## Projects
 
-In the second half of the semester, you will work on a project, which will replace regular weekly homeworks.
+In the second half of this course, you will work on a project, which will replace regular homeworks.
 
 ### Timeline:
-- March 7 - **Choose a project topic**.
-- March 14 - **First draft of your project proposal**: 3-5 paragraphs description of the project goal, scope, and implementation plan.
-- March 28 - **Finalized project proposal**: Have a proof of concept. Create a Github repository and send me its link.
-- May - **Project presentations** (quick presentation in class and a 2-3 page report).
+- June 12 - **Choose a project topic**.
+- June 17 - **First draft of your project proposal**: 3-5 paragraphs description of the project goal, scope, and implementation plan.
+- June 24 - **Finalized project proposal**: Have a proof of concept. Create a Github repository and send me its link.
+- July 8 - **Project presentations** (quick presentation in class and a 2-3 page report).
 
 The topic for your project must be discussed and aproved before you start working on it.
 
-Projects can be either individual or implemented by two-person teams.  
+All projects are individual.
 
 **Github repo:**
 You will have to create a Github repository for your project, so your progress can be tracked.
-Update the repository regularly, at least once a week.
-For two-person projects, both participants should commit to the project (coordinate your work well).
+Update the repository regularly, at least twice a week.
 If your repository remains dormant until the last few days, when you suddenly upload everything,
 you may get a low grade for the project. 
 
@@ -79,9 +79,9 @@ Some possible specific topics (if you don't have any particular idea in mind):
 - Huffman coding for file compression (there is a functional tree construction algorithm at its core).
 - Markdown to HTML converter (also can design your own markup language).
 - Scientific simulation or mathematical modeling for Physics/Chemistry/Biology.
-- Generating diagrams or images using vector graphics library Cairo (package [cairo2](https://github.com/Chris00/ocaml-cairo)). 
+- Procedural art or other image generation using vector graphics library Cairo (package [cairo2](https://github.com/Chris00/ocaml-cairo)). 
 Take a look at [Context Free Art](https://www.contextfreeart.org/index.html) for examples of recursive declarative images.
-- Simple data plotting software similar to [gnuplot](http://www.gnuplot.info/) or [matplotlib](https://matplotlib.org/),
+- Develop a simple data plotting software similar to [gnuplot](http://www.gnuplot.info/) or [matplotlib](https://matplotlib.org/),
 using library Cairo (package [cairo2](https://github.com/Chris00/ocaml-cairo)) for output.
 - Declarative terminal graphics with package [notty](https://github.com/pqwy/notty).
 - Simple video game (using package [tsdl](https://erratique.ch/software/tsdl) or 
@@ -98,6 +98,13 @@ built-in module [Graphics](https://caml.inria.fr/pub/docs/manual-ocaml/libref/Gr
 - Lightweight concurrency in OCaml using [Lwt](https://github.com/ocsigen/lwt).
 - A Unix utility such as `tree` or `grep`. Should implement command-line flags and options. Use modules Sys and Unix.    
 - Of course, you are encouraged to come up with your own topic, that would be even better. 
+
+### Example projects from Spring 2019:
+
+- https://github.com/BrandonFoster/csci-49201-01-simple-interpreter-in-ocaml (Interpreter for a subset of Lisp)
+- https://github.com/jengajenga/Tour-Scheduler (Scheduler application)
+- https://github.com/ocamlca/Cellular-Automaton-Ocaml (Cellular automata)
+- https://github.com/buhotech/OGalaga (ReasonML game)
 
 ### Grading criteria
 
