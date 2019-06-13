@@ -21,9 +21,9 @@ Office: HN 1000C
 * [Lists. Pattern matching. Local name binding](lec/2/) (Reading: 3.1 - 3.5, 2.13).
 * [Common built-in types. Printing. Semicolon. Tuples. Accumulators](lec/3/) (Reading: 2.15, 3.15)
 * [Option type. Tail call optimization. Map, filter, iter](lec/4) (Reading: 3.21, 3.5, 4.1-4.4)
+* [Variant types. Reading a file. MiniMake](lec/5) (Reading: 3.12, 3.23, 3.24)
 
 <!--
-* [Variant types. Reading a file. MiniMake](lec/5) (Reading: 3.12, 3.23, 3.24)
 * [Currying. Pipeline operator. Fold](lec/6) (Reading: 2.11, 4.13, 4.12, 2.12, 4.5-4.9)
 * [Records and modules](lec/7) (Reading: 3.14, 5.1-5.6)
 * [Recursive variant types. Binary search trees](lec/8) (Reading: 3.32, 3.31, 8.5)
