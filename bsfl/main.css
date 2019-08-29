@@ -1,0 +1,160 @@
+
+main { font-family: 'Rubik', sans-serif }
+
+* {
+  box-sizing: border-box;
+}
+
+.col-half {width: 8.33333333333333%;}
+.col-1 {width: 16.66666666666666%;}
+.col-2 {width: 33.33333333333333%;}
+.col-3 {width: 50%;}
+.col-4 {width: 66.66666666666667%;}
+.col-5 {width: 83.33333333333333%;}
+.col-6 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  padding-top: 0.45em;
+  padding-bottom: 0.45em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+
+.stadium {
+  /* font-size:90%; */
+  width:40em;
+  float: left;
+}
+
+.field {
+  width: 100%;
+  background-color: #CFA; 
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.bench {
+  width: 100%;
+  background-color: #CFA; 
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.tgt { 
+  border-color: #0001;  
+  border-style: solid; 
+  border-width: 0.5em;
+  min-height: 5.8em; 
+  text-align:center;
+  border-radius: 1em;
+}
+
+.spot {
+  border-color: #0003 !important;
+  background-color: #0001 !important;
+}
+
+.player {
+  width: 3.5em;
+  height: 3.5em;
+  cursor: move;
+
+  display: inline-block;
+
+  z-index: 1;
+}
+
+svg {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+div.loc {
+  position:absolute;
+  z-index:0;
+  font-size:100%;
+  color: #0004;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.addon {
+/*  border-color: #0001; 
+  border-style: solid; 
+  border-width: 0.5em; */
+  min-height: 5.9em; 
+  text-align:center;
+  border-radius: 1em;
+}
+
+#prediction {
+}
+
+/*
+button{
+  margin: 0;
+  border: none;
+  border-radius: 0.3em;
+  height: 2em;
+  display: inline-block;
+  background-color: #eee;
+  min-width:10em;
+}
+*/
+
+.tab-button:hover{
+  background-color: #EFC;
+  box-shadow: none;
+}
+
+.tab-button.selected{
+  background-color: #CFA
+}
+
+.tab-button.selected:hover{
+  background-color: #DFB
+}
+
+section.tab{
+  border-top:2px solid #CFA;
+  padding-top: 1em;
+}
+
+.animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.animate-opacity{animation:opac 0.5s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.animate-top{position:relative;animation:animatetop 0.2s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.animate-left{position:relative;animation:animateleft 0.2s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+
+div.money{
+  display: inline-block; width:4em; text-align:center; background-color:#bea;
+}
+
+div.money span.dollar{
+  color:#efe;
+}
+
+button div.money{
+  display: inline-block; width:4em; text-align:center; background-color:#bea4;
+  color: #000;
+}
+
+button div.money span.dollar{
+  color:#efe;
+}

@@ -20,15 +20,36 @@ function team_make_empty() {
 
   return team;
 }
-  
-function team_make_random(id0) {
+
+function team_add_player(team, pl, loc) {
+  let id = parseInt(pl.id)
+  team.players.set(id, pl);
+  team.player_loc.set(id, loc);
+  team.place.get(loc).add(id);
+  if (loc_is_pitch(loc)) {
+    team.count_on_pitch += 1;
+  }
+}
+
+function team_remove_player_by_id(team, id) {
+  let loc = team.player_loc.get(id);
+  team.players.delete(id);
+  team.player_loc.delete(id);
+  team.place.get(loc).delete(id);
+  if (loc_is_pitch(loc)) {
+    team.count_on_pitch -= 1;
+  }
+}
+
+function team_make_random() {
   const init_num_players = max_players_on_pitch + 0;
   
   var team = team_make_empty();
       
   for (var i = 0; i < init_num_players; i++) {
-    var id = id0 + i;
-    var pl = player_make(id);
+    var pl = Player.make();
+    Player.assign_unique_id(pl);
+    let id = parseInt(pl.id)
     team.players.set(id, pl);
   }
 
@@ -40,37 +61,37 @@ function team_make_random(id0) {
 }
     
 function team_mean_player(team) {
-  var pl_sum = player_zero();
+  var pl_sum = Player.zero();
 
   if (team.players.size > 0) {
     for (var [id, pl] of team.players) {
-      pl_sum = player_sum(pl_sum, pl);
+      pl_sum = Player.sum(pl_sum, pl);
     }
-    return player_mult(pl_sum, 1.0 / team.players.size);
+    return Player.mult(pl_sum, 1.0 / team.players.size);
   }
   else
     return pl_sum;
 }
 
 function team_mean_player_on_pitch(team) {
-  var pl_sum = player_zero();
+  var pl_sum = Player.zero();
 
   if (team.count_on_pitch > 0) {
     var num = 0;
     for (var [id, pl] of team.players) {
       if (loc_is_pitch(team.player_loc.get(id))) {
-        pl_sum = player_sum(pl_sum, pl);
+        pl_sum = Player.sum(pl_sum, pl);
         num += 1;
       }
     }
-    return player_mult(pl_sum, 1.0 / num);
+    return Player.mult(pl_sum, 1.0 / num);
   }
   else
     return pl_sum;
 }
 
 
-function team_mean_team(team, id0=-max_players_on_pitch) {
+function team_mean_team(team) {
   var pl_base = team_mean_player_on_pitch(team);
 
   var h = 0.5 * (pl_base.win + pl_base.pas);
@@ -98,14 +119,14 @@ function team_mean_team(team, id0=-max_players_on_pitch) {
     return new_team;
   }
 
+  var id0 = -1;
   // ratio=0: defense
   // ratio=1: attack
-  var id = id0;
   function gen(ratio) {
     let def = abs_min + diff*(1-ratio);
     let atk = abs_min + diff*ratio;
-    let pl = {win: h, pas: h, atk: atk, def: def, id: id};
-    id += 1;
+    let pl = {win: h, pas: h, atk: atk, def: def, id: id0};
+    id0 -= 1;
     return pl;
   }
 
@@ -137,7 +158,7 @@ function team_mean_team(team, id0=-max_players_on_pitch) {
   return new_team;
 }
 
-function team_make_good(id0) {
+function team_make_good() {
   var not_ready = true; 
   var attempts = 0; 
   
@@ -146,7 +167,7 @@ function team_make_good(id0) {
   while(not_ready) {
     attempts += 1;
 
-    team = team_make_random(id0);
+    team = team_make_random();
 
     var pl_mean = team_mean_player(team);
 
@@ -250,7 +271,32 @@ function team_expected(team) {
   return spots_expected( team_to_spots(team) );
 }
 
+// Sampling
+function team_sample_win(team, loc) {
+  var arr = [];
+  var sum = 0;
+  for (let [id, pl] of team.players) {
+    let pl_loc = team.player_loc.get(pl.id);
+    let spots = loc_to_spot(pl_loc);
+    for (let spot of spots){
+      if (spot === loc) {
+        arr.push([pl, pl.win]);
+        sum += pl.win;
+      }
+    }
+  }
+  for (var i = 0; i < arr.length; i++) {
+    arr[i][1] /= sum;
+  }
+  return sample_prob(arr);
+}
+
+
+
 var Team = {
+  add_player : team_add_player,
+  remove_player_by_id : team_remove_player_by_id,
+
   mean_player : team_mean_player,
   mean_team : team_mean_team,
   make_good : team_make_good,
@@ -258,5 +304,6 @@ var Team = {
   move_player : team_move_player,
   
   expected : team_expected,
+  sample_win : team_sample_win,
 }
 

@@ -3,13 +3,18 @@
 
 <head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8"> 
 
 <script src="raphael.min.js"></script>
 <script src="base.js"></script>
+<script src="names.js"></script>
 <script src="player.js"></script>
 <script src="team.js"></script>
+<script src="sim.js"></script>
+<script src="transfers.js"></script>
 <script src="main.js"></script>
+
 
 <link href="https://fonts.googleapis.com/css?family=Mali:500|Rubik&display=swap" rel="stylesheet"> 
 
@@ -18,178 +23,61 @@
 <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico&display=swap" rel="stylesheet"> 
 -->
 
-<style>
-
-html { font-family: 'Rubik', sans-serif }
-
-* {
-  box-sizing: border-box;
-}
-
-.col-half {width: 8.33333333333333%;}
-.col-1 {width: 16.66666666666666%;}
-.col-2 {width: 33.33333333333333%;}
-.col-3 {width: 50%;}
-.col-4 {width: 66.66666666666667%;}
-.col-5 {width: 83.33333333333333%;}
-.col-6 {width: 100%;}
-
-[class*="col-"] {
-  float: left;
-  padding-top: 0.45em;
-  padding-bottom: 0.45em;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
-}
-
-.stadium {
-  font-size:90%;
-  width:40em;
-  float: left;
-}
-
-.field {
-  width: 100%;
-  background-color: #CFA;
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.bench {
-  width: 100%;
-  background-color: #CFA;
-}
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.tgt { 
-  border-color: #0001;  
-  border-style: solid; 
-  border-width: 0.5em;
-  min-height: 5.9em; 
-  text-align:center;
-  border-radius: 1em;
-}
-
-.spot {
-  border-color: #0003 !important;
-  background-color: #0001 !important;
-}
-
-.player {
-  width: 3.5em;
-  height: 3.5em;
-  cursor: move;
-
-  display: inline-block;
-
-  z-index: 1;
-}
-
-div.loc {
-  position:absolute;
-  z-index:0;
-  font-size:100%;
-  color: #0004;
-  user-select: none;
-}
-
-.addon {
-/*  border-color: #0001; 
-  border-style: solid; 
-  border-width: 0.5em; */
-  min-height: 5.9em; 
-  text-align:center;
-  border-radius: 1em;
-}
-
-#prediction {
-}
+<link rel="stylesheet" type="text/css" href="w3.css">
+<link rel="stylesheet" type="text/css" href="main.css">
 
 
-</style>
 </head>
 
 <body onload="init()">
 
-  <div class="stadium">
-    <div class="col-6 tgt bench" id="target-Bench" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">Bench</div> <br /> </div>
+  <main>
+    <nav>
+      <button class="tab-button w3-btn selected" onclick="open_tab(event, 'tab-team')">&#9917; Tactics</button>
+      <button class="tab-button w3-btn" onclick="open_tab(event, 'tab-transfers')">&#8645; Transfers</button>
+      <button class="tab-button w3-btn" onclick="open_tab(event, 'tab-help')">? Help</button>
+    </nav> 
 
-    <div class="col-6"></div>
-
-    <div class="field">  
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col-2 tgt spot" id="target-CF" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">CF</div> </div>
-        <div class="col-2"></div>
-      </div>
-
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-1 tgt" id="target-LW" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">LW</div> </div>
-        <div class="col-2 tgt" id="target-AM" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">AM</div> </div>
-        <div class="col-1 tgt" id="target-RW" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">RW</div> </div>
-        <div class="col-1"></div>
-      </div>
-
-      <div class="row">
-        <div class="col-1 tgt spot" id="target-LM" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">LM</div> </div>
-        <div class="col-1 tgt" id="target-CML" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">CML</div> </div>
-        <div class="col-2 tgt spot" id="target-CM" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">CM</div> </div>
-        <div class="col-1 tgt" id="target-CMR" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">CMR</div> </div>
-        <div class="col-1 tgt spot" id="target-RM" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">RM</div> </div>
-      </div>
-
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-1 tgt" id="target-LB" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">LB</div> </div>
-        <div class="col-2 tgt" id="target-DM" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">DM</div> </div>
-        <div class="col-1 tgt" id="target-RB" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">RB</div> </div>
-        <div class="col-1"></div>
-      </div>
-      
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col-2 tgt spot" id="target-CB" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">CB</div> </div>
-        <div class="col-2"></div>
-      </div>
-      
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col-half"></div>
-        <div class="col-1 tgt" id="target-GK" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"> <div class="loc">GK</div> </div>
-        <div class="col-3"></div>
-      </div>
-    </div>
-  </div>
-  <div class = "addon">
-    <h3> Predicted Attack / Defense flow diagram: </h3>
-    <div id = "prediction"> </div>
+    <!-- 1 -->
     
-    <p> <span style="color: #F60">Orange arrows</span>: Attack flow. </p>
-    <p> <span style="color: #999">Grey arrows</span>: Intercepted balls. </p>
-    <p> <span style="color: #0AF">Blue arrows</span>: Shots blocked by the opponent's defenders and the goalkeeper. </p>
-  </div>
+    <section id='tab-team' class='tab animate-opacity'>
+      <div id='stad1'></div>
 
-  <div style="clear:both; padding: 2em;">
-    <h3> Player stats and passing explained</h3>
-    <p> Each player has four stats: 
-        <ul>  
-          <li><strong>atk</strong>: attack, shooting</li> 
-          <li><strong>def</strong>: defense, blocking opponent's shots</li>
-          <li><strong>win</strong>: ball winning, interception</li>
-          <li><strong>pas</strong>: passing, moving the ball forward</li>
-        </ul>
-    </p>
+      <div class = "addon">
+        <h3> Predicted Attack / Defense flow diagram: </h3>
+        <div id = "prediction"> </div>
+        
+        <p> <span style="color: #F60">Orange arrows</span>: Attack flow. </p>
+        <p> <span style="color: #999">Grey arrows</span>: Intercepted balls. </p>
+        <p> <span style="color: #0AF">Blue arrows</span>: Shots blocked by the opponent's defenders and the goalkeeper. </p>
+      </div>
+      <div class = "addon" id = "log" style="width:30%;">
+      </div>
+    </section>
+    
+    <!-- 2 -->
+    
+    <section id='tab-transfers' class='tab animate-opacity' style="display:none">
+      <div id='transfers'>
+      </div>
+    </section>
+    
+    <!-- 3 -->
 
-    <img src="https://i.imgur.com/WjGUP3y.png" />
-  </div>
+    <section id='tab-help' class='tab animate-opacity' style="display:none">
+      <h3> Player stats and passing explained</h3>
+      <p> Each player has four stats: 
+          <ul>  
+            <li><strong>atk</strong>: attack, shooting</li> 
+            <li><strong>def</strong>: defense, blocking opponent's shots</li>
+            <li><strong>win</strong>: ball winning, interception</li>
+            <li><strong>pas</strong>: passing, moving the ball forward</li>
+          </ul>
+      </p>
+      <img src="https://i.imgur.com/WjGUP3y.png" />
+    </section>
 
+  </main>
 
 </body>
 </html>
