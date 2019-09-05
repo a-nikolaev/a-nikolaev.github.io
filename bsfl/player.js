@@ -38,7 +38,7 @@ function player_make() {
   let x_w = 3; // deterministic to random ratio of the player's cost
 
   let value = rounding(sum*sum * 1000 * (1.0/x_v) * (x_v + bounded_std_normal(-1, 1)));
-  let wage = rounding(sum*sum*sum     * (1.0/x_w) * (x_w + bounded_std_normal(-1, 1)));
+  let wage = rounding(sum*sum*sum*sum * 0.1 * (1.0/x_w) * (x_w + bounded_std_normal(-1, 1)));
 
   let price = rounding(value * 1.1 * (2 + bounded_std_normal(-1, 1)));
 

@@ -7,16 +7,81 @@
 var state = {
   team : undefined,
   money : 1500000,
+  opponents : [],
 };
 
 function show_report(team) {
   let team2 = Team.mean_team(team);
   show_predictions(team, team2);
-  show_simulation(team, team2);
+  // show_simulation(team, team2);
+  show_sim_many(team, team2);
+}
+
+function show_league_simple(){
+  // test league
+  let t0 = Team.make_good();
+  let c1 = Club.make('100', Team.good_formation(t0, 100));
+  let c2 = Club.make('1000', Team.good_formation(t0, 1000));
+  let c3 = Club.make('10000', Team.good_formation(t0, 10000));
+
+  let qt0 = Team.quick_formation(t0);
+  let c4 = Club.make('Q-100', Team.good_formation(qt0, 100));
+  let c5 = Club.make('Q-1000', Team.good_formation(qt0, 1000));
+  let c6 = Club.make('Q-10000', Team.good_formation(qt0, 10000));
+
+  let clubs = [c1, c2, c3, c4, c5, c6];
+  let n = clubs.length;
+
+  for(var trial = 1; trial <= 5; trial++){ 
+    console.log ("---- Season ", trial, " ----");
+
+    let points = [];
+    for(let i = 0; i < n; i++) {
+      points.push(0);
+    }
+
+    for(let i = 0; i < n; i++) {
+      for(let j = 0; j < n; j++) {
+        if (i !== j) {
+          let res = Sim.simulate_match([clubs[i].team, clubs[j].team]);
+          let gi = res[0];
+          let gj = res[1];
+          
+          if (gi > gj) {
+            points[i] += 3;
+          }
+          else if (gi < gj) {
+            points[j] += 3;
+          }
+          else {
+            points[i] += 1;
+            points[j] += 1;
+          }
+        }
+      }
+    }
+
+    console.log(points);
+
+    let arr = [];
+    for(let i = 0; i < n; i++) {
+      arr.push([points[i], clubs[i]]);
+    }
+
+    arr.sort(function(a,b){return b[0] - a[0];});
+
+    for(let i = 0; i < n; i++) {
+      console.log(i, arr[i][1].name, arr[i][0]);
+    }
+  }
 }
 
 function init() {
-  state.team = Team.make_good(0);
+  state.team = Team.make_good();
+
+  state.team = Team.good_formation(Team.quick_formation(state.team));
+  //state.team = Team.quick_formation(state.team);
+
   make_pitch('stad1', 'some1', state.team);
 
   init_buy_transfers(state);
@@ -24,6 +89,36 @@ function init() {
   show_transfers(state);
 
   show_report(state.team);
+
+  // add opponents
+  for (var i=0; i<7; i++) {
+    let power = 1.0 + 1.0 * Math.random();
+
+    let t0 = Team.make_good(power);
+    let qt0 = Team.quick_formation(t0);
+    
+    let time = 1 + random_int(3000);
+
+    let gqt0 = Team.good_formation(qt0, time);
+    let mean_pl = Team.mean_player(gqt0);
+    var c = Club.make(`${Math.round(11.0 * Player.total(mean_pl))}-Q-${time}`, gqt0);
+
+    state.opponents.push(c);
+  }
+
+  document.onkeyup = function(e) {
+    switch (e.which) {
+      case 49: 
+        open_tab(event, 'tab-team');
+        break;
+      case 50:
+        open_tab(event, 'tab-transfers');
+        break;
+      case 51:
+        open_tab(event, 'tab-help');
+        break;
+    }
+  }
 }
 
 function show_predictions(team1, team2) {
@@ -68,6 +163,116 @@ function show_simulation(team1, team2) {
   }
 }
 
+function show_sim_many(team1, team2) {  
+  var log_div = document.getElementById("log");
+  log_div.innerHTML = '';
+
+  var d1, d2, d3;
+  make_child(log_div, 'div', {'class':'w3-cell-row'}, function(d) {
+    make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
+      d.innerHTML = 'wins';
+      d1 = d;
+    });
+    make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
+      d.innerHTML = 'draws';
+      d2 = d;
+    });
+    make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
+      d.innerHTML = 'losses';
+      d3 = d;
+    });
+  });
+
+  for (var i = 0; i < 12; i++) { 
+    let res = Sim.simulate_median_match([team1, team2]);
+    let g0 = res[0];
+    let g1 = res[1];
+
+    var dcell = d2;
+    let score = `${g0}-${g1}`;
+    if (g0 > g1) {
+      dcell = d1;
+    }
+    else if (g0 < g1) {
+      dcell = d3;
+    }
+
+    make_child(dcell, 'div', {}, function(d){
+      d.innerHTML = score;
+    })
+  }
+}
+
+function show_league_in_log(le) {
+  let arr = [];
+  let n = le.n;
+  for(let i = 0; i < n; i++) {
+    arr.push([le.points[i], le.clubs[i]]);
+  }
+
+  arr.sort(function(a,b){return b[0] - a[0];});
+
+  var log_div = document.getElementById("log");
+  log_div.innerHTML = '';
+
+  make_child(log_div, 'table', {'class':'w3-table-all'}, function(d) {
+    make_child(d, 'tr', {'class':''}, function(d) {
+      make_child(d, 'th', {'class':''}, function(d){
+        d.innerHTML= 'Place';
+      });
+      make_child(d, 'th', {'class':''}, function(d){
+        d.innerHTML= 'Name';
+      });
+      make_child(d, 'th', {'class':''}, function(d){
+        d.innerHTML= 'Points';
+      });
+    });
+
+    for(let i = 0; i < n; i++) {
+      make_child(d, 'tr', {'class':''}, function(d) {
+        make_child(d, 'td', {'class':''}, function(d){
+          d.innerHTML= `${i}`;
+        });
+        make_child(d, 'td', {'class':''}, function(d){
+          d.innerHTML= `${arr[i][1].name}`;
+        });
+        make_child(d, 'td', {'class':''}, function(d){
+          d.innerHTML= `${arr[i][0]}`;
+        });
+      });
+    }
+  });
+}
+
+function show_sim_league(state) {
+  let clubs_arr = state.opponents.slice(0);
+  clubs_arr.push(Club.make('Me', state.team));
+  let le = League.make(clubs_arr.length, clubs_arr);
+
+  League.simulate_season(le);
+  show_league_in_log(le);
+  return le;
+}
+
+function play_season(state) {
+
+  if (state.money < 0.0) {
+    return;
+  }
+
+  let le = show_sim_league(state);
+  var pts = 0;
+  for (let i = 0; i < le.n; i++) {
+    if (le.clubs[i].name == 'Me') {
+      pts = le.points[i];
+    }
+  }
+  
+  state.money = rounding(state.money + pts * 100000 - Team.all_wages(state.team));
+  init_buy_transfers(state);
+  show_transfers(state);
+}
+
 function open_tab(ev, tab_id) {
   var i;
   var x = document.getElementsByClassName("tab");
@@ -81,86 +286,6 @@ function open_tab(ev, tab_id) {
     tablinks[i].className = tablinks[i].className.replace(" selected", "");
   }
   ev.currentTarget.className += " selected";
-}
-
-function estimate_lineup_expected(e, eop){
-  function or_zero(x) {
-    if (isNaN(x)) 
-      return 0;
-    else
-      return x;
-  }
-
-  // CB
-  var x_cb = e.get(Loc.CB).win;
-  if (x_cb <= 0){
-    x_cb = 0;
-  }
-
-  // LM, CM, RM
-  var wgt_lm = 3;
-  var wgt_cm = 4;
-  var wgt_rm = 3;
-  var wgt_sum = wgt_lm + wgt_cm + wgt_rm;
-
-  var cb_to_lm = x_cb * or_zero(wgt_lm / wgt_sum);
-  var cb_to_cm = x_cb * or_zero(wgt_cm / wgt_sum);
-  var cb_to_rm = x_cb * or_zero(wgt_rm / wgt_sum);
-
-  var x_lm = cb_to_lm * or_zero((e.get(Loc.CB).pas + e.get(Loc.LM).win) / (e.get(Loc.CB).pas + e.get(Loc.LM).win + eop.get(Loc.RM).win));
-  var loss_lm = cb_to_lm - x_lm;
-  
-  var x_cm = cb_to_cm * or_zero((e.get(Loc.CB).pas + e.get(Loc.CM).win) / (e.get(Loc.CB).pas + e.get(Loc.CM).win + eop.get(Loc.CM).win));
-  var loss_cm = cb_to_cm - x_cm;
-  
-  var x_rm = cb_to_rm * or_zero((e.get(Loc.CB).pas + e.get(Loc.RM).win) / (e.get(Loc.CB).pas + e.get(Loc.RM).win + eop.get(Loc.LM).win));
-  var loss_rm = cb_to_rm - x_rm;
-
-  x_lm += e.get(Loc.LM).win;
-  x_cm += e.get(Loc.CM).win;
-  x_rm += e.get(Loc.RM).win;
-
-  // CF
-  var lm_to_cf = x_lm;
-  var cm_to_cf = x_cm;
-  var rm_to_cf = x_rm;
-  var got_from_lm = lm_to_cf * or_zero((e.get(Loc.LM).pas + e.get(Loc.CF).win) / (e.get(Loc.LM).pas + e.get(Loc.CF).win + eop.get(Loc.CB).win));
-  var got_from_cm = cm_to_cf * or_zero((e.get(Loc.CM).pas + e.get(Loc.CF).win) / (e.get(Loc.CM).pas + e.get(Loc.CF).win + eop.get(Loc.CB).win));
-  var got_from_rm = rm_to_cf * or_zero((e.get(Loc.RM).pas + e.get(Loc.CF).win) / (e.get(Loc.RM).pas + e.get(Loc.CF).win + eop.get(Loc.CB).win));
-
-  var before_block_cf = got_from_lm + got_from_cm + got_from_rm;
-  var loss_cf = (lm_to_cf + cm_to_cf + rm_to_cf) - before_block_cf;
-
-  // Shoot - Block
-  var x_cf = before_block_cf * or_zero((e.get(Loc.CF).atk) / (e.get(Loc.CF).atk + eop.get(Loc.CB).def));
-  var block_cf = before_block_cf - x_cf;
-
-  // Shoot - Goalkeeper
-  var x_goal = x_cf * or_zero((e.get(Loc.CF).atk) / (e.get(Loc.CF).atk + eop.get(Loc.GK).def));
-  var block_goal = x_cf - x_goal;
-
-  let ans = {
-    'cb_to_lm': cb_to_lm,
-    'cb_to_cm': cb_to_cm,
-    'cb_to_rm': cb_to_rm,
-    
-    'loss_lm': loss_lm,
-    'loss_cm': loss_cm,
-    'loss_rm': loss_rm,
-    
-    'lm_to_cf': lm_to_cf,
-    'cm_to_cf': cm_to_cf,
-    'rm_to_cf': rm_to_cf,
-    
-    'loss_cf': loss_cf,
-    'block_cf': block_cf,
-    'x_cf': x_cf,
-    
-    'block_goal': block_goal,
-    'x_goal': x_goal,
-  };
-
-  return ans;
 }
 
 function add_prediction(div, e1, e2, reverse) {
@@ -177,12 +302,12 @@ function add_prediction(div, e1, e2, reverse) {
   let loc_after_goal = -2
 
   var coords = new Map([
-    [Loc.GK, [0,  35 * reverse]], 
-    [Loc.CB, [0,  20 * reverse]],
-    [Loc.LM, [-20, 0 * reverse]],
-    [Loc.CM, [0,   0 * reverse]],
-    [Loc.RM, [20,  0 * reverse]],
-    [Loc.CF, [0, -20 * reverse]],
+    [Loc.GK, [0,          35 * reverse]], 
+    [Loc.CB, [0,          20 * reverse]],
+    [Loc.LM, [-20*reverse, 0 * reverse]],
+    [Loc.CM, [0,           0 * reverse]],
+    [Loc.RM, [20*reverse,  0 * reverse]],
+    [Loc.CF, [0,         -20 * reverse]],
     [loc_goal, [0, -35 * reverse]],
     [loc_after_goal, [0, -50 * reverse]]
   ]);
@@ -218,7 +343,7 @@ function add_prediction(div, e1, e2, reverse) {
 
   // draw expected team
   function draw(e, eop) {
-    let z = estimate_lineup_expected(e, eop);    
+    let z = Team.estimate_lineup_expected(e, eop);    
 
     arrow(Loc.CB, Loc.LM, z.cb_to_lm);
     arrow(Loc.CB, Loc.CM, z.cb_to_cm);
@@ -279,7 +404,7 @@ function gen_drop_handler(uname, team) {
     var loc_to = loc_of_str(target.id.split('-')[1]);
 
     var loc_from = team.player_loc.get(player_id);
-    console.log(player_id, loc_to, loc_from);
+    // console.log(player_id, loc_to, loc_from);
 
     if (target !== null && Team.allow_move(team, player_id, loc_from, loc_to)) {
       Team.move_player(team, player_id, loc_from, loc_to);

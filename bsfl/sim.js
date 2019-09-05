@@ -35,6 +35,7 @@ function loc_to_s(ini, loc) {
 
 
 function sim_simulate_match(t) {
+
   // Given the real team tr
   var tex = [Team.expected(t[0]), Team.expected(t[1])]; // Expected 
 
@@ -74,11 +75,10 @@ function sim_simulate_match(t) {
     let tgt_exi = tex[ini].get(tgt_spot);
     let tgt_exo = tex[1-ini].get(opposite(tgt_spot));
 
-    let atk = pl.pas + tgt_exi.win;
+    let atk = Model.combo(pl.pas, tgt_exi.win);
     let def = tgt_exo.win;
 
-    let x = Math.random() * (atk + def);
-    if (x < atk) { // ball moved forward
+    if (Model.sample(atk, def)) { // ball moved forward
       say(`passes to ${loc_to_s(ini, tgt_spot)}`);
       spot = tgt_spot;
     }
@@ -109,10 +109,8 @@ function sim_simulate_match(t) {
     let def_cb = excb.def;
     let def_gk = exgk.def;
 
-    let x1 = Math.random() * (atk + def_cb);
-    if (x1 < atk) { // not blocked by defenders
-      let x2 = Math.random() * (atk + def_gk);
-      if (x2 < atk) { // scored
+    if (Model.sample(atk, def_cb)) { // not blocked by defenders
+      if (Model.sample(atk, def_gk)) { // scored
         g[ini] += 1;
         say(`GOAL! ${g[0]}-${g[1]}`);
         ini = 1 - ini;
@@ -144,7 +142,18 @@ function sim_simulate_match(t) {
   return [g[0], g[1], events];
 }
 
+function sim_simulate_median_match(t, num=5) {
+  var arr = [];
+  for(let i = 0; i < num; i++) {
+    arr.push(sim_simulate_match(t));
+  }
+  arr.sort(function(a,b){ return (a[0]-a[1]) - (b[0]-b[1]); });
+
+  return arr[Math.floor(num/2)];
+}
+
 var Sim = {
   simulate_match : sim_simulate_match,
+  simulate_median_match : sim_simulate_median_match,
 }
 

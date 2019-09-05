@@ -90,6 +90,13 @@ function team_mean_player_on_pitch(team) {
     return pl_sum;
 }
 
+function team_all_wages(team) {
+  var sum = 0;
+  for(let pl of team.players.values()) {
+    sum += pl.wage;
+  }
+  return sum;
+}
 
 function team_mean_team(team) {
   var pl_base = team_mean_player_on_pitch(team);
@@ -158,7 +165,7 @@ function team_mean_team(team) {
   return new_team;
 }
 
-function team_make_good() {
+function team_make_good(factor = 1) {
   var not_ready = true; 
   var attempts = 0; 
   
@@ -172,14 +179,14 @@ function team_make_good() {
     var pl_mean = team_mean_player(team);
 
     function is_good(x) {
-      return x > 5.5 && x < 6;
+      return 5.5 < x && x < 6*factor;
     }
 
     if (is_good(pl_mean.atk) && is_good(pl_mean.win) && is_good(pl_mean.pas) && is_good(pl_mean.def)) {
       not_ready = false;
     }
     // PRINTING ATTEMPTS
-    console.log(attempts, pl_mean.atk, pl_mean.win, pl_mean.pas, pl_mean.def);
+    // console.log(attempts, pl_mean.atk, pl_mean.win, pl_mean.pas, pl_mean.def);
   }
   return team;
 }
@@ -271,6 +278,97 @@ function team_expected(team) {
   return spots_expected( team_to_spots(team) );
 }
 
+function team_estimate_lineup_expected(e, eop){
+
+  function xy(x, y) {
+    return Model.mean(x, y);
+  }
+  function xxy(x1, x2, y) {
+    return Model.mean(Model.combo(x1, x2), y);
+  }
+
+  function or_zero(x) {
+    if (isNaN(x)) 
+      return 0;
+    else
+      return x;
+  }
+
+  // CB
+  var x_cb = 50.0 * ( 
+    0.3 * or_zero(xy(e.get(Loc.CB).win, Model.combo(eop.get(Loc.CF).win, eop.get(Loc.LM).pas))) + 
+    0.4 * or_zero(xy(e.get(Loc.CB).win, Model.combo(eop.get(Loc.CF).win, eop.get(Loc.CM).pas))) + 
+    0.3 * or_zero(xy(e.get(Loc.CB).win, Model.combo(eop.get(Loc.CF).win, eop.get(Loc.RM).pas))) ) ;
+  if (x_cb <= 0){
+    x_cb = 0;
+  }
+
+  // LM, CM, RM
+  var wgt_lm = 3;
+  var wgt_cm = 4;
+  var wgt_rm = 3;
+  var wgt_sum = wgt_lm + wgt_cm + wgt_rm;
+
+  var cb_to_lm = x_cb * or_zero(wgt_lm / wgt_sum);
+  var cb_to_cm = x_cb * or_zero(wgt_cm / wgt_sum);
+  var cb_to_rm = x_cb * or_zero(wgt_rm / wgt_sum);
+
+  var x_lm = cb_to_lm * or_zero(xxy(e.get(Loc.CB).pas, e.get(Loc.LM).win, eop.get(Loc.RM).win));
+  var loss_lm = cb_to_lm - x_lm;
+  
+  var x_cm = cb_to_cm * or_zero(xxy(e.get(Loc.CB).pas, e.get(Loc.CM).win, eop.get(Loc.CM).win));
+  var loss_cm = cb_to_cm - x_cm;
+  
+  var x_rm = cb_to_rm * or_zero(xxy(e.get(Loc.CB).pas, e.get(Loc.RM).win, eop.get(Loc.LM).win));
+  var loss_rm = cb_to_rm - x_rm;
+
+  x_lm += 30.0 * or_zero(xy(e.get(Loc.LM).win, Model.combo(eop.get(Loc.RM).win, eop.get(Loc.CB).pas)));
+  x_cm += 30.0 * or_zero(xy(e.get(Loc.CM).win, Model.combo(eop.get(Loc.CM).win, eop.get(Loc.CB).pas)));
+  x_rm += 30.0 * or_zero(xy(e.get(Loc.RM).win, Model.combo(eop.get(Loc.LM).win, eop.get(Loc.CB).pas)));
+
+  // CF
+  var lm_to_cf = x_lm;
+  var cm_to_cf = x_cm;
+  var rm_to_cf = x_rm;
+  var got_from_lm = lm_to_cf * or_zero(xxy(e.get(Loc.LM).pas, e.get(Loc.CF).win, eop.get(Loc.CB).win));
+  var got_from_cm = cm_to_cf * or_zero(xxy(e.get(Loc.CM).pas, e.get(Loc.CF).win, eop.get(Loc.CB).win));
+  var got_from_rm = rm_to_cf * or_zero(xxy(e.get(Loc.RM).pas, e.get(Loc.CF).win, eop.get(Loc.CB).win));
+
+  var before_block_cf = got_from_lm + got_from_cm + got_from_rm;
+  var loss_cf = (lm_to_cf + cm_to_cf + rm_to_cf) - before_block_cf;
+
+  // Shoot - Block
+  var x_cf = before_block_cf * or_zero(xy(e.get(Loc.CF).atk, eop.get(Loc.CB).def));
+  var block_cf = before_block_cf - x_cf;
+
+  // Shoot - Goalkeeper
+  var x_goal = x_cf * or_zero(xy(e.get(Loc.CF).atk, eop.get(Loc.GK).def));
+  var block_goal = x_cf - x_goal;
+
+  let ans = {
+    'cb_to_lm': cb_to_lm,
+    'cb_to_cm': cb_to_cm,
+    'cb_to_rm': cb_to_rm,
+    
+    'loss_lm': loss_lm,
+    'loss_cm': loss_cm,
+    'loss_rm': loss_rm,
+    
+    'lm_to_cf': lm_to_cf,
+    'cm_to_cf': cm_to_cf,
+    'rm_to_cf': rm_to_cf,
+    
+    'loss_cf': loss_cf,
+    'block_cf': block_cf,
+    'x_cf': x_cf,
+    
+    'block_goal': block_goal,
+    'x_goal': x_goal,
+  };
+
+  return ans;
+}
+
 // Sampling
 function team_sample_win(team, loc) {
   var arr = [];
@@ -291,12 +389,160 @@ function team_sample_win(team, loc) {
   return sample_prob(arr);
 }
 
+function team_clone(team_orig) {
+  var team = { 
+    players : new Map(team_orig.players),
+    player_loc : new Map(team_orig.player_loc),
+    count_on_pitch : team_orig.count_on_pitch,
+    place : new Map()
+  };
+  for(let [loc, set_orig] of team_orig.place) {
+    team.place.set(loc, new Set(set_orig));
+  }
+  return team;
+}
 
+// Random formation change
+function team_random_change(team_orig) {
+  let team = team_clone(team_orig);
+
+  // sample a player from the team
+  let pl_num = team.players.size;
+  let id = sample_from_iter(team.players.keys(), pl_num);
+  let src_loc = team.player_loc.get(id);
+
+  // sample dst location
+  let locs_arr = Object.values(Loc);
+  let dst_loc = parseInt(sample_from_iter(locs_arr, locs_arr.length));
+
+  if (! team_allow_move(team, id, src_loc, dst_loc)) {
+    let set_ids_at_dst = team.place.get(dst_loc);
+    let id2 = sample_from_iter(set_ids_at_dst, set_ids_at_dst.size);
+    team_move_player(team, id2, dst_loc, src_loc);
+  }
+  team_move_player(team, id, src_loc, dst_loc);
+  return team;
+}
+
+// Auto-formation
+
+function team_quick_formation(team0) {
+  let team = team_clone(team0);
+  let ids = Array.from(team.players.keys());
+  for (let id of ids){
+    team_move_player(team, id, team.player_loc.get(id), Loc.Bench);
+  }
+
+  let options = [
+    [[ 10, -1, -1, -2 ], [Loc.GK]], 
+    [[  4,  2,  2, -2 ], [Loc.CB]], 
+    [[  3,  2,  2, -1 ], [Loc.LB, Loc.DM, Loc.RB]], 
+    [[ -1,  4,  4, -1 ], [Loc.LM, Loc.CML, Loc.CM, Loc.CMR, Loc.RM]], 
+    [[ -1,  2,  2,  3 ], [Loc.LW, Loc.AM, Loc.RW]], 
+    [[ -1,  3, -1,  5 ], [Loc.CF]]
+  ];
+
+  var arr = [];
+
+  for (let id of ids) {
+    let pl = team.players.get(id);
+    for (let opt of options) {
+      let x = opt[0];
+      let locs = opt[1];
+      let score = pl.def * x[0] + pl.win * x[1] + pl.pas * x[2] + pl.atk * x[3];
+      arr.push([score, id, locs]);
+    }
+  }
+
+  arr.sort(function(a,b){return b[0] - a[0];});
+
+  for(let a of arr){
+    let score = a[0];
+    let id = a[1];
+    let locs = a[2];
+
+    if (team.player_loc.get(id) === Loc.Bench) {
+      let dst_loc = locs[random_int(locs.length)];
+
+      if (team_allow_move(team, id, Loc.Bench, dst_loc)) {
+        team_move_player(team, id, Loc.Bench, dst_loc);
+      }
+    }
+  }
+
+  return team;
+}
+
+function team_good_formation(team0, iter_num=2000) {
+
+  function team_strength(t) {
+    let e1 = Team.expected(t);
+    let e2 = Team.expected(team_mean_team(t));
+    
+    let z1 = team_estimate_lineup_expected(e1, e2);
+    let z2 = team_estimate_lineup_expected(e2, e1);
+    
+    let g1 = parseFloat(z1.x_goal);
+    let g2 = parseFloat(z2.x_goal);
+
+    if (g2 > 0) {
+      return (g1-g2)/g2 + t.count_on_pitch;
+    }
+    else {
+      return -1;
+    }
+  }
+
+  function team_symmetry(t){
+    let arr = [[Loc.LB, Loc.RB], [Loc.LM, Loc.RM], [Loc.CML, Loc.CMR], [Loc.LW, Loc.RW]];
+    
+    var ecc = 0.0;
+    var num = 0;
+    for(let e of arr) {
+      let l1 = e[0];
+      let l2 = e[1];
+      let n1 = t.place.get(l1).size;
+      let n2 = t.place.get(l2).size;
+      let decc = Math.abs(n1 - n2) / (n1 + n2 + 1);
+      ecc += decc;
+      num += 1; 
+    }
+
+    return (-ecc/num);
+  }
+
+  function team_eval(t) {
+    return team_strength(t) + 0.15 * team_symmetry(t);
+  }
+
+  var t1 = team_clone(team0);
+  var t2 = t1;
+  var score1 = team_eval(t1);
+  var score2 = score1;
+
+  // console.log(score1, score2);
+
+  for(var i = 0; i < iter_num; i++) {
+    t2 = team_random_change(t1);
+    score2 = team_eval(t2);
+
+    let temperature = 0.02 * (iter_num - i) / iter_num ;
+    if (score2 > score1 || Math.random() < Math.exp((score2-score1)/temperature)) {
+      t1 = t2;
+      score1 = score2;
+      // console.log(score1);
+    }
+  }
+
+  return t1;
+
+}
 
 var Team = {
   add_player : team_add_player,
   remove_player_by_id : team_remove_player_by_id,
 
+  all_wages : team_all_wages,
   mean_player : team_mean_player,
   mean_team : team_mean_team,
   make_good : team_make_good,
@@ -304,6 +550,12 @@ var Team = {
   move_player : team_move_player,
   
   expected : team_expected,
+  estimate_lineup_expected : team_estimate_lineup_expected,
+
   sample_win : team_sample_win,
+
+  random_change : team_random_change,
+  good_formation : team_good_formation,
+  quick_formation : team_quick_formation,
 }
 

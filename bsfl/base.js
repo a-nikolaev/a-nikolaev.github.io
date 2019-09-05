@@ -166,3 +166,18 @@ function rounding(x) {
   return round_to(x, 3);
 }
 
+// Uniform sampling from an iterator
+function sample_from_iter (iter, size) {
+  let j = random_int(size);
+  var x = undefined;
+  for(let y of iter) {
+    x = y;
+    if (j > 0) {
+      j -= 1;
+    }
+    else {
+      break;
+    }
+  }
+  return x;
+}

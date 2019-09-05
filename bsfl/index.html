@@ -10,15 +10,18 @@
 <script src="base.js"></script>
 <script src="names.js"></script>
 <script src="player.js"></script>
+<script src="model.js"></script>
 <script src="team.js"></script>
 <script src="sim.js"></script>
+<script src="club.js"></script>
+<script src="league.js"></script>
 <script src="transfers.js"></script>
 <script src="main.js"></script>
 
 
-<link href="https://fonts.googleapis.com/css?family=Mali:500|Rubik&display=swap" rel="stylesheet"> 
 
 <!--
+<link href="https://fonts.googleapis.com/css?family=Mali:500|Rubik&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico&display=swap" rel="stylesheet"> 
 -->
@@ -33,9 +36,12 @@
 
   <main>
     <nav>
-      <button class="tab-button w3-btn selected" onclick="open_tab(event, 'tab-team')">&#9917; Tactics</button>
-      <button class="tab-button w3-btn" onclick="open_tab(event, 'tab-transfers')">&#8645; Transfers</button>
-      <button class="tab-button w3-btn" onclick="open_tab(event, 'tab-help')">? Help</button>
+      <button class="tab-button w3-btn selected" onclick="open_tab(event, 'tab-team')">
+        &#9917; Tactics <span class='w3-border w3-light-grey w3-round'> &nbsp;1&nbsp; </span></button>
+      <button class="tab-button w3-btn" onclick="open_tab(event, 'tab-transfers')">
+        &#8645; Transfers <span class='w3-border w3-light-grey w3-round'> &nbsp;2&nbsp; </span></button>
+      <button class="tab-button w3-btn" onclick="open_tab(event, 'tab-help')">
+        ? Help <span class='w3-border w3-light-grey w3-round w3-shadow'>&nbsp;3&nbsp;</span></button>
     </nav> 
 
     <!-- 1 -->
@@ -51,6 +57,11 @@
         <p> <span style="color: #999">Grey arrows</span>: Intercepted balls. </p>
         <p> <span style="color: #0AF">Blue arrows</span>: Shots blocked by the opponent's defenders and the goalkeeper. </p>
       </div>
+      
+      <div class = 'w3-btn w3-blue' onclick='show_report(state.team);'> Simulate 12 matches </div>
+      
+      <div class = 'w3-btn w3-green' onclick='play_season(state);'> Play season </div>
+
       <div class = "addon" id = "log" style="width:30%;">
       </div>
     </section>
@@ -74,7 +85,7 @@
             <li><strong>pas</strong>: passing, moving the ball forward</li>
           </ul>
       </p>
-      <img src="https://i.imgur.com/WjGUP3y.png" />
+      <!-- <img src="https://i.imgur.com/WjGUP3y.png" /> -->
     </section>
 
   </main>

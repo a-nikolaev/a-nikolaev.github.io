@@ -6,6 +6,8 @@
 var transfers_buy = new Map();
 
 function init_buy_transfers(){
+  transfers_buy.clear();
+
   for(var i = 0; i < 20; i++) {
     let pl = Player.make();
     Player.assign_unique_id(pl);
@@ -91,8 +93,6 @@ function show_sells(top_div, state){
   make_child(top_div, 'div', {'class':'w3-container w3-half'}, function(d){
     for (let [id, pl] of sorted_players_arr) {
 
-      console.log(id, Player.total(pl), pl.lastname);
-
       add_player_entry(d, pl, function(d){
           make_child(d, 'button', {'class':'w3-btn w3-red w3-round'}, function(d){
             d.innerHTML = `Sell`;
@@ -110,8 +110,6 @@ function show_buys(top_div, state){
 
   make_child(top_div, 'div', {'class':'w3-container w3-half'}, function(d){
     for (let [id, pl] of transfers_buy) {
-
-      console.log(id, Player.total(pl), pl.lastname);
 
       add_player_entry(d, pl, function(d){
           let price = parseInt(pl.price);
@@ -135,6 +133,9 @@ function show_transfers(state) {
   top_div.innerHTML = '';
   make_child(top_div, 'div', {}, function(d){
     d.innerHTML = `Budget: ${s_of_money_exact(state.money)}`;
+  });
+  make_child(top_div, 'div', {}, function(d){
+    d.innerHTML = `Wages: ${s_of_money_exact(rounding(Team.all_wages(state.team)))}`;
   });
   show_sells(top_div, state);
   show_buys(top_div, state);
