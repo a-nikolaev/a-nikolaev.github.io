@@ -156,7 +156,7 @@ function league_simulate_season(le) {
 }
 
 function league_payment_per_point(lvl) {
-  return (1 + lvl)*20000;
+  return (1 + lvl)*10000;
 }
 
 let League = {
