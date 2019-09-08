@@ -6,8 +6,9 @@
 /* Player's team */
 var state = {
   team : undefined,
-  money : 1500000,
+  money : 1000000,
   opponents : [],
+  league_lvl : 0,
 };
 
 function show_report(team) {
@@ -76,6 +77,26 @@ function show_league_simple(){
   }
 }
 
+function generate_opponents(state) {
+  // clear array
+  state.opponents.splice(0, state.opponents.length);
+
+  for (var i=0; i<7; i++) {
+    let lvl = state.league_lvl + 1.5 * Math.random();
+
+    let t0 = Team.make_good(lvl);
+    let qt0 = Team.quick_formation(t0);
+    
+    let time = 500 + Math.round(200 * lvl) + random_int(2000);
+
+    let gqt0 = Team.good_formation(qt0, time);
+    let mean_pl = Team.mean_player(gqt0);
+    var c = Club.make(`${Math.round(11.0 * Player.total(mean_pl))}-Q-${time}`, gqt0);
+
+    state.opponents.push(c);
+  }
+}
+
 function init() {
   state.team = Team.make_good();
 
@@ -91,20 +112,7 @@ function init() {
   show_report(state.team);
 
   // add opponents
-  for (var i=0; i<7; i++) {
-    let power = 1.0 + 1.0 * Math.random();
-
-    let t0 = Team.make_good(power);
-    let qt0 = Team.quick_formation(t0);
-    
-    let time = 1 + random_int(3000);
-
-    let gqt0 = Team.good_formation(qt0, time);
-    let mean_pl = Team.mean_player(gqt0);
-    var c = Club.make(`${Math.round(11.0 * Player.total(mean_pl))}-Q-${time}`, gqt0);
-
-    state.opponents.push(c);
-  }
+  generate_opponents(state);
 
   document.onkeyup = function(e) {
     switch (e.which) {
@@ -204,13 +212,6 @@ function show_sim_many(team1, team2) {
 }
 
 function show_league_in_log(le) {
-  let arr = [];
-  let n = le.n;
-  for(let i = 0; i < n; i++) {
-    arr.push([le.points[i], le.clubs[i]]);
-  }
-
-  arr.sort(function(a,b){return b[0] - a[0];});
 
   var log_div = document.getElementById("log");
   log_div.innerHTML = '';
@@ -228,18 +229,23 @@ function show_league_in_log(le) {
       });
     });
 
-    for(let i = 0; i < n; i++) {
+    for(let place = 0; place < le.n; place++) {
+      let i = le.order_place2i[place];
+      let name = le.clubs[i].name;
+      let pts = le.points[i];
+
       make_child(d, 'tr', {'class':''}, function(d) {
         make_child(d, 'td', {'class':''}, function(d){
-          d.innerHTML= `${i}`;
+          d.innerHTML= `${place}`;
         });
         make_child(d, 'td', {'class':''}, function(d){
-          d.innerHTML= `${arr[i][1].name}`;
+          d.innerHTML= `${name}`;
         });
         make_child(d, 'td', {'class':''}, function(d){
-          d.innerHTML= `${arr[i][0]}`;
+          d.innerHTML= `${pts}`;
         });
       });
+
     }
   });
 }
@@ -262,15 +268,57 @@ function play_season(state) {
 
   let le = show_sim_league(state);
   var pts = 0;
+  var i_me = 0;
+  var place = 0;
   for (let i = 0; i < le.n; i++) {
     if (le.clubs[i].name == 'Me') {
+      i_me = i;
+      place = le.order_i2place[i];
       pts = le.points[i];
     }
   }
+
+  let money_received = pts * League.payment_per_point(state.league_lvl); 
+  let money_paid = Team.all_wages(state.team); 
+  state.money = rounding(state.money + money_received - money_paid);
   
-  state.money = rounding(state.money + pts * 100000 - Team.all_wages(state.team));
+  // add to the log
+  var log_div = document.getElementById("log");
+  make_child(log_div, 'table', {'class':'w3-table-all w3-panel'}, function(d) {
+    make_child(d, 'tr', {'class':''}, function(d) {
+      d.innerHTML = `<td>TV and sponsor money:</td><td>${s_of_money_approx(money_received)}</td>`;
+    });
+    make_child(d, 'tr', {'class':''}, function(d) {
+      d.innerHTML = `<td>Paid wages:</td><td>${s_of_money_approx(money_paid)}</td>`;
+    });
+  });
+  
+
+  var promoting = (place === 0);
+  var relegating = (place === le.n-1);
+
+  if (promoting) {
+    state.league_lvl += 1;
+    
+    var d = document.getElementById("notice-text");
+    d.innerHTML = `<div class='w3-panel w3-light-green'><p>Promoted to level ${state.league_lvl} division.</div>`;
+    document.getElementById('notice').style.display='block';
+    
+    generate_opponents(state);
+  }
+  else if (relegating && state.league_lvl > 0) {
+    state.league_lvl -= 1;
+    
+    var d = document.getElementById("notice-text");
+    d.innerHTML = `<div class='w3-panel w3-deep-orange'>Relegated to level ${state.league_lvl} division.</div>`;
+    document.getElementById('notice').style.display='block';
+    
+    generate_opponents(state);
+  }
+
   init_buy_transfers(state);
   show_transfers(state);
+
 }
 
 function open_tab(ev, tab_id) {
@@ -412,6 +460,8 @@ function gen_drop_handler(uname, team) {
       target.appendChild(document.getElementById(data));
       
       show_report(team);
+
+      show_transfers(state);
     }
   }
   return drop_handler;
@@ -496,6 +546,8 @@ function make_pitch(div_id, uname, team) {
 }
 
 function add_player_svg(div_id, pl) {
+  document.getElementById(div_id).title = `    ${pl.atk}\n${pl.win}      ${pl.pas}\n    ${pl.def}`;
+
   var pic = Raphael(div_id, "100%", "100%");
   pic.setViewBox(-10,-10,20,20);
  
@@ -506,13 +558,13 @@ function add_player_svg(div_id, pl) {
   var circ1 = pic.circle(0, 0, 2).attr({stroke: "#555", "stroke-width": 0.2, "stroke-opacity": 0.5, fill: "#8C8", "fill-opacity":0.35});
 
   // radar diagram
-  var cr = 55 + pl.atk * 200 / 9;
-  var cg = 100 + (6 + (pl.pas-pl.win)) * 155 / 12;
-  var cb = 55 + pl.def * 200 / 9;
+  var cr = 55 + 200 * (pl.atk-2) / 8;
+  var cg = 127 + 127 * ((pl.pas-pl.win)) / 8;
+  var cb = 55 + 200 * (pl.def-2) / 8;
   var color1 = Raphael.rgb(cr, cg, cb);
   var hsb = Raphael.rgb2hsb(color1);
-  var color2 = Raphael.hsb(hsb.h, Math.min(1, hsb.s * 2.0), hsb.b);
-  var color2 = Raphael.hsb(hsb.h, Math.min(1, hsb.s * 3.0), hsb.b*0.4);
+  var color2 = Raphael.hsb(hsb.h, Math.min(1, hsb.s * 3.0), hsb.b);
+  var color2 = Raphael.hsb(hsb.h, Math.min(1, hsb.s * 5.0), hsb.b*0.4);
 
   var sc = 1;
   var sm = 0.0;
@@ -537,9 +589,13 @@ function add_player_svg(div_id, pl) {
   poly.attr({stroke: color2, "stroke-width": 0.5, fill: color1 });
   
   // text
+  /*
   var txt = Math.round(Player.total(pl)).toString();
-  var letters1 = pic.text(0, 0, txt).attr({ "font-size": 6.5, "font-family": "'Mali', cursive", stroke: color1, "stroke-width": 1.5 });
-  var letters2 = pic.text(0, 0, txt).attr({ "font-size": 6.5, "font-family": "'Mali', cursive", fill: "#000" });
+  var letters1 = pic.text(0, 0, txt).attr({ "font-size": 6.5, "font-family": "'Mali', cursive", stroke: color1, "stroke-width": 1.5, 
+      'text-anchor': 'middle'});
+  var letters2 = pic.text(0, 0, txt).attr({ "font-size": 6.5, "font-family": "'Mali', cursive", fill: "#000", 
+      'text-anchor': 'middle'});
+      */
 }
 
 function show_team_on_pitch(uname, team) {

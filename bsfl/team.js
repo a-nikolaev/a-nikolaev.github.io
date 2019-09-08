@@ -165,7 +165,7 @@ function team_mean_team(team) {
   return new_team;
 }
 
-function team_make_good(factor = 1) {
+function team_make_good_old(factor = 1) {
   var not_ready = true; 
   var attempts = 0; 
   
@@ -187,6 +187,62 @@ function team_make_good(factor = 1) {
     }
     // PRINTING ATTEMPTS
     // console.log(attempts, pl_mean.atk, pl_mean.win, pl_mean.pas, pl_mean.def);
+  }
+  return team;
+}
+
+function team_make_good(lvl = 0) {
+  const init_num_players = max_players_on_pitch + 0;
+  
+  let arr = [];
+  var num = 0;
+  
+  function all_are_good(pl) {
+    let mean = (pl.win + pl.pas + pl.atk + pl.def) * 0.25;
+    function is_good(x) {
+      return mean*0.9 < x && x < mean * 1.15;
+    }
+    return (is_good(pl.atk) && is_good(pl.win) && is_good(pl.pas) && is_good(pl.def));
+  }
+  
+  var sum_pl = Player.zero(); 
+  var i = 0;
+  while (num < init_num_players || ! all_are_good(sum_pl)) {
+
+    let pls = [];
+    for(let j = 0; j < 1 + round_probable(0.5 * lvl); j++) {
+      pls.push(Player.make(lvl));
+    }
+    console.log('sampled', pls.length);
+    pls.sort(function(a,b){return Player.total(b) - Player.total(a);});
+    let pl = pls[0];
+
+    //let pl = Player.make();
+
+    arr.push(pl);
+    sum_pl = Player.sum(sum_pl, pl);
+    if (num < init_num_players) {
+      num += 1;
+    }
+    else {
+      //     v     i   num = 3   
+      // 0 1 2 3 4 5
+      let i_to_subtract = i - num;
+      if (i_to_subtract >= 0) {
+        sum_pl = Player.sum(sum_pl, Player.mult(arr[i_to_subtract], -1));
+      }
+    }
+    i += 1;
+  }
+  console.log('founda after ', i);
+
+  var team = team_make_empty();
+  //       v     i  num = 3
+  // 0 1 2 3 4 5 -
+  for (let j = i - num; j < i; j++) {
+    let pl = arr[j];
+    Player.assign_unique_id(pl)
+    team_add_player(team, pl, Loc.Bench);
   }
   return team;
 }

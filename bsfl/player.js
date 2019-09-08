@@ -6,38 +6,37 @@ function player_zero() {
   return {def : 0, win : 0, atk : 0, pas : 0, id : -1};
 }
 
-function gen_std_normal(){
-  // Box-Muller method
-  let u = Math.random();
-  let v = Math.random();
-  return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-}
-
-function bounded_std_normal(lo, hi){
-  var x = hi+1;
-  while(x < lo || hi < x) {
-    x = gen_std_normal();
-  }
-  return x;
-}
-
-function clamp(lo, hi, x) {
-  return Math.min(Math.max(lo, x), hi);
-}
-
-function player_make() {
+function player_make(lvl=0) {
+  /*
   let pre_atk = random_int(6)
   let atk = 3 + pre_atk + random_int(2);
   let def = 3 + (5 - pre_atk) + random_int(2);
   let win = 3 + random_int(7); 
   let pas = 3 + random_int(7); 
+  */
 
-  let sum = atk + pas + win + def;
+  function g() {
+    return clamp(0, 10, 2 + Math.round((0.5 * lvl+1.7) * bounded_std_normal(0.0, 10.0)));
+  }
+
+  var atk = g();
+  var def = g(); 
+  if (def > atk) {
+    atk = clamp(2, 10, Math.round(atk / 2));
+  }
+  else if (atk > def) {
+    def = clamp(2, 10, Math.round(def / 2));
+  }
+
+  let win = g(); 
+  let pas = g(); 
+
+  let sum = 0.5 * (atk + pas + win + def) + 2.0 * Math.max(atk, pas, win, def);
 
   let x_v = 4; // deterministic to random ratio of the player's cost
   let x_w = 3; // deterministic to random ratio of the player's cost
 
-  let value = rounding(sum*sum * 1000 * (1.0/x_v) * (x_v + bounded_std_normal(-1, 1)));
+  let value = rounding(sum*sum*sum * 20 * (1.0/x_v) * (x_v + bounded_std_normal(-1, 1)));
   let wage = rounding(sum*sum*sum*sum * 0.1 * (1.0/x_w) * (x_w + bounded_std_normal(-1, 1)));
 
   let price = rounding(value * 1.1 * (2 + bounded_std_normal(-1, 1)));

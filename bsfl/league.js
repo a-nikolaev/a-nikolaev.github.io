@@ -9,6 +9,8 @@ function league_make(n, seeded_clubs=[]) {
   let points = [];
   let goals_for = [];
   let goals_ag = [];
+  let order_i2place = [];
+  let order_place2i = [];
 
   for(let i = 0; i < n; i++) {
     var c;
@@ -29,6 +31,8 @@ function league_make(n, seeded_clubs=[]) {
     points.push(0);
     goals_for.push(0);
     goals_ag.push(0);
+    order_i2place.push(i);
+    order_place2i.push(i);
   }
 
   return {
@@ -38,21 +42,33 @@ function league_make(n, seeded_clubs=[]) {
     'points' : points, 
     'goals_for' : goals_for, 
     'goals_ag' : goals_ag, 
+    'order_i2place' : order_i2place,
+    'order_place2i' : order_place2i,
   };
 }
 
-function league_print(le) {
-  console.log('--------------');
+function league_update_order(le) {
   let arr = [];
   let n = le.n;
   for(let i = 0; i < n; i++) {
-    arr.push([le.points[i], le.clubs[i]]);
+    arr.push([le.points[i], i]);
   }
 
   arr.sort(function(a,b){return b[0] - a[0];});
 
-  for(let i = 0; i < n; i++) {
-    console.log(i, arr[i][1].name, arr[i][0]);
+  for(let place = 0; place < n; place++) {
+    let i = arr[place][1];
+    le.order_i2place[i] = place;
+    le.order_place2i[place] = i;
+  }
+}
+
+function league_print(le) {
+  console.log('--------------');
+  let n = le.n;
+  for(let place = 0; place < n; place++) {
+    let i = le.order_place2i[place];
+    console.log(place, le.clubs[i].name, le.points[i]);
   }
 }
 
@@ -128,6 +144,8 @@ function league_simulate_round(le) {
     }
   }
   le.matches += 1;
+
+  league_update_order(le);
 }
 
 function league_simulate_season(le) {
@@ -137,6 +155,10 @@ function league_simulate_season(le) {
   league_print(le);
 }
 
+function league_payment_per_point(lvl) {
+  return (1 + lvl)*20000;
+}
+
 let League = {
   make : league_make,
   print : league_print,
@@ -144,4 +166,5 @@ let League = {
   opponent : league_opponent,
   simulate_round : league_simulate_round,
   simulate_season : league_simulate_season,
+  payment_per_point : league_payment_per_point,
 };

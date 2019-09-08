@@ -5,11 +5,11 @@
 
 var transfers_buy = new Map();
 
-function init_buy_transfers(){
+function init_buy_transfers(state){
   transfers_buy.clear();
 
   for(var i = 0; i < 20; i++) {
-    let pl = Player.make();
+    let pl = Player.make(state.league_lvl);
     Player.assign_unique_id(pl);
 
     let id = parseInt(pl.id)
@@ -45,7 +45,7 @@ function do_buy(state, pl, price) {
   }
 }
 
-function add_player_entry(parent, pl, gen_button){
+function add_player_entry(parent, pl, loc, gen_button){
   let id = parseInt(pl.id)
   
   make_child(parent, 'div', {'class':'w3-cell-row w3-border-bottom'}, function(d){
@@ -60,7 +60,15 @@ function add_player_entry(parent, pl, gen_button){
     make_child(d, 'div', {'class':'w3-cell w3-cell-middle'}, function(d){
       make_child(d, 'div', {}, function() {
         make_child(d, 'span', {'class':''}, function(d){
-          d.innerHTML = `${pl.firstname} ${pl.lastname}`;
+          var loc_text = '';
+          if (loc !== undefined) {
+            var tag_color = 'w3-brown';
+            if (loc === Loc.Bench) {
+              tag_color = 'w3-grey';
+            }
+            loc_text = `<sup><b><span class='${tag_color} w3-text-white' style='padding: 0.05em 0.3em 0.05em 0.3em;'>${s_of_loc(loc)}</span></b></sup>`;
+          }
+          d.innerHTML = `${pl.firstname} ${pl.lastname} ${loc_text}`;
         });
 
         make_child(d, 'br', {}, function(d){});
@@ -92,8 +100,8 @@ function show_sells(top_div, state){
 
   make_child(top_div, 'div', {'class':'w3-container w3-half'}, function(d){
     for (let [id, pl] of sorted_players_arr) {
-
-      add_player_entry(d, pl, function(d){
+      let loc = team.player_loc.get(id);
+      add_player_entry(d, pl, loc, function(d){
           make_child(d, 'button', {'class':'w3-btn w3-red w3-round'}, function(d){
             d.innerHTML = `Sell`;
             d.onclick = function(){
@@ -111,7 +119,7 @@ function show_buys(top_div, state){
   make_child(top_div, 'div', {'class':'w3-container w3-half'}, function(d){
     for (let [id, pl] of transfers_buy) {
 
-      add_player_entry(d, pl, function(d){
+      add_player_entry(d, pl, undefined, function(d){
           let price = parseInt(pl.price);
 
           make_child(d, 'span', {}, function(d){

@@ -143,7 +143,7 @@ section.tab{
 .animate-left{position:relative;animation:animateleft 0.2s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
 
 div.money{
-  display: inline-block; width:4em; text-align:center; background-color:#bea;
+  display: inline-block; min-width:4em; text-align:center; background-color:#bea;
 }
 
 div.money span.dollar{

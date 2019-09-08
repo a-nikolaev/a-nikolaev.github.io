@@ -6,6 +6,26 @@ function random_int(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+function gen_std_normal(){
+  // Box-Muller method
+  let u = Math.random();
+  let v = Math.random();
+  return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+
+function bounded_std_normal(lo, hi){
+  var x = hi+1;
+  while(x < lo || hi < x) {
+    x = gen_std_normal();
+  }
+  return x;
+}
+
+function clamp(lo, hi, x) {
+  return Math.min(Math.max(lo, x), hi);
+}
+
+
 /* Locations */
 const Loc = {
   Bench: 0,
@@ -123,7 +143,7 @@ function s_of_money_approx(x){
     return f(1e3, 'K');
   }
   else {
-    return x;
+    return f(1, '');
   }
 }
 
@@ -145,7 +165,7 @@ function s_of_money_exact(x){
     return f(1e3, 'K');
   }
   else {
-    return x;
+    return f(1, '');
   }
 }
 
@@ -164,6 +184,12 @@ function round_to(x, sig_digits){
 
 function rounding(x) {
   return round_to(x, 3);
+}
+
+function round_probable(x) {
+  let y = Math.floor(x);
+  let dy = (Math.round() < (x - y)) ? 1 : 0;
+  return y + dy;
 }
 
 // Uniform sampling from an iterator
