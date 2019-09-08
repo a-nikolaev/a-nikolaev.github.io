@@ -263,7 +263,7 @@ function show_sim_league(state) {
 
 function play_season(state) {
 
-  if (state.money < 0.0) {
+  if (state.money < Team.all_wages(state.team)) {
     return;
   }
 
