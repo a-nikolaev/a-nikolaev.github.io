@@ -81,8 +81,9 @@ function generate_opponents(state) {
   // clear array
   state.opponents.splice(0, state.opponents.length);
 
-  for (var i=0; i<7; i++) {
-    let lvl = state.league_lvl + 1.5 * Math.random();
+  let num = 7;
+  for (var i=0; i<num; i++) {
+    let lvl = state.league_lvl + 0.7 * (i/num) + 0.7 * Math.random();
 
     let t0 = Team.make_good(lvl);
     let qt0 = Team.quick_formation(t0);
