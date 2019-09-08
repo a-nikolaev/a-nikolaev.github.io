@@ -558,9 +558,10 @@ function add_player_svg(div_id, pl) {
   var circ1 = pic.circle(0, 0, 2).attr({stroke: "#555", "stroke-width": 0.2, "stroke-opacity": 0.5, fill: "#8C8", "fill-opacity":0.35});
 
   // radar diagram
-  var cr = 55 + 200 * (pl.atk-2) / 8;
-  var cg = 127 + 127 * ((pl.pas-pl.win)) / 8;
-  var cb = 55 + 200 * (pl.def-2) / 8;
+  let mx = (Math.max(pl.atk, pl.def, pl.win, pl.pas) + 9) * 0.5;
+  var cr = 55 + 200 * (pl.atk-2) / (mx-1);
+  var cg = 127 + 127 * ((pl.pas-pl.win)) / (mx-1);
+  var cb = 55 + 200 * (pl.def-2) / (mx-1);
   var color1 = Raphael.rgb(cr, cg, cb);
   var hsb = Raphael.rgb2hsb(color1);
   var color2 = Raphael.hsb(hsb.h, Math.min(1, hsb.s * 3.0), hsb.b);
