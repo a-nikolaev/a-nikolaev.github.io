@@ -302,7 +302,7 @@ function play_season(state) {
     state.league_lvl += 1;
     
     var d = document.getElementById("notice-text");
-    d.innerHTML = `<div class='w3-panel w3-light-green'><p>Promoted to level ${state.league_lvl} division.</div>`;
+    d.innerHTML = `<div class='w3-card w3-panel w3-light-green w3-text-white'><h5>&#129093; Promoted to Division ${state.league_lvl}</h5></div>`;
     document.getElementById('notice').style.display='block';
     
     generate_opponents(state);
@@ -311,7 +311,7 @@ function play_season(state) {
     state.league_lvl -= 1;
     
     var d = document.getElementById("notice-text");
-    d.innerHTML = `<div class='w3-panel w3-deep-orange'>Relegated to level ${state.league_lvl} division.</div>`;
+    d.innerHTML = `<div class='w3-card w3-padding w3-panel w3-deep-orange w3-text-white'><h5>&#129095; Relegated to Division ${state.league_lvl}</h5></div>`;
     document.getElementById('notice').style.display='block';
     
     generate_opponents(state);
