@@ -18,7 +18,7 @@ function init_buy_transfers(state){
 }
 
 function refresh(state){
-  make_pitch('stad1', 'some1', state.team);
+  make_pitch('main-stadium', 'maintgt', state.team);
   show_transfers(state);
 }
 
@@ -139,11 +139,10 @@ function show_buys(top_div, state){
 function show_transfers(state) {
   var top_div = document.getElementById('transfers');
   top_div.innerHTML = '';
-  make_child(top_div, 'div', {}, function(d){
-    d.innerHTML = `Budget: ${s_of_money_exact(state.money)}`;
-  });
-  make_child(top_div, 'div', {}, function(d){
-    d.innerHTML = `Wages: ${s_of_money_exact(rounding(Team.all_wages(state.team)))}`;
+  make_child(top_div, 'div', {'class':'w3-margin-bottom'}, function(d){
+    d.innerHTML = '';
+    d.innerHTML += `<div class='w3-container'>Budget: ${s_of_money_exact(state.money)}</div>`;
+    d.innerHTML += `<div class='w3-container'>Wages: ${s_of_money_exact(rounding(Team.all_wages(state.team)))}</div>`;
   });
   show_sells(top_div, state);
   show_buys(top_div, state);

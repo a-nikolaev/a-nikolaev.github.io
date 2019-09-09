@@ -23,13 +23,13 @@ main { font-family: 'Rubik', sans-serif }
 
 .stadium {
   /* font-size:90%; */
-  width:40em;
+  background-color: #CFA;
+  width:34em;
   float: left;
 }
 
 .field {
   width: 100%;
-/*  background-color: #CFA; */
   content: "";
   clear: both;
   display: table;
@@ -49,10 +49,10 @@ main { font-family: 'Rubik', sans-serif }
 .tgt { 
   border-color: #0001;  
   border-style: solid; 
-  border-width: 0.5em;
-  min-height: 5.8em; 
+  border-width: 0.2em;
+  min-height: 5.2em; 
   text-align:center;
-  border-radius: 1em;
+  border-radius: 0.6em;
 }
 
 .spot {
@@ -101,7 +101,9 @@ div.loc {
   border-width: 0.5em; */
   min-height: 5.9em; 
   text-align:center;
-  border-radius: 1em;
+  border-radius: 0.3em;
+  float: left;
+  margin: 0.3em;
 }
 
 #prediction {

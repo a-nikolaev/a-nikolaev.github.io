@@ -104,7 +104,7 @@ function init() {
   state.team = Team.good_formation(Team.quick_formation(state.team));
   //state.team = Team.quick_formation(state.team);
 
-  make_pitch('stad1', 'some1', state.team);
+  make_pitch('main-stadium', 'maintgt', state.team);
 
   init_buy_transfers(state);
 
@@ -177,17 +177,17 @@ function show_sim_many(team1, team2) {
   log_div.innerHTML = '';
 
   var d1, d2, d3;
-  make_child(log_div, 'div', {'class':'w3-cell-row'}, function(d) {
+  make_child(log_div, 'div', {'class':'w3-cell-row w3-panel'}, function(d) {
     make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
-      d.innerHTML = 'wins';
+      d.innerHTML = '<div class=""><b>wins</b></div>';
       d1 = d;
     });
     make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
-      d.innerHTML = 'draws';
+      d.innerHTML = '<div class=""><b>draws</b></div>';
       d2 = d;
     });
     make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
-      d.innerHTML = 'losses';
+      d.innerHTML = '<div class=""><b>losses<b></div>';
       d3 = d;
     });
   });
@@ -338,7 +338,7 @@ function open_tab(ev, tab_id) {
 }
 
 function add_prediction(div, e1, e2, reverse) {
-  var pic = Raphael(div, "15em", "25em");
+  var pic = Raphael(div, "9em", "15em");
   pic.setViewBox(-30, -50, 60, 100);
 
   function print(e) {
@@ -365,14 +365,14 @@ function add_prediction(div, e1, e2, reverse) {
     let xy1 = coords.get(loc1);
     let xy2 = coords.get(loc2);
     if (mag >= 0) {
-      let color = "#F60";
+      let color = "#260";
       pic.path("M" + xy1[0] + "," + xy1[1] + "L" + xy2[0] + "," + xy2[1]).attr({stroke: color, "stroke-width": mag*0.1, "arrow-end": "classic"});
 
       let x = 0.5 * (xy1[0] + xy2[0]);
       let y = 0.5 * (xy1[1] + xy2[1]);
       let txt = Math.round(mag);
-      pic.text(x, y, txt).attr({ "font-size": 5, "font-family": "'Mali', cursive", stroke: "#FFF", "stroke-width": 1.5 });
-      pic.text(x, y, txt).attr({ "font-size": 5, "font-family": "'Mali', cursive", fill: color });
+      pic.text(x, y, txt).attr({ "font-size": 7, "font-family": "'Mali', cursive", stroke: "#FFF", "stroke-width": 2 });
+      pic.text(x, y, txt).attr({ "font-size": 7, "font-family": "'Mali', cursive", fill: color });
     }
   }
   
@@ -419,7 +419,7 @@ function add_prediction(div, e1, e2, reverse) {
       let xy = coords.get(loc);
       let x = xy[0];
       let y = xy[1];
-      pic.circle(x, y, 2).attr({stroke: "#DDD", "stroke-width": 0.5, fill: "#E50"});
+      pic.circle(x, y, 1.5).attr({stroke: "#fff", "stroke-width": 0.5, fill: "#481"});
     }
     
   }
@@ -491,7 +491,7 @@ function make_pitch(div_id, uname, team) {
     make_child(d, 'div', {'class':'col-6 tgt bench', 'id':`${uname}-Bench`, 'ondrop':drop_handler, 'ondragover':dragover_handler}, function(d){
       d.ondrop=drop_handler;
       d.ondragover=dragover_handler;
-      d.innerHTML = '<div class="loc">Bench</div> <br />';
+      d.innerHTML = '<div class="loc">Bench</div>';
     });
     // Gap
     make_child(d, 'div', {'class':'col-6'}, function(d){});

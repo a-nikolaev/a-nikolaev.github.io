@@ -47,23 +47,26 @@
     <!-- 1 -->
     
     <section id='tab-team' class='tab animate-opacity'>
-      <div id='stad1'></div>
+      <div id='main-stadium' class="addon w3-card"></div>
+     
+      <div class='addon w3-card w3-container'>
+        <div class = 'w3-bar'>
+          <div class = 'w3-btn w3-green' onclick='play_season(state);'> Play season </div>
+          <div class = 'w3-btn w3-pale-green' onclick='show_report(state.team);'> Simulate 12 matches </div>
+        </div>
+        <div id = "log" class='' style="max-width: 22em;"></div>
+      </div>
 
-      <div class = "addon">
-        <h3> Predicted Attack / Defense flow diagram: </h3>
+      <div class = "addon w3-card w3-container" style='max-width:22em;'>
+        <h4> Predicted Attack / Defense flow diagram: </h3>
         <div id = "prediction"> </div>
         
-        <p> <span style="color: #F60">Orange arrows</span>: Attack flow. </p>
+        <p> <span style="color: #260">Green arrows</span>: Attack flow. </p>
         <p> <span style="color: #999">Grey arrows</span>: Intercepted balls. </p>
         <p> <span style="color: #0AF">Blue arrows</span>: Shots blocked by the opponent's defenders and the goalkeeper. </p>
       </div>
       
-      <div class = 'w3-btn w3-blue' onclick='show_report(state.team);'> Simulate 12 matches </div>
       
-      <div class = 'w3-btn w3-green' onclick='play_season(state);'> Play season </div>
-
-      <div class = "addon" id = "log" style="width:30%;">
-      </div>
     </section>
     
     <!-- 2 -->
@@ -76,6 +79,7 @@
     <!-- 3 -->
 
     <section id='tab-help' class='tab animate-opacity' style="display:none">
+      <div class = 'addon w3-card w3-panel' style="max-width:40em; text-align:left;">
       <h3> Player stats and passing explained</h3>
       <p> Each player has four stats: 
           <ul>  
@@ -86,6 +90,7 @@
           </ul>
       </p>
       <img src="https://i.imgur.com/WjGUP3y.png" />
+      </div>
     </section>
 
   </main>
