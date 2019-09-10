@@ -80,16 +80,110 @@
 
     <section id='tab-help' class='tab animate-opacity' style="display:none">
       <div class = 'addon w3-card w3-panel' style="max-width:40em; text-align:left;">
-      <h3> Player stats and passing explained</h3>
-      <p> Each player has four stats: 
-          <ul>  
-            <li><strong>atk</strong>: attack, shooting</li> 
-            <li><strong>def</strong>: defense, blocking opponent's shots</li>
-            <li><strong>win</strong>: ball winning, interception</li>
-            <li><strong>pas</strong>: passing, moving the ball forward</li>
-          </ul>
+      <h4>Team formation</h4>
+      <h5>Main positions</h5>
+      <p>
+        There are five main player positions used by the match engine:
+        <strong>CB</strong>, <strong>LM</strong>, <strong>CM</strong>, <strong>RM</strong>, <strong>CF</strong>.
       </p>
-      <img src="https://i.imgur.com/WjGUP3y.png" />
+      <img style="display:block; margin:auto;" src="./img/help-spots.png" />
+      <h5>Intermediate positions</h5>
+      <p>
+      For tactical flexibility, there are intermediate positions between adjacent main positions.
+      Players in intermediate positions share their time equally between the corresponding main positions
+      (for example, an LB spends half of their time as a CB and half as an LM):
+      <div class='w3-row' style='padding:0; margin:0'>
+      <div class='w3-half'>
+        <ul style='padding-top:0; padding-bottom:0; margin-top:0; margin-bottom:0;'>  
+          <li><strong>LB</strong>: CB and LM </li> 
+          <li><strong>DM</strong>: CB and CM </li> 
+          <li><strong>RB</strong>: CB and RM </li> 
+          <li><strong>CML</strong>: LM and CM </li> 
+        </ul>
+      </div>
+      <div class='w3-half'>
+        <ul style='padding-top:0; padding-bottom:0; margin-top:0; margin-bottom:0;'>  
+          <li><strong>CMR</strong>: CM and RM </li> 
+          <li><strong>LW</strong>: LM and CF </li> 
+          <li><strong>AM</strong>: CM and CF </li> 
+          <li><strong>RW</strong>: RM and CF </li> 
+        </ul>
+      </div>
+      </div>
+      <div class='help-emph'>
+      To be more precise, you can think of a player in an intermediate position to be divided into <i>two players with 50% ball-winning of the original</i>,
+      placed in the two corresponding main positions.
+      </div>
+      </p>
+      
+      <h5>GK position</h5>
+      <p>
+      There is also a special position for a goalkeeper (<strong>GK</strong>) who protects the goal from the shots of the opponent team. 
+      There can be at most one GK in a team formation.
+      </p>
+      <h5>Bench</h5>
+      <p>
+      Unused players stay on the <strong>Bench</strong>. (You still have to pay wages to these players, even if they don't play.)
+      </p>
+      </div>
+
+      <div class = 'addon w3-card w3-panel' style="max-width:40em; text-align:left;">
+      <h4>Player stats</h4>
+      <img style="display:block; margin:auto;" src="./img/help-stats.png" />
+      <p> 
+      A player has four main stats: 
+      <ul>  
+        <li><strong>atk</strong>: attack, shooting (used by CF)</li> 
+        <li><strong>def</strong>: defense, blocking opponent's shots (used by CB and GK)</li>
+        <li><strong>win</strong>: ball winning, interception (used by all except GK)</li>
+        <li><strong>pas</strong>: passing, moving the ball forward (used by all except GK and CF)</li>
+      </ul>
+      </p>
+      </div>
+
+      <div class = 'addon w3-card w3-panel' style="max-width:40em; text-align:left;">
+      <h4>Flow of the game. Passing and shooting</h4>
+      <p>
+      The ball is always at one of the main positions (CB, LM, CM, RM, or CF), and it is always controlled by one of the two teams.
+      </p>
+      <p>
+      When your team controls the ball at CB, it attempts to pass to a midfield position. When the ball is at a midfield position,
+      it attempts to pass to CF. When the ball is at CF, one of your forwards shoots. 
+      The ball then can be blocked by the opponent CB and GK defense. 
+      If neither stop the ball, you score and the game is resumed by the opponent team from CM position. 
+      Otherwise, if CB or GK stop the ball, their CB take possession of the ball.
+      </p>
+      </div>
+
+      <div class = 'addon w3-card w3-panel' style="max-width:40em; text-align:left;">
+      <h4>Ball-winning</h4>
+      <p>
+      Ball-winning is the property that determines how involved the player is in the game. 
+      It is crucial for successfully receiving a pass as well as for intercepting the opponents' passes.
+      </p>
+      <p>
+      The success of your team's pass from the position <b>A</b> to the position <b>B</b> is determined from the passing of the A player 
+      who controls the ball and the ball-winning of your B position players.
+      These numbers are compared against the ball-winning of the opponent team at B. 
+      The winning team gains possession of the ball at the the position B. 
+      <div class='help-emph'>
+      Players with higher ball-winning have higher chance to get possession of the ball.
+      </div>
+      </p>
+      </div>
+
+      <div class = 'addon w3-card w3-panel' style="max-width:40em; text-align:left;">
+      <h4>Transfers, wages, and sponsor money</h4>
+      
+      <h4>Divisions, promotion and relegation</h4>
+      
+      <h4>Keyboard shortcuts</h4>
+      Press 
+      <span class='w3-border w3-light-grey w3-round'>&nbsp;1&nbsp;</span>,
+      <span class='w3-border w3-light-grey w3-round'>&nbsp;2&nbsp;</span>, and
+      <span class='w3-border w3-light-grey w3-round'>&nbsp;3&nbsp;</span>
+      on the keyboard to jump between Tactics, Transfers, and Help tabs.
+      
       </div>
     </section>
 

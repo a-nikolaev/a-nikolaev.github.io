@@ -200,7 +200,7 @@ function team_make_good(lvl = 0) {
   function all_are_good(pl) {
     let mean = (pl.win + pl.pas + pl.atk + pl.def) * 0.25;
     function is_good(x) {
-      return mean*0.94 < x && x < mean * 1.08;
+      return mean*0.91 < x && x < mean * 1.10;
     }
     return (is_good(pl.atk) && is_good(pl.win) && is_good(pl.pas) && is_good(pl.def));
   }

@@ -20,7 +20,16 @@ function player_make(lvl=0) {
   }
 
   var atk = g();
-  var def = g(); 
+  var def = g();
+
+  if (def === atk) {
+    if (random_int(2) === 0) {
+      def -= 0.000001;
+    }
+    else {
+      atk -= 0.000001;
+    }
+  }
   if (def > atk) {
     atk = clamp(2, 10, Math.round(atk / 2));
   }
