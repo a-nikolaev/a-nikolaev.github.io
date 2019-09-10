@@ -7,6 +7,9 @@ function league_make(n, seeded_clubs=[]) {
 
   let clubs = [];
   let points = [];
+  let wins = [];
+  let draws = [];
+  let losses = [];
   let goals_for = [];
   let goals_ag = [];
   let order_i2place = [];
@@ -29,6 +32,9 @@ function league_make(n, seeded_clubs=[]) {
     }
     clubs.push(c);
     points.push(0);
+    wins.push(0);
+    draws.push(0);
+    losses.push(0);
     goals_for.push(0);
     goals_ag.push(0);
     order_i2place.push(i);
@@ -37,9 +43,13 @@ function league_make(n, seeded_clubs=[]) {
 
   return {
     'n' : n,
+    'repeats' : 2,
     'matches' : 0,
     'clubs' : clubs, 
     'points' : points, 
+    'wins' : wins, 
+    'draws' : draws, 
+    'losses' : losses, 
     'goals_for' : goals_for, 
     'goals_ag' : goals_ag, 
     'order_i2place' : order_i2place,
@@ -68,7 +78,7 @@ function league_print(le) {
   let n = le.n;
   for(let place = 0; place < n; place++) {
     let i = le.order_place2i[place];
-    console.log(place, le.clubs[i].name, le.points[i]);
+    console.log(place, le.clubs[i].name, le.wins[i], le.draws[i], le.losses[i], le.points[i]);
   }
 }
 
@@ -80,6 +90,7 @@ function league_opponent(le, j, match_day) {
   if (match_day === undefined) {
     i = le.matches + 1; // opponent for the next match
   }
+  i = (i - 1) % (le.n-1) + 1; // two rounds
 
   function modulo(x) {
     return (x - 1 + n - 1) % (n-1) + 1;
@@ -97,7 +108,7 @@ function league_opponent(le, j, match_day) {
 }
 
 function league_print_schedule(le) {
-  for (let md = 1; md <= le.n-1; md++) {
+  for (let md = 1; md <= le.repeats*(le.n-1); md++) {
     console.log(`Round ${md}`);
     for (let j = 0; j < le.n; j++) {
       let op = league_opponent(le, j, md);
@@ -109,7 +120,7 @@ function league_print_schedule(le) {
 }
 
 function league_simulate_round(le) {
-  if (le.matches >= le.n-1) {
+  if (le.matches >= le.repeats * (le.n-1)) {
     return;
   }
   
@@ -127,13 +138,19 @@ function league_simulate_round(le) {
 
       if (g1 > g2) {
         le.points[j] += 3;
+        le.wins[j] += 1;
+        le.losses[jop] += 1;
       }
       else if (g2 > g1) {
         le.points[jop] += 3;
+        le.wins[jop] += 1;
+        le.losses[j] += 1;
       }
       else {
         le.points[j] += 1;
         le.points[jop] += 1;
+        le.draws[j] += 1;
+        le.draws[jop] += 1;
       }
       
       le.goals_for[j] += g1;
@@ -149,14 +166,14 @@ function league_simulate_round(le) {
 }
 
 function league_simulate_season(le) {
-  for (let md = 1; md <= le.n-1; md++) {
+  for (let md = 1; md <= le.repeats*(le.n-1); md++) {
     league_simulate_round(le);
   }
-  league_print(le);
+  // league_print(le);
 }
 
 function league_payment_per_point(lvl) {
-  return (1 + lvl)*10000;
+  return (1 + lvl)*10000 * 0.5;
 }
 
 let League = {
