@@ -8,8 +8,36 @@ var state = {
   team : undefined,
   money : 1000000,
   opponents : [],
+  league_size : 8,
   league_lvl : 0,
+  is_ready : false,
 };
+
+var all_workers = [];
+for (let i = 0; i < state.league_size-1; i++) {
+  if (window.Worker) {
+    let w = new Worker('./worker.js');
+
+    w.onmessage = function(e) {
+      let c = e.data;
+      if (state.opponents.length < state.league_size-1) {
+        state.opponents.push(c);
+      }
+      if (state.opponents.length === state.league_size-1) {
+        state.ready = true;
+        let wait_icons = document.querySelectorAll('.wait-icon');
+        for (let el of wait_icons) {
+          el.innerHTML = '';
+        }
+        let wait_sensitives = document.querySelectorAll('.wait-sensitive');
+        for (let el of wait_sensitives) {
+          el.className = el.className.replace(" w3-disabled", "");
+        }
+      }
+    }
+    all_workers.push(w);
+  }
+}
 
 function show_report(team) {
   let team2 = Team.mean_team(team);
@@ -78,23 +106,33 @@ function show_league_simple(){
 }
 
 function generate_opponents(state) {
+
+  if (window.Worker) {
+    // Disable
+    state.is_ready = false;
+    let wait_icons = document.querySelectorAll('.wait-icon');
+    for (let el of wait_icons) {
+      el.innerHTML = '<img style="height:1em;" src="./img/wait.svg" />';
+    }
+    let wait_sensitives = document.querySelectorAll('.wait-sensitive');
+    for (let el of wait_sensitives) {
+      el.className = el.className + " w3-disabled";
+    }
+  }
+
   // clear array
   state.opponents.splice(0, state.opponents.length);
 
-  let num = 7;
+  let num = state.league_size - 1;
   for (var i=0; i<num; i++) {
     let lvl = state.league_lvl + 0.7 * (i/num) + 0.7 * Math.random();
 
-    let t0 = Team.make_good(lvl);
-    let qt0 = Team.quick_formation(t0);
-    
-    let time = 500 + Math.round(200 * lvl) + random_int(2000);
-
-    let gqt0 = Team.good_formation(qt0, time);
-    let mean_pl = Team.mean_player(gqt0);
-    var c = Club.make(`${Math.round(11.0 * Player.total(mean_pl))}-Q-${time}`, gqt0);
-
-    state.opponents.push(c);
+    if (window.Worker) {
+      all_workers[i].postMessage(lvl);
+    }
+    else {
+      state.opponents.push(Club.generate_opponent(lvl));
+    }
   }
 }
 

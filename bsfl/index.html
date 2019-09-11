@@ -51,7 +51,7 @@
      
       <div class='addon w3-card w3-container'>
         <div class = 'w3-bar'>
-          <div class = 'w3-btn w3-green' onclick='play_season(state);'> Play season </div>
+          <div class = 'wait-sensitive w3-btn w3-green' onclick='if(state.ready){ play_season(state); }'> Play season <span class='wait-icon'></span> </div>
           <div class = 'w3-btn w3-pale-green' onclick='show_report(state.team);'> Simulate 12 matches </div>
         </div>
         <div id = "log" class='' style="max-width: 22em;"></div>

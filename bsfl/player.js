@@ -1,6 +1,8 @@
 
 'use strict';
 
+/* uses base.js, names.js */
+
 /* Player */
 function player_zero() {
   return {def : 0, win : 0, atk : 0, pas : 0, id : -1};

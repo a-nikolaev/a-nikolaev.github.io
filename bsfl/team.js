@@ -1,7 +1,7 @@
 
 'use strict';
 
-/* uses base.js and player.js */
+/* uses base.js, names.js, player.js */
 
 /* number of players per team */
 const max_players_on_pitch = 11;
