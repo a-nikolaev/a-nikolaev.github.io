@@ -137,6 +137,11 @@ function generate_opponents(state) {
 }
 
 function init() {
+
+  simple_notify('deep-green', `
+    <img src="./img/logo.png">
+    `);
+
   state.team = Team.make_good();
 
   state.team = Team.good_formation(Team.quick_formation(state.team));
@@ -166,6 +171,12 @@ function init() {
         break;
     }
   }
+}
+
+function simple_notify(w3color, text) {
+  var d = document.getElementById("notice-text");
+  d.innerHTML = `<div class='w3-card w3-padding w3-panel ${w3color} w3-text-white'>${text}</div>`;
+  document.getElementById('notice').style.display='block';
 }
 
 function show_predictions(team1, team2) {
@@ -213,19 +224,23 @@ function show_simulation(team1, team2) {
 function show_sim_many(team1, team2) {  
   var log_div = document.getElementById("log");
   log_div.innerHTML = '';
+  
+  make_child(log_div, 'div', {'class':'w3-panel'}, function(d) {
+    d.innerHTML = '(Simulated against an easy opponent)';
+  });
 
   var d1, d2, d3;
   make_child(log_div, 'div', {'class':'w3-cell-row w3-panel'}, function(d) {
     make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
-      d.innerHTML = '<div class=""><b>wins</b></div>';
+      d.innerHTML = '<div class=""><b>won</b></div>';
       d1 = d;
     });
     make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
-      d.innerHTML = '<div class=""><b>draws</b></div>';
+      d.innerHTML = '<div class=""><b>drawn</b></div>';
       d2 = d;
     });
     make_child(d, 'div', {'class':'w3-cell w3-cell-top'}, function(d) {
-      d.innerHTML = '<div class=""><b>losses<b></div>';
+      d.innerHTML = '<div class=""><b>lost<b></div>';
       d3 = d;
     });
   });
@@ -302,6 +317,7 @@ function show_sim_league(state) {
 function play_season(state) {
 
   if (state.money < Team.all_wages(state.team)) {
+    simple_notify('w3-deep-orange',  `<h5>Not enough funds to pay wages! (Can you sell something?)</h5>`);
     return;
   }
 
@@ -338,20 +354,12 @@ function play_season(state) {
 
   if (promoting) {
     state.league_lvl += 1;
-    
-    var d = document.getElementById("notice-text");
-    d.innerHTML = `<div class='w3-card w3-panel w3-light-green w3-text-white'><h5>&#129093; Promoted to Division ${state.league_lvl}</h5></div>`;
-    document.getElementById('notice').style.display='block';
-    
+    simple_notify('w3-light-green', `<h5>&#129093; Promoted to Division ${state.league_lvl}</h5>`);
     generate_opponents(state);
   }
   else if (relegating && state.league_lvl > 0) {
     state.league_lvl -= 1;
-    
-    var d = document.getElementById("notice-text");
-    d.innerHTML = `<div class='w3-card w3-padding w3-panel w3-deep-orange w3-text-white'><h5>&#129095; Relegated to Division ${state.league_lvl}</h5></div>`;
-    document.getElementById('notice').style.display='block';
-    
+    simple_notify('w3-deep-orange',  `<h5>&#129095; Relegated to Division ${state.league_lvl}</h5>`);
     generate_opponents(state);
   }
 

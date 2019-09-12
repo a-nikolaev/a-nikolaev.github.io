@@ -121,6 +121,10 @@ button{
 }
 */
 
+.deep-green{
+  background-color: #004f08;
+}
+
 .tab-button:hover{
   background-color: #EFC;
   box-shadow: none;
