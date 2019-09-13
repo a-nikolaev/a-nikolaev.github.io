@@ -40,7 +40,7 @@ for (let i = 0; i < state.league_size-1; i++) {
 }
 
 function show_report(team) {
-  let team2 = Team.mean_team(team);
+  let team2 = Team.mean_team(team, true);
   show_predictions(team, team2);
   // show_simulation(team, team2);
   show_sim_many(team, team2);
@@ -138,11 +138,9 @@ function generate_opponents(state) {
 
 function init() {
 
-  simple_notify('deep-green', `
-    <img src="./img/logo.png">
-    `);
+  simple_notify('deep-green', `<img src="./img/logo.png">`);
 
-  state.team = Team.make_good();
+  state.team = Team.make_good(state.league_lvl);
 
   state.team = Team.good_formation(Team.quick_formation(state.team));
   //state.team = Team.quick_formation(state.team);
@@ -226,7 +224,7 @@ function show_sim_many(team1, team2) {
   log_div.innerHTML = '';
   
   make_child(log_div, 'div', {'class':'w3-panel'}, function(d) {
-    d.innerHTML = '(Simulated against an easy opponent)';
+    d.innerHTML = 'Simulated friendly matches:';
   });
 
   var d1, d2, d3;

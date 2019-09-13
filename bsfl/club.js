@@ -15,7 +15,7 @@ function club_generate_opponent(lvl) {
   let t0 = Team.make_good(lvl);
   let qt0 = Team.quick_formation(t0);
   
-  let time = 500 + Math.round(200 * lvl) + random_int(2000);
+  let time = 500 + Math.min(2000, Math.round(200 * lvl)) + random_int(2000);
 
   let gqt0 = Team.good_formation(qt0, time);
   let mean_pl = Team.mean_player(gqt0);

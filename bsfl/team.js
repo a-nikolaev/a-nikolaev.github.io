@@ -98,8 +98,14 @@ function team_all_wages(team) {
   return sum;
 }
 
-function team_mean_team(team) {
-  var pl_base = team_mean_player_on_pitch(team);
+function team_mean_team(team, include_bench=false) {
+  var pl_base;
+  if (include_bench) {
+    pl_base = team_mean_player(team);
+  }
+  else {
+    pl_base = team_mean_player_on_pitch(team);
+  }
 
   var h = 0.5 * (pl_base.win + pl_base.pas);
   var v = 0.5 * (pl_base.atk + pl_base.def)
@@ -194,52 +200,49 @@ function team_make_good_old(factor = 1) {
 function team_make_good(lvl = 0) {
   const init_num_players = max_players_on_pitch + 0;
   
-  let arr = [];
+  var arr = [];
   var num = 0;
   
-  function all_are_good(pl) {
+  function all_are_good(pl, iter) {
     let mean = (pl.win + pl.pas + pl.atk + pl.def) * 0.25;
+    let d = Math.sqrt(iter) * 0.01;
     function is_good(x) {
-      return mean*0.91 < x && x < mean * 1.10;
+      return mean*(1 - d) < x && x < mean * (1 + d);
     }
     return (is_good(pl.atk) && is_good(pl.win) && is_good(pl.pas) && is_good(pl.def));
   }
   
-  var sum_pl = Player.zero(); 
-  var i = 0;
-  while (num < init_num_players || ! all_are_good(sum_pl)) {
-
+  function gen_player(){
     let pls = [];
     for(let j = 0; j < 1 + round_probable(0.5 * lvl); j++) {
       pls.push(Player.make(lvl));
     }
-    console.log('sampled', pls.length);
     pls.sort(function(a,b){return Player.total(b) - Player.total(a);});
-    let pl = pls[0];
+    return pls[0];
+  }
 
-    //let pl = Player.make();
-
-    arr.push(pl);
+  var sum_pl = Player.zero(); 
+  var iter = 0;
+  var i = 0;
+  while (num < init_num_players || ! all_are_good(sum_pl, iter)) {
+    iter += 1;
+    let pl = gen_player();
     sum_pl = Player.sum(sum_pl, pl);
+
     if (num < init_num_players) {
+      arr.push(pl);
       num += 1;
     }
     else {
-      //     v     i   num = 3   
-      // 0 1 2 3 4 5
-      let i_to_subtract = i - num;
-      if (i_to_subtract >= 0) {
-        sum_pl = Player.sum(sum_pl, Player.mult(arr[i_to_subtract], -1));
-      }
+      sum_pl = Player.sum(sum_pl, Player.mult(arr[i], -1));
+      arr[i] = pl;
     }
-    i += 1;
+    i = (i + 1) % init_num_players;
   }
-  console.log('founda after ', i);
+  console.log('found after ', iter);
 
   var team = team_make_empty();
-  //       v     i  num = 3
-  // 0 1 2 3 4 5 -
-  for (let j = i - num; j < i; j++) {
+  for (let j = 0; j < init_num_players; j++) {
     let pl = arr[j];
     Player.assign_unique_id(pl)
     team_add_player(team, pl, Loc.Bench);
@@ -394,7 +397,12 @@ function team_estimate_lineup_expected(e, eop){
   var loss_cf = (lm_to_cf + cm_to_cf + rm_to_cf) - before_block_cf;
 
   // Shoot - Block
-  var x_cf = before_block_cf * or_zero(xy(e.get(Loc.CF).atk, eop.get(Loc.CB).def));
+  var x_cf = before_block_cf * or_zero(
+      xy(
+        Model.combo(e.get(Loc.CF).atk, Math.pow(e.get(Loc.CF).win, 0.5)),
+        Model.combo(eop.get(Loc.CB).def, Math.pow(eop.get(Loc.CB).win, 0.05))
+      )
+    );
   var block_cf = before_block_cf - x_cf;
 
   // Shoot - Goalkeeper
@@ -474,9 +482,15 @@ function team_random_change(team_orig) {
   if (! team_allow_move(team, id, src_loc, dst_loc)) {
     let set_ids_at_dst = team.place.get(dst_loc);
     let id2 = sample_from_iter(set_ids_at_dst, set_ids_at_dst.size);
-    team_move_player(team, id2, dst_loc, src_loc);
+    if (id2 !== undefined) {
+      if (team_allow_move(team, id2, dst_loc, src_loc)) {
+        team_move_player(team, id2, dst_loc, src_loc);
+      }
+    }
   }
-  team_move_player(team, id, src_loc, dst_loc);
+  if (team_allow_move(team, id, src_loc, dst_loc)) {
+    team_move_player(team, id, src_loc, dst_loc);
+  }
   return team;
 }
 
@@ -533,7 +547,7 @@ function team_good_formation(team0, iter_num=2000) {
 
   function team_strength(t) {
     let e1 = Team.expected(t);
-    let e2 = Team.expected(team_mean_team(t));
+    let e2 = Team.expected(team_mean_team(t, true));
     
     let z1 = team_estimate_lineup_expected(e1, e2);
     let z2 = team_estimate_lineup_expected(e2, e1);
@@ -542,7 +556,7 @@ function team_good_formation(team0, iter_num=2000) {
     let g2 = parseFloat(z2.x_goal);
 
     if (g2 > 0) {
-      return (g1-g2)/g2 + t.count_on_pitch;
+      return (g1-g2)/g2;
     }
     else {
       return -1;
@@ -560,27 +574,34 @@ function team_good_formation(team0, iter_num=2000) {
       let n1 = t.place.get(l1).size;
       let n2 = t.place.get(l2).size;
       let decc = Math.abs(n1 - n2) / (n1 + n2 + 1);
-      ecc += decc;
+      let overfill = 0.0;
+      if (n1 > 1) { 
+        overfill += 0.2 * (n1-1);
+      }
+      if (n2 > 1) { 
+        overfill += 0.2 * (n2-1);
+      }
+      ecc += decc + overfill;
       num += 1; 
     }
 
     return (-ecc/num);
   }
-
-  function team_eval(t) {
-    return team_strength(t) + 0.15 * team_symmetry(t);
+  
+  function team_eval(t, alpha) {
+    return team_strength(t) + 1.0 * team_symmetry(t) + t.count_on_pitch * alpha;
   }
 
   var t1 = team_clone(team0);
   var t2 = t1;
-  var score1 = team_eval(t1);
+  var score1 = team_eval(t1, 0);
   var score2 = score1;
 
   // console.log(score1, score2);
 
   for(var i = 0; i < iter_num; i++) {
     t2 = team_random_change(t1);
-    score2 = team_eval(t2);
+    score2 = team_eval(t2, 0.1*Math.pow(i/iter_num,1));
 
     let temperature = 0.02 * (iter_num - i) / iter_num ;
     if (score2 > score1 || Math.random() < Math.exp((score2-score1)/temperature)) {

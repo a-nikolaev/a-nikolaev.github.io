@@ -106,10 +106,12 @@ function sim_simulate_match(t) {
     let exgk = tex[1-ini].get(Loc.GK);
 
     let atk = pl.atk;
+    let cf_win = tex[ini].get(Loc.CF).win;
     let def_cb = excb.def;
     let def_gk = exgk.def;
 
-    if (Model.sample(atk, def_cb)) { // not blocked by defenders
+    if (Model.sample(Model.combo(atk, Math.pow(cf_win, 0.5)), 
+                     Model.combo(def_cb, Math.pow(excb.win, 0.05)))) { // not blocked by defenders
       if (Model.sample(atk, def_gk)) { // scored
         g[ini] += 1;
         say(`GOAL! ${g[0]}-${g[1]}`);
