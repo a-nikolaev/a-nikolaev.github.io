@@ -138,7 +138,7 @@ function generate_opponents(state) {
 
 function init() {
 
-  //simple_notify('deep-green', `<img src="./img/logo.png">`);
+  simple_notify('deep-green', `<img src="./img/logo.png">`);
 
   state.team = Team.make_good(state.league_lvl);
 
