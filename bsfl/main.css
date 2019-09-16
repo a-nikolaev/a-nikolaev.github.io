@@ -70,6 +70,13 @@ main { font-family: 'Rubik', sans-serif }
   z-index: 1;
 }
 
+.portrait {
+  width: 3.5em;
+  height: 3.5em;
+  display: inline-block;
+  z-index: 1;
+}
+
 svg {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

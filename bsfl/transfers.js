@@ -51,6 +51,10 @@ function add_player_entry(parent, pl, loc, gen_button){
   make_child(parent, 'div', {'class':'w3-cell-row w3-border-bottom'}, function(d){
 
     make_child(d, 'div', {'class':'w3-cell w3-cell-middle'}, function(d){
+      let face_tag_id = `face-sell-${id}`; 
+      make_child(d, 'div', {'id':face_tag_id, 'class':'player'}, function(d){
+        Face.add(face_tag_id, pl.face); 
+      });
       let tag_id = `sell-${id}`; 
       make_child(d, 'div', {'id':tag_id, 'class':'player'}, function(d){
         add_player_svg(tag_id, pl); 

@@ -1,7 +1,7 @@
 
 'use strict';
 
-/* uses base.js, names.js */
+/* uses base.js, names.js, face.js */
 
 /* Player */
 function player_zero() {
@@ -62,6 +62,7 @@ function player_make(lvl=0) {
     price : price,
     firstname : firstname,
     lastname : lastname,
+    face : Face.make(),
     id : -1};
 }
 

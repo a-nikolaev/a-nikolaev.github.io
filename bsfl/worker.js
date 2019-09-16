@@ -1,5 +1,5 @@
 
-importScripts('base.js', 'names.js', 'player.js', 'model.js', 'team.js', 'club.js');
+importScripts('base.js', 'names.js', 'face.js', 'player.js', 'model.js', 'team.js', 'club.js');
 
 onmessage = function(e) {
   let lvl = e.data;
