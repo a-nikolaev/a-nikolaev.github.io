@@ -4,7 +4,7 @@ function face_make(){
 
   q.t_skin = random_int(6);
   q.t_eyes = clamp(0, 5, q.t_skin + random_int(3)-1);
-  q.t_hair = clamp(0, 5, q.t_skin + random_int(3));
+  q.t_hair = clamp(0, 5, q.t_skin + random_int(4));
 
   // face
   q.fw =  4.1 + 0.2 * bounded_std_normal(-1.0, 1.8); // width

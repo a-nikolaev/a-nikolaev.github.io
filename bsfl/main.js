@@ -11,6 +11,7 @@ var state = {
   league_size : 8,
   league_lvl : 0,
   is_ready : false,
+  season : 0,
 };
 
 var all_workers = [];
@@ -39,11 +40,11 @@ for (let i = 0; i < state.league_size-1; i++) {
   }
 }
 
-function show_report(team) {
-  let team2 = Team.mean_team(team, true);
-  show_predictions(team, team2);
-  // show_simulation(team, team2);
-  show_sim_many(team, team2);
+function show_report(state) {
+  let team2 = Team.mean_team(state.team, true);
+  show_predictions(state.team, team2);
+  // show_simulation(state.team, team2);
+  // show_sim_many(state.team, team2);
 }
 
 function show_league_simple(){
@@ -124,14 +125,17 @@ function generate_opponents(state) {
   state.opponents.splice(0, state.opponents.length);
 
   let num = state.league_size - 1;
+
+  let names = Club.generate_names(state.league_lvl, num);
+
   for (var i=0; i<num; i++) {
     let lvl = state.league_lvl + 0.7 * (i/num) + 0.7 * Math.random();
-
+    let name = names[i];
     if (window.Worker) {
-      all_workers[i].postMessage(lvl);
+      all_workers[i].postMessage([lvl, name]);
     }
     else {
-      state.opponents.push(Club.generate_opponent(lvl));
+      state.opponents.push(Club.generate_opponent(lvl, name));
     }
   }
 }
@@ -151,7 +155,7 @@ function init() {
 
   show_transfers(state);
 
-  show_report(state.team);
+  show_report(state);
 
   // add opponents
   generate_opponents(state);
@@ -263,21 +267,25 @@ function show_sim_many(team1, team2) {
   }
 }
 
-function show_league_in_log(le) {
+function show_league_in_log(le, league_lvl, season) {
 
   var log_div = document.getElementById("log");
   log_div.innerHTML = '';
+  
+  make_child(log_div, 'h5', {'class':'w3-container', 'style':'background-color:#cfa;'}, function(d) {
+    d.innerHTML = League.name(league_lvl) + ` <sub>(Season ${season})</sub>`;
+  });
 
   make_child(log_div, 'table', {'class':'w3-table-all'}, function(d) {
     make_child(d, 'tr', {'class':''}, function(d) {
       make_child(d, 'th', {'class':''}, function(d){
-        d.innerHTML= 'Place';
+        d.innerHTML= '#';
       });
       make_child(d, 'th', {'class':''}, function(d){
-        d.innerHTML= 'Name';
+        d.innerHTML= 'Team';
       });
       make_child(d, 'th', {'class':''}, function(d){
-        d.innerHTML= 'Points';
+        d.innerHTML= 'Pts';
       });
     });
 
@@ -288,10 +296,15 @@ function show_league_in_log(le) {
 
       make_child(d, 'tr', {'class':''}, function(d) {
         make_child(d, 'td', {'class':''}, function(d){
-          d.innerHTML= `${place}`;
+          d.innerHTML= `${place + 1}`;
         });
         make_child(d, 'td', {'class':''}, function(d){
-          d.innerHTML= `${name}`;
+          if (le.is_player[i]) {
+            d.innerHTML= `<i class='w3-tag w3-teal'>${name}</i>`;
+          }
+          else {
+            d.innerHTML= `${name}`;
+          }
         });
         make_child(d, 'td', {'class':''}, function(d){
           d.innerHTML= `${pts}`;
@@ -304,11 +317,11 @@ function show_league_in_log(le) {
 
 function show_sim_league(state) {
   let clubs_arr = state.opponents.slice(0);
-  clubs_arr.push(Club.make('Me', state.team));
+  clubs_arr.push(Club.make('You', state.team));
   let le = League.make(clubs_arr.length, clubs_arr);
 
   League.simulate_season(le);
-  show_league_in_log(le);
+  show_league_in_log(le, state.league_lvl, state.season);
   return le;
 }
 
@@ -319,12 +332,14 @@ function play_season(state) {
     return;
   }
 
+  state.season += 1;
+
   let le = show_sim_league(state);
   var pts = 0;
   var i_me = 0;
   var place = 0;
   for (let i = 0; i < le.n; i++) {
-    if (le.clubs[i].name == 'Me') {
+    if (le.is_player[i] === true) {
       i_me = i;
       place = le.order_i2place[i];
       pts = le.points[i];
@@ -352,12 +367,12 @@ function play_season(state) {
 
   if (promoting) {
     state.league_lvl += 1;
-    simple_notify('w3-light-green', `<h5>&#129093; Promoted to Division ${state.league_lvl}</h5>`);
+    simple_notify('w3-light-green', `<h5>&#129093; Promoted to ${League.name(state.league_lvl)}</h5>`);
     generate_opponents(state);
   }
   else if (relegating && state.league_lvl > 0) {
     state.league_lvl -= 1;
-    simple_notify('w3-deep-orange',  `<h5>&#129095; Relegated to Division ${state.league_lvl}</h5>`);
+    simple_notify('w3-deep-orange',  `<h5>&#129095; Relegated to ${League.name(state.league_lvl)}</h5>`);
     generate_opponents(state);
   }
 
@@ -504,8 +519,7 @@ function gen_drop_handler(uname, team) {
       // Get the id of the target and add the moved element to the target's DOM
       target.appendChild(document.getElementById(data));
       
-      show_report(team);
-
+      show_report(state);
       show_transfers(state);
     }
   }
@@ -666,3 +680,4 @@ function show_team_on_pitch(uname, team) {
     add_player_svg(div_id, pl);
   }
 }
+

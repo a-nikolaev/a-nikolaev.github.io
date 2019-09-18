@@ -6,6 +6,7 @@
 function league_make(n, seeded_clubs=[]) {
 
   let clubs = [];
+  let is_player = [];
   let points = [];
   let wins = [];
   let draws = [];
@@ -31,6 +32,7 @@ function league_make(n, seeded_clubs=[]) {
       c = Club.make(`${Math.round(11.0 * Player.total(mean_pl))}-Q-${time}K`, gqt0);
     }
     clubs.push(c);
+    is_player.push(false);
     points.push(0);
     wins.push(0);
     draws.push(0);
@@ -40,12 +42,14 @@ function league_make(n, seeded_clubs=[]) {
     order_i2place.push(i);
     order_place2i.push(i);
   }
+  is_player[n-1] = true;
 
   return {
     'n' : n,
     'repeats' : 2,
     'matches' : 0,
-    'clubs' : clubs, 
+    'clubs' : clubs,
+    'is_player' : is_player,
     'points' : points, 
     'wins' : wins, 
     'draws' : draws, 
@@ -176,6 +180,16 @@ function league_payment_per_point(lvl) {
   return (1 + lvl)*10000 * 0.5;
 }
 
+function league_name(league_lvl) {
+  let code = 'A'.charCodeAt(0);
+  let ch = String.fromCharCode(code + (12-league_lvl));
+  if (league_lvl > 12) {
+    return `Division A<sup>${league_lvl + 1 - 12}</sup>`
+  }
+  return `Division ${ch}`;
+  //return `Sunday League <span class='w3-badge w3-white'>🍺</span>`;
+}
+
 let League = {
   make : league_make,
   print : league_print,
@@ -184,4 +198,5 @@ let League = {
   simulate_round : league_simulate_round,
   simulate_season : league_simulate_season,
   payment_per_point : league_payment_per_point,
+  name : league_name,
 };

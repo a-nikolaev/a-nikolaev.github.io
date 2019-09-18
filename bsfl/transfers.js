@@ -19,6 +19,7 @@ function init_buy_transfers(state){
 
 function refresh(state){
   make_pitch('main-stadium', 'maintgt', state.team);
+  show_report(state);
   show_transfers(state);
 }
 
