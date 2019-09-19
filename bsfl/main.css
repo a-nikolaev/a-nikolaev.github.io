@@ -1,5 +1,5 @@
 
-main { font-family: 'Rubik', sans-serif }
+main { font-family: sans-serif }
 
 * {
   box-sizing: border-box;
@@ -67,7 +67,7 @@ main { font-family: 'Rubik', sans-serif }
 
   display: inline-block;
 
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .portrait {
@@ -116,18 +116,6 @@ div.loc {
 #prediction {
 }
 
-/*
-button{
-  margin: 0;
-  border: none;
-  border-radius: 0.3em;
-  height: 2em;
-  display: inline-block;
-  background-color: #eee;
-  min-width:10em;
-}
-*/
-
 .deep-green{
   background-color: #004f08;
 }
@@ -174,4 +162,49 @@ button div.money{
 
 button div.money span.dollar{
   color:#efe;
+}
+
+
+/* ---- Tooltips, src: https://www.w3schools.com/howto/howto_css_tooltip.asp ---- */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgba(50, 50, 50, 1);
+  border-radius: 0em 3em 3em 3em;
+  /* -moz-border-radius: 3em; -webkit-border-radius: 3em; */
+  /* box-shadow: 0.3em 0.3em 0.05em rgba(0, 0, 0, 0.1); */
+  /* -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); */
+
+  opacity : 0.0;
+  transition: opacity 0.5s;
+
+  width: 0;
+  height: 0;
+}
+.tooltip:hover .tooltiptext {
+  pointer-events : none;
+  position: absolute; left: 2em; top: 2em; 
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  width: auto;
+  height: auto;
+}
+
+.tooltiptext tr { 
+  line-height: 1.0em; 
+}
+
+.tooltiptext td { 
+  min-width: 1em; 
+  text-align:center;
+  vertical-align:middle;
+  font-weight: 700;
 }

@@ -57,7 +57,7 @@ function add_player_entry(parent, pl, loc, gen_button){
         Face.add(face_tag_id, pl.face); 
       });
       let tag_id = `sell-${id}`; 
-      make_child(d, 'div', {'id':tag_id, 'class':'player'}, function(d){
+      make_child(d, 'div', {'id':tag_id, 'class':'player tooltip'}, function(d){
         add_player_svg(tag_id, pl); 
       });
     });

@@ -430,8 +430,8 @@ function add_prediction(div, e1, e2, reverse) {
       let x = 0.5 * (xy1[0] + xy2[0]);
       let y = 0.5 * (xy1[1] + xy2[1]);
       let txt = Math.round(mag);
-      pic.text(x, y, txt).attr({ "font-size": 7, "font-family": "'Mali', cursive", stroke: "#FFF", "stroke-width": 2 });
-      pic.text(x, y, txt).attr({ "font-size": 7, "font-family": "'Mali', cursive", fill: color });
+      pic.text(x, y, txt).attr({ "font-size": 7, "font-family": "'Quicksand', cursive", "font-weight":'700', stroke: "#FFF", "stroke-width": 2 });
+      pic.text(x, y, txt).attr({ "font-size": 7, "font-family": "'Quicksand', cursive", "font-weight":'700', fill: color });
     }
   }
   
@@ -490,6 +490,23 @@ function dragstart_handler(ev) {
   // Add the target element's id to the data transfer object
   ev.dataTransfer.setData("text", ev.target.id);
   ev.dataTransfer.dropEffect = "move";
+  
+  ev.target.className = ev.target.className.replace(" tooltip", "");
+  ev.target.style.opacity = 0.4;
+  /*
+  ev.target.style.border = '1px solid';
+  ev.target.style['border-radius'] = '2em';
+  ev.target.style.width = '3.5em';
+  ev.target.style.height = '3.5em';
+  */
+}
+
+function dragend_handler(ev) {
+  ev.target.className += " tooltip";
+  ev.target.style.opacity = 1;
+  /*
+  ev.target.style.border = 'none';
+  */
 }
 
 function dragover_handler(ev) {
@@ -605,7 +622,13 @@ function make_pitch(div_id, uname, team) {
 }
 
 function add_player_svg(div_id, pl) {
-  document.getElementById(div_id).title = `    ${pl.atk}\n${pl.win}      ${pl.pas}\n    ${pl.def}`;
+  let parent_div = document.getElementById(div_id);
+  make_child(parent_div, 'span', {'class':'tooltiptext'}, function(d){
+    function row(a,b,c) {
+      return `<tr><td>${a}</td><td>${b}</td><td>${c}</td></tr>`
+    }
+    d.innerHTML = `<table>${row('',pl.atk,'')} ${row(pl.win,'',pl.pas)} ${row('',pl.def,'')}</table>`;
+  });
 
   var pic = Raphael(div_id, "100%", "100%");
   pic.setViewBox(-10,-10,20,20);
@@ -668,9 +691,10 @@ function show_team_on_pitch(uname, team) {
 
     var div = document.createElement("div");
     div.setAttribute('id', div_id);
-    div.setAttribute('class', 'player');
+    div.setAttribute('class', 'player tooltip');
     div.setAttribute('draggable', 'true');
     div.ondragstart = dragstart_handler;
+    div.ondragend = dragend_handler;
 
     var spot_name = `${uname}-${s_of_loc(team.player_loc.get(id))}`;
     console.log(name);
