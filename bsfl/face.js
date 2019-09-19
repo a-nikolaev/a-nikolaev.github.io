@@ -7,7 +7,7 @@ function face_make(){
   q.t_hair = clamp(0, 5, q.t_skin + random_int(4));
 
   // face
-  q.fw =  4.1 + 0.2 * bounded_std_normal(-1.0, 1.8); // width
+  q.fw =  4.0 + 0.1 * bounded_std_normal(-2.0, 3.5); // width
   let face_height = 6 + 0.25 * bounded_std_normal(-1.5, 1.5) ; // top
   q.ft = -face_height + 0.03 * bounded_std_normal(-1.5, 1.5) ; // top
   q.fb = face_height  + 0.03 * bounded_std_normal(-1.5, 1.5) ; // bottom
