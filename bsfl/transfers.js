@@ -103,7 +103,7 @@ function show_sells(top_div, state){
   let sorted_players_arr = Array.from( team.players );
   sorted_players_arr.sort(function(e1, e2){ return Player.total(e2[1]) - Player.total(e1[1]); });
 
-  make_child(top_div, 'div', {'class':'w3-container w3-half'}, function(d){
+  make_child(top_div, 'div', {'class':'w3-container w3-half', 'style':'padding-bottom:2em;'}, function(d){
     for (let [id, pl] of sorted_players_arr) {
       let loc = team.player_loc.get(id);
       add_player_entry(d, pl, loc, function(d){
@@ -121,7 +121,7 @@ function show_sells(top_div, state){
 function show_buys(top_div, state){ 
   let team = state.team;
 
-  make_child(top_div, 'div', {'class':'w3-container w3-half'}, function(d){
+  make_child(top_div, 'div', {'class':'w3-container w3-half', 'style':'padding-bottom:2em;'}, function(d){
     for (let [id, pl] of transfers_buy) {
 
       add_player_entry(d, pl, undefined, function(d){
