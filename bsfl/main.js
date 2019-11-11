@@ -34,6 +34,9 @@ for (let i = 0; i < state.league_size-1; i++) {
         for (let el of wait_sensitives) {
           el.className = el.className.replace(" w3-disabled", "");
         }
+
+        // can show prediction now
+        show_report(state);
       }
     }
     all_workers.push(w);
@@ -41,8 +44,7 @@ for (let i = 0; i < state.league_size-1; i++) {
 }
 
 function show_report(state) {
-  let team2 = Team.mean_team(state.team, true);
-  show_predictions(state.team, team2);
+  show_predictions(state);
   // show_simulation(state.team, team2);
   // show_sim_many(state.team, team2);
 }
@@ -155,8 +157,6 @@ function init() {
 
   show_transfers(state);
 
-  show_report(state);
-
   // add opponents
   generate_opponents(state);
 
@@ -181,15 +181,56 @@ function simple_notify(w3color, text) {
   document.getElementById('notice').style.display='block';
 }
 
-function show_predictions(team1, team2) {
+function show_predictions(state) {
   var div = document.getElementById("prediction");
   div.innerHTML='';
 
+  function average_estimates(arr) {
+    let n = arr.length;
+    var avg = {};
+    if (n > 0) {
+      for(let key in arr[0]){
+        avg[key] = 0;
+      }
+      for (let obj of arr) {
+        for(let key in obj){
+          avg[key] += obj[key] / n;
+        }
+      }
+    }
+    return avg;
+  }
+  
+  /*
+  let team1 = state.team
+  let team2 = state.opponents[0].team
+
   var e1 = Team.expected(team1);
   var e2 = Team.expected(team2);
+  
+  let z12 = Team.estimate_lineup_expected(e1, e2);    
+  let z21 = Team.estimate_lineup_expected(e2, e1);    
 
-  add_prediction(div, e2, e1, -1);
-  add_prediction(div, e1, e2, 1);
+  add_prediction(div, z21, -1);
+  add_prediction(div, z12, 1);
+  */
+
+  let team1 = state.team;
+  let e1 = Team.expected(team1);
+  
+  let ops2 = state.opponents.map( op => {
+      let e2 = Team.expected(op.team);
+      return Team.estimate_lineup_expected(e2, e1);
+    });
+  let z2 = average_estimates(ops2)
+  add_prediction(div, z2, -1);
+  
+  let ops1 = state.opponents.map( op => {
+      let e2 = Team.expected(op.team);
+      return Team.estimate_lineup_expected(e1, e2);
+    });
+  let z1 = average_estimates(ops1)
+  add_prediction(div, z1, 1);
 }
 
 function show_simulation(team1, team2) {  
@@ -396,15 +437,9 @@ function open_tab(ev, tab_id) {
   ev.currentTarget.className += " selected";
 }
 
-function add_prediction(div, e1, e2, reverse) {
+function add_prediction(div, z, reverse) {
   var pic = Raphael(div, "9em", "15em");
   pic.setViewBox(-30, -50, 60, 100);
-
-  function print(e) {
-    for(let [loc, pl] of e) {
-      console.log(loc, pl);
-    }
-  }
 
   let loc_goal = -1;
   let loc_after_goal = -2
@@ -450,8 +485,7 @@ function add_prediction(div, e1, e2, reverse) {
   }
 
   // draw expected team
-  function draw(e, eop) {
-    let z = Team.estimate_lineup_expected(e, eop);    
+  function draw() {
 
     arrow(Loc.CB, Loc.LM, z.cb_to_lm);
     arrow(Loc.CB, Loc.CM, z.cb_to_cm);
@@ -483,7 +517,7 @@ function add_prediction(div, e1, e2, reverse) {
     
   }
   
-  draw(e1, e2);
+  draw();
 }
 
 function dragstart_handler(ev) {
