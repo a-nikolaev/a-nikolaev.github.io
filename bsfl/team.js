@@ -239,7 +239,7 @@ function team_make_good(lvl = 0) {
     }
     i = (i + 1) % init_num_players;
   }
-  console.log('found after ', iter);
+  //console.log('found after ', iter);
 
   var team = team_make_empty();
   for (let j = 0; j < init_num_players; j++) {

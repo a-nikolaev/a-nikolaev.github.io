@@ -177,14 +177,16 @@ function league_simulate_season(le) {
 }
 
 function league_payment_per_point(lvl) {
-  return (1 + lvl)*10000 * 0.5;
+  // return (1 + lvl)*10000 * 0.25;
+  return 4000 + 1500*lvl + 500*lvl*lvl;
 }
 
 function league_name(league_lvl) {
+  let mx = global_max_division; // 0 ... 9
   let code = 'A'.charCodeAt(0);
-  let ch = String.fromCharCode(code + (12-league_lvl));
-  if (league_lvl > 12) {
-    return `Division A<sup>${league_lvl + 1 - 12}</sup>`
+  let ch = String.fromCharCode(code + (mx-league_lvl));
+  if (league_lvl > mx) {
+    return `Division A<sup>${league_lvl + 1 - mx}</sup>`
   }
   return `Division ${ch}`;
   //return `Sunday League <span class='w3-badge w3-white'>🍺</span>`;

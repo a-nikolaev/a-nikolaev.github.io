@@ -18,7 +18,10 @@ function player_make(lvl=0) {
   */
 
   function g() {
-    return clamp(0, 10, 2 + Math.round((0.5 * lvl+1.7) * bounded_std_normal(0.0, 10.0)));
+    // return clamp(0, 10, 2 + Math.round((0.5 * lvl+1.7) * bounded_std_normal(0.0, 10.0)));
+    // return clamp(0, 10, 2 + Math.round((0.5 * lvl*lvl/12 +1.7) * bounded_std_normal(0.0, 10.0)));
+    let d_num = global_max_division+1;
+    return clamp(0, 10, 2 + Math.round((0.5 * lvl*lvl * 12/(d_num*d_num) + 1.7) * bounded_std_normal(0.0, 10.0)));
   }
 
   var atk = g();

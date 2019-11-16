@@ -131,7 +131,11 @@ function generate_opponents(state) {
   let names = Club.generate_names(state.league_lvl, num);
 
   for (var i=0; i<num; i++) {
-    let lvl = state.league_lvl + 0.7 * (i/num) + 0.7 * Math.random();
+    var top_league_factor = 1.0;
+    if (state.league_lvl >= global_max_division) {
+      top_league_factor = 2.0;
+    }
+    let lvl = state.league_lvl + top_league_factor * (0.7 * (i/num) + 0.7 * Math.random());
     let name = names[i];
     if (window.Worker) {
       all_workers[i].postMessage([lvl, name]);
@@ -156,6 +160,27 @@ function init() {
   init_buy_transfers(state);
 
   show_transfers(state);
+
+  /*
+  // test team costs
+  for (var d = 0; d <= 12; d++) {
+    function tot_wages(t) {
+      var s = 0;
+      for (let [id, pl] of t.players) {
+        s += pl.wage;        
+      }
+      return s;
+    }
+    var sum = 0;
+    let num = 30;
+    for (var i = 0; i < num; i++) {
+      let t = Team.make_good(d);
+      let s = tot_wages(t);
+      sum += s;
+    }
+    console.log(`${d} ${sum/num}`)
+  }
+  */
 
   // add opponents
   generate_opponents(state);

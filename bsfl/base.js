@@ -1,6 +1,8 @@
 
 'use strict';
 
+const global_max_division = 9;
+
 /* 0 ... (max-1) */
 function random_int(max) {
   return Math.floor(Math.random() * Math.floor(max));

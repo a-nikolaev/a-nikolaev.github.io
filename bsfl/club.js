@@ -12,13 +12,13 @@ function club_all_wages(c) {
 }
 
 function club_generate_one_name(lvl) {
-  let arr = real_club_names[Math.min(Math.floor(lvl), 12)];
+  let arr = real_club_names[Math.min(Math.floor(lvl), global_max_division)];
   let cc = sample_from_iter(arr, arr.length);
   return cc.name;
 }
 
 function club_generate_names(lvl, n) {
-  let arr = real_club_names[Math.min(Math.floor(lvl), 12)];
+  let arr = real_club_names[Math.min(Math.floor(lvl), global_max_division)];
   let narr = [];
   for (let x of arr) {
     narr.push(x.name);
