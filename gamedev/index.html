@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Alexey Nikolaev - Game development portfolio</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+    <style>
+      p, ul { font-size:1.5rem; }
+    </style>
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme"> -->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			  
+        <section>
+            <img height='100px' src='./01-wanderers/01.png' />
+            <img height='100px' src='./01-wanderers/03.png' />
+            <img height='100px' src='./01-wanderers/map.png' />
+            <img height='100px' src='./05-curseofwar/2.png' />
+            <img height='100px' src='./04-bsfl/1.png' />
+            <br />
+            <img height='100px' src='./06-boardgame/dice-soccer-4.jpg' /> 
+            <img height='100px' src='./06-boardgame/harbors-maps.png' /> 
+            <img height='100px' src="./08-misc/turing-tarpit.png" />
+            <img height='100px' src='./07-artist/cat.png' /> 
+            <img height='100px' src='./07-artist/breakfast.png' />
+            <img height='100px' src="./08-misc/soko-13-no-border.png" />
+            <br />
+            <img height='100px' src="./03-wfc/game.png" />
+            <img height='100px' src="./03-wfc/sml.png" />
+            <img height='100px' src="./08-misc/shield-fclogo.png" />
+            <img height='100px' src="./08-misc/spaceships-3.png" />
+            <img height='100px' src="./08-misc/horddays.png" />
+         <br />
+         Scroll 🡆 to see different projects <br />
+         <p>Scroll 🡇 to see details for each project</p>
+        </section>
+
+        <!-- Wanderers -->
+        <section> 
+          <section> 
+            <img src='./01-wanderers/logo.png'>
+            <p>
+            An open world adventure dungeon crawler (<a href="https://github.com/a-nikolaev/wanderers">Github</a>).
+            <br />
+            Persistent procedurally generated world simulated at two scales. 
+            Smooth turn-based action. Physics-based combat. Economy and population simulation.
+            </p>
+
+            <p>(scroll down)</p>
+          </section>
+          <section><img src='./01-wanderers/01.png' /></section>
+          <section><video data-autoplay src='./01-wanderers/vid.mp4'></video><p>combat example video</p></section>
+          <section>
+            <img src='./01-wanderers/map.png' />
+            <img src='./01-wanderers/tileset.png' />
+          </section>
+          <section><img src='./01-wanderers/02.png' /> </section>
+          <!-- <section><img src='./01-wanderers/03.png' /> </section> -->
+          <section><img src='./01-wanderers/04.png' /> </section>
+        </section>
+
+        <!-- Tournaments -->
+        <section>
+          <section> Programming competitions at Hunter College <br />
+            <img src='./02-tournaments/hunter-logo.svg' /> <br />
+            <p>Designed and run multiple gamified programming tournaments for Hunter College students.</p>
+            <p><b>Example tournament projects:</b>
+            <ul> 
+            <li> Program an AI for a group of dwarves who must build a fort, gather apples and pumpkins, and fend off zombies that come at night </li>
+            <li> Program space debris collecting robots that occasionally break and must be repaired </li>
+            <li> Play Battleships and solve Crossword puzzles </li>
+            </ul>
+            </p>
+            <p>(scroll down)</p>
+          </section>
+          <section>
+          <p>An example solution for the Dwarf Outpost tournament (C++) <br />
+            (If the recording does not show up, reload the page or watch 
+            <a href="https://asciinema.org/a/yQCLhsIRIGNb1IoSfRnbiqYn5" target="_blank">here</a>)<br />
+            <script id="asciicast-yQCLhsIRIGNb1IoSfRnbiqYn5" src="https://asciinema.org/a/yQCLhsIRIGNb1IoSfRnbiqYn5.js" 
+                data-autoplay="0" data-preload="0" data-theme="tango" data-size="small" data-cols="76" data-rows="26" data-speed="3" data-loop="1" 
+                async>
+            </script>
+          Dwarves are provided with an API to check the current time and their surroundings, walk, chop wood, build fences, and pick apples and pumpkins.
+          </p>
+          </section>
+        </section>
+
+        <!-- WFC -->
+        <section>
+          <section>
+            Wave-function collapse
+            <p>Implemented the WFC algorithm for arbitrary neighborhoods and localized collapsing</p>
+            <img src='./03-wfc/out.png' />
+            <img src='./03-wfc/animation-pause.gif' />
+            <p>(scroll down)</p>
+          </section>
+          <section>
+            <video data-autoplay src='./03-wfc/wfc.mp4'></video>
+            <p>WFC map generation (the goal is to evolve/modify WFC rules as the game goes)</p>
+          </section>
+        </section>
+        
+        <!-- BSFL -->
+        <section> 
+          <section>
+            <p> <b>BSFL</b>: A coffee-break soccer club manager (<a href="https://5th.itch.io/bsfl">play at itch.io</a>) <br />
+            <img src='./04-bsfl/1.png' /> <br />
+            (scroll down)</p>
+          </section>
+          <section>
+            <img src='./04-bsfl/2.png' /> 
+            <p>relatively simple game mechanics and tactical flexibility</p>
+          </section>
+          <section>
+            <img src='./04-bsfl/3.png' />
+            <p>faces of the players are procedurally generated</p>
+          </section>
+        </section>
+
+        <!-- Curse of War -->
+        <section> 
+          <section>
+            <p> <b>Curse of War</b>: A Linux strategy game with ncurses and SDL interface (<a href="https://github.com/a-nikolaev/curseofwar">Github</a>) <br />
+            <img width='50%' src='./05-curseofwar/0.png' /><br />
+            Included in Ubuntu, Debian, Arch Linux, and many other Linux distributions. </p>
+            
+            <p>Reviews: <br />
+            <a href="https://linuxhint.com/linux_shell_ascii_games/">Top 5 ASCII Games on Linux</a> <br />
+            <a href="https://www.ubuntupit.com/best-ascii-games-on-linux/">The 20 Best ASCII Games on Linux System in 2020</a> <br />
+            <a href="https://itsfoss.com/best-ascii-games/">Best ASCII Games for Linux That are Insanely Good</a>
+            </p>
+            <p>(scroll down)</p>
+          </section>
+          <section>
+            <img src='./05-curseofwar/2.png' />
+            <p>can play against computer opponents or via network</p>
+          </section>
+          <section>
+            <img src='./05-curseofwar/1.png' />
+          </section>
+        </section>
+
+        <!-- Board games -->
+        <section>
+          <section>
+            Board game development 
+            <p>Educational programming game Magic Harbors (in development)</p>
+            <img width='70%'src='./06-boardgame/map-4.png'>
+            <p>(scroll down)</p>
+          </section>
+          <section>
+            <img width='80%'src='./06-boardgame/harbors-maps.png'>
+            <p>computer-aided design of game boards, maximizing their "traversability"</p>
+          </section>
+          <section>
+            <p>A soccer game I designed back in high school with my brother</p>
+            <img height='400px' src='./06-boardgame/dice-soccer-4.jpg' /> 
+            &emsp;
+            <img height='400px' src='./06-boardgame/skills.png' /> <br />
+          </section>
+        </section>
+
+        <!-- Artist -->
+        <section>
+          <section> Procedural painting <br />
+            <img width='30%' src='./07-artist/icecream.jpg' /> 
+            <img width='45%' src='./07-artist/flower.jpg' /> 
+            <p>(scroll down)</p>
+          </section>
+          <section> 
+            <img width='40%' src='./07-artist/fields.png' /> 
+            <img width='40%' src='./07-artist/cat.png' /> 
+            <img width='40%' src='./07-artist/breakfast.png' /> 
+            <img width='40%' src='./07-artist/fruits.png' /> 
+          </section>
+        </section>
+        
+        <!-- Misc -->
+        <section>
+          <section>
+            Other projects and prototypes
+            <p>(scroll down)</p>
+          </section>
+          <section><p>A puzzle generator for Sokoban and similar games <br />
+            <img src="./08-misc/soko-02.png" />
+            <!-- <img src="./08-misc/soko-03.png" /> -->
+            <img src="./08-misc/soko-04.png" />
+            <img src="./08-misc/soko-05.png" />
+            <img src="./08-misc/soko-06.png" />
+            <!-- <img src="./08-misc/soko-07.png" /> -->
+            <img src="./08-misc/soko-08.png" />
+
+            <img src="./08-misc/soko-09.png" />
+            <img src="./08-misc/soko-10.png" />
+            <!--<img src="./08-misc/soko-11.png" />
+            <img src="./08-misc/soko-12.png" />-->
+            <img src="./08-misc/soko-13.png" />
+            <!-- <img src="./08-misc/soko-14.png"> -->
+            <img src="./08-misc/soko-15.png" />
+            <img src="./08-misc/soko-21.png" />
+          </p>
+          </section>
+          <section><p>Cooperative teams AI</p> <video width='50%' data-autoplay src='./08-misc/coop-teams.mp4'></video></section>
+          <section><p>Procedurally generated emblems/logos (JS, Canvas)</p><img src="./08-misc/shield-fclogo.png" /></section>
+          <section><p>7DRL Zombie apocalypse with 3D terrain</p><img src='./08-misc/horddays.png' /></section>
+          <section><p>A fluid-like NPC movement model intended to simulate <br /> moving crowds and pushing (think of a horde of zombies)</p> 
+            <video data-autoplay src='./08-misc/liquid.mp4'></video></section>
+          <!--
+          <section><p>A roguelike engine with tweening animation <br /> implemented with persistent data structures</p>
+            <video data-autoplay src='./08-misc/rlish.mp4'></video></section>
+          -->
+          <section><p>Programming robots with a concatenative language inspired by Joy and SKI combinators </p><img src="./08-misc/turing-tarpit.png" /></section>
+          <section><p>Procedurally generated sci-fi logos/spaceships (JS, SVG)</p>
+          <div id='space'></div>
+          <button type="button" onclick="update_space();">Generate more</button>
+          </section>
+          </section>
+        </section>
+
+			</div>
+		</div>
+    
+    <script src="space-js/martinez.min.js"></script>
+    <script src="space-js/random.js"></script>
+    <script src="space-js/vec2d.js"></script>
+    <script src="space-js/logo.js"></script>
+    <script>
+      function update_space() {
+          const div = document.getElementById('space'); 
+          div.innerHTML=make_logo();
+      }
+      document.body.addEventListener("load", update_space());
+    </script>
+
+		<script src="dist/reveal.js"></script>
+		<!--
+    <script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+    -->
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+        minScale: 1.0,
+        maxScale: 1.0, 
+				// Learn about plugins: https://revealjs.com/plugins/
+				// plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
