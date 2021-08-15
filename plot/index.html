@@ -1,0 +1,341 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Plot</title>
+
+<script>
+  /**
+   * Converts an HSL color value to RGB. Conversion formula
+   * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+   * Assumes h, s, and l are contained in the set [0, 1] and
+   * returns r, g, and b in the set [0, 255].
+   *
+   * @param   {number}  h       The hue
+   * @param   {number}  s       The saturation
+   * @param   {number}  l       The lightness
+   * @return  {Array}           The RGB representation
+   */
+  function hslToRgb(color){
+      var h = color.h;
+      var s = color.s;
+      var l = color.l;
+      var r, g, b;
+
+      if(s == 0){
+          r = g = b = l; // achromatic
+      }else{
+          var hue2rgb = function hue2rgb(p, q, t){
+              if(t < 0) t += 1;
+              if(t > 1) t -= 1;
+              if(t < 1/6) return p + (q - p) * 6 * t;
+              if(t < 1/2) return q;
+              if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+              return p;
+          }
+
+          var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+          var p = 2 * l - q;
+          r = hue2rgb(p, q, h + 1/3);
+          g = hue2rgb(p, q, h);
+          b = hue2rgb(p, q, h - 1/3);
+      }
+
+      return {r:Math.round(r * 255), g:Math.round(g * 255), b:Math.round(b * 255)}
+  }
+    
+  function rgb_to_string(c) {
+    var cc = 0x1000000 + c.b + 0x100 * c.g + 0x10000 * c.r;
+      return '#'+cc.toString(16).substr(1);
+  }
+
+  function hsl_to_string(c) {
+    return rgb_to_string(hslToRgb(c));
+  }
+
+  function parse_data(text) {
+    const lines = text.split("\n");
+    const col_num = lines[0].trim().split(/[ \t]+/).length;
+    const data = new Array();
+    for (let i = 0; i < col_num; i++) {
+      data.push(new Array());
+    }
+    for (const line of lines) {
+        const arr = line.trim().split(/ +/);
+        if (arr.length >= col_num) {
+          for (let i = 0; i < col_num; i++) {
+              data[i].push(parseFloat(arr[i]));
+          }
+        }
+    }
+    return data;
+  }
+
+  function find_stats(data){
+    return data.map(arr => { return {min: Math.min(...arr), max: Math.max(...arr)}; });
+  }
+
+  function round_sig_digits(x, num=1) {
+    return parseFloat(x.toPrecision(num));
+  }
+
+  function make_axis(lo, hi, is_log=false, step=undefined) {
+    if (!is_log) {
+      // Non-logarithmic
+      if (step === undefined) {
+        let range = (hi - lo);
+        let approx_step = range * 0.1;
+        step = round_sig_digits(2 ** Math.ceil(Math.log(approx_step) / Math.log(2)));
+      }
+      let new_lo = Math.floor(lo / step) * step;
+      let new_hi = Math.ceil(hi / step) * step;
+      if (new_lo == new_hi || isNaN(new_lo) || isNaN(new_hi)) {
+        new_lo = lo - 1;
+        new_hi = hi + 1;
+        step = 0.25;
+      }
+      return {lo: new_lo, hi: new_hi, step: step, is_log: is_log};
+    } else {
+      // Logarithmic
+      lo = Math.floor(Math.log(lo) / Math.log(10));
+      hi = Math.ceil(Math.log(hi) / Math.log(10));
+      
+      if (step === undefined) {
+        let range = (hi - lo);
+        let approx_step = range * 0.1;
+        step = round_sig_digits(2 ** Math.ceil(Math.log(approx_step) / Math.log(2)));
+        if (step < 1) {
+          step = 1;
+        }
+      }
+      let new_lo = Math.floor(lo / step) * step;
+      let new_hi = Math.ceil(hi / step) * step;
+      if (new_lo == new_hi || isNaN(new_lo) || isNaN(new_hi)) {
+        new_lo = lo - 1;
+        new_hi = hi + 1;
+        step = 1;
+      }
+      return {lo: new_lo, hi: new_hi, step: step, is_log: is_log};
+    }
+  }
+    
+  function draw_frame(c, axis_x, axis_y, x_to_px, y_to_px) {
+    // Same axis as the real ones, but is_log turned off
+    const pseudo_axis_x = {lo: axis_x.lo, hi: axis_x.hi, step: axis_x.step, is_log: false};
+    const pseudo_axis_y = {lo: axis_y.lo, hi: axis_y.hi, step: axis_y.step, is_log: false};
+    
+    c.beginPath();
+    c.strokeStyle = "#DDDDDD";
+    c.lineWidth = 2;
+
+    // number of grid intervals in x and y direction, e.g.
+    // +---+---+---+   ->  3 grid intervals
+    // 0   5  10  15
+    let num_x = Math.round((axis_x.hi - axis_x.lo) / axis_x.step);
+    let num_y = Math.round((axis_y.hi - axis_y.lo) / axis_y.step);
+
+    for(let i = 0; i <= num_x; i++) {
+      let x = axis_x.lo + axis_x.step * i;
+      c.moveTo(x_to_px(pseudo_axis_x, x), y_to_px(pseudo_axis_y, axis_y.lo));
+      c.lineTo(x_to_px(pseudo_axis_x, x), y_to_px(pseudo_axis_y, axis_y.hi));
+    }
+    
+    for(let j = 0; j <= num_y; j++) {
+      let y = axis_y.lo + axis_y.step * j;
+      c.moveTo(x_to_px(pseudo_axis_x, axis_x.lo), y_to_px(pseudo_axis_y, y));
+      c.lineTo(x_to_px(pseudo_axis_x, axis_x.hi), y_to_px(pseudo_axis_y, y));
+    }
+
+    c.stroke();
+ 
+    // Text
+    function float_to_string(x, is_log){
+      if (is_log) {
+        if (-3.5 < x && x < 3.5) {
+          let v = 10**x;
+          return `${parseFloat(v.toPrecision(12))}`;
+        } else {
+          let v = 10**x;
+          return `1E${parseFloat(x.toPrecision(12))}`;
+        }
+      } else {
+        return `${parseFloat(x.toPrecision(12))}`;
+      }
+    }
+
+    c.fillStyle = "#000000";
+    font_size = 12;
+    chosen_font = "Arial";
+    c.font = "bold " + font_size + "px " + chosen_font;
+    c.textBaseline = "middle";
+    
+    c.textAlign = "center";
+    let x_label_step = (axis_x.is_log ? 1 : 2);
+    for(let i = 0; i <= num_x; i+=x_label_step) {
+      let x = axis_x.lo + axis_x.step * i;
+
+      let text = float_to_string(x, axis_x.is_log);
+      let text_x = x_to_px(pseudo_axis_x, x);
+      let text_y = y_to_px(pseudo_axis_y, axis_y.lo) + font_size;
+  
+      c.fillText(text, text_x, text_y);
+    }
+    
+    c.textAlign = "end";
+    let y_label_step = (axis_y.is_log ? 1 : 2);
+    for(let j = 0; j <= num_y; j+=y_label_step) {
+      let y = axis_y.lo + axis_y.step * j;
+
+      let text = float_to_string(y, axis_y.is_log);
+      let text_x = x_to_px(pseudo_axis_x, axis_x.lo) - font_size;
+      let text_y = y_to_px(pseudo_axis_y, y);
+  
+      c.fillText(text, text_x, text_y);
+    }
+  }
+
+  function render() {
+    const textarea = document.getElementById('plot-data');
+    const data = parse_data(textarea.value);
+    const stats = find_stats(data);
+
+    console.log(stats);
+    
+    // Data series to be plotted
+    const series = [];
+    for (let i = 1; i < stats.length; i++) {
+      series.push({
+        // for each x and y, specify either the column number or the formula
+        x: {column: 0, formula: undefined}, 
+        y: {column: i, formula: undefined}
+      });
+    }
+    
+    const min_x = Math.min(...series.map(ser => stats[ser.x.column].min));
+    const max_x = Math.max(...series.map(ser => stats[ser.x.column].max));
+    const min_y = Math.min(...series.map(ser => stats[ser.y.column].min));
+    const max_y = Math.max(...series.map(ser => stats[ser.y.column].max));
+    const axis_x = make_axis(min_x, max_x, document.getElementById("input-x-log").checked);
+    const axis_y = make_axis(min_y, max_y, document.getElementById("input-y-log").checked);
+
+    console.log(axis_x);
+    console.log(axis_y);
+
+    const w = parseInt(document.getElementById("input-width").value);
+    const h = parseInt(document.getElementById("input-height").value);
+    const margin = {
+      top: 20,
+      left: 50,
+      right: 20,
+      bottom: 50,
+    };
+    function x_to_px(axis, x) {
+      if (axis.is_log) {
+        x = Math.log(x) / Math.log(10);
+      }
+      return margin.left + (w - margin.left - margin.right) * (x - axis.lo) / (axis.hi - axis.lo);
+    }
+    function y_to_px(axis, y) {
+      if (axis.is_log) {
+        y = Math.log(y) / Math.log(10);
+      }
+      return h - (margin.bottom + (h - margin.top - margin.bottom) * (y - axis.lo) / (axis.hi - axis.lo));
+    }
+
+    const dash_style = ((d) => [
+      [],
+      [d-2, 2],
+      [d-4, 4],
+      [d-6, 6],
+      [2*d - 4, 4],
+      [2*d - 8, 8],
+    ])(10);
+    
+    const hue_style = [0, 0.5, 0.25, 0.75, 0.125, 0.625, 0.375, 0.875];
+
+    const canvas = document.getElementById('canvas');
+    canvas.width = w;
+    canvas.height = h;
+
+    const c = canvas.getContext("2d");
+    c.fillStyle = "#FFFFFF";
+    c.fillRect(0, 0, w, h);
+
+    draw_frame(c, axis_x, axis_y, x_to_px, y_to_px);
+
+    for(let k = 0; k < series.length; k++) {
+      const x_col = series[k].x.column;
+      const y_col = series[k].y.column;
+      
+      const ratio = k / series.length;
+      hue = hue_style[k % hue_style.length];
+      color_point = {h: hue, s: 1 * (1-hue), l: 0.25 + 0.25*(1-hue)}; 
+      color_line =  {h: hue, s: 1 * (1-hue), l: 0.25 + 0.30*(1-hue)}; 
+
+      // Draw line
+      if (data[0].length > 1) {
+        c.beginPath();
+        c.strokeStyle = hsl_to_string(color_line);
+        c.setLineDash(dash_style[k % dash_style.length]);
+        c.lineJoin = "bevel";
+        c.lineWidth = 1 + 2 * (1-ratio);
+        c.moveTo(x_to_px(axis_x, data[x_col][0]), y_to_px(axis_y, data[y_col][0]));
+        for(let i = 1; i < data[0].length; i++) {
+          c.lineTo(x_to_px(axis_x, data[x_col][i]), y_to_px(axis_y, data[y_col][i]));
+        }
+        c.stroke();
+      }
+     
+      // Draw points
+      if (data[0].length > 0) {
+        c.strokeStyle = hsl_to_string(color_line);
+        c.fillStyle = hsl_to_string(color_point);
+        c.setLineDash([]);
+        c.lineWidth = 1;
+        for(let i = 0; i < data[0].length; i++) {
+          c.beginPath();
+          c.arc(x_to_px(axis_x, data[x_col][i]), y_to_px(axis_y, data[y_col][i]), 3.2, 0, 2*Math.PI, false);
+          c.stroke();
+          c.fill();
+        }
+      }
+    }
+
+    let img = document.getElementById('img');
+    img.src=canvas.toDataURL("image/png")
+  }
+
+  function init() {
+    const textarea = document.getElementById('plot-data')
+    textarea.oninput=render; 
+    document.getElementById("input-width").oninput=render;
+    document.getElementById("input-height").oninput=render;
+    document.getElementById("input-x-log").oninput=render;
+    document.getElementById("input-y-log").oninput=render;
+    render()
+  }
+</script>
+
+</head>
+
+<body onload="init()">
+
+<p>
+  <label>Width (px)</label> 
+  <input type="number" id="input-width" value="550" /> 
+  <input type="checkbox" id="input-x-log" name="x-log-scale">
+  <label for="y-log-scale">log scale</label>
+</p>
+<p>
+  <label>Height (px)</label> 
+  <input type="number" id="input-height" value="450" /> 
+  <input type="checkbox" id="input-y-log" name="y-log-scale">
+  <label for="y-log-scale">log scale</label>
+</p>
+<p>
+  <textarea id="plot-data" cols="30" rows="12"></textarea>
+  <img src="" id="img" style="vertical-align:top;" />
+</p>
+<div id="plot-output"><canvas id = "canvas" hidden /></div>
+
+</body>
+<html>
