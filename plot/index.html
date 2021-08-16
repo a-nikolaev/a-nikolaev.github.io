@@ -1,7 +1,11 @@
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8"> 
 <title>Plot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"> 
+
+<link rel="stylesheet" type="text/css" href="sanitize.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 
 <script>
   /**
@@ -95,6 +99,10 @@
       }
       return {lo: new_lo, hi: new_hi, step: step, is_log: is_log};
     } else {
+      if (lo<=0) {
+        lo = NaN;
+        hi = NaN;
+      }
       // Logarithmic
       lo = Math.floor(Math.log(lo) / Math.log(10));
       hi = Math.ceil(Math.log(hi) / Math.log(10));
@@ -319,23 +327,40 @@
 
 <body onload="init()">
 
-<p>
-  <label>Width (px)</label> 
-  <input type="number" id="input-width" value="550" /> 
-  <input type="checkbox" id="input-x-log" name="x-log-scale">
-  <label for="y-log-scale">log scale</label>
-</p>
-<p>
-  <label>Height (px)</label> 
-  <input type="number" id="input-height" value="450" /> 
-  <input type="checkbox" id="input-y-log" name="y-log-scale">
-  <label for="y-log-scale">log scale</label>
-</p>
-<p>
-  <textarea id="plot-data" cols="30" rows="12"></textarea>
+  <div class="top-bar"><span>scatter plot online</span></div>
+<div class="group">
+  <div class="prop">
+    <div class="row">
+      <label for="input-width">Width (px)</label>
+      <span>
+      <input type="number" step="1" id="input-width" value="550" /> 
+      <input type="checkbox" id="input-x-log">
+      <label for="input-x-log">log scale</label>
+      </span>
+    </div>
+    <div class="row">
+      <label for="input-height">Height (px)</label>
+      <span>
+      <input type="number" step="1" id="input-height" value="450" /> 
+      <input type="checkbox" id="input-y-log">
+      <label for="input-y-log">log scale</label>
+      </span>
+    </div>
+    <textarea id="plot-data" cols="30" rows="12">
+1   4       3
+2   2       1
+4   1       2
+8   0.5     1
+16  0.25    1.5
+32  0.125   1
+64  0.0625  1.25
+    </textarea>
+  </div>
   <img src="" id="img" style="vertical-align:top;" />
-</p>
+</div>
+
 <div id="plot-output"><canvas id = "canvas" hidden /></div>
+
 
 </body>
 <html>
