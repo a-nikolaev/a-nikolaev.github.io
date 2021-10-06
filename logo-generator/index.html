@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+body{
+  font-family: sans-serif;
+}
+</style>
+<script>
+  let default_values = {};
+  let possible_values = {};
+
+  function refresh(id) {
+    let v = parseFloat( document.getElementById(id).value );
+    document.getElementById(id+'-output').textContent = v;
+    draw();
+  }
+
+  function reset() {
+    for (let id in default_values) {
+      document.getElementById(id).value = default_values[id];
+      refresh(id);
+    }
+  }
+
+  function randomize() {
+    for (let id in default_values) {
+      let all_values = possible_values[id];
+      let i = Math.floor(Math.random() * all_values.length);
+      document.getElementById(id).value = all_values[i]; 
+      refresh(id);
+    }
+  }
+
+  function create_inputs() {
+    function create(id, name, min, max, step, value) {
+      const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+      let all_values = range(min, max, step);
+      possible_values[id] = all_values;
+      default_values[id] = value;
+      let s =
+        `<label for="${id}" style='display: inline-block; width: 8em;'>${name}</label>
+        <datalist id="${id}-custom-list">
+          ${ all_values.map(i => "<option value=" + i + "></option>").join("") }
+        </datalist>
+        <input type='range' name='${id}' id='${id}' min='${min}' max='${max}' value='${value}' step='${step}' oninput='refresh("${id}")' 
+               list='${id}-custom-list'></input>
+        <output for='${id}' id='${id}-output'>${value}</output>
+        <br />`;
+      document.getElementById('inputs').innerHTML += s;
+    }
+
+    document.getElementById('inputs').innerHTML += "<h3>Rings</h3>";
+    create("i-num-rings", "number", 1, 21, 2, 13);
+    create("i-rotation", "rotation", -7, +7, 0.5, -2.5);
+    create("i-offset", "offset", 0, 2, 0.2, 1);
+    create("i-rounded", "rounded", 0, 1.0, 0.1, 0.2);
+    create("i-thickness", "thickness", -0.03, 0.05, 0.005, -0.01);
+    create("i-growth", "growth", 0, 0.10, 0.01, 0.08);
+    
+    document.getElementById('inputs').innerHTML += "<h3>Line</h3>";
+    create("i-ribbon-width", "width", 0.0, 1.2, 0.1, 0.5);
+    create("i-ribbon-modulation", "modulation", 0.0, 1.4, 0.1, 0.3);
+    create("i-ribbon-phase", "phase", -1.0, 1.0, 0.1, 0.0);
+    
+    document.getElementById('inputs').innerHTML += `
+      <h3>Quick options</h3>
+      <input type='button' value='Reset' onclick='reset()' style='width: 8em;'></input>
+      &emsp;
+      <input type='button' value='Randomize' onclick='randomize()' style='width: 8em;'></input> 
+    `;
+  }
+
+  function extrapolate(arr) {
+    let n = arr.length
+    let x1 = arr[0][0];
+    let y1 = arr[0][1];
+    let x2 = arr[1][0];
+    let y2 = arr[1][1];
+    
+    let x3 = arr[n-2][0];
+    let y3 = arr[n-2][1];
+    let x4 = arr[n-1][0];
+    let y4 = arr[n-1][1];
+    
+    return [].concat(
+      [[x1 + (x1-x2), y1 + (y1-y2)]],
+      arr, 
+      [[x4 + (x4-x3), y4 + (y4-y3)]]
+    );
+  }
+
+  function hex(cx, cy, r, dphi) {
+    let r1 = r;
+    let r0 = r * Math.cos(Math.PI / 6);
+    let arr = [];
+    for (let i = 0; i < 6; i++) {
+      const phi0 = dphi + i * 2.0*Math.PI/6.0;
+      const x0 = cx + r0*Math.cos(phi0);
+      const y0 = cy + r0*Math.sin(phi0);
+      arr.push([x0, y0])
+      
+      const phi1 = phi0 + Math.PI/6.0;
+      const x1 = cx + r1*Math.cos(phi1);
+      const y1 = cy + r1*Math.sin(phi1);
+      arr.push([x1, y1]);
+    }
+    arr.push(arr[0]);
+    return arr
+  }
+
+  function path_of_arr(arr) {
+    let s = `M ${arr[0][0]},${arr[0][1]} `;
+    for (let i = 0; i < arr.length-2; i+=2) {
+      let x1 = arr[i][0];
+      let y1 = arr[i][1];
+      let x2 = arr[i+1][0];
+      let y2 = arr[i+1][1];
+      let x3 = arr[i+2][0];
+      let y3 = arr[i+2][1];
+      //console.log(`${i}, ${i+1}, ${i+2}: (${x1},${y1}), (${x2},${y2}), (${x3},${y3})`);
+
+      let alpha = prop('i-rounded');
+      let xa = (alpha)*x1 + (1.0-alpha)*x2;
+      let ya = (alpha)*y1 + (1.0-alpha)*y2;
+      let xb = (alpha)*x3 + (1.0-alpha)*x2;
+      let yb = (alpha)*y3 + (1.0-alpha)*y2;
+
+      s += `L ${xa},${ya} `;
+      s += `Q ${x2},${y2} ${xb},${yb} `;
+      s += `L ${x3},${y3} `;
+    }
+    return s;
+  }
+  
+  function simple_path_of_arr(arr) {
+    let s = `M ${arr[0][0]},${arr[0][1]} `;
+    let t = "";
+    for (let i = 1; i < arr.length; i+=1) {
+      let x1 = arr[i][0];
+      let y1 = arr[i][1];
+      //s += `L ${x1},${y1} `;
+      t += `${x1},${y1} `;
+    }
+    s += `Q ${t} `;
+    return s;
+  }
+
+  function prop(id) {
+    return document.getElementById(id).value;
+  }
+
+  function draw() {
+    const svg = document.getElementById('logo');
+    svg.innerHTML = '';
+
+    let x_max = 400;
+    let y_max = 400;
+    let cx = x_max * 0.5;
+    let cy = y_max * 0.5;
+    let r = 150;
+
+    let ribbon1 = [];
+    let ribbon2 = [];
+
+    const n = prop('i-num-rings'); // 13
+    
+    let svg_hexes = "";
+
+    for (let i = 0; i < n; i++) {
+      let j = Math.floor(i / 2) * 2;
+      let offset = prop('i-offset');
+      let ij = offset*i + (1.0-offset)*j;
+      let dphi = prop('i-rotation') * Math.sin(0.5 * Math.PI * ij /n) * Math.PI / 24.0;
+
+      let is_white = Math.round(i%2);
+      let is_blue = Math.round(1.0 - is_white);
+
+      let rr = r - r * ((i)/n);
+      
+      let blue_thickness = prop('i-thickness')
+      let blue_growth = prop('i-growth')
+      rr += is_blue * (r * blue_thickness + r * blue_growth * (i/n));
+      let arr = hex(cx, cy, rr, dphi);
+      if (is_blue) {
+        ribbon1.push(arr[3]);
+        ribbon2.push(arr[9]);
+      }
+
+      let path = path_of_arr(arr);
+      let color1 = (i%2 == 0) ? "#005ba9" : "#FFFFFF";   //  #54c8f3
+      let color2 = (i%2 == 0) ? "#54c8f3" : "#FFFFFF";   
+      svg_hexes += `<path d="${path}" stroke="none" fill="${color1}" clip-path="url(#clip-keep-left)"/>`
+      svg_hexes += `<path d="${path}" stroke="none" fill="${color2}" clip-path="url(#clip-keep-right)"/>`
+    }
+
+    let ribbon = ribbon1.concat(ribbon2.reverse());
+    let ribbon_ext = extrapolate(ribbon);
+
+    let clip_keep_left = simple_path_of_arr(ribbon_ext.concat([[cx, 0], [0, 0], [0, y_max], [cx, y_max]]));
+    let clip_keep_right = simple_path_of_arr(ribbon_ext.concat([[cx, 0], [x_max, 0], [x_max, y_max], [cx, y_max]]));
+    let svg_defs = `
+    <defs>
+      <clipPath id="clip-keep-left"> <path d="${clip_keep_left} z" /> </clipPath> 
+      <clipPath id="clip-keep-right"> <path d="${clip_keep_right} z" /> </clipPath> 
+    </defs>
+    `;
+
+    svg.innerHTML += svg_defs;
+    svg.innerHTML += svg_hexes;
+
+    function make_curve(factor_x) {
+      return ((xy) => {
+        let x = xy[0];
+        let y = xy[1];
+        let width = prop('i-ribbon-width') * r / n;
+        let t = (y - cy) / r;
+        let freq = prop('i-ribbon-modulation');
+        let phase = prop('i-ribbon-phase') * 1;
+        return [x + width * (0.0 + 1.0 * Math.cos(freq*Math.PI * (t + phase))) * factor_x, y];
+      });
+    }
+
+    s_curve_1 = ribbon_ext.map(make_curve(1.0));
+    s_curve_2 = ribbon_ext.reverse().map(make_curve(-1.0));
+    
+    svg.innerHTML += `<path d="${simple_path_of_arr([].concat(s_curve_1, s_curve_2))}" 
+      stroke="#ffffff" fill="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="bevel" 
+      />`
+    svg
+  }
+
+</script>
+</head>
+<body onload="create_inputs(); draw();">
+<div style='display: flex;'>
+<div style='flex: 1;'>
+<svg version="1.1"
+     width="400" height="400"
+     xmlns="http://www.w3.org/2000/svg"
+     id="logo">
+</svg>
+</div>
+<div style='flex: 1;' id='inputs'> </div>
+</div>
+</body>
+</html>
